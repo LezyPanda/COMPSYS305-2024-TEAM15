@@ -6,11 +6,11 @@ end ClockDividerTest;
 
 architecture aClockDividerTest of ClockDividerTest is
 	component ClockDivider
-	port(
-        clockIn, reset : in std_logic;
-		factor : in integer;
-        clockOut: out std_logic
-	);
+		port(
+			clockIn, reset : in std_logic;
+			factor : in integer;
+			clockOut: out std_logic
+		);
 	end component;
 
 	signal clockIn, reset, clockOut : std_logic := '0';
