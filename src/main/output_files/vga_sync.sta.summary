@@ -1,0 +1,101 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'clock_50Mhz'
+Slack : -5.529
+TNS   : -142.330
+
+Type  : Slow 1100mV 85C Model Setup 'ClockDivider:dummy|vClockOut'
+Slack : -3.277
+TNS   : -147.821
+
+Type  : Slow 1100mV 85C Model Hold 'clock_50Mhz'
+Slack : 0.443
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'ClockDivider:dummy|vClockOut'
+Slack : 0.732
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ClockDivider:dummy|vClockOut'
+Slack : -0.538
+TNS   : -43.467
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clock_50Mhz'
+Slack : -0.538
+TNS   : -37.761
+
+Type  : Slow 1100mV 0C Model Setup 'clock_50Mhz'
+Slack : -5.695
+TNS   : -144.280
+
+Type  : Slow 1100mV 0C Model Setup 'ClockDivider:dummy|vClockOut'
+Slack : -3.302
+TNS   : -145.328
+
+Type  : Slow 1100mV 0C Model Hold 'clock_50Mhz'
+Slack : 0.449
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'ClockDivider:dummy|vClockOut'
+Slack : 0.671
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ClockDivider:dummy|vClockOut'
+Slack : -0.538
+TNS   : -43.442
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clock_50Mhz'
+Slack : -0.538
+TNS   : -38.608
+
+Type  : Fast 1100mV 85C Model Setup 'clock_50Mhz'
+Slack : -2.904
+TNS   : -48.914
+
+Type  : Fast 1100mV 85C Model Setup 'ClockDivider:dummy|vClockOut'
+Slack : -1.352
+TNS   : -55.784
+
+Type  : Fast 1100mV 85C Model Hold 'clock_50Mhz'
+Slack : 0.201
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'ClockDivider:dummy|vClockOut'
+Slack : 0.281
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clock_50Mhz'
+Slack : -0.308
+TNS   : -4.532
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ClockDivider:dummy|vClockOut'
+Slack : 0.072
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'clock_50Mhz'
+Slack : -2.637
+TNS   : -42.297
+
+Type  : Fast 1100mV 0C Model Setup 'ClockDivider:dummy|vClockOut'
+Slack : -1.204
+TNS   : -47.733
+
+Type  : Fast 1100mV 0C Model Hold 'clock_50Mhz'
+Slack : 0.190
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'ClockDivider:dummy|vClockOut'
+Slack : 0.254
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clock_50Mhz'
+Slack : -0.317
+TNS   : -4.687
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ClockDivider:dummy|vClockOut'
+Slack : 0.093
+TNS   : 0.000
+
+------------------------------------------------------------

@@ -1,0 +1,35 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\Users\thoye\Desktop\COMPSYS305-2024-TEAM15\src\main\unnamed.qsys --block-symbol-file --output-directory=C:\Users\thoye\Desktop\COMPSYS305-2024-TEAM15\src\main\unnamed --family="Cyclone V" --part=5CEBA4F23C7
+Progress: Loading main/unnamed.qsys
+Progress: Reading input file
+Progress: Adding altclkctrl_0 [altclkctrl 18.1]
+Progress: Parameterizing module altclkctrl_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+: unnamed.altclkctrl_0: Targeting device family: Cyclone V.
+: unnamed.altclkctrl_0: Regional clock network allows a clock signal to reach a quadrant of the chip. Only one clock input is accepted.
+: unnamed.altclkctrl_0: The register mode of port 'ena' is unavailable while 'ena' port not added. 
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\Users\thoye\Desktop\COMPSYS305-2024-TEAM15\src\main\unnamed.qsys --synthesis=VERILOG --output-directory=C:\Users\thoye\Desktop\COMPSYS305-2024-TEAM15\src\main\unnamed\synthesis --family="Cyclone V" --part=5CEBA4F23C7
+Progress: Loading main/unnamed.qsys
+Progress: Reading input file
+Progress: Adding altclkctrl_0 [altclkctrl 18.1]
+Progress: Parameterizing module altclkctrl_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+: unnamed.altclkctrl_0: Targeting device family: Cyclone V.
+: unnamed.altclkctrl_0: Regional clock network allows a clock signal to reach a quadrant of the chip. Only one clock input is accepted.
+: unnamed.altclkctrl_0: The register mode of port 'ena' is unavailable while 'ena' port not added. 
+Info: unnamed: Generating unnamed "unnamed" for QUARTUS_SYNTH
+Info: altclkctrl_0: Generating top-level entity unnamed_altclkctrl_0.
+Info: altclkctrl_0: "unnamed" instantiated altclkctrl "altclkctrl_0"
+Info: unnamed: Done "unnamed" with 2 modules, 2 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
