@@ -255,7 +255,6 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_VS -entity DE0_C
 set_location_assignment PIN_H13 -to CLOCK2_50
 set_location_assignment PIN_E10 -to CLOCK3_50
 set_location_assignment PIN_V15 -to CLOCK4_50
-set_location_assignment PIN_M9 -to CLOCK_50
 set_location_assignment PIN_W8 -to DRAM_ADDR[0]
 set_location_assignment PIN_T8 -to DRAM_ADDR[1]
 set_location_assignment PIN_U11 -to DRAM_ADDR[2]
@@ -434,9 +433,6 @@ set_location_assignment PIN_K9 -to SD_DATA[0]
 set_location_assignment PIN_D12 -to SD_DATA[1]
 set_location_assignment PIN_E12 -to SD_DATA[2]
 set_location_assignment PIN_C11 -to SD_DATA[3]
-set_location_assignment PIN_U13 -to SW[0]
-set_location_assignment PIN_V13 -to SW[1]
-set_location_assignment PIN_T13 -to SW[2]
 set_location_assignment PIN_T12 -to SW[3]
 set_location_assignment PIN_AA15 -to SW[4]
 set_location_assignment PIN_AB15 -to SW[5]
@@ -447,28 +443,20 @@ set_location_assignment PIN_AB12 -to SW[9]
 set_location_assignment PIN_B6 -to VGA_B[0]
 set_location_assignment PIN_B7 -to VGA_B[1]
 set_location_assignment PIN_A8 -to VGA_B[2]
-set_location_assignment PIN_A7 -to VGA_B[3]
 set_location_assignment PIN_L7 -to VGA_G[0]
 set_location_assignment PIN_K7 -to VGA_G[1]
 set_location_assignment PIN_J7 -to VGA_G[2]
-set_location_assignment PIN_J8 -to VGA_G[3]
-set_location_assignment PIN_H8 -to VGA_HS
 set_location_assignment PIN_A9 -to VGA_R[0]
 set_location_assignment PIN_B10 -to VGA_R[1]
 set_location_assignment PIN_C9 -to VGA_R[2]
-set_location_assignment PIN_A5 -to VGA_R[3]
-set_location_assignment PIN_G8 -to VGA_VS
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity DE0_CV_Default -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity DE0_CV_Default -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -entity DE0_CV_Default -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE0_CV_Default -section_id Top
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name BOARD "DE0-CV Development Board"
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SOURCE_FILE DP_CLK.cmp
 set_global_assignment -name QIP_FILE unnamed/synthesis/unnamed.qip
 set_global_assignment -name VHDL_FILE ClockDivider.vhdl
 set_global_assignment -name VHDL_FILE vga_sync.vhd
@@ -478,3 +466,16 @@ set_global_assignment -name VHDL_FILE bouncy_ball.vhd
 set_global_assignment -name VHDL_FILE ball.vhd
 set_global_assignment -name QIP_FILE DP_CLK.qip
 set_global_assignment -name SIP_FILE DP_CLK.sip
+set_location_assignment PIN_M9 -to refclk
+set_location_assignment PIN_U13 -to red
+set_location_assignment PIN_V13 -to green
+set_location_assignment PIN_T13 -to blue
+set_location_assignment PIN_A7 -to blue_out
+set_location_assignment PIN_J8 -to green_out
+set_location_assignment PIN_H8 -to horiz_sync_out
+set_location_assignment PIN_A5 -to red_out
+set_location_assignment PIN_G8 -to vert_sync_out
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

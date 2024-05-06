@@ -110,10 +110,6 @@
 				{
 					"name" : "blue",
 					"strict" : false
-				},
-				{
-					"name" : "clock_50Mhz",
-					"strict" : false
 				}
 			]
 		}
