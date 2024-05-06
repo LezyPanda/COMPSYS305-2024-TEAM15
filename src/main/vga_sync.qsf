@@ -476,3 +476,5 @@ set_global_assignment -name VHDL_FILE mouse.vhd
 set_global_assignment -name VHDL_FILE char_rom.vhd
 set_global_assignment -name VHDL_FILE bouncy_ball.vhd
 set_global_assignment -name VHDL_FILE ball.vhd
+set_global_assignment -name QIP_FILE DP_CLK.qip
+set_global_assignment -name SIP_FILE DP_CLK.sip
