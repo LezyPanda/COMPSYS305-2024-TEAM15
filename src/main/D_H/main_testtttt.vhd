@@ -17,6 +17,7 @@ architecture tb of main_tb is
             refclk   : in  std_logic;
             rst      : in  std_logic;
             locked   : out std_logic;
+            red, green, blue : in std_logic;
             red_out, green_out, blue_out, horiz_sync_out, vert_sync_out : out std_logic;
             pixel_row, pixel_column: out std_logic_vector(9 DOWNTO 0)
         );
