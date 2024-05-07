@@ -1,0 +1,568 @@
+set_location_assignment PIN_H13 -to CLOCK2_50
+set_location_assignment PIN_E10 -to CLOCK3_50
+set_location_assignment PIN_V15 -to CLOCK4_50
+set_location_assignment PIN_W8 -to DRAM_ADDR[0]
+set_location_assignment PIN_T8 -to DRAM_ADDR[1]
+set_location_assignment PIN_U11 -to DRAM_ADDR[2]
+set_location_assignment PIN_Y10 -to DRAM_ADDR[3]
+set_location_assignment PIN_N6 -to DRAM_ADDR[4]
+set_location_assignment PIN_AB10 -to DRAM_ADDR[5]
+set_location_assignment PIN_P12 -to DRAM_ADDR[6]
+set_location_assignment PIN_P7 -to DRAM_ADDR[7]
+set_location_assignment PIN_P8 -to DRAM_ADDR[8]
+set_location_assignment PIN_R5 -to DRAM_ADDR[9]
+set_location_assignment PIN_U8 -to DRAM_ADDR[10]
+set_location_assignment PIN_P6 -to DRAM_ADDR[11]
+set_location_assignment PIN_R7 -to DRAM_ADDR[12]
+set_location_assignment PIN_T7 -to DRAM_BA[0]
+set_location_assignment PIN_AB7 -to DRAM_BA[1]
+set_location_assignment PIN_V6 -to DRAM_CAS_N
+set_location_assignment PIN_R6 -to DRAM_CKE
+set_location_assignment PIN_AB11 -to DRAM_CLK
+set_location_assignment PIN_U6 -to DRAM_CS_N
+set_location_assignment PIN_Y9 -to DRAM_DQ[0]
+set_location_assignment PIN_T10 -to DRAM_DQ[1]
+set_location_assignment PIN_R9 -to DRAM_DQ[2]
+set_location_assignment PIN_Y11 -to DRAM_DQ[3]
+set_location_assignment PIN_R10 -to DRAM_DQ[4]
+set_location_assignment PIN_R11 -to DRAM_DQ[5]
+set_location_assignment PIN_R12 -to DRAM_DQ[6]
+set_location_assignment PIN_AA12 -to DRAM_DQ[7]
+set_location_assignment PIN_AA9 -to DRAM_DQ[8]
+set_location_assignment PIN_AB8 -to DRAM_DQ[9]
+set_location_assignment PIN_AA8 -to DRAM_DQ[10]
+set_location_assignment PIN_AA7 -to DRAM_DQ[11]
+set_location_assignment PIN_V10 -to DRAM_DQ[12]
+set_location_assignment PIN_V9 -to DRAM_DQ[13]
+set_location_assignment PIN_U10 -to DRAM_DQ[14]
+set_location_assignment PIN_T9 -to DRAM_DQ[15]
+set_location_assignment PIN_U12 -to DRAM_LDQM
+set_location_assignment PIN_AB6 -to DRAM_RAS_N
+set_location_assignment PIN_N8 -to DRAM_UDQM
+set_location_assignment PIN_AB5 -to DRAM_WE_N
+set_location_assignment PIN_N16 -to GPIO_0[0]
+set_location_assignment PIN_B16 -to GPIO_0[1]
+set_location_assignment PIN_M16 -to GPIO_0[2]
+set_location_assignment PIN_C16 -to GPIO_0[3]
+set_location_assignment PIN_D17 -to GPIO_0[4]
+set_location_assignment PIN_K20 -to GPIO_0[5]
+set_location_assignment PIN_K21 -to GPIO_0[6]
+set_location_assignment PIN_K22 -to GPIO_0[7]
+set_location_assignment PIN_M20 -to GPIO_0[8]
+set_location_assignment PIN_M21 -to GPIO_0[9]
+set_location_assignment PIN_N21 -to GPIO_0[10]
+set_location_assignment PIN_R22 -to GPIO_0[11]
+set_location_assignment PIN_R21 -to GPIO_0[12]
+set_location_assignment PIN_T22 -to GPIO_0[13]
+set_location_assignment PIN_N20 -to GPIO_0[14]
+set_location_assignment PIN_N19 -to GPIO_0[15]
+set_location_assignment PIN_M22 -to GPIO_0[16]
+set_location_assignment PIN_P19 -to GPIO_0[17]
+set_location_assignment PIN_L22 -to GPIO_0[18]
+set_location_assignment PIN_P17 -to GPIO_0[19]
+set_location_assignment PIN_P16 -to GPIO_0[20]
+set_location_assignment PIN_M18 -to GPIO_0[21]
+set_location_assignment PIN_L18 -to GPIO_0[22]
+set_location_assignment PIN_L17 -to GPIO_0[23]
+set_location_assignment PIN_L19 -to GPIO_0[24]
+set_location_assignment PIN_K17 -to GPIO_0[25]
+set_location_assignment PIN_K19 -to GPIO_0[26]
+set_location_assignment PIN_P18 -to GPIO_0[27]
+set_location_assignment PIN_R15 -to GPIO_0[28]
+set_location_assignment PIN_R17 -to GPIO_0[29]
+set_location_assignment PIN_R16 -to GPIO_0[30]
+set_location_assignment PIN_T20 -to GPIO_0[31]
+set_location_assignment PIN_T19 -to GPIO_0[32]
+set_location_assignment PIN_T18 -to GPIO_0[33]
+set_location_assignment PIN_T17 -to GPIO_0[34]
+set_location_assignment PIN_T15 -to GPIO_0[35]
+set_location_assignment PIN_H16 -to GPIO_1[0]
+set_location_assignment PIN_A12 -to GPIO_1[1]
+set_location_assignment PIN_H15 -to GPIO_1[2]
+set_location_assignment PIN_B12 -to GPIO_1[3]
+set_location_assignment PIN_A13 -to GPIO_1[4]
+set_location_assignment PIN_B13 -to GPIO_1[5]
+set_location_assignment PIN_C13 -to GPIO_1[6]
+set_location_assignment PIN_D13 -to GPIO_1[7]
+set_location_assignment PIN_G18 -to GPIO_1[8]
+set_location_assignment PIN_G17 -to GPIO_1[9]
+set_location_assignment PIN_H18 -to GPIO_1[10]
+set_location_assignment PIN_J18 -to GPIO_1[11]
+set_location_assignment PIN_J19 -to GPIO_1[12]
+set_location_assignment PIN_G11 -to GPIO_1[13]
+set_location_assignment PIN_H10 -to GPIO_1[14]
+set_location_assignment PIN_J11 -to GPIO_1[15]
+set_location_assignment PIN_H14 -to GPIO_1[16]
+set_location_assignment PIN_A15 -to GPIO_1[17]
+set_location_assignment PIN_J13 -to GPIO_1[18]
+set_location_assignment PIN_L8 -to GPIO_1[19]
+set_location_assignment PIN_A14 -to GPIO_1[20]
+set_location_assignment PIN_B15 -to GPIO_1[21]
+set_location_assignment PIN_C15 -to GPIO_1[22]
+set_location_assignment PIN_E14 -to GPIO_1[23]
+set_location_assignment PIN_E15 -to GPIO_1[24]
+set_location_assignment PIN_E16 -to GPIO_1[25]
+set_location_assignment PIN_F14 -to GPIO_1[26]
+set_location_assignment PIN_F15 -to GPIO_1[27]
+set_location_assignment PIN_F13 -to GPIO_1[28]
+set_location_assignment PIN_F12 -to GPIO_1[29]
+set_location_assignment PIN_G16 -to GPIO_1[30]
+set_location_assignment PIN_G15 -to GPIO_1[31]
+set_location_assignment PIN_G13 -to GPIO_1[32]
+set_location_assignment PIN_G12 -to GPIO_1[33]
+set_location_assignment PIN_J17 -to GPIO_1[34]
+set_location_assignment PIN_K16 -to GPIO_1[35]
+set_location_assignment PIN_U21 -to HEX0[0]
+set_location_assignment PIN_V21 -to HEX0[1]
+set_location_assignment PIN_W22 -to HEX0[2]
+set_location_assignment PIN_W21 -to HEX0[3]
+set_location_assignment PIN_Y22 -to HEX0[4]
+set_location_assignment PIN_Y21 -to HEX0[5]
+set_location_assignment PIN_AA22 -to HEX0[6]
+set_location_assignment PIN_AA20 -to HEX1[0]
+set_location_assignment PIN_AB20 -to HEX1[1]
+set_location_assignment PIN_AA19 -to HEX1[2]
+set_location_assignment PIN_AA18 -to HEX1[3]
+set_location_assignment PIN_AB18 -to HEX1[4]
+set_location_assignment PIN_AA17 -to HEX1[5]
+set_location_assignment PIN_U22 -to HEX1[6]
+set_location_assignment PIN_Y19 -to HEX2[0]
+set_location_assignment PIN_AB17 -to HEX2[1]
+set_location_assignment PIN_AA10 -to HEX2[2]
+set_location_assignment PIN_Y14 -to HEX2[3]
+set_location_assignment PIN_V14 -to HEX2[4]
+set_location_assignment PIN_AB22 -to HEX2[5]
+set_location_assignment PIN_AB21 -to HEX2[6]
+set_location_assignment PIN_Y16 -to HEX3[0]
+set_location_assignment PIN_W16 -to HEX3[1]
+set_location_assignment PIN_Y17 -to HEX3[2]
+set_location_assignment PIN_V16 -to HEX3[3]
+set_location_assignment PIN_U17 -to HEX3[4]
+set_location_assignment PIN_V18 -to HEX3[5]
+set_location_assignment PIN_V19 -to HEX3[6]
+set_location_assignment PIN_U20 -to HEX4[0]
+set_location_assignment PIN_Y20 -to HEX4[1]
+set_location_assignment PIN_V20 -to HEX4[2]
+set_location_assignment PIN_U16 -to HEX4[3]
+set_location_assignment PIN_U15 -to HEX4[4]
+set_location_assignment PIN_Y15 -to HEX4[5]
+set_location_assignment PIN_P9 -to HEX4[6]
+set_location_assignment PIN_N9 -to HEX5[0]
+set_location_assignment PIN_M8 -to HEX5[1]
+set_location_assignment PIN_T14 -to HEX5[2]
+set_location_assignment PIN_P14 -to HEX5[3]
+set_location_assignment PIN_C1 -to HEX5[4]
+set_location_assignment PIN_C2 -to HEX5[5]
+set_location_assignment PIN_W19 -to HEX5[6]
+set_location_assignment PIN_M7 -to KEY[2]
+set_location_assignment PIN_M6 -to KEY[3]
+set_location_assignment PIN_AA2 -to LEDR[0]
+set_location_assignment PIN_AA1 -to LEDR[1]
+set_location_assignment PIN_W2 -to LEDR[2]
+set_location_assignment PIN_Y3 -to LEDR[3]
+set_location_assignment PIN_N2 -to LEDR[4]
+set_location_assignment PIN_N1 -to LEDR[5]
+set_location_assignment PIN_U2 -to LEDR[6]
+set_location_assignment PIN_U1 -to LEDR[7]
+set_location_assignment PIN_L2 -to LEDR[8]
+set_location_assignment PIN_L1 -to LEDR[9]
+set_location_assignment PIN_D3 -to PS2_CLK
+set_location_assignment PIN_E2 -to PS2_CLK2
+set_location_assignment PIN_G2 -to PS2_DAT
+set_location_assignment PIN_G1 -to PS2_DAT2
+set_location_assignment PIN_P22 -to RESET_N
+set_location_assignment PIN_H11 -to SD_CLK
+set_location_assignment PIN_B11 -to SD_CMD
+set_location_assignment PIN_K9 -to SD_DATA[0]
+set_location_assignment PIN_D12 -to SD_DATA[1]
+set_location_assignment PIN_E12 -to SD_DATA[2]
+set_location_assignment PIN_C11 -to SD_DATA[3]
+set_location_assignment PIN_T12 -to SW[3]
+set_location_assignment PIN_AA15 -to SW[4]
+set_location_assignment PIN_AB15 -to SW[5]
+set_location_assignment PIN_AA14 -to SW[6]
+set_location_assignment PIN_AA13 -to SW[7]
+set_location_assignment PIN_AB13 -to SW[8]
+set_location_assignment PIN_AB12 -to SW[9]
+set_location_assignment PIN_B6 -to VGA_B[0]
+set_location_assignment PIN_B7 -to VGA_B[1]
+set_location_assignment PIN_A8 -to VGA_B[2]
+set_location_assignment PIN_L7 -to VGA_G[0]
+set_location_assignment PIN_K7 -to VGA_G[1]
+set_location_assignment PIN_J7 -to VGA_G[2]
+set_location_assignment PIN_A9 -to VGA_R[0]
+set_location_assignment PIN_B10 -to VGA_R[1]
+set_location_assignment PIN_C9 -to VGA_R[2]
+set_instance_assignment -name PLL_COMPENSATION_MODE DIRECT -to "*DP_CLK_0002*|altera_pll:altera_pll_i*|*" -qip DP_CLK/DP_CLK_0002.qip
+set_instance_assignment -name PLL_AUTO_RESET OFF -to "*DP_CLK_0002*|altera_pll:altera_pll_i*|*" -qip DP_CLK/DP_CLK_0002.qip
+set_instance_assignment -name PLL_BANDWIDTH_PRESET AUTO -to "*DP_CLK_0002*|altera_pll:altera_pll_i*|*" -qip DP_CLK/DP_CLK_0002.qip
+set_location_assignment PIN_M9 -to CLOCK_50
+set_location_assignment PIN_U7 -to KEY[0]
+set_location_assignment PIN_W9 -to KEY[1]
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE0_CV_Default -section_id Top
+set_location_assignment PIN_U13 -to red
+set_location_assignment PIN_V13 -to green
+set_location_assignment PIN_T13 -to blue
+set_location_assignment PIN_A7 -to blue_out
+set_location_assignment PIN_J8 -to green_out
+set_location_assignment PIN_H8 -to horiz_sync_out
+set_location_assignment PIN_A5 -to red_out
+set_location_assignment PIN_G8 -to vert_sync_out
+set_global_assignment -name FAMILY "Cyclone V"
+set_global_assignment -name DEVICE AUTO
+set_global_assignment -name TOP_LEVEL_ENTITY main_d
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "21:58:34  MAY 07, 2024"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
+set_global_assignment -name VHDL_FILE vga_sync.vhd
+set_global_assignment -name VHDL_FILE mouse.vhd
+set_global_assignment -name VHDL_FILE main_d.vhd
+set_global_assignment -name VHDL_FILE char_rom.vhd
+set_global_assignment -name VHDL_FILE bouncy_ball.vhd
+set_global_assignment -name VHDL_FILE ball.vhd
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name QIP_FILE DP_CLK.qip
+set_global_assignment -name IP_TOOL_NAME altera_pll -entity DP_CLK -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_TOOL_VERSION 18.1 -entity DP_CLK -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_TOOL_ENV mwpim -entity DP_CLK -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name MISC_FILE DP_CLK.cmp -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_TARGETED_DEVICE_FAMILY "Cyclone V" -entity DP_CLK -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_GENERATED_DEVICE_FAMILY "\{Cyclone V\}" -entity DP_CLK -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_QSYS_MODE UNKNOWN -entity DP_CLK -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON -qip DP_CLK.qip
+set_global_assignment -name IP_COMPONENT_NAME RFBfQ0xL -entity DP_CLK -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_DISPLAY_NAME "UExMIEludGVsIEZQR0EgSVA=" -entity DP_CLK -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_REPORT_HIERARCHY OFF -entity DP_CLK -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_INTERNAL OFF -entity DP_CLK -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24=" -entity DP_CLK -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_VERSION "MTguMQ==" -entity DP_CLK -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_DESCRIPTION "SW50ZWwgUGhhc2UtTG9ja2VkIExvb3A=" -entity DP_CLK -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_NAME "RFBfQ0xLXzAwMDI=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_DISPLAY_NAME "UExMIEludGVsIEZQR0EgSVA=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_REPORT_HIERARCHY OFF -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_INTERNAL OFF -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_VERSION "MTguMQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_DESCRIPTION "SW50ZWwgUGhhc2UtTG9ja2VkIExvb3A=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "ZGVidWdfcHJpbnRfb3V0cHV0::ZmFsc2U=::ZGVidWdfcHJpbnRfb3V0cHV0" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "ZGVidWdfdXNlX3JiY190YWZfbWV0aG9k::ZmFsc2U=::ZGVidWdfdXNlX3JiY190YWZfbWV0aG9k" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "ZGV2aWNl::NUNFQkEyRjE3QTc=::ZGV2aWNl" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BsbF9tb2Rl::SW50ZWdlci1OIFBMTA==::UExMIE1vZGU=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "ZnJhY3Rpb25hbF92Y29fbXVsdGlwbGllcg==::ZmFsc2U=::ZnJhY3Rpb25hbF92Y29fbXVsdGlwbGllcg==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3JlZmVyZW5jZV9jbG9ja19mcmVxdWVuY3k=::NTAuMA==::UmVmZXJlbmNlIENsb2NrIEZyZXF1ZW5jeQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "cmVmZXJlbmNlX2Nsb2NrX2ZyZXF1ZW5jeQ==::NTAuMCBNSHo=::cmVmZXJlbmNlX2Nsb2NrX2ZyZXF1ZW5jeQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2NoYW5uZWxfc3BhY2luZw==::MC4w::Q2hhbm5lbCBTcGFjaW5n" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX29wZXJhdGlvbl9tb2Rl::ZGlyZWN0::T3BlcmF0aW9uIE1vZGU=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2ZlZWRiYWNrX2Nsb2Nr::R2xvYmFsIENsb2Nr::RmVlZGJhY2sgQ2xvY2s=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2ZyYWN0aW9uYWxfY291dA==::MzI=::RnJhY3Rpb25hbCBjYXJyeSBvdXQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2RzbV9vdXRfc2Vs::MXN0X29yZGVy::RFNNIE9yZGVy" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "b3BlcmF0aW9uX21vZGU=::ZGlyZWN0::b3BlcmF0aW9uX21vZGU=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3VzZV9sb2NrZWQ=::dHJ1ZQ==::RW5hYmxlIGxvY2tlZCBvdXRwdXQgcG9ydA==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2VuX2Fkdl9wYXJhbXM=::ZmFsc2U=::RW5hYmxlIHBoeXNpY2FsIG91dHB1dCBjbG9jayBwYXJhbWV0ZXJz" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX251bWJlcl9vZl9jbG9ja3M=::MQ==::TnVtYmVyIE9mIENsb2Nrcw==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "bnVtYmVyX29mX2Nsb2Nrcw==::MQ==::bnVtYmVyX29mX2Nsb2Nrcw==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX211bHRpcGx5X2ZhY3Rvcg==::MQ==::TXVsdGlwbHkgRmFjdG9yIChNLUNvdW50ZXIp" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2ZyYWNfbXVsdGlwbHlfZmFjdG9y::MQ==::RnJhY3Rpb25hbCBNdWx0aXBseSBGYWN0b3IgKEsp" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2RpdmlkZV9mYWN0b3Jfbg==::MQ==::RGl2aWRlIEZhY3RvciAoTi1Db3VudGVyKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2Nhc2NhZGVfY291bnRlcjA=::ZmFsc2U=::TWFrZSB0aGlzIGEgY2FzY2FkZSBjb3VudGVy" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX291dHB1dF9jbG9ja19mcmVxdWVuY3kw::MjUuMA==::RGVzaXJlZCBGcmVxdWVuY3k=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2RpdmlkZV9mYWN0b3JfYzA=::MQ==::RGl2aWRlIEZhY3RvciAoQy1Db3VudGVyKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9tdWx0aXBseV9mYWN0b3Iw::Ng==::QWN0dWFsIE11bHRpcGx5IEZhY3Rvcg==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9mcmFjX211bHRpcGx5X2ZhY3RvcjA=::MQ==::QWN0dWFsIEZyYWN0aW9uYWwgTXVsdGlwbHkgRmFjdG9yIChLKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9kaXZpZGVfZmFjdG9yMA==::MTI=::QWN0dWFsIERpdmlkZSBGYWN0b3I=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9vdXRwdXRfY2xvY2tfZnJlcXVlbmN5MA==::MCBNSHo=::QWN0dWFsIEZyZXF1ZW5jeQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BzX3VuaXRzMA==::cHM=::UGhhc2UgU2hpZnQgdW5pdHM=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0MA==::MA==::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0X2RlZzA=::MC4w::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9waGFzZV9zaGlmdDA=::MA==::QWN0dWFsIFBoYXNlIFNoaWZ0" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2R1dHlfY3ljbGUw::NTA=::RHV0eSBDeWNsZQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2Nhc2NhZGVfY291bnRlcjE=::ZmFsc2U=::TWFrZSB0aGlzIGEgY2FzY2FkZSBjb3VudGVy" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX291dHB1dF9jbG9ja19mcmVxdWVuY3kx::MTAwLjA=::RGVzaXJlZCBGcmVxdWVuY3k=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2RpdmlkZV9mYWN0b3JfYzE=::MQ==::RGl2aWRlIEZhY3RvciAoQy1Db3VudGVyKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9tdWx0aXBseV9mYWN0b3Ix::MQ==::QWN0dWFsIE11bHRpcGx5IEZhY3Rvcg==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9mcmFjX211bHRpcGx5X2ZhY3RvcjE=::MQ==::QWN0dWFsIEZyYWN0aW9uYWwgTXVsdGlwbHkgRmFjdG9yIChLKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9kaXZpZGVfZmFjdG9yMQ==::MQ==::QWN0dWFsIERpdmlkZSBGYWN0b3I=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9vdXRwdXRfY2xvY2tfZnJlcXVlbmN5MQ==::MCBNSHo=::QWN0dWFsIEZyZXF1ZW5jeQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BzX3VuaXRzMQ==::cHM=::UGhhc2UgU2hpZnQgdW5pdHM=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0MQ==::MA==::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0X2RlZzE=::MC4w::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9waGFzZV9zaGlmdDE=::MA==::QWN0dWFsIFBoYXNlIFNoaWZ0" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2R1dHlfY3ljbGUx::NTA=::RHV0eSBDeWNsZQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2Nhc2NhZGVfY291bnRlcjI=::ZmFsc2U=::TWFrZSB0aGlzIGEgY2FzY2FkZSBjb3VudGVy" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX291dHB1dF9jbG9ja19mcmVxdWVuY3ky::MTAwLjA=::RGVzaXJlZCBGcmVxdWVuY3k=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2RpdmlkZV9mYWN0b3JfYzI=::MQ==::RGl2aWRlIEZhY3RvciAoQy1Db3VudGVyKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9tdWx0aXBseV9mYWN0b3Iy::MQ==::QWN0dWFsIE11bHRpcGx5IEZhY3Rvcg==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9mcmFjX211bHRpcGx5X2ZhY3RvcjI=::MQ==::QWN0dWFsIEZyYWN0aW9uYWwgTXVsdGlwbHkgRmFjdG9yIChLKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9kaXZpZGVfZmFjdG9yMg==::MQ==::QWN0dWFsIERpdmlkZSBGYWN0b3I=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9vdXRwdXRfY2xvY2tfZnJlcXVlbmN5Mg==::MCBNSHo=::QWN0dWFsIEZyZXF1ZW5jeQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BzX3VuaXRzMg==::cHM=::UGhhc2UgU2hpZnQgdW5pdHM=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0Mg==::MA==::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0X2RlZzI=::MC4w::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9waGFzZV9zaGlmdDI=::MA==::QWN0dWFsIFBoYXNlIFNoaWZ0" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2R1dHlfY3ljbGUy::NTA=::RHV0eSBDeWNsZQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2Nhc2NhZGVfY291bnRlcjM=::ZmFsc2U=::TWFrZSB0aGlzIGEgY2FzY2FkZSBjb3VudGVy" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX291dHB1dF9jbG9ja19mcmVxdWVuY3kz::MTAwLjA=::RGVzaXJlZCBGcmVxdWVuY3k=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2RpdmlkZV9mYWN0b3JfYzM=::MQ==::RGl2aWRlIEZhY3RvciAoQy1Db3VudGVyKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9tdWx0aXBseV9mYWN0b3Iz::MQ==::QWN0dWFsIE11bHRpcGx5IEZhY3Rvcg==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9mcmFjX211bHRpcGx5X2ZhY3RvcjM=::MQ==::QWN0dWFsIEZyYWN0aW9uYWwgTXVsdGlwbHkgRmFjdG9yIChLKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9kaXZpZGVfZmFjdG9yMw==::MQ==::QWN0dWFsIERpdmlkZSBGYWN0b3I=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9vdXRwdXRfY2xvY2tfZnJlcXVlbmN5Mw==::MCBNSHo=::QWN0dWFsIEZyZXF1ZW5jeQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BzX3VuaXRzMw==::cHM=::UGhhc2UgU2hpZnQgdW5pdHM=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0Mw==::MA==::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0X2RlZzM=::MC4w::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9waGFzZV9zaGlmdDM=::MA==::QWN0dWFsIFBoYXNlIFNoaWZ0" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2R1dHlfY3ljbGUz::NTA=::RHV0eSBDeWNsZQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2Nhc2NhZGVfY291bnRlcjQ=::ZmFsc2U=::TWFrZSB0aGlzIGEgY2FzY2FkZSBjb3VudGVy" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX291dHB1dF9jbG9ja19mcmVxdWVuY3k0::MTAwLjA=::RGVzaXJlZCBGcmVxdWVuY3k=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2RpdmlkZV9mYWN0b3JfYzQ=::MQ==::RGl2aWRlIEZhY3RvciAoQy1Db3VudGVyKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9tdWx0aXBseV9mYWN0b3I0::MQ==::QWN0dWFsIE11bHRpcGx5IEZhY3Rvcg==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9mcmFjX211bHRpcGx5X2ZhY3RvcjQ=::MQ==::QWN0dWFsIEZyYWN0aW9uYWwgTXVsdGlwbHkgRmFjdG9yIChLKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9kaXZpZGVfZmFjdG9yNA==::MQ==::QWN0dWFsIERpdmlkZSBGYWN0b3I=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9vdXRwdXRfY2xvY2tfZnJlcXVlbmN5NA==::MCBNSHo=::QWN0dWFsIEZyZXF1ZW5jeQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BzX3VuaXRzNA==::cHM=::UGhhc2UgU2hpZnQgdW5pdHM=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0NA==::MA==::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0X2RlZzQ=::MC4w::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9waGFzZV9zaGlmdDQ=::MA==::QWN0dWFsIFBoYXNlIFNoaWZ0" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2R1dHlfY3ljbGU0::NTA=::RHV0eSBDeWNsZQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2Nhc2NhZGVfY291bnRlcjU=::ZmFsc2U=::TWFrZSB0aGlzIGEgY2FzY2FkZSBjb3VudGVy" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX291dHB1dF9jbG9ja19mcmVxdWVuY3k1::MTAwLjA=::RGVzaXJlZCBGcmVxdWVuY3k=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2RpdmlkZV9mYWN0b3JfYzU=::MQ==::RGl2aWRlIEZhY3RvciAoQy1Db3VudGVyKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9tdWx0aXBseV9mYWN0b3I1::MQ==::QWN0dWFsIE11bHRpcGx5IEZhY3Rvcg==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9mcmFjX211bHRpcGx5X2ZhY3RvcjU=::MQ==::QWN0dWFsIEZyYWN0aW9uYWwgTXVsdGlwbHkgRmFjdG9yIChLKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9kaXZpZGVfZmFjdG9yNQ==::MQ==::QWN0dWFsIERpdmlkZSBGYWN0b3I=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9vdXRwdXRfY2xvY2tfZnJlcXVlbmN5NQ==::MCBNSHo=::QWN0dWFsIEZyZXF1ZW5jeQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BzX3VuaXRzNQ==::cHM=::UGhhc2UgU2hpZnQgdW5pdHM=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0NQ==::MA==::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0X2RlZzU=::MC4w::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9waGFzZV9zaGlmdDU=::MA==::QWN0dWFsIFBoYXNlIFNoaWZ0" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2R1dHlfY3ljbGU1::NTA=::RHV0eSBDeWNsZQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2Nhc2NhZGVfY291bnRlcjY=::ZmFsc2U=::TWFrZSB0aGlzIGEgY2FzY2FkZSBjb3VudGVy" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX291dHB1dF9jbG9ja19mcmVxdWVuY3k2::MTAwLjA=::RGVzaXJlZCBGcmVxdWVuY3k=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2RpdmlkZV9mYWN0b3JfYzY=::MQ==::RGl2aWRlIEZhY3RvciAoQy1Db3VudGVyKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9tdWx0aXBseV9mYWN0b3I2::MQ==::QWN0dWFsIE11bHRpcGx5IEZhY3Rvcg==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9mcmFjX211bHRpcGx5X2ZhY3RvcjY=::MQ==::QWN0dWFsIEZyYWN0aW9uYWwgTXVsdGlwbHkgRmFjdG9yIChLKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9kaXZpZGVfZmFjdG9yNg==::MQ==::QWN0dWFsIERpdmlkZSBGYWN0b3I=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9vdXRwdXRfY2xvY2tfZnJlcXVlbmN5Ng==::MCBNSHo=::QWN0dWFsIEZyZXF1ZW5jeQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BzX3VuaXRzNg==::cHM=::UGhhc2UgU2hpZnQgdW5pdHM=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0Ng==::MA==::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0X2RlZzY=::MC4w::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9waGFzZV9zaGlmdDY=::MA==::QWN0dWFsIFBoYXNlIFNoaWZ0" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2R1dHlfY3ljbGU2::NTA=::RHV0eSBDeWNsZQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2Nhc2NhZGVfY291bnRlcjc=::ZmFsc2U=::TWFrZSB0aGlzIGEgY2FzY2FkZSBjb3VudGVy" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX291dHB1dF9jbG9ja19mcmVxdWVuY3k3::MTAwLjA=::RGVzaXJlZCBGcmVxdWVuY3k=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2RpdmlkZV9mYWN0b3JfYzc=::MQ==::RGl2aWRlIEZhY3RvciAoQy1Db3VudGVyKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9tdWx0aXBseV9mYWN0b3I3::MQ==::QWN0dWFsIE11bHRpcGx5IEZhY3Rvcg==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9mcmFjX211bHRpcGx5X2ZhY3Rvcjc=::MQ==::QWN0dWFsIEZyYWN0aW9uYWwgTXVsdGlwbHkgRmFjdG9yIChLKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9kaXZpZGVfZmFjdG9yNw==::MQ==::QWN0dWFsIERpdmlkZSBGYWN0b3I=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9vdXRwdXRfY2xvY2tfZnJlcXVlbmN5Nw==::MCBNSHo=::QWN0dWFsIEZyZXF1ZW5jeQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BzX3VuaXRzNw==::cHM=::UGhhc2UgU2hpZnQgdW5pdHM=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0Nw==::MA==::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0X2RlZzc=::MC4w::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9waGFzZV9zaGlmdDc=::MA==::QWN0dWFsIFBoYXNlIFNoaWZ0" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2R1dHlfY3ljbGU3::NTA=::RHV0eSBDeWNsZQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2Nhc2NhZGVfY291bnRlcjg=::ZmFsc2U=::TWFrZSB0aGlzIGEgY2FzY2FkZSBjb3VudGVy" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX291dHB1dF9jbG9ja19mcmVxdWVuY3k4::MTAwLjA=::RGVzaXJlZCBGcmVxdWVuY3k=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2RpdmlkZV9mYWN0b3JfYzg=::MQ==::RGl2aWRlIEZhY3RvciAoQy1Db3VudGVyKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9tdWx0aXBseV9mYWN0b3I4::MQ==::QWN0dWFsIE11bHRpcGx5IEZhY3Rvcg==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9mcmFjX211bHRpcGx5X2ZhY3Rvcjg=::MQ==::QWN0dWFsIEZyYWN0aW9uYWwgTXVsdGlwbHkgRmFjdG9yIChLKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9kaXZpZGVfZmFjdG9yOA==::MQ==::QWN0dWFsIERpdmlkZSBGYWN0b3I=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9vdXRwdXRfY2xvY2tfZnJlcXVlbmN5OA==::MCBNSHo=::QWN0dWFsIEZyZXF1ZW5jeQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BzX3VuaXRzOA==::cHM=::UGhhc2UgU2hpZnQgdW5pdHM=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0OA==::MA==::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0X2RlZzg=::MC4w::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9waGFzZV9zaGlmdDg=::MA==::QWN0dWFsIFBoYXNlIFNoaWZ0" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2R1dHlfY3ljbGU4::NTA=::RHV0eSBDeWNsZQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2Nhc2NhZGVfY291bnRlcjk=::ZmFsc2U=::TWFrZSB0aGlzIGEgY2FzY2FkZSBjb3VudGVy" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX291dHB1dF9jbG9ja19mcmVxdWVuY3k5::MTAwLjA=::RGVzaXJlZCBGcmVxdWVuY3k=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2RpdmlkZV9mYWN0b3JfYzk=::MQ==::RGl2aWRlIEZhY3RvciAoQy1Db3VudGVyKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9tdWx0aXBseV9mYWN0b3I5::MQ==::QWN0dWFsIE11bHRpcGx5IEZhY3Rvcg==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9mcmFjX211bHRpcGx5X2ZhY3Rvcjk=::MQ==::QWN0dWFsIEZyYWN0aW9uYWwgTXVsdGlwbHkgRmFjdG9yIChLKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9kaXZpZGVfZmFjdG9yOQ==::MQ==::QWN0dWFsIERpdmlkZSBGYWN0b3I=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9vdXRwdXRfY2xvY2tfZnJlcXVlbmN5OQ==::MCBNSHo=::QWN0dWFsIEZyZXF1ZW5jeQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BzX3VuaXRzOQ==::cHM=::UGhhc2UgU2hpZnQgdW5pdHM=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0OQ==::MA==::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0X2RlZzk=::MC4w::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9waGFzZV9zaGlmdDk=::MA==::QWN0dWFsIFBoYXNlIFNoaWZ0" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2R1dHlfY3ljbGU5::NTA=::RHV0eSBDeWNsZQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2Nhc2NhZGVfY291bnRlcjEw::ZmFsc2U=::TWFrZSB0aGlzIGEgY2FzY2FkZSBjb3VudGVy" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX291dHB1dF9jbG9ja19mcmVxdWVuY3kxMA==::MTAwLjA=::RGVzaXJlZCBGcmVxdWVuY3k=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2RpdmlkZV9mYWN0b3JfYzEw::MQ==::RGl2aWRlIEZhY3RvciAoQy1Db3VudGVyKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9tdWx0aXBseV9mYWN0b3IxMA==::MQ==::QWN0dWFsIE11bHRpcGx5IEZhY3Rvcg==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9mcmFjX211bHRpcGx5X2ZhY3RvcjEw::MQ==::QWN0dWFsIEZyYWN0aW9uYWwgTXVsdGlwbHkgRmFjdG9yIChLKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9kaXZpZGVfZmFjdG9yMTA=::MQ==::QWN0dWFsIERpdmlkZSBGYWN0b3I=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9vdXRwdXRfY2xvY2tfZnJlcXVlbmN5MTA=::MCBNSHo=::QWN0dWFsIEZyZXF1ZW5jeQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BzX3VuaXRzMTA=::cHM=::UGhhc2UgU2hpZnQgdW5pdHM=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0MTA=::MA==::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0X2RlZzEw::MC4w::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9waGFzZV9zaGlmdDEw::MA==::QWN0dWFsIFBoYXNlIFNoaWZ0" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2R1dHlfY3ljbGUxMA==::NTA=::RHV0eSBDeWNsZQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2Nhc2NhZGVfY291bnRlcjEx::ZmFsc2U=::TWFrZSB0aGlzIGEgY2FzY2FkZSBjb3VudGVy" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX291dHB1dF9jbG9ja19mcmVxdWVuY3kxMQ==::MTAwLjA=::RGVzaXJlZCBGcmVxdWVuY3k=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2RpdmlkZV9mYWN0b3JfYzEx::MQ==::RGl2aWRlIEZhY3RvciAoQy1Db3VudGVyKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9tdWx0aXBseV9mYWN0b3IxMQ==::MQ==::QWN0dWFsIE11bHRpcGx5IEZhY3Rvcg==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9mcmFjX211bHRpcGx5X2ZhY3RvcjEx::MQ==::QWN0dWFsIEZyYWN0aW9uYWwgTXVsdGlwbHkgRmFjdG9yIChLKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9kaXZpZGVfZmFjdG9yMTE=::MQ==::QWN0dWFsIERpdmlkZSBGYWN0b3I=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9vdXRwdXRfY2xvY2tfZnJlcXVlbmN5MTE=::MCBNSHo=::QWN0dWFsIEZyZXF1ZW5jeQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BzX3VuaXRzMTE=::cHM=::UGhhc2UgU2hpZnQgdW5pdHM=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0MTE=::MA==::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0X2RlZzEx::MC4w::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9waGFzZV9zaGlmdDEx::MA==::QWN0dWFsIFBoYXNlIFNoaWZ0" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2R1dHlfY3ljbGUxMQ==::NTA=::RHV0eSBDeWNsZQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2Nhc2NhZGVfY291bnRlcjEy::ZmFsc2U=::TWFrZSB0aGlzIGEgY2FzY2FkZSBjb3VudGVy" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX291dHB1dF9jbG9ja19mcmVxdWVuY3kxMg==::MTAwLjA=::RGVzaXJlZCBGcmVxdWVuY3k=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2RpdmlkZV9mYWN0b3JfYzEy::MQ==::RGl2aWRlIEZhY3RvciAoQy1Db3VudGVyKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9tdWx0aXBseV9mYWN0b3IxMg==::MQ==::QWN0dWFsIE11bHRpcGx5IEZhY3Rvcg==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9mcmFjX211bHRpcGx5X2ZhY3RvcjEy::MQ==::QWN0dWFsIEZyYWN0aW9uYWwgTXVsdGlwbHkgRmFjdG9yIChLKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9kaXZpZGVfZmFjdG9yMTI=::MQ==::QWN0dWFsIERpdmlkZSBGYWN0b3I=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9vdXRwdXRfY2xvY2tfZnJlcXVlbmN5MTI=::MCBNSHo=::QWN0dWFsIEZyZXF1ZW5jeQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BzX3VuaXRzMTI=::cHM=::UGhhc2UgU2hpZnQgdW5pdHM=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0MTI=::MA==::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0X2RlZzEy::MC4w::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9waGFzZV9zaGlmdDEy::MA==::QWN0dWFsIFBoYXNlIFNoaWZ0" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2R1dHlfY3ljbGUxMg==::NTA=::RHV0eSBDeWNsZQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2Nhc2NhZGVfY291bnRlcjEz::ZmFsc2U=::TWFrZSB0aGlzIGEgY2FzY2FkZSBjb3VudGVy" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX291dHB1dF9jbG9ja19mcmVxdWVuY3kxMw==::MTAwLjA=::RGVzaXJlZCBGcmVxdWVuY3k=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2RpdmlkZV9mYWN0b3JfYzEz::MQ==::RGl2aWRlIEZhY3RvciAoQy1Db3VudGVyKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9tdWx0aXBseV9mYWN0b3IxMw==::MQ==::QWN0dWFsIE11bHRpcGx5IEZhY3Rvcg==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9mcmFjX211bHRpcGx5X2ZhY3RvcjEz::MQ==::QWN0dWFsIEZyYWN0aW9uYWwgTXVsdGlwbHkgRmFjdG9yIChLKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9kaXZpZGVfZmFjdG9yMTM=::MQ==::QWN0dWFsIERpdmlkZSBGYWN0b3I=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9vdXRwdXRfY2xvY2tfZnJlcXVlbmN5MTM=::MCBNSHo=::QWN0dWFsIEZyZXF1ZW5jeQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BzX3VuaXRzMTM=::cHM=::UGhhc2UgU2hpZnQgdW5pdHM=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0MTM=::MA==::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0X2RlZzEz::MC4w::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9waGFzZV9zaGlmdDEz::MA==::QWN0dWFsIFBoYXNlIFNoaWZ0" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2R1dHlfY3ljbGUxMw==::NTA=::RHV0eSBDeWNsZQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2Nhc2NhZGVfY291bnRlcjE0::ZmFsc2U=::TWFrZSB0aGlzIGEgY2FzY2FkZSBjb3VudGVy" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX291dHB1dF9jbG9ja19mcmVxdWVuY3kxNA==::MTAwLjA=::RGVzaXJlZCBGcmVxdWVuY3k=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2RpdmlkZV9mYWN0b3JfYzE0::MQ==::RGl2aWRlIEZhY3RvciAoQy1Db3VudGVyKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9tdWx0aXBseV9mYWN0b3IxNA==::MQ==::QWN0dWFsIE11bHRpcGx5IEZhY3Rvcg==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9mcmFjX211bHRpcGx5X2ZhY3RvcjE0::MQ==::QWN0dWFsIEZyYWN0aW9uYWwgTXVsdGlwbHkgRmFjdG9yIChLKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9kaXZpZGVfZmFjdG9yMTQ=::MQ==::QWN0dWFsIERpdmlkZSBGYWN0b3I=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9vdXRwdXRfY2xvY2tfZnJlcXVlbmN5MTQ=::MCBNSHo=::QWN0dWFsIEZyZXF1ZW5jeQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BzX3VuaXRzMTQ=::cHM=::UGhhc2UgU2hpZnQgdW5pdHM=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0MTQ=::MA==::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0X2RlZzE0::MC4w::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9waGFzZV9zaGlmdDE0::MA==::QWN0dWFsIFBoYXNlIFNoaWZ0" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2R1dHlfY3ljbGUxNA==::NTA=::RHV0eSBDeWNsZQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2Nhc2NhZGVfY291bnRlcjE1::ZmFsc2U=::TWFrZSB0aGlzIGEgY2FzY2FkZSBjb3VudGVy" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX291dHB1dF9jbG9ja19mcmVxdWVuY3kxNQ==::MTAwLjA=::RGVzaXJlZCBGcmVxdWVuY3k=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2RpdmlkZV9mYWN0b3JfYzE1::MQ==::RGl2aWRlIEZhY3RvciAoQy1Db3VudGVyKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9tdWx0aXBseV9mYWN0b3IxNQ==::MQ==::QWN0dWFsIE11bHRpcGx5IEZhY3Rvcg==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9mcmFjX211bHRpcGx5X2ZhY3RvcjE1::MQ==::QWN0dWFsIEZyYWN0aW9uYWwgTXVsdGlwbHkgRmFjdG9yIChLKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9kaXZpZGVfZmFjdG9yMTU=::MQ==::QWN0dWFsIERpdmlkZSBGYWN0b3I=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9vdXRwdXRfY2xvY2tfZnJlcXVlbmN5MTU=::MCBNSHo=::QWN0dWFsIEZyZXF1ZW5jeQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BzX3VuaXRzMTU=::cHM=::UGhhc2UgU2hpZnQgdW5pdHM=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0MTU=::MA==::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0X2RlZzE1::MC4w::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9waGFzZV9zaGlmdDE1::MA==::QWN0dWFsIFBoYXNlIFNoaWZ0" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2R1dHlfY3ljbGUxNQ==::NTA=::RHV0eSBDeWNsZQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2Nhc2NhZGVfY291bnRlcjE2::ZmFsc2U=::TWFrZSB0aGlzIGEgY2FzY2FkZSBjb3VudGVy" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX291dHB1dF9jbG9ja19mcmVxdWVuY3kxNg==::MTAwLjA=::RGVzaXJlZCBGcmVxdWVuY3k=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2RpdmlkZV9mYWN0b3JfYzE2::MQ==::RGl2aWRlIEZhY3RvciAoQy1Db3VudGVyKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9tdWx0aXBseV9mYWN0b3IxNg==::MQ==::QWN0dWFsIE11bHRpcGx5IEZhY3Rvcg==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9mcmFjX211bHRpcGx5X2ZhY3RvcjE2::MQ==::QWN0dWFsIEZyYWN0aW9uYWwgTXVsdGlwbHkgRmFjdG9yIChLKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9kaXZpZGVfZmFjdG9yMTY=::MQ==::QWN0dWFsIERpdmlkZSBGYWN0b3I=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9vdXRwdXRfY2xvY2tfZnJlcXVlbmN5MTY=::MCBNSHo=::QWN0dWFsIEZyZXF1ZW5jeQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BzX3VuaXRzMTY=::cHM=::UGhhc2UgU2hpZnQgdW5pdHM=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0MTY=::MA==::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0X2RlZzE2::MC4w::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9waGFzZV9zaGlmdDE2::MA==::QWN0dWFsIFBoYXNlIFNoaWZ0" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2R1dHlfY3ljbGUxNg==::NTA=::RHV0eSBDeWNsZQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2Nhc2NhZGVfY291bnRlcjE3::ZmFsc2U=::TWFrZSB0aGlzIGEgY2FzY2FkZSBjb3VudGVy" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX291dHB1dF9jbG9ja19mcmVxdWVuY3kxNw==::MTAwLjA=::RGVzaXJlZCBGcmVxdWVuY3k=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2RpdmlkZV9mYWN0b3JfYzE3::MQ==::RGl2aWRlIEZhY3RvciAoQy1Db3VudGVyKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9tdWx0aXBseV9mYWN0b3IxNw==::MQ==::QWN0dWFsIE11bHRpcGx5IEZhY3Rvcg==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9mcmFjX211bHRpcGx5X2ZhY3RvcjE3::MQ==::QWN0dWFsIEZyYWN0aW9uYWwgTXVsdGlwbHkgRmFjdG9yIChLKQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9kaXZpZGVfZmFjdG9yMTc=::MQ==::QWN0dWFsIERpdmlkZSBGYWN0b3I=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9vdXRwdXRfY2xvY2tfZnJlcXVlbmN5MTc=::MCBNSHo=::QWN0dWFsIEZyZXF1ZW5jeQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BzX3VuaXRzMTc=::cHM=::UGhhc2UgU2hpZnQgdW5pdHM=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0MTc=::MA==::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BoYXNlX3NoaWZ0X2RlZzE3::MC4w::UGhhc2UgU2hpZnQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2FjdHVhbF9waGFzZV9zaGlmdDE3::MA==::QWN0dWFsIFBoYXNlIFNoaWZ0" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2R1dHlfY3ljbGUxNw==::NTA=::RHV0eSBDeWNsZQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTA=::MjUuMDAwMDAwIE1Ieg==::b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTA=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "cGhhc2Vfc2hpZnQw::MCBwcw==::cGhhc2Vfc2hpZnQw" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "ZHV0eV9jeWNsZTA=::NTA=::ZHV0eV9jeWNsZTA=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTE=::MCBNSHo=::b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTE=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "cGhhc2Vfc2hpZnQx::MCBwcw==::cGhhc2Vfc2hpZnQx" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "ZHV0eV9jeWNsZTE=::NTA=::ZHV0eV9jeWNsZTE=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTI=::MCBNSHo=::b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTI=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "cGhhc2Vfc2hpZnQy::MCBwcw==::cGhhc2Vfc2hpZnQy" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "ZHV0eV9jeWNsZTI=::NTA=::ZHV0eV9jeWNsZTI=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTM=::MCBNSHo=::b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTM=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "cGhhc2Vfc2hpZnQz::MCBwcw==::cGhhc2Vfc2hpZnQz" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "ZHV0eV9jeWNsZTM=::NTA=::ZHV0eV9jeWNsZTM=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTQ=::MCBNSHo=::b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "cGhhc2Vfc2hpZnQ0::MCBwcw==::cGhhc2Vfc2hpZnQ0" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "ZHV0eV9jeWNsZTQ=::NTA=::ZHV0eV9jeWNsZTQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTU=::MCBNSHo=::b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTU=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "cGhhc2Vfc2hpZnQ1::MCBwcw==::cGhhc2Vfc2hpZnQ1" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "ZHV0eV9jeWNsZTU=::NTA=::ZHV0eV9jeWNsZTU=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTY=::MCBNSHo=::b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTY=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "cGhhc2Vfc2hpZnQ2::MCBwcw==::cGhhc2Vfc2hpZnQ2" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "ZHV0eV9jeWNsZTY=::NTA=::ZHV0eV9jeWNsZTY=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTc=::MCBNSHo=::b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTc=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "cGhhc2Vfc2hpZnQ3::MCBwcw==::cGhhc2Vfc2hpZnQ3" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "ZHV0eV9jeWNsZTc=::NTA=::ZHV0eV9jeWNsZTc=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTg=::MCBNSHo=::b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTg=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "cGhhc2Vfc2hpZnQ4::MCBwcw==::cGhhc2Vfc2hpZnQ4" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "ZHV0eV9jeWNsZTg=::NTA=::ZHV0eV9jeWNsZTg=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTk=::MCBNSHo=::b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTk=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "cGhhc2Vfc2hpZnQ5::MCBwcw==::cGhhc2Vfc2hpZnQ5" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "ZHV0eV9jeWNsZTk=::NTA=::ZHV0eV9jeWNsZTk=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTEw::MCBNSHo=::b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTEw" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "cGhhc2Vfc2hpZnQxMA==::MCBwcw==::cGhhc2Vfc2hpZnQxMA==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "ZHV0eV9jeWNsZTEw::NTA=::ZHV0eV9jeWNsZTEw" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTEx::MCBNSHo=::b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTEx" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "cGhhc2Vfc2hpZnQxMQ==::MCBwcw==::cGhhc2Vfc2hpZnQxMQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "ZHV0eV9jeWNsZTEx::NTA=::ZHV0eV9jeWNsZTEx" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTEy::MCBNSHo=::b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTEy" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "cGhhc2Vfc2hpZnQxMg==::MCBwcw==::cGhhc2Vfc2hpZnQxMg==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "ZHV0eV9jeWNsZTEy::NTA=::ZHV0eV9jeWNsZTEy" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTEz::MCBNSHo=::b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTEz" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "cGhhc2Vfc2hpZnQxMw==::MCBwcw==::cGhhc2Vfc2hpZnQxMw==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "ZHV0eV9jeWNsZTEz::NTA=::ZHV0eV9jeWNsZTEz" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTE0::MCBNSHo=::b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTE0" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "cGhhc2Vfc2hpZnQxNA==::MCBwcw==::cGhhc2Vfc2hpZnQxNA==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "ZHV0eV9jeWNsZTE0::NTA=::ZHV0eV9jeWNsZTE0" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTE1::MCBNSHo=::b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTE1" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "cGhhc2Vfc2hpZnQxNQ==::MCBwcw==::cGhhc2Vfc2hpZnQxNQ==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "ZHV0eV9jeWNsZTE1::NTA=::ZHV0eV9jeWNsZTE1" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTE2::MCBNSHo=::b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTE2" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "cGhhc2Vfc2hpZnQxNg==::MCBwcw==::cGhhc2Vfc2hpZnQxNg==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "ZHV0eV9jeWNsZTE2::NTA=::ZHV0eV9jeWNsZTE2" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTE3::MCBNSHo=::b3V0cHV0X2Nsb2NrX2ZyZXF1ZW5jeTE3" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "cGhhc2Vfc2hpZnQxNw==::MCBwcw==::cGhhc2Vfc2hpZnQxNw==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "ZHV0eV9jeWNsZTE3::NTA=::ZHV0eV9jeWNsZTE3" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BsbF9hdXRvX3Jlc2V0::T2Zm::UExMIEF1dG8gUmVzZXQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BsbF9iYW5kd2lkdGhfcHJlc2V0::QXV0bw==::UExMIEJhbmR3aWR0aCBQcmVzZXQ=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2VuX3JlY29uZg==::ZmFsc2U=::RW5hYmxlIGR5bmFtaWMgcmVjb25maWd1cmF0aW9uIG9mIFBMTA==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2VuX2Rwc19wb3J0cw==::ZmFsc2U=::RW5hYmxlIGFjY2VzcyB0byBkeW5hbWljIHBoYXNlIHNoaWZ0IHBvcnRz" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2VuX3Bob3V0X3BvcnRz::ZmFsc2U=::RW5hYmxlIGFjY2VzcyB0byBQTEwgRFBBIG91dHB1dCBwb3J0" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "cGxsX3R5cGU=::R2VuZXJhbA==::UExMIFRZUEU=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "cGxsX3N1YnR5cGU=::R2VuZXJhbA==::UExMIFNVQlRZUEU=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BhcmFtZXRlcl9saXN0::TS1Db3VudGVyIEhpIERpdmlkZSxNLUNvdW50ZXIgTG93IERpdmlkZSxOLUNvdW50ZXIgSGkgRGl2aWRlLE4tQ291bnRlciBMb3cgRGl2aWRlLE0tQ291bnRlciBCeXBhc3MgRW5hYmxlLE4tQ291bnRlciBCeXBhc3MgRW5hYmxlLE0tQ291bnRlciBPZGQgRGl2aWRlIEVuYWJsZSxOLUNvdW50ZXIgT2RkIERpdmlkZSBFbmFibGUsQy1Db3VudGVyLTAgSGkgRGl2aWRlLEMtQ291bnRlci0wIExvdyBEaXZpZGUsQy1Db3VudGVyLTAgQ29hcnNlIFBoYXNlIFNoaWZ0LEMtQ291bnRlci0wIFZDTyBQaGFzZSBUYXAsQy1Db3VudGVyLTAgSW5wdXQgU291cmNlLEMtQ291bnRlci0wIEJ5cGFzcyBFbmFibGUsQy1Db3VudGVyLTAgT2RkIERpdmlkZSBFbmFibGUsVkNPIFBvc3QgRGl2aWRlIENvdW50ZXIgRW5hYmxlLENoYXJnZSBQdW1wIGN1cnJlbnQgKHVBKSxMb29wIEZpbHRlciBCYW5kd2lkdGggUmVzaXN0b3IgKE9obXMpICxQTEwgT3V0cHV0IFZDTyBGcmVxdWVuY3ksSy1GcmFjdGlvbmFsIERpdmlzaW9uIFZhbHVlIChEU00pLEZlZWRiYWNrIENsb2NrIFR5cGUsRmVlZGJhY2sgQ2xvY2sgTVVYIDEsRmVlZGJhY2sgQ2xvY2sgTVVYIDIsTSBDb3VudGVyIFNvdXJjZSBNVVgsUExMIEF1dG8gUmVzZXQ=::UGFyYW1ldGVyIE5hbWVz" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3BhcmFtZXRlcl92YWx1ZXM=::MywzLDI1NiwyNTYsZmFsc2UsdHJ1ZSxmYWxzZSxmYWxzZSw2LDYsMSwwLHBoX211eF9jbGssZmFsc2UsZmFsc2UsMiwzMCwyMDAwLDMwMC4wIE1IeiwxLG5vbmUsZ2xiLG1fY250LHBoX211eF9jbGssZmFsc2U=::UGFyYW1ldGVyIFZhbHVlcw==" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX21pZl9nZW5lcmF0ZQ==::ZmFsc2U=::R2VuZXJhdGUgTUlGIGZpbGU=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2VuYWJsZV9taWZfZHBz::ZmFsc2U=::RW5hYmxlIER5bmFtaWMgUGhhc2UgU2hpZnQgZm9yIE1JRiBzdHJlYW1pbmc=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2Rwc19jbnRy::QzA=::RFBTIENvdW50ZXIgU2VsZWN0aW9u" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2Rwc19udW0=::MQ==::TnVtYmVyIG9mIER5bmFtaWMgUGhhc2UgU2hpZnRz" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2Rwc19kaXI=::UG9zaXRpdmU=::RHluYW1pYyBQaGFzZSBTaGlmdCBEaXJlY3Rpb24=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX3JlZmNsa19zd2l0Y2g=::ZmFsc2U=::Q3JlYXRlIGEgc2Vjb25kIGlucHV0IGNsayAncmVmY2xrMSc=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2VuYWJsZV9jYXNjYWRlX291dA==::ZmFsc2U=::Q3JlYXRlIGEgJ2Nhc2NhZGVfb3V0JyBzaWduYWwgdG8gY29ubmVjdCB3aXRoIGEgZG93bnN0cmVhbSBQTEw=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_COMPONENT_PARAMETER "Z3VpX2VuYWJsZV9jYXNjYWRlX2lu::ZmFsc2U=::Q3JlYXRlIGFuIGFkanBsbGluIG9yIGNjbGsgc2lnbmFsIHRvIGNvbm5lY3Qgd2l0aCBhbiB1cHN0cmVhbSBQTEw=" -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name VHDL_FILE DP_CLK.vhd -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name VERILOG_FILE DP_CLK/DP_CLK_0002.v -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name QIP_FILE DP_CLK/DP_CLK_0002.qip -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_TOOL_NAME altera_pll -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_TOOL_VERSION 18.1 -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name IP_TOOL_ENV mwpim -entity DP_CLK_0002 -qip DP_CLK.qip -library DP_CLK
+set_global_assignment -name SIP_FILE DP_CLK.sip
+set_global_assignment -name IP_TOOL_NAME altera_pll -entity DP_CLK -sip DP_CLK.sip -library lib_DP_CLK
+set_global_assignment -name IP_TOOL_VERSION 18.1 -entity DP_CLK -sip DP_CLK.sip -library lib_DP_CLK
+set_global_assignment -name IP_TOOL_ENV mwpim -entity DP_CLK -sip DP_CLK.sip -library lib_DP_CLK
+set_global_assignment -name SPD_FILE DP_CLK.spd -sip DP_CLK.sip -library lib_DP_CLK
+set_global_assignment -name MISC_FILE DP_CLK_sim/DP_CLK.vho -sip DP_CLK.sip -library lib_DP_CLK
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity DE0_CV_Default -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity DE0_CV_Default -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -entity DE0_CV_Default -section_id Top
