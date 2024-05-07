@@ -1,0 +1,37 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "rO",
+					"strict" : false
+				},
+				{
+					"name" : "gO",
+					"strict" : false
+				},
+				{
+					"name" : "bO",
+					"strict" : false
+				},
+				{
+					"name" : "horizSyncO",
+					"strict" : false
+				},
+				{
+					"name" : "vertSyncO",
+					"strict" : false
+				},
+				{
+					"name" : "pb1",
+					"strict" : false
+				},
+				{
+					"name" : "pb2",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
