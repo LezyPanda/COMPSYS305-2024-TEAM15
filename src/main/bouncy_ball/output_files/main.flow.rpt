@@ -1,6 +1,6 @@
 Flow report for main
-Tue May 07 14:03:19 2024
-Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+Wed May 08 12:12:06 2024
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
 ---------------------
@@ -37,29 +37,29 @@ refer to the applicable agreement for further details.
 
 
 
-+-----------------------------------------------------------------------------------+
-; Flow Summary                                                                      ;
-+---------------------------------+-------------------------------------------------+
-; Flow Status                     ; Successful - Tue May 07 14:03:15 2024           ;
-; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
-; Revision Name                   ; main                                            ;
-; Top-level Entity Name           ; main                                            ;
-; Family                          ; Cyclone V                                       ;
-; Device                          ; 5CEBA4F23C7                                     ;
-; Timing Models                   ; Final                                           ;
-; Logic utilization (in ALMs)     ; 62 / 18,480 ( < 1 % )                           ;
-; Total registers                 ; 82                                              ;
-; Total pins                      ; 9 / 224 ( 4 % )                                 ;
-; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 0 / 3,153,920 ( 0 % )                           ;
-; Total DSP Blocks                ; 0 / 66 ( 0 % )                                  ;
-; Total HSSI RX PCSs              ; 0                                               ;
-; Total HSSI PMA RX Deserializers ; 0                                               ;
-; Total HSSI TX PCSs              ; 0                                               ;
-; Total HSSI PMA TX Serializers   ; 0                                               ;
-; Total PLLs                      ; 1 / 4 ( 25 % )                                  ;
-; Total DLLs                      ; 0 / 4 ( 0 % )                                   ;
-+---------------------------------+-------------------------------------------------+
++-------------------------------------------------------------------------------+
+; Flow Summary                                                                  ;
++---------------------------------+---------------------------------------------+
+; Flow Status                     ; Successful - Wed May 08 12:12:01 2024       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; main                                        ;
+; Top-level Entity Name           ; main                                        ;
+; Family                          ; Cyclone V                                   ;
+; Device                          ; 5CEBA4F23C7                                 ;
+; Timing Models                   ; Final                                       ;
+; Logic utilization (in ALMs)     ; 51 / 18,480 ( < 1 % )                       ;
+; Total registers                 ; 74                                          ;
+; Total pins                      ; 8 / 224 ( 4 % )                             ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0 / 3,153,920 ( 0 % )                       ;
+; Total DSP Blocks                ; 0 / 66 ( 0 % )                              ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 1 / 4 ( 25 % )                              ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
++---------------------------------+---------------------------------------------+
 
 
 +-----------------------------------------+
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/07/2024 14:02:45 ;
+; Start date & time ; 05/08/2024 12:11:28 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; main                ;
 +-------------------+---------------------+
@@ -78,10 +78,11 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+----------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name    ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+----------------+------------+
-; COMPILER_SIGNATURE_ID               ; 224948462596924.171504736506352        ; --            ; --             ; --         ;
+; COMPILER_SIGNATURE_ID               ; 4931002573328.171512708804216          ; --            ; --             ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --             ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --             ; --         ;
-; MISC_FILE                           ; DP_CLK.cmp                             ; --            ; --             ; --         ;
+; MISC_FILE                           ; pll.cmp                                ; --            ; --             ; --         ;
+; MISC_FILE                           ; pll_sim/pll.vo                         ; --            ; --             ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; DE0_CV_Default ; Top        ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --             ; Top        ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; DE0_CV_Default ; Top        ;
@@ -89,6 +90,7 @@ refer to the applicable agreement for further details.
 ; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; DE0_CV_Default ; Top        ;
 ; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --             ; Top        ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --             ; --         ;
+; SPD_FILE                            ; pll.spd                                ; --            ; --             ; --         ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                     ; --            ; --             ; --         ;
 +-------------------------------------+----------------------------------------+---------------+----------------+------------+
 
@@ -98,11 +100,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:05     ; 1.0                     ; 4895 MB             ; 00:00:02                           ;
-; Fitter               ; 00:00:21     ; 1.0                     ; 7671 MB             ; 00:00:21                           ;
-; Assembler            ; 00:00:02     ; 1.0                     ; 4819 MB             ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.3                     ; 5239 MB             ; 00:00:01                           ;
-; Total                ; 00:00:31     ; --                      ; --                  ; 00:00:25                           ;
+; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 4884 MB             ; 00:00:20                           ;
+; Fitter               ; 00:00:19     ; 1.0                     ; 7312 MB             ; 00:01:37                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 4811 MB             ; 00:00:03                           ;
+; Timing Analyzer      ; 00:00:04     ; 1.2                     ; 5207 MB             ; 00:00:04                           ;
+; Total                ; 00:00:35     ; --                      ; --                  ; 00:02:04                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -111,10 +113,10 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; EN453071         ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; EN453071         ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; EN453071         ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; EN453071         ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-K701K8L  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-K701K8L  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-K701K8L  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-K701K8L  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
