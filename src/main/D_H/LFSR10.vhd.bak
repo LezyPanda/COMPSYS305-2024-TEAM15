@@ -1,0 +1,27 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+ENTITY LFSR10 IS
+  PORT (Clk, Rst: IN std_logic;
+        output: OUT std_logic_vector (9 DOWNTO 0));
+END LFSR10;
+
+ARCHITECTURE behaivour OF LFSR10 IS
+  SIGNAL Currentstate, Nextstate: std_logic_vector (10 DOWNTO 0);
+  SIGNAL feedback: std_logic;
+BEGIN
+
+  StateReg: PROCESS (Clk,Rst)
+  BEGIN
+    IF (Rst = '1') THEN
+      Currentstate <= (0 => '1', OTHERS =>'0');
+    ELSIF (Clk = '1' AND Clk'EVENT) THEN
+      Currentstate <= Nextstate;
+    END IF;
+  END PROCESS;
+  
+  feedback <= Currentstate(5) & Currentstate(4) XOR Currentstate(3) XOR Currentstate(2) XOR Currentstate(0);
+  Nextstate <= feedback & Currentstate(7 DOWNTO 1);
+  output <= Currentstate;
+
+END behaivour;
