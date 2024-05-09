@@ -7,11 +7,11 @@ END Testbench;
 ARCHITECTURE TBarch OF Testbench IS
   COMPONENT LFSR8 IS
     PORT (Clk, Rst: IN std_logic;
-          output: OUT std_logic_vector (8 DOWNTO 0));
+          output: OUT std_logic_vector (5 DOWNTO 0));
   END COMPONENT;
 
   SIGNAL Clk_s, Rst_s: std_logic;
-  SIGNAL output_s: std_logic_vector(8 DOWNTO 0);
+  SIGNAL output_s: std_logic_vector(5 DOWNTO 0);
 
 BEGIN
   CompToTest: LFSR8 PORT MAP (Clk_s, Rst_s, output_s);
