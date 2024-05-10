@@ -1,0 +1,133 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'dummy|dp_clk_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -5.793
+TNS   : -16.694
+
+Type  : Slow 1100mV 85C Model Setup 'vert_sync'
+Slack : -2.307
+TNS   : -24.517
+
+Type  : Slow 1100mV 85C Model Hold 'vert_sync'
+Slack : 0.278
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'dummy|dp_clk_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.475
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'vert_sync'
+Slack : -0.538
+TNS   : -9.555
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'dummy|dp_clk_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.666
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clock_50Mhz'
+Slack : 9.949
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'dummy|dp_clk_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 19.270
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'dummy|dp_clk_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -5.198
+TNS   : -15.169
+
+Type  : Slow 1100mV 0C Model Setup 'vert_sync'
+Slack : -2.472
+TNS   : -25.937
+
+Type  : Slow 1100mV 0C Model Hold 'dummy|dp_clk_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.238
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'vert_sync'
+Slack : 0.249
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'vert_sync'
+Slack : -0.538
+TNS   : -9.497
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'dummy|dp_clk_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.666
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clock_50Mhz'
+Slack : 9.980
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'dummy|dp_clk_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 19.185
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'dummy|dp_clk_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -4.963
+TNS   : -12.191
+
+Type  : Fast 1100mV 85C Model Setup 'vert_sync'
+Slack : -0.621
+TNS   : -6.601
+
+Type  : Fast 1100mV 85C Model Hold 'vert_sync'
+Slack : 0.089
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'dummy|dp_clk_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.238
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'vert_sync'
+Slack : 0.090
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'dummy|dp_clk_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.666
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clock_50Mhz'
+Slack : 9.643
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'dummy|dp_clk_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 19.549
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'dummy|dp_clk_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -3.871
+TNS   : -9.420
+
+Type  : Fast 1100mV 0C Model Setup 'vert_sync'
+Slack : -0.567
+TNS   : -5.856
+
+Type  : Fast 1100mV 0C Model Hold 'vert_sync'
+Slack : 0.067
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'dummy|dp_clk_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.199
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'vert_sync'
+Slack : 0.109
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'dummy|dp_clk_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.666
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clock_50Mhz'
+Slack : 9.632
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'dummy|dp_clk_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 19.540
+TNS   : 0.000
+
+------------------------------------------------------------

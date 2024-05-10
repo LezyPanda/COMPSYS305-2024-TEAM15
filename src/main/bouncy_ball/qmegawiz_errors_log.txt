@@ -1,6 +1,0 @@
-
-
-C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/bouncy_ball/pll.v
-
-May 08 11AM:52:53>: Megafunction PLL Intel FPGA IP v18.1 is not listed in any 
-wizard.lst file in the specified library path(s).Wizard launch aborted
