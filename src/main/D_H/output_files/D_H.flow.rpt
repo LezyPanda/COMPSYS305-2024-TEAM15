@@ -1,5 +1,5 @@
 Flow report for D_H
-Tue May 07 22:17:23 2024
+Fri May 10 21:22:51 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,18 +40,18 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Tue May 07 22:17:19 2024       ;
+; Flow Status                     ; Successful - Fri May 10 21:22:47 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; D_H                                         ;
-; Top-level Entity Name           ; main_d                                      ;
+; Top-level Entity Name           ; main_dd                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CGXFC7C7F23C8                              ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 24 / 56,480 ( < 1 % )                       ;
-; Total registers                 ; 55                                          ;
-; Total pins                      ; 31 / 268 ( 12 % )                           ;
+; Logic utilization (in ALMs)     ; 31 / 56,480 ( < 1 % )                       ;
+; Total registers                 ; 51                                          ;
+; Total pins                      ; 6 / 268 ( 2 % )                             ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0 / 7,024,640 ( 0 % )                       ;
+; Total block memory bits         ; 4,096 / 7,024,640 ( < 1 % )                 ;
 ; Total DSP Blocks                ; 0 / 156 ( 0 % )                             ;
 ; Total HSSI RX PCSs              ; 0 / 6 ( 0 % )                               ;
 ; Total HSSI PMA RX Deserializers ; 0 / 6 ( 0 % )                               ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/07/2024 22:16:44 ;
+; Start date & time ; 05/10/2024 21:22:14 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; D_H                 ;
 +-------------------+---------------------+
@@ -78,19 +78,23 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+----------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name    ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+----------------+------------+
-; COMPILER_SIGNATURE_ID               ; 88974378684314.171507700319424         ; --            ; --             ; --         ;
+; COMPILER_SIGNATURE_ID               ; 88974378684314.171533293428300         ; --            ; --             ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --             ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --             ; --         ;
 ; MISC_FILE                           ; DP_CLK.cmp                             ; --            ; --             ; --         ;
 ; MISC_FILE                           ; DP_CLK_sim/DP_CLK.vho                  ; --            ; --             ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; DE0_CV_Default ; Top        ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; main_d         ; Top        ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; main_dd        ; Top        ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; DE0_CV_Default ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; main_d         ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; main_dd        ; Top        ;
 ; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; DE0_CV_Default ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; main_d         ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; main_dd        ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --             ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --             ; --         ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --             ; --         ;
 ; SPD_FILE                            ; DP_CLK.spd                             ; --            ; --             ; --         ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                     ; --            ; --             ; --         ;
-; TOP_LEVEL_ENTITY                    ; main_d                                 ; D_H           ; --             ; --         ;
+; TOP_LEVEL_ENTITY                    ; main_dd                                ; D_H           ; --             ; --         ;
 +-------------------------------------+----------------------------------------+---------------+----------------+------------+
 
 
@@ -99,11 +103,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4927 MB             ; 00:00:03                           ;
-; Fitter               ; 00:00:21     ; 1.0                     ; 8030 MB             ; 00:00:11                           ;
-; Assembler            ; 00:00:06     ; 1.0                     ; 4830 MB             ; 00:00:00                           ;
-; Timing Analyzer      ; 00:00:04     ; 1.1                     ; 5370 MB             ; 00:00:00                           ;
-; Total                ; 00:00:38     ; --                      ; --                  ; 00:00:14                           ;
+; Analysis & Synthesis ; 00:00:05     ; 1.0                     ; 4940 MB             ; 00:00:02                           ;
+; Fitter               ; 00:00:22     ; 1.0                     ; 8054 MB             ; 00:00:19                           ;
+; Assembler            ; 00:00:04     ; 1.0                     ; 4829 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:04     ; 1.1                     ; 5419 MB             ; 00:00:01                           ;
+; Total                ; 00:00:35     ; --                      ; --                  ; 00:00:23                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
