@@ -7,7 +7,7 @@ entity PipeGame is
 		clk : in STD_LOGIC;
 		reset : in STD_LOGIC;
 		h_sync, v_sync : out STD_LOGIC;
-		red, green, blue : OUT std_logic
+		rgb : out STD_LOGIC_VECTOR (11 downto 0)
 	);
 end PipeGame;
 
