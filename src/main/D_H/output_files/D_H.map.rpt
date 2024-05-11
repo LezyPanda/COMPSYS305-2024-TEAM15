@@ -1,5 +1,5 @@
 Analysis & Synthesis report for D_H
-Fri May 10 21:22:19 2024
+Sat May 11 22:28:12 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -15,16 +15,17 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Source assignments for char_rom:inst2|altsyncram:altsyncram_component|altsyncram_d5g1:auto_generated
- 14. Parameter Settings for User Entity Instance: DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i
- 15. Parameter Settings for User Entity Instance: char_rom:inst2|altsyncram:altsyncram_component
- 16. altsyncram Parameter Settings by Entity Instance
- 17. Post-Synthesis Netlist Statistics for Top Partition
- 18. Elapsed Time Per Partition
- 19. Analysis & Synthesis Messages
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for char_rom:inst2|altsyncram:altsyncram_component|altsyncram_d5g1:auto_generated
+ 15. Parameter Settings for User Entity Instance: DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i
+ 16. Parameter Settings for User Entity Instance: char_rom:inst2|altsyncram:altsyncram_component
+ 17. altsyncram Parameter Settings by Entity Instance
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
 
 
 
@@ -50,13 +51,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri May 10 21:22:19 2024       ;
+; Analysis & Synthesis Status     ; Successful - Sat May 11 22:28:12 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; D_H                                         ;
 ; Top-level Entity Name           ; main_dd                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 46                                          ;
+; Total registers                 ; 47                                          ;
 ; Total pins                      ; 6                                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 4,096                                       ;
@@ -75,7 +76,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Device                                                                          ; 5CEBA4F23C7        ;                    ;
 ; Top-level entity name                                                           ; main_dd            ; D_H                ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
@@ -162,42 +163,42 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 24          ;
-; Maximum allowed            ; 16          ;
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 14          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 16          ;
+; Maximum used               ; 14          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-16        ;   0.0%      ;
+;     Processors 2-14        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                        ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                              ; Library ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------+---------+
-; vga_sync.vhd                     ; yes             ; User VHDL File                     ; C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd             ;         ;
-; char_rom.vhd                     ; yes             ; User VHDL File                     ; C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/char_rom.vhd             ;         ;
-; DP_CLK.vhd                       ; yes             ; User Wizard-Generated File         ; C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/DP_CLK.vhd               ; DP_CLK  ;
-; DP_CLK/DP_CLK_0002.v             ; yes             ; User Verilog HDL File              ; C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/DP_CLK/DP_CLK_0002.v     ; DP_CLK  ;
-; output_files/main_dd.bdf         ; yes             ; User Block Diagram/Schematic File  ; C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/output_files/main_dd.bdf ;         ;
-; TCGROM.MIF                       ; yes             ; User Memory Initialization File    ; C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/TCGROM.MIF               ;         ;
-; flappy_text.vhd                  ; yes             ; User VHDL File                     ; C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd          ;         ;
-; altera_pll.v                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altera_pll.v                       ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf                     ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc              ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc                        ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc                     ;         ;
-; aglobal181.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc                     ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc                      ;         ;
-; altrom.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc                         ;         ;
-; altram.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc                         ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc                       ;         ;
-; db/altsyncram_d5g1.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/db/altsyncram_d5g1.tdf   ;         ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                  ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                        ; Library ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------+---------+
+; vga_sync.vhd                     ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd             ;         ;
+; char_rom.vhd                     ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/char_rom.vhd             ;         ;
+; DP_CLK.vhd                       ; yes             ; User Wizard-Generated File         ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/DP_CLK.vhd               ; DP_CLK  ;
+; DP_CLK/DP_CLK_0002.v             ; yes             ; User Verilog HDL File              ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/DP_CLK/DP_CLK_0002.v     ; DP_CLK  ;
+; output_files/main_dd.bdf         ; yes             ; User Block Diagram/Schematic File  ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/output_files/main_dd.bdf ;         ;
+; TCGROM.MIF                       ; yes             ; User Memory Initialization File    ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/TCGROM.MIF               ;         ;
+; flappy_text.vhd                  ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd          ;         ;
+; altera_pll.v                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altera_pll.v                 ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf               ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc        ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc                  ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc               ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc               ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc                ;         ;
+; altrom.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc                   ;         ;
+; altram.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc                   ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc                 ;         ;
+; db/altsyncram_d5g1.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/db/altsyncram_d5g1.tdf   ;         ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -205,16 +206,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                      ;
 +---------------------------------------------+----------------------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 33                                                                         ;
+; Estimate of Logic utilization (ALMs needed) ; 44                                                                         ;
 ;                                             ;                                                                            ;
-; Combinational ALUT usage for logic          ; 48                                                                         ;
-;     -- 7 input functions                    ; 2                                                                          ;
-;     -- 6 input functions                    ; 12                                                                         ;
-;     -- 5 input functions                    ; 3                                                                          ;
+; Combinational ALUT usage for logic          ; 69                                                                         ;
+;     -- 7 input functions                    ; 3                                                                          ;
+;     -- 6 input functions                    ; 13                                                                         ;
+;     -- 5 input functions                    ; 11                                                                         ;
 ;     -- 4 input functions                    ; 3                                                                          ;
-;     -- <=3 input functions                  ; 28                                                                         ;
+;     -- <=3 input functions                  ; 39                                                                         ;
 ;                                             ;                                                                            ;
-; Dedicated logic registers                   ; 46                                                                         ;
+; Dedicated logic registers                   ; 47                                                                         ;
 ;                                             ;                                                                            ;
 ; I/O pins                                    ; 6                                                                          ;
 ; Total MLAB memory bits                      ; 0                                                                          ;
@@ -226,9 +227,9 @@ refer to the applicable agreement for further details.
 ;     -- PLLs                                 ; 1                                                                          ;
 ;                                             ;                                                                            ;
 ; Maximum fan-out node                        ; DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i|outclk_wire[0] ;
-; Maximum fan-out                             ; 55                                                                         ;
-; Total fan-out                               ; 399                                                                        ;
-; Average fan-out                             ; 3.47                                                                       ;
+; Maximum fan-out                             ; 56                                                                         ;
+; Total fan-out                               ; 489                                                                        ;
+; Average fan-out                             ; 3.57                                                                       ;
 +---------------------------------------------+----------------------------------------------------------------------------+
 
 
@@ -237,15 +238,15 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                    ; Entity Name     ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------+-----------------+--------------+
-; |main_dd                                  ; 48 (1)              ; 46 (0)                    ; 4096              ; 0          ; 6    ; 0            ; |main_dd                                                                               ; main_dd         ; work         ;
+; |main_dd                                  ; 69 (1)              ; 47 (0)                    ; 4096              ; 0          ; 6    ; 0            ; |main_dd                                                                               ; main_dd         ; work         ;
 ;    |DP_CLK:inst|                          ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|DP_CLK:inst                                                                   ; DP_CLK          ; dp_clk       ;
 ;       |DP_CLK_0002:dp_clk_inst|           ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|DP_CLK:inst|DP_CLK_0002:dp_clk_inst                                           ; DP_CLK_0002     ; DP_CLK       ;
 ;          |altera_pll:altera_pll_i|        ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i                   ; altera_pll      ; work         ;
-;    |VGA_SYNC:inst1|                       ; 37 (37)             ; 46 (46)                   ; 0                 ; 0          ; 0    ; 0            ; |main_dd|VGA_SYNC:inst1                                                                ; VGA_SYNC        ; work         ;
+;    |VGA_SYNC:inst1|                       ; 36 (36)             ; 47 (47)                   ; 0                 ; 0          ; 0    ; 0            ; |main_dd|VGA_SYNC:inst1                                                                ; VGA_SYNC        ; work         ;
 ;    |char_rom:inst2|                       ; 2 (2)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |main_dd|char_rom:inst2                                                                ; char_rom        ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |main_dd|char_rom:inst2|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
 ;          |altsyncram_d5g1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |main_dd|char_rom:inst2|altsyncram:altsyncram_component|altsyncram_d5g1:auto_generated ; altsyncram_d5g1 ; work         ;
-;    |flappy_text:inst6|                    ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|flappy_text:inst6                                                             ; flappy_text     ; work         ;
+;    |flappy_text:inst5|                    ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|flappy_text:inst5                                                             ; flappy_text     ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -268,15 +269,30 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+----------------------+-----------------+
 
 
++-------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                         ;
++----------------------------------------------------+-------------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal           ; Free of Timing Hazards ;
++----------------------------------------------------+-------------------------------+------------------------+
+; flappy_text:inst5|font_col[2]                      ; flappy_text:inst5|font_row[2] ; yes                    ;
+; flappy_text:inst5|font_col[1]                      ; flappy_text:inst5|font_row[2] ; yes                    ;
+; flappy_text:inst5|font_row[0]                      ; flappy_text:inst5|font_row[2] ; yes                    ;
+; flappy_text:inst5|font_row[1]                      ; flappy_text:inst5|font_row[2] ; yes                    ;
+; flappy_text:inst5|font_row[2]                      ; flappy_text:inst5|font_row[2] ; yes                    ;
+; flappy_text:inst5|font_col[0]                      ; flappy_text:inst5|font_row[2] ; yes                    ;
+; Number of user-specified and inferred latches = 6  ;                               ;                        ;
++----------------------------------------------------+-------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
 +--------------------------------------------------------------------------------+
 ; Registers Removed During Synthesis                                             ;
 +---------------------------------------+----------------------------------------+
 ; Register name                         ; Reason for Removal                     ;
 +---------------------------------------+----------------------------------------+
 ; VGA_SYNC:inst1|blue_out               ; Stuck at GND due to stuck port data_in ;
-; VGA_SYNC:inst1|pixel_column[0]        ; Lost fanout                            ;
 ; VGA_SYNC:inst1|pixel_row[9]           ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 3 ;                                        ;
+; Total Number of Removed Registers = 2 ;                                        ;
 +---------------------------------------+----------------------------------------+
 
 
@@ -285,12 +301,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 46    ;
+; Total registers                              ; 47    ;
 ; Number of registers using Synchronous Clear  ; 20    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 28    ;
+; Number of registers using Clock Enable       ; 29    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -301,7 +317,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
 ; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |main_dd|VGA_SYNC:inst1|v_count[9]              ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |main_dd|flappy_text:inst6|character_address[0] ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |main_dd|flappy_text:inst5|character_address[0] ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |main_dd|flappy_text:inst5|font_col[2]          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
 
 
@@ -647,30 +664,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 46                          ;
-;     ENA               ; 18                          ;
+; arriav_ff             ; 47                          ;
+;     ENA               ; 19                          ;
 ;     ENA SCLR          ; 10                          ;
 ;     SCLR              ; 10                          ;
 ;     plain             ; 8                           ;
-; arriav_lcell_comb     ; 48                          ;
+; arriav_lcell_comb     ; 69                          ;
 ;     arith             ; 20                          ;
 ;         1 data inputs ; 20                          ;
-;     extend            ; 2                           ;
-;         7 data inputs ; 2                           ;
-;     normal            ; 26                          ;
+;     extend            ; 3                           ;
+;         7 data inputs ; 3                           ;
+;     normal            ; 46                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 3                           ;
-;         3 data inputs ; 3                           ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 15                          ;
 ;         4 data inputs ; 3                           ;
-;         5 data inputs ; 3                           ;
-;         6 data inputs ; 12                          ;
+;         5 data inputs ; 11                          ;
+;         6 data inputs ; 13                          ;
 ; boundary_port         ; 6                           ;
 ; generic_pll           ; 1                           ;
 ; stratixv_ram_block    ; 8                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 2.05                        ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 2.79                        ;
 +-----------------------+-----------------------------+
 
 
@@ -689,52 +706,52 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri May 10 21:22:14 2024
+    Info: Processing started: Sat May 11 22:28:05 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off D_H -c D_H
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file lfsr10.vhd
-    Info (12022): Found design unit 1: LFSR8-LFSR8_beh File: C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/LFSR10.vhd Line: 9
-    Info (12023): Found entity 1: LFSR8 File: C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/LFSR10.vhd Line: 4
+    Info (12022): Found design unit 1: LFSR8-LFSR8_beh File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/LFSR10.vhd Line: 9
+    Info (12023): Found entity 1: LFSR8 File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/LFSR10.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file vga_sync.vhd
-    Info (12022): Found design unit 1: VGA_SYNC-a File: C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd Line: 13
-    Info (12023): Found entity 1: VGA_SYNC File: C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd Line: 7
+    Info (12022): Found design unit 1: VGA_SYNC-a File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd Line: 13
+    Info (12023): Found entity 1: VGA_SYNC File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file mouse.vhd
-    Info (12022): Found design unit 1: MOUSE-behavior File: C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/mouse.vhd Line: 18
-    Info (12023): Found entity 1: MOUSE File: C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/mouse.vhd Line: 9
+    Info (12022): Found design unit 1: MOUSE-behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/mouse.vhd Line: 18
+    Info (12023): Found entity 1: MOUSE File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/mouse.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file main_d.vhd
-    Info (12022): Found design unit 1: main_d-a File: C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/main_d.vhd Line: 17
-    Info (12023): Found entity 1: main_d File: C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/main_d.vhd Line: 6
+    Info (12022): Found design unit 1: main_d-a File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/main_d.vhd Line: 17
+    Info (12023): Found entity 1: main_d File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/main_d.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file char_rom.vhd
-    Info (12022): Found design unit 1: char_rom-SYN File: C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/char_rom.vhd Line: 20
-    Info (12023): Found entity 1: char_rom File: C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/char_rom.vhd Line: 9
+    Info (12022): Found design unit 1: char_rom-SYN File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/char_rom.vhd Line: 20
+    Info (12023): Found entity 1: char_rom File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/char_rom.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file bouncy_ball.vhd
-    Info (12022): Found design unit 1: bouncy_ball-behavior File: C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/bouncy_ball.vhd Line: 14
-    Info (12023): Found entity 1: bouncy_ball File: C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/bouncy_ball.vhd Line: 7
+    Info (12022): Found design unit 1: bouncy_ball-behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/bouncy_ball.vhd Line: 14
+    Info (12023): Found entity 1: bouncy_ball File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/bouncy_ball.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file ball.vhd
-    Info (12022): Found design unit 1: ball-behavior File: C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/ball.vhd Line: 14
-    Info (12023): Found entity 1: ball File: C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/ball.vhd Line: 7
+    Info (12022): Found design unit 1: ball-behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/ball.vhd Line: 14
+    Info (12023): Found entity 1: ball File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/ball.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file dp_clk.vhd
-    Info (12022): Found design unit 1: DP_CLK-rtl File: C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/DP_CLK.vhd Line: 20
-    Info (12023): Found entity 1: DP_CLK File: C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/DP_CLK.vhd Line: 11
+    Info (12022): Found design unit 1: DP_CLK-rtl File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/DP_CLK.vhd Line: 20
+    Info (12023): Found entity 1: DP_CLK File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/DP_CLK.vhd Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file dp_clk/dp_clk_0002.v
-    Info (12023): Found entity 1: DP_CLK_0002 File: C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/DP_CLK/DP_CLK_0002.v Line: 2
+    Info (12023): Found entity 1: DP_CLK_0002 File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/DP_CLK/DP_CLK_0002.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file output_files/main_dd.bdf
     Info (12023): Found entity 1: main_dd
 Info (12021): Found 2 design units, including 1 entities, in source file pipes.vhd
-    Info (12022): Found design unit 1: PipeGame-Behavioral File: C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/pipes.vhd Line: 14
-    Info (12023): Found entity 1: PipeGame File: C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/pipes.vhd Line: 5
+    Info (12022): Found design unit 1: PipeGame-Behavioral File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/pipes.vhd Line: 14
+    Info (12023): Found entity 1: PipeGame File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/pipes.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file flappy_text.vhd
-    Info (12022): Found design unit 1: flappy_text-behavior File: C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 13
-    Info (12023): Found entity 1: flappy_text File: C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 6
+    Info (12022): Found design unit 1: flappy_text-behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 14
+    Info (12023): Found entity 1: flappy_text File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 6
 Info (12127): Elaborating entity "main_dd" for the top level hierarchy
 Info (12128): Elaborating entity "VGA_SYNC" for hierarchy "VGA_SYNC:inst1"
 Info (12128): Elaborating entity "DP_CLK" for hierarchy "DP_CLK:inst"
-Info (12128): Elaborating entity "DP_CLK_0002" for hierarchy "DP_CLK:inst|DP_CLK_0002:dp_clk_inst" File: C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/DP_CLK.vhd Line: 32
-Info (12128): Elaborating entity "altera_pll" for hierarchy "DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i" File: C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/DP_CLK/DP_CLK_0002.v Line: 85
+Info (12128): Elaborating entity "DP_CLK_0002" for hierarchy "DP_CLK:inst|DP_CLK_0002:dp_clk_inst" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/DP_CLK.vhd Line: 32
+Info (12128): Elaborating entity "altera_pll" for hierarchy "DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/DP_CLK/DP_CLK_0002.v Line: 85
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "wire_to_nowhere_64" into its bus
-Info (12130): Elaborated megafunction instantiation "DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i" File: C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/DP_CLK/DP_CLK_0002.v Line: 85
-Info (12133): Instantiated megafunction "DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i" with the following parameter: File: C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/DP_CLK/DP_CLK_0002.v Line: 85
+Info (12130): Elaborated megafunction instantiation "DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/DP_CLK/DP_CLK_0002.v Line: 85
+Info (12133): Instantiated megafunction "DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i" with the following parameter: File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/DP_CLK/DP_CLK_0002.v Line: 85
     Info (12134): Parameter "fractional_vco_multiplier" = "false"
     Info (12134): Parameter "reference_clock_frequency" = "50.0 MHz"
     Info (12134): Parameter "operation_mode" = "direct"
@@ -796,14 +813,14 @@ Info (12133): Instantiated megafunction "DP_CLK:inst|DP_CLK_0002:dp_clk_inst|alt
     Info (12134): Parameter "pll_type" = "General"
     Info (12134): Parameter "pll_subtype" = "General"
 Info (12128): Elaborating entity "char_rom" for hierarchy "char_rom:inst2"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "char_rom:inst2|altsyncram:altsyncram_component" File: C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/char_rom.vhd Line: 51
-Info (12130): Elaborated megafunction instantiation "char_rom:inst2|altsyncram:altsyncram_component" File: C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/char_rom.vhd Line: 51
-Info (12133): Instantiated megafunction "char_rom:inst2|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/char_rom.vhd Line: 51
+Info (12128): Elaborating entity "altsyncram" for hierarchy "char_rom:inst2|altsyncram:altsyncram_component" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/char_rom.vhd Line: 51
+Info (12130): Elaborated megafunction instantiation "char_rom:inst2|altsyncram:altsyncram_component" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/char_rom.vhd Line: 51
+Info (12133): Instantiated megafunction "char_rom:inst2|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/char_rom.vhd Line: 51
     Info (12134): Parameter "address_aclr_a" = "NONE"
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
     Info (12134): Parameter "init_file" = "tcgrom.mif"
-    Info (12134): Parameter "intended_device_family" = "Cyclone III"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
     Info (12134): Parameter "numwords_a" = "512"
@@ -814,13 +831,32 @@ Info (12133): Instantiated megafunction "char_rom:inst2|altsyncram:altsyncram_co
     Info (12134): Parameter "width_a" = "8"
     Info (12134): Parameter "width_byteena_a" = "1"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_d5g1.tdf
-    Info (12023): Found entity 1: altsyncram_d5g1 File: C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/db/altsyncram_d5g1.tdf Line: 27
+    Info (12023): Found entity 1: altsyncram_d5g1 File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/db/altsyncram_d5g1.tdf Line: 27
 Info (12128): Elaborating entity "altsyncram_d5g1" for hierarchy "char_rom:inst2|altsyncram:altsyncram_component|altsyncram_d5g1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12128): Elaborating entity "flappy_text" for hierarchy "flappy_text:inst6"
+Info (12128): Elaborating entity "flappy_text" for hierarchy "flappy_text:inst5"
+Warning (10631): VHDL Process Statement warning at flappy_text.vhd(18): inferring latch(es) for signal or variable "font_row", which holds its previous value in one or more paths through the process File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 18
+Warning (10631): VHDL Process Statement warning at flappy_text.vhd(18): inferring latch(es) for signal or variable "font_col", which holds its previous value in one or more paths through the process File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 18
+Info (10041): Inferred latch for "font_col[0]" at flappy_text.vhd(18) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 18
+Info (10041): Inferred latch for "font_col[1]" at flappy_text.vhd(18) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 18
+Info (10041): Inferred latch for "font_col[2]" at flappy_text.vhd(18) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 18
+Info (10041): Inferred latch for "font_row[0]" at flappy_text.vhd(18) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 18
+Info (10041): Inferred latch for "font_row[1]" at flappy_text.vhd(18) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 18
+Info (10041): Inferred latch for "font_row[2]" at flappy_text.vhd(18) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 18
+Warning (13012): Latch flappy_text:inst5|font_col[2] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 18
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst1|pixel_column[5] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd Line: 88
+Warning (13012): Latch flappy_text:inst5|font_col[1] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 18
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst1|pixel_column[4] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd Line: 88
+Warning (13012): Latch flappy_text:inst5|font_row[0] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 18
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst1|pixel_row[3] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd Line: 88
+Warning (13012): Latch flappy_text:inst5|font_row[1] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 18
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst1|pixel_row[4] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd Line: 88
+Warning (13012): Latch flappy_text:inst5|font_row[2] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 18
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst1|pixel_row[5] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd Line: 88
+Warning (13012): Latch flappy_text:inst5|font_col[0] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 18
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst1|pixel_column[3] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd Line: 88
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "blue_out" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Warning (20013): Ignored 24 assignments for entity "DE0_CV_Default" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE0_CV_Default -section_id Top was ignored
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity DE0_CV_Default -section_id Top was ignored
@@ -850,16 +886,16 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 3 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning: RST port on the PLL is not properly connected on instance DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i|general[0].gpll. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altera_pll.v Line: 748
     Info: Must be connected
-Info (21057): Implemented 87 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 109 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 5 output pins
-    Info (21061): Implemented 72 logic cells
+    Info (21061): Implemented 94 logic cells
     Info (21064): Implemented 8 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
-    Info: Peak virtual memory: 4940 megabytes
-    Info: Processing ended: Fri May 10 21:22:19 2024
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:02
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 43 warnings
+    Info: Peak virtual memory: 4888 megabytes
+    Info: Processing ended: Sat May 11 22:28:12 2024
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:14
 
 

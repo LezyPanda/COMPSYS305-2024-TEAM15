@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Fri May 10 21:22:19 2024
+Analysis & Synthesis Status : Successful - Sat May 11 22:28:12 2024
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : D_H
 Top-level Entity Name : main_dd
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 46
+Total registers : 47
 Total pins : 6
 Total virtual pins : 0
 Total block memory bits : 4,096

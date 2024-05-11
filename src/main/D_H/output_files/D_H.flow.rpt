@@ -1,5 +1,5 @@
 Flow report for D_H
-Fri May 10 21:22:51 2024
+Sat May 11 22:28:36 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,24 +40,24 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Fri May 10 21:22:47 2024       ;
+; Flow Status                     ; Successful - Sat May 11 22:28:32 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; D_H                                         ;
 ; Top-level Entity Name           ; main_dd                                     ;
 ; Family                          ; Cyclone V                                   ;
-; Device                          ; 5CGXFC7C7F23C8                              ;
+; Device                          ; 5CEBA4F23C7                                 ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 31 / 56,480 ( < 1 % )                       ;
-; Total registers                 ; 51                                          ;
-; Total pins                      ; 6 / 268 ( 2 % )                             ;
+; Logic utilization (in ALMs)     ; 43 / 18,480 ( < 1 % )                       ;
+; Total registers                 ; 54                                          ;
+; Total pins                      ; 6 / 224 ( 3 % )                             ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 4,096 / 7,024,640 ( < 1 % )                 ;
-; Total DSP Blocks                ; 0 / 156 ( 0 % )                             ;
-; Total HSSI RX PCSs              ; 0 / 6 ( 0 % )                               ;
-; Total HSSI PMA RX Deserializers ; 0 / 6 ( 0 % )                               ;
-; Total HSSI TX PCSs              ; 0 / 6 ( 0 % )                               ;
-; Total HSSI PMA TX Serializers   ; 0 / 6 ( 0 % )                               ;
-; Total PLLs                      ; 1 / 13 ( 8 % )                              ;
+; Total block memory bits         ; 4,096 / 3,153,920 ( < 1 % )                 ;
+; Total DSP Blocks                ; 0 / 66 ( 0 % )                              ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 1 / 4 ( 25 % )                              ;
 ; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
 +---------------------------------+---------------------------------------------+
 
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/10/2024 21:22:14 ;
+; Start date & time ; 05/11/2024 22:28:06 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; D_H                 ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+----------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name    ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+----------------+------------+
-; COMPILER_SIGNATURE_ID               ; 88974378684314.171533293428300         ; --            ; --             ; --         ;
+; COMPILER_SIGNATURE_ID               ; 4931002573328.171542328514784          ; --            ; --             ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --             ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --             ; --         ;
 ; MISC_FILE                           ; DP_CLK.cmp                             ; --            ; --             ; --         ;
@@ -103,11 +103,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:05     ; 1.0                     ; 4940 MB             ; 00:00:02                           ;
-; Fitter               ; 00:00:22     ; 1.0                     ; 8054 MB             ; 00:00:19                           ;
-; Assembler            ; 00:00:04     ; 1.0                     ; 4829 MB             ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:04     ; 1.1                     ; 5419 MB             ; 00:00:01                           ;
-; Total                ; 00:00:35     ; --                      ; --                  ; 00:00:23                           ;
+; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4888 MB             ; 00:00:14                           ;
+; Fitter               ; 00:00:17     ; 1.1                     ; 7335 MB             ; 00:01:35                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 4813 MB             ; 00:00:02                           ;
+; Timing Analyzer      ; 00:00:03     ; 1.2                     ; 5226 MB             ; 00:00:04                           ;
+; Total                ; 00:00:29     ; --                      ; --                  ; 00:01:55                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -116,10 +116,10 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-SO6G96U  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-SO6G96U  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-SO6G96U  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-SO6G96U  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-K701K8L  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-K701K8L  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-K701K8L  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-K701K8L  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

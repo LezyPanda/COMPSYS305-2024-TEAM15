@@ -1,12 +1,12 @@
 |main
 rO <= VGA_SYNC:inst2.red_out
 clock50 => pll:inst1.refclk
-pb1 => bouncy_ball:inst.pb1
-pb2 => bouncy_ball:inst.pb2
 gO <= VGA_SYNC:inst2.green_out
 bO <= VGA_SYNC:inst2.blue_out
 horizSyncO <= VGA_SYNC:inst2.horiz_sync_out
 vertSyncO <= VGA_SYNC:inst2.vert_sync_out
+pb1 => bouncy_ball:inst.pb1
+pb2 => bouncy_ball:inst.pb2
 
 
 |main|VGA_SYNC:inst2
@@ -273,6 +273,35 @@ extclk_out[0] <= <GND>
 extclk_out[1] <= <GND>
 cascade_out[0] <= <GND>
 zdbfbclk <> <GND>
+
+
+|main|PipeGame:inst5
+clk => LFSR8:lfsr_inst.Clk
+reset => LFSR8:lfsr_inst.Rst
+red <= red.DB_MAX_OUTPUT_PORT_TYPE
+green <= green.DB_MAX_OUTPUT_PORT_TYPE
+blue <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|PipeGame:inst5|LFSR8:lfsr_inst
+Clk => Currstate[0].CLK
+Clk => Currstate[1].CLK
+Clk => Currstate[2].CLK
+Clk => Currstate[3].CLK
+Clk => Currstate[4].CLK
+Clk => Currstate[5].CLK
+Rst => Currstate[0].PRESET
+Rst => Currstate[1].ACLR
+Rst => Currstate[2].ACLR
+Rst => Currstate[3].ACLR
+Rst => Currstate[4].ACLR
+Rst => Currstate[5].ACLR
+output[0] <= Currstate[0].DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= Currstate[1].DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= Currstate[2].DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= Currstate[3].DB_MAX_OUTPUT_PORT_TYPE
+output[4] <= Currstate[4].DB_MAX_OUTPUT_PORT_TYPE
+output[5] <= Currstate[5].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |main|bouncy_ball:inst

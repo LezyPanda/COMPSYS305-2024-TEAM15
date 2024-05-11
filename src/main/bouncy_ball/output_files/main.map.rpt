@@ -1,5 +1,5 @@
 Analysis & Synthesis report for main
-Wed May 08 12:11:37 2024
+Fri May 10 21:56:40 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -15,10 +15,10 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis IP Cores Summary
   9. Registers Removed During Synthesis
- 10. Removed Registers Triggering Further Register Optimizations
- 11. General Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Parameter Settings for User Entity Instance: pll:inst1|pll_0002:pll_inst|altera_pll:altera_pll_i
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: pll:inst1|pll_0002:pll_inst|altera_pll:altera_pll_i
+ 13. Port Connectivity Checks: "PipeGame:inst5|LFSR8:lfsr_inst"
  14. Post-Synthesis Netlist Statistics for Top Partition
  15. Elapsed Time Per Partition
  16. Analysis & Synthesis Messages
@@ -47,13 +47,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed May 08 12:11:37 2024       ;
+; Analysis & Synthesis Status     ; Successful - Fri May 10 21:56:40 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; main                                        ;
 ; Top-level Entity Name           ; main                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 58                                          ;
+; Total registers                 ; 24                                          ;
 ; Total pins                      ; 8                                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -176,6 +176,8 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                       ; Library ;
 +----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------+---------+
+; LFSR10.vhd                       ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/bouncy_ball/LFSR10.vhd      ;         ;
+; pipes.vhd                        ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/bouncy_ball/pipes.vhd       ;         ;
 ; vga_sync.vhd                     ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/bouncy_ball/vga_sync.vhd    ;         ;
 ; bouncy_ball.vhd                  ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/bouncy_ball/bouncy_ball.vhd ;         ;
 ; pll.v                            ; yes             ; User Wizard-Generated File         ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/bouncy_ball/pll.v           ; pll     ;
@@ -190,16 +192,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+--------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                              ;
 +---------------------------------------------+--------------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 52                                                                 ;
+; Estimate of Logic utilization (ALMs needed) ; 20                                                                 ;
 ;                                             ;                                                                    ;
-; Combinational ALUT usage for logic          ; 87                                                                 ;
-;     -- 7 input functions                    ; 2                                                                  ;
-;     -- 6 input functions                    ; 11                                                                 ;
-;     -- 5 input functions                    ; 14                                                                 ;
-;     -- 4 input functions                    ; 8                                                                  ;
-;     -- <=3 input functions                  ; 52                                                                 ;
+; Combinational ALUT usage for logic          ; 34                                                                 ;
+;     -- 7 input functions                    ; 1                                                                  ;
+;     -- 6 input functions                    ; 3                                                                  ;
+;     -- 5 input functions                    ; 4                                                                  ;
+;     -- 4 input functions                    ; 1                                                                  ;
+;     -- <=3 input functions                  ; 25                                                                 ;
 ;                                             ;                                                                    ;
-; Dedicated logic registers                   ; 58                                                                 ;
+; Dedicated logic registers                   ; 24                                                                 ;
 ;                                             ;                                                                    ;
 ; I/O pins                                    ; 8                                                                  ;
 ;                                             ;                                                                    ;
@@ -209,9 +211,9 @@ refer to the applicable agreement for further details.
 ;     -- PLLs                                 ; 1                                                                  ;
 ;                                             ;                                                                    ;
 ; Maximum fan-out node                        ; pll:inst1|pll_0002:pll_inst|altera_pll:altera_pll_i|outclk_wire[0] ;
-; Maximum fan-out                             ; 49                                                                 ;
-; Total fan-out                               ; 479                                                                ;
-; Average fan-out                             ; 2.96                                                               ;
+; Maximum fan-out                             ; 25                                                                 ;
+; Total fan-out                               ; 190                                                                ;
+; Average fan-out                             ; 2.53                                                               ;
 +---------------------------------------------+--------------------------------------------------------------------+
 
 
@@ -220,9 +222,8 @@ refer to the applicable agreement for further details.
 +------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                       ; Entity Name ; Library Name ;
 +------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------+-------------+--------------+
-; |main                              ; 87 (0)              ; 58 (0)                    ; 0                 ; 0          ; 8    ; 0            ; |main                                                     ; main        ; work         ;
-;    |VGA_SYNC:inst2|                ; 41 (41)             ; 48 (48)                   ; 0                 ; 0          ; 0    ; 0            ; |main|VGA_SYNC:inst2                                      ; VGA_SYNC    ; work         ;
-;    |bouncy_ball:inst|              ; 46 (46)             ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |main|bouncy_ball:inst                                    ; bouncy_ball ; work         ;
+; |main                              ; 34 (0)              ; 24 (0)                    ; 0                 ; 0          ; 8    ; 0            ; |main                                                     ; main        ; work         ;
+;    |VGA_SYNC:inst2|                ; 34 (34)             ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |main|VGA_SYNC:inst2                                      ; VGA_SYNC    ; work         ;
 ;    |pll:inst1|                     ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|pll:inst1                                           ; pll         ; pll          ;
 ;       |pll_0002:pll_inst|          ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|pll:inst1|pll_0002:pll_inst                         ; pll_0002    ; pll          ;
 ;          |altera_pll:altera_pll_i| ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|pll:inst1|pll_0002:pll_inst|altera_pll:altera_pll_i ; altera_pll  ; work         ;
@@ -239,28 +240,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+-----------------+-----------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                     ;
-+----------------------------------------+-----------------------------------------------+
-; Register name                          ; Reason for Removal                            ;
-+----------------------------------------+-----------------------------------------------+
-; bouncy_ball:inst|ball_y_motion[3..9]   ; Merged with bouncy_ball:inst|ball_y_motion[2] ;
-; bouncy_ball:inst|ball_y_motion[0]      ; Stuck at GND due to stuck port data_in        ;
-; bouncy_ball:inst|ball_y_pos[0]         ; Stuck at GND due to stuck port data_in        ;
-; bouncy_ball:inst|ball_y_motion[1]      ; Stuck at VCC due to stuck port data_in        ;
-; VGA_SYNC:inst2|pixel_row[9]            ; Stuck at GND due to stuck port data_in        ;
-; Total Number of Removed Registers = 11 ;                                               ;
-+----------------------------------------+-----------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                         ;
-+--------------------------------+---------------------------+----------------------------------------+
-; Register name                  ; Reason for Removal        ; Registers Removed due to This Register ;
-+--------------------------------+---------------------------+----------------------------------------+
-; bouncy_ball:inst|ball_y_pos[0] ; Stuck at GND              ; bouncy_ball:inst|ball_y_motion[1]      ;
-;                                ; due to stuck port data_in ;                                        ;
-+--------------------------------+---------------------------+----------------------------------------+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; VGA_SYNC:inst2|video_on_v             ; Lost fanout                            ;
+; VGA_SYNC:inst2|video_on_h             ; Lost fanout                            ;
+; VGA_SYNC:inst2|red_out                ; Stuck at GND due to stuck port data_in ;
+; VGA_SYNC:inst2|green_out              ; Stuck at GND due to stuck port data_in ;
+; VGA_SYNC:inst2|blue_out               ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 5 ;                                        ;
++---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -268,24 +259,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 58    ;
+; Total registers                              ; 24    ;
 ; Number of registers using Synchronous Clear  ; 20    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 29    ;
+; Number of registers using Clock Enable       ; 10    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |main|VGA_SYNC:inst2|v_count[9]         ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |main|bouncy_ball:inst|ball_y_motion[1] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |main|VGA_SYNC:inst2|v_count[9] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------+
@@ -535,34 +525,41 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "PipeGame:inst5|LFSR8:lfsr_inst"                                                       ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; output ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 58                          ;
-;     ENA               ; 19                          ;
+; arriav_ff             ; 24                          ;
 ;     ENA SCLR          ; 10                          ;
 ;     SCLR              ; 10                          ;
-;     plain             ; 19                          ;
-; arriav_lcell_comb     ; 87                          ;
-;     arith             ; 42                          ;
+;     plain             ; 4                           ;
+; arriav_lcell_comb     ; 35                          ;
+;     arith             ; 20                          ;
+;         1 data inputs ; 20                          ;
+;     extend            ; 1                           ;
+;         7 data inputs ; 1                           ;
+;     normal            ; 14                          ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 31                          ;
-;         2 data inputs ; 10                          ;
-;     extend            ; 2                           ;
-;         7 data inputs ; 2                           ;
-;     normal            ; 43                          ;
-;         2 data inputs ; 1                           ;
-;         3 data inputs ; 9                           ;
-;         4 data inputs ; 8                           ;
-;         5 data inputs ; 14                          ;
-;         6 data inputs ; 11                          ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 3                           ;
+;         4 data inputs ; 1                           ;
+;         5 data inputs ; 4                           ;
+;         6 data inputs ; 3                           ;
 ; boundary_port         ; 8                           ;
 ; generic_pll           ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.30                        ;
-; Average LUT depth     ; 2.62                        ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.96                        ;
 +-----------------------+-----------------------------+
 
 
@@ -581,19 +578,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed May 08 12:11:27 2024
+    Info: Processing started: Fri May 10 21:56:32 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off bouncy_ball -c main
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file lfsr10.vhd
+    Info (12022): Found design unit 1: LFSR8-LFSR8_beh File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/bouncy_ball/LFSR10.vhd Line: 9
+    Info (12023): Found entity 1: LFSR8 File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/bouncy_ball/LFSR10.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file pipes.vhd
+    Info (12022): Found design unit 1: PipeGame-Behavioral File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/bouncy_ball/pipes.vhd Line: 13
+    Info (12023): Found entity 1: PipeGame File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/bouncy_ball/pipes.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file vga_sync.vhd
     Info (12022): Found design unit 1: VGA_SYNC-a File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/bouncy_ball/vga_sync.vhd Line: 13
     Info (12023): Found entity 1: VGA_SYNC File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/bouncy_ball/vga_sync.vhd Line: 7
-Info (12021): Found 2 design units, including 1 entities, in source file mouse.vhd
-    Info (12022): Found design unit 1: MOUSE-behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/bouncy_ball/mouse.vhd Line: 18
-    Info (12023): Found entity 1: MOUSE File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/bouncy_ball/mouse.vhd Line: 9
-Info (12021): Found 2 design units, including 1 entities, in source file char_rom.vhd
-    Info (12022): Found design unit 1: char_rom-SYN File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/bouncy_ball/char_rom.vhd Line: 20
-    Info (12023): Found entity 1: char_rom File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/bouncy_ball/char_rom.vhd Line: 9
+Warning (12019): Can't analyze file -- file mouse.vhd is missing
+Warning (12019): Can't analyze file -- file char_rom.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file bouncy_ball.vhd
     Info (12022): Found design unit 1: bouncy_ball-behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/bouncy_ball/bouncy_ball.vhd Line: 14
     Info (12023): Found entity 1: bouncy_ball File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/bouncy_ball/bouncy_ball.vhd Line: 7
@@ -674,8 +673,19 @@ Info (12133): Instantiated megafunction "pll:inst1|pll_0002:pll_inst|altera_pll:
     Info (12134): Parameter "duty_cycle17" = "50"
     Info (12134): Parameter "pll_type" = "General"
     Info (12134): Parameter "pll_subtype" = "General"
+Info (12128): Elaborating entity "PipeGame" for hierarchy "PipeGame:inst5"
+Warning (10541): VHDL Signal Declaration warning at pipes.vhd(9): used implicit default value for signal "red" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/bouncy_ball/pipes.vhd Line: 9
+Warning (10541): VHDL Signal Declaration warning at pipes.vhd(9): used implicit default value for signal "green" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/bouncy_ball/pipes.vhd Line: 9
+Warning (10541): VHDL Signal Declaration warning at pipes.vhd(9): used implicit default value for signal "blue" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/bouncy_ball/pipes.vhd Line: 9
+Warning (10036): Verilog HDL or VHDL warning at pipes.vhd(26): object "bottom_pipe_height" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/bouncy_ball/pipes.vhd Line: 26
+Info (12128): Elaborating entity "LFSR8" for hierarchy "PipeGame:inst5|LFSR8:lfsr_inst" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/bouncy_ball/pipes.vhd Line: 38
 Info (12128): Elaborating entity "bouncy_ball" for hierarchy "bouncy_ball:inst"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "rO" is stuck at GND
+    Warning (13410): Pin "gO" is stuck at GND
+    Warning (13410): Pin "bO" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Warning (20013): Ignored 230 assignments for entity "DE0_CV_Default" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK2_50 -entity DE0_CV_Default was ignored
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK3_50 -entity DE0_CV_Default was ignored
@@ -911,15 +921,18 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 3 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning: RST port on the PLL is not properly connected on instance pll:inst1|pll_0002:pll_inst|altera_pll:altera_pll_i|general[0].gpll. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altera_pll.v Line: 748
     Info: Must be connected
-Info (21057): Implemented 119 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "pb1"
+    Warning (15610): No output dependent on input pin "pb2"
+Info (21057): Implemented 45 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 5 output pins
-    Info (21061): Implemented 110 logic cells
+    Info (21061): Implemented 36 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 233 warnings
-    Info: Peak virtual memory: 4884 megabytes
-    Info: Processing ended: Wed May 08 12:11:37 2024
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:21
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 246 warnings
+    Info: Peak virtual memory: 4914 megabytes
+    Info: Processing ended: Fri May 10 21:56:40 2024
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:15
 
 
