@@ -80,33 +80,32 @@ begin
         elsif (rising_edge(vClk)) then
 			Reset <= '0';
 			init <= '0';
-			-- if num is 3:59
+			-- if num is 3:59 stop all
 			if (vQ3 = "1001" and vQ2 = "0101" and vQ1 = "0011") then
 				tEnable1 := '0';
 				tEnable2 := '0';
 				tEnable3 := '0';
 				timeOut <= '1';
 				LEDR <= "1111111111";
-			-- if the second one is 1 second? idk if this is suppose to check 
-			elsif (vQ3 = "0001") then
+			-- if the second one is 9 second turn on the second ten seven seg
+			elsif (vQ3 = "1001") then
 				LEDR <= "0000000000";
-					tEnable1 := '0';
-					tEnable2 := '0';
-					tEnable3 := '1'; 
-				if (vQ2 = "0000") then
+					-- if second sevenseg is 5 turn on the minute counter
+				if (vQ2 = "0101") then
 					tEnable1 := '0';
 					tEnable2 := '1';
-					tEnable2 := '1'; --?
+				 -- if 59 turn increase minute
 				else
 					tEnable1 := '1';
 					tEnable2 := '1';
 					tEnable3 := '1';
 				end if;
+			-- else enable second again
 			else
 				LEDR <= "0000000000";
-				tEnable1 := '0';
+				tEnable1 := '1';
 				tEnable2 := '0';
-				tEnable3 := '1';
+				tEnable3 := '0';
 			end if;
 		else
 			Reset <= '0';
