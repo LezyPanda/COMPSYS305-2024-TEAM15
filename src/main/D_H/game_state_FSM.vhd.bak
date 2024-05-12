@@ -20,7 +20,6 @@ architecture FSM of game_state_FSM is
 	process(clk)
 		begin
 			if rising_edge(clk) then 
-		-- next state
 		-- current state is intro if button is pressed, game will reset to beginning and go to start screen
 			case state is 
 				when intro =>
@@ -58,7 +57,7 @@ architecture FSM of game_state_FSM is
 			end if
 		end process;
 		
-		-- mode select (output state)
+		-- mode select
 		process(state, mode_select)
 		begin
 			case state is
