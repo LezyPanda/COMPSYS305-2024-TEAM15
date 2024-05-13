@@ -1,90 +1,102 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.NUMERIC_STD.ALL;
+USE IEEE.STD_LOGIC_ARITH.all;
+USE IEEE.STD_LOGIC_UNSIGNED.all;
 
 entity PipeGame is
 	Port (
-		clk : in STD_LOGIC;
-		reset : in STD_LOGIC;
-		h_sync, v_sync : out STD_LOGIC;
-		red, green, blue : OUT std_logic
+		-- clk, v_sync to vga, state and mode to fsm, reset can be disconeccted
+		clk,v_sync,reset,mode : in STD_LOGIC;
+		state                 : in std_logic_vector(1 downto 0);
+		--vga sync
+		pixel_row, pixel_column	: in std_logic_vector(9 DOWNTO 0);
+		-- pipe gap connected to LFSR
+		pipe_gap :std_logic_vector (5 DOWNTO 0);
+		-- vga
+		red, green, blue : OUT std_logic;
+		-- intended for bird/ball but can be disconnected for now
+		pipe_out :out std_logic
 	);
 end PipeGame;
 
 architecture Behavioral of PipeGame is
-	-- Constants for display size, pipe dimensions, and number of pipes
+	-- Constants for display size, pipe dimensions, and number of pipes (tobe used later)
 	constant DISP_WIDTH : integer := 640;
 	constant DISP_HEIGHT : integer := 480;
-	constant PIPE_WIDTH : integer := 32;
-	constant PIPE_GAP : integer := 96;
+	--constant PIPE_WIDTH : integer := 32;
 	constant MIN_PIPE_HEIGHT : integer := 32;
-	constant NUM_PIPES : integer := 6;
 
 	-- Signals for pipe positions and heights
-	type PipeArray is array (0 to NUM_PIPES-1) of integer;
-	signal pipe_x : PipeArray := (others => DISP_WIDTH);
-	signal top_pipe_height : PipeArray := (others => DISP_HEIGHT / 2);
-	signal bottom_pipe_height : PipeArray := (others => DISP_HEIGHT / 2);
+	signal pipe_width_start : integer := 640;
+	signal pipe_width_end   : integer := 672;
+	signal pipe_height_gap  : integer := 192;
+	signal pipe_speed       : integer := 150;
 
-	-- Instantiate VGA sync and lFSR10 modules
-	component vga_sync is
-		Port (
-			clock_25Mhz, red, green, blue : in STD_LOGIC;
-			red_out, green_out, blue_out, horiz_sync_out, vert_sync_out : out STD_LOGIC;
-			pixel_row, pixel_column : out STD_LOGIC_VECTOR (9 downto 0)
-		);
-	end component;
+	-- check if game is running
+	signal running :std_logic := '1';
+	signal start_pipe, paused, dead,move_pipe: std_logic :=  '0';
 
-	component LFSR8 is
-		Port (
-			Clk, Rst : in std_logic;
-			output : out std_logic_vector (5 downto 0)
-		);
-	end component;
-
-	signal lfsr_output : std_logic_vector(5 downto 0);
-
+	
+	
 begin
 	-- Instantiate VGA sync and lFSR10 modules
-	vga_inst : vga_sync
-		port map (
-			clock_25Mhz => clk,
-			red => '0',
-			green => '1', -- Set green to '1' to make the pipes green
-			blue => '0',
-			red_out => open,
-			green_out => open,
-			blue_out => open,
-			horiz_sync_out => h_sync,
-			vert_sync_out => v_sync,
-			pixel_row => open,
-			pixel_column => open
-		);
-
-	lfsr_inst : LFSR8
-		port map (
-			Clk => clk,
-			Rst => reset,
-			output => lfsr_output
-		);
-
-	pipe_gen_proc : process(clk)
-	begin
-		if rising_edge(clk) then
-			-- Move the pipes to the left and generate new ones as necessary
-			for i in 0 to NUM_PIPES-1 loop
-				pipe_x(i) <= pipe_x(i) - 1;
-
-				-- If a pipe has moved off the screen, generate a new one
-				if pipe_x(i) < 0 then
-					pipe_x(i) <= DISP_WIDTH;
-
-					-- Generate random heights for the pipes, ensuring they are at least MIN_PIPE_HEIGHT
-					-- and there is a gap of PIPE_GAP between them
-					top_pipe_height(i) <= to_integer(unsigned(lfsr_output)) mod (DISP_HEIGHT - PIPE_GAP - MIN_PIPE_HEIGHT) + MIN_PIPE_HEIGHT;
-					bottom_pipe_height(i) <= DISP_HEIGHT - top_pipe_height(i) - PIPE_GAP;
+	
+pipe_process : process(move_pipe)
+		begin 
+		if(running = '1' and paused = '0') then 
+		-- check if pipes are off the screen
+			if move_pipe = '1' then
+				if not( pipe_width_start = 0) then 
+					pipe_width_start <= pipe_width_start - 1;
 				end if;
-			end loop;
+				pipe_width_end <= pipe_width_end  - 1;
+			end if;
 		end if;
-	end process;
+		
+		
+		pipe_out <= '0';
+
+		-- pipe generation
+		if(pipe_width_end < 1) then
+				pipe_width_start <= 640;
+				pipe_width_end <= 672;
+				-- to be changed
+				pipe_height_gap <= conv_integer(unsigned(pipe_gap)) * 4;
+			end if;
+		
+		
+		-- pipe rendering
+		if(pixel_column >= CONV_STD_LOGIC_VECTOR(pipe_width_start,10) and pixel_column < CONV_STD_LOGIC_VECTOR(pipe_width_end,10))then
+				if(pixel_row <= CONV_STD_LOGIC_VECTOR(pipe_height_gap,10) or pixel_row >CONV_STD_LOGIC_VECTOR(pipe_height_gap +150,10))then
+					pipe_out <= '1';
+				end if;
+			end if;
+		end process pipe_process;
+-- temp clk divider		
+time_process : process(clk)
+				variable count : integer := 0;
+				variable next_pipe_count : integer := 0;
+		begin
+			if(rising_edge(clk) and paused = '0') then
+				if(state = "01")then	
+					count := count + 1;
+					move_pipe <= '0';
+					
+					
+					if(count >= (25000000/pipe_speed)) then
+						count := 0;
+						move_pipe <= '1';
+						next_pipe_count := next_pipe_count + 1;
+					end if;
+				end if;
+			
+			if(reset = '1')then 
+				count := 0;
+				next_pipe_count := 0;
+			end if;
+		end if;	
+	end process time_process;
 end Behavioral;
+		
+				
+			
