@@ -12,6 +12,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "blue_out",
+					"strict" : false
+				},
+				{
 					"name" : "horiz_sync_out",
 					"strict" : false
 				},
@@ -144,11 +148,27 @@
 					"strict" : false
 				},
 				{
+					"name" : "mouse_data",
+					"strict" : false
+				},
+				{
+					"name" : "mouse_clk",
+					"strict" : false
+				},
+				{
 					"name" : "KEY0",
 					"strict" : false
 				},
 				{
-					"name" : "refclk",
+					"name" : "KEY1",
+					"strict" : false
+				},
+				{
+					"name" : "KEY2",
+					"strict" : false
+				},
+				{
+					"name" : "KEY3",
 					"strict" : false
 				}
 			]

@@ -1,41 +1,79 @@
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.all;
-USE  IEEE.STD_LOGIC_ARITH.all;
-USE  IEEE.STD_LOGIC_UNSIGNED.all;
-
+USE IEEE.STD_LOGIC_ARITH.all;
+USE IEEE.STD_LOGIC_SIGNED.all;
 
 ENTITY ball IS
-	PORT
-		( clk 						: IN std_logic;
-		  pixel_row, pixel_column	: IN std_logic_vector(9 DOWNTO 0);
-		  red, green, blue 			: OUT std_logic);		
+	PORT( 
+		clk, vertSync 				: in std_logic;
+		mbL, mbR						: in std_logic;
+		game_state					: in std_logic_vector(1 downto 0);
+		pixel_row, pixel_column		: IN std_logic_vector(9 DOWNTO 0);
+		displayText : in std_logic;
+		red, green, blue 			: OUT std_logic
+	);		
 END ball;
 
 architecture behavior of ball is
 
-SIGNAL ball_on					: std_logic;
-SIGNAL size 					: std_logic_vector(9 DOWNTO 0);  
-SIGNAL ball_y_pos, ball_x_pos	: std_logic_vector(9 DOWNTO 0);
 
-BEGIN           
+	SIGNAL ball_on					: std_logic;
+	SIGNAL size 					: std_logic_vector(9 DOWNTO 0)	:= CONV_STD_LOGIC_VECTOR(8, 10);  
+	SiGNAL ball_x_pos				: std_logic_vector(10 DOWNTO 0)  := CONV_STD_LOGIC_VECTOR(316, 11);
+	SIGNAL ball_y_pos				: std_logic_vector(9 DOWNTO 0) 	:= CONV_STD_LOGIC_VECTOR(100, 10);
+	SIGNAL ball_y_motion			: std_logic_vector(9 DOWNTO 0);
 
-size <= CONV_STD_LOGIC_VECTOR(8,10);
--- ball_x_pos and ball_y_pos show the (x,y) for the centre of ball
-ball_x_pos <= CONV_STD_LOGIC_VECTOR(590,10);
-ball_y_pos <= CONV_STD_LOGIC_VECTOR(350,10);
+BEGIN
+	
+	process(clk)
+	begin
+		if (game_state = "01") then
+			-- x_pos - size <= pixel_column <= x_pos + size
+			if (('0' & ball_x_pos <= pixel_column + size) and ('0' & pixel_column <= ball_x_pos + size) and ('0' & ball_y_pos <= pixel_row + size) and ('0' & pixel_row <= ball_y_pos + size) ) then
+				ball_on <= '1';
+			else
+				ball_on <= '0';
+			end if;
+			-- Colours for pixel data on video signal
+			-- Keeping background white and square in red
+			red <= displayText or ball_on;
+			-- Turn off Green and Blue when displaying square
+			green <= ball_on;
+			blue <= displayText;
+		else
+			-- Colours for pixel data on video signal
+			-- Keeping background white and square in red
+			red <= displayText;
+			-- Turn off Green and Blue when displaying square
+			green <= mbL;
+			blue <= displayText;
+		end if;
 
+	end process;
+	
+	process (vertSync, ball_x_pos, ball_y_pos)  	
+	begin
+		-- Move ball once every vertical sync
+		if (rising_edge(vertSync)) then			
+			-- Bounce off top or bottom of the screen
+			if ( (ball_y_pos >= CONV_STD_LOGIC_VECTOR(479,10) - size) ) then
+				ball_y_motion <= - CONV_STD_LOGIC_VECTOR(2,10);
+			elsif (ball_y_pos <= size) then 
+				ball_y_motion <= CONV_STD_LOGIC_VECTOR(2,10);
+			end if;
+			-- Compute next ball Y position
+			ball_y_pos <= ball_y_pos + ball_y_motion;
+			
+			if (mbL = '1') then
+				ball_x_pos <= ball_x_pos + "1";
+			end if;
+			if (mbR = '1') then
+				ball_x_pos <= ball_x_pos - "1";
+			end if;
+		end if;
+		
 
-ball_on <= '1' when ( ('0' & ball_x_pos <= pixel_column + size) and ('0' & pixel_column <= ball_x_pos + size) 	-- x_pos - size <= pixel_column <= x_pos + size
-					and ('0' & ball_y_pos <= pixel_row + size) and ('0' & pixel_row <= ball_y_pos + size) )  else	-- y_pos - size <= pixel_row <= y_pos + size
-			'0';
-
-
--- Colours for pixel data on video signal
--- Keeping background white and square in red
-Red <=  '1';
--- Turn off Green and Blue when displaying square
-Green <= not ball_on;
-Blue <=  not ball_on;
-
+		
+	end process;
 END behavior;
 

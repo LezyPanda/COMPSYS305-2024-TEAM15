@@ -1,5 +1,5 @@
 Analysis & Synthesis report for D_H
-Sun May 12 19:01:41 2024
+Mon May 13 18:21:04 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -15,22 +15,25 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
- 10. User-Specified and Inferred Latches
- 11. Registers Removed During Synthesis
- 12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Source assignments for char_rom:inst2|altsyncram:altsyncram_component|altsyncram_d5g1:auto_generated
- 16. Parameter Settings for User Entity Instance: DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i
- 17. Parameter Settings for User Entity Instance: char_rom:inst2|altsyncram:altsyncram_component
- 18. altsyncram Parameter Settings by Entity Instance
- 19. Port Connectivity Checks: "timer:inst6|BCDCounter:dummy4"
- 20. Port Connectivity Checks: "timer:inst6|BCDCounter:dummy3"
- 21. Port Connectivity Checks: "timer:inst6|BCDCounter:dummy2"
- 22. Port Connectivity Checks: "timer:inst6|ClockDivider:dummy"
- 23. Post-Synthesis Netlist Statistics for Top Partition
- 24. Elapsed Time Per Partition
- 25. Analysis & Synthesis Messages
+ 10. State Machine - |main_dd|game_state_FSM:inst2|state
+ 11. State Machine - |main_dd|MOUSE:inst1|mouse_state
+ 12. User-Specified and Inferred Latches
+ 13. Registers Removed During Synthesis
+ 14. Removed Registers Triggering Further Register Optimizations
+ 15. General Register Statistics
+ 16. Inverted Register Statistics
+ 17. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 18. Source assignments for char_rom:inst4|altsyncram:altsyncram_component|altsyncram_d5g1:auto_generated
+ 19. Parameter Settings for User Entity Instance: DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i
+ 20. Parameter Settings for User Entity Instance: char_rom:inst4|altsyncram:altsyncram_component
+ 21. altsyncram Parameter Settings by Entity Instance
+ 22. Port Connectivity Checks: "timer:inst77|BCDCounter:dummy4"
+ 23. Port Connectivity Checks: "timer:inst77|BCDCounter:dummy3"
+ 24. Port Connectivity Checks: "timer:inst77|BCDCounter:dummy2"
+ 25. Port Connectivity Checks: "timer:inst77|ClockDivider:dummy"
+ 26. Post-Synthesis Netlist Statistics for Top Partition
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
 
 
 
@@ -56,14 +59,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun May 12 19:01:41 2024       ;
+; Analysis & Synthesis Status     ; Successful - Mon May 13 18:21:04 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; D_H                                         ;
 ; Top-level Entity Name           ; main_dd                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 104                                         ;
-; Total pins                      ; 38                                          ;
+; Total registers                 ; 198                                         ;
+; Total pins                      ; 43                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 4,096                                       ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -176,7 +179,8 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-14        ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-14        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -185,12 +189,15 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                        ; Library ;
 +----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------+---------+
+; game_state_FSM.vhd               ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/game_state_FSM.vhd       ;         ;
 ; ClockDivider.vhdl                ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/ClockDivider.vhdl        ;         ;
 ; BCD2SevenSeg.vhd                 ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/BCD2SevenSeg.vhd         ;         ;
 ; timer.vhdl                       ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/timer.vhdl               ;         ;
 ; BCDCounter.vhdl                  ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/BCDCounter.vhdl          ;         ;
 ; vga_sync.vhd                     ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd             ;         ;
+; mouse.vhd                        ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/mouse.vhd                ;         ;
 ; char_rom.vhd                     ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/char_rom.vhd             ;         ;
+; ball.vhd                         ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/ball.vhd                 ;         ;
 ; DP_CLK.vhd                       ; yes             ; User Wizard-Generated File         ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/DP_CLK.vhd               ; DP_CLK  ;
 ; DP_CLK/DP_CLK_0002.v             ; yes             ; User Verilog HDL File              ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/DP_CLK/DP_CLK_0002.v     ; DP_CLK  ;
 ; output_files/main_dd.bdf         ; yes             ; User Block Diagram/Schematic File  ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/output_files/main_dd.bdf ;         ;
@@ -215,18 +222,18 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                      ;
 +---------------------------------------------+----------------------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 106                                                                        ;
+; Estimate of Logic utilization (ALMs needed) ; 210                                                                        ;
 ;                                             ;                                                                            ;
-; Combinational ALUT usage for logic          ; 178                                                                        ;
-;     -- 7 input functions                    ; 6                                                                          ;
-;     -- 6 input functions                    ; 23                                                                         ;
-;     -- 5 input functions                    ; 20                                                                         ;
-;     -- 4 input functions                    ; 44                                                                         ;
-;     -- <=3 input functions                  ; 85                                                                         ;
+; Combinational ALUT usage for logic          ; 361                                                                        ;
+;     -- 7 input functions                    ; 5                                                                          ;
+;     -- 6 input functions                    ; 46                                                                         ;
+;     -- 5 input functions                    ; 50                                                                         ;
+;     -- 4 input functions                    ; 84                                                                         ;
+;     -- <=3 input functions                  ; 176                                                                        ;
 ;                                             ;                                                                            ;
-; Dedicated logic registers                   ; 104                                                                        ;
+; Dedicated logic registers                   ; 198                                                                        ;
 ;                                             ;                                                                            ;
-; I/O pins                                    ; 38                                                                         ;
+; I/O pins                                    ; 43                                                                         ;
 ; Total MLAB memory bits                      ; 0                                                                          ;
 ; Total block memory bits                     ; 4096                                                                       ;
 ;                                             ;                                                                            ;
@@ -236,9 +243,9 @@ refer to the applicable agreement for further details.
 ;     -- PLLs                                 ; 1                                                                          ;
 ;                                             ;                                                                            ;
 ; Maximum fan-out node                        ; DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i|outclk_wire[0] ;
-; Maximum fan-out                             ; 54                                                                         ;
-; Total fan-out                               ; 1158                                                                       ;
-; Average fan-out                             ; 3.16                                                                       ;
+; Maximum fan-out                             ; 123                                                                        ;
+; Total fan-out                               ; 2080                                                                       ;
+; Average fan-out                             ; 3.17                                                                       ;
 +---------------------------------------------+----------------------------------------------------------------------------+
 
 
@@ -247,23 +254,26 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                    ; Entity Name     ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------+-----------------+--------------+
-; |main_dd                                  ; 178 (0)             ; 104 (0)                   ; 4096              ; 0          ; 38   ; 0            ; |main_dd                                                                               ; main_dd         ; work         ;
+; |main_dd                                  ; 361 (0)             ; 198 (0)                   ; 4096              ; 0          ; 43   ; 0            ; |main_dd                                                                               ; main_dd         ; work         ;
 ;    |DP_CLK:inst|                          ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|DP_CLK:inst                                                                   ; DP_CLK          ; dp_clk       ;
 ;       |DP_CLK_0002:dp_clk_inst|           ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|DP_CLK:inst|DP_CLK_0002:dp_clk_inst                                           ; DP_CLK_0002     ; DP_CLK       ;
 ;          |altera_pll:altera_pll_i|        ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i                   ; altera_pll      ; work         ;
-;    |VGA_SYNC:inst1|                       ; 38 (38)             ; 45 (45)                   ; 0                 ; 0          ; 0    ; 0            ; |main_dd|VGA_SYNC:inst1                                                                ; VGA_SYNC        ; work         ;
-;    |char_rom:inst2|                       ; 2 (2)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |main_dd|char_rom:inst2                                                                ; char_rom        ; work         ;
-;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |main_dd|char_rom:inst2|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
-;          |altsyncram_d5g1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |main_dd|char_rom:inst2|altsyncram:altsyncram_component|altsyncram_d5g1:auto_generated ; altsyncram_d5g1 ; work         ;
-;    |flappy_text:inst5|                    ; 60 (60)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|flappy_text:inst5                                                             ; flappy_text     ; work         ;
-;    |timer:inst6|                          ; 78 (2)              ; 59 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst6                                                                   ; timer           ; work         ;
-;       |BCD2SevenSeg:dummy5|               ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst6|BCD2SevenSeg:dummy5                                               ; BCD2SevenSeg    ; work         ;
-;       |BCD2SevenSeg:dummy6|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst6|BCD2SevenSeg:dummy6                                               ; BCD2SevenSeg    ; work         ;
-;       |BCD2SevenSeg:dummy7|               ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst6|BCD2SevenSeg:dummy7                                               ; BCD2SevenSeg    ; work         ;
-;       |BCDCounter:dummy2|                 ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst6|BCDCounter:dummy2                                                 ; BCDCounter      ; work         ;
-;       |BCDCounter:dummy3|                 ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst6|BCDCounter:dummy3                                                 ; BCDCounter      ; work         ;
-;       |BCDCounter:dummy4|                 ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst6|BCDCounter:dummy4                                                 ; BCDCounter      ; work         ;
-;       |ClockDivider:dummy|                ; 40 (40)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst6|ClockDivider:dummy                                                ; ClockDivider    ; work         ;
+;    |MOUSE:inst1|                          ; 47 (47)             ; 65 (65)                   ; 0                 ; 0          ; 0    ; 0            ; |main_dd|MOUSE:inst1                                                                   ; MOUSE           ; work         ;
+;    |VGA_SYNC:inst6|                       ; 40 (40)             ; 48 (48)                   ; 0                 ; 0          ; 0    ; 0            ; |main_dd|VGA_SYNC:inst6                                                                ; VGA_SYNC        ; work         ;
+;    |ball:inst10|                          ; 95 (95)             ; 21 (21)                   ; 0                 ; 0          ; 0    ; 0            ; |main_dd|ball:inst10                                                                   ; ball            ; work         ;
+;    |char_rom:inst4|                       ; 2 (2)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |main_dd|char_rom:inst4                                                                ; char_rom        ; work         ;
+;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |main_dd|char_rom:inst4|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
+;          |altsyncram_d5g1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |main_dd|char_rom:inst4|altsyncram:altsyncram_component|altsyncram_d5g1:auto_generated ; altsyncram_d5g1 ; work         ;
+;    |flappy_text:inst3|                    ; 92 (92)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|flappy_text:inst3                                                             ; flappy_text     ; work         ;
+;    |game_state_FSM:inst2|                 ; 6 (6)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|game_state_FSM:inst2                                                          ; game_state_FSM  ; work         ;
+;    |timer:inst77|                         ; 79 (3)              ; 59 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst77                                                                  ; timer           ; work         ;
+;       |BCD2SevenSeg:dummy5|               ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst77|BCD2SevenSeg:dummy5                                              ; BCD2SevenSeg    ; work         ;
+;       |BCD2SevenSeg:dummy6|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst77|BCD2SevenSeg:dummy6                                              ; BCD2SevenSeg    ; work         ;
+;       |BCD2SevenSeg:dummy7|               ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst77|BCD2SevenSeg:dummy7                                              ; BCD2SevenSeg    ; work         ;
+;       |BCDCounter:dummy2|                 ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst77|BCDCounter:dummy2                                                ; BCDCounter      ; work         ;
+;       |BCDCounter:dummy3|                 ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst77|BCDCounter:dummy3                                                ; BCDCounter      ; work         ;
+;       |BCDCounter:dummy4|                 ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst77|BCDCounter:dummy4                                                ; BCDCounter      ; work         ;
+;       |ClockDivider:dummy|                ; 40 (40)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst77|ClockDivider:dummy                                               ; ClockDivider    ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -273,7 +283,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------+
 ; Name                                                                                     ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF        ;
 +------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------+
-; char_rom:inst2|altsyncram:altsyncram_component|altsyncram_d5g1:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 512          ; 8            ; --           ; --           ; 4096 ; tcgrom.mif ;
+; char_rom:inst4|altsyncram:altsyncram_component|altsyncram_d5g1:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 512          ; 8            ; --           ; --           ; 4096 ; tcgrom.mif ;
 +------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------+
 
 
@@ -286,38 +296,85 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+----------------------+-----------------+
 
 
+Encoding Type:  One-Hot
++-------------------------------------------------------------------+
+; State Machine - |main_dd|game_state_FSM:inst2|state               ;
++-------------+-------------+------------+------------+-------------+
+; Name        ; state.pause ; state.dead ; state.play ; state.intro ;
++-------------+-------------+------------+------------+-------------+
+; state.intro ; 0           ; 0          ; 0          ; 0           ;
+; state.play  ; 0           ; 0          ; 1          ; 1           ;
+; state.dead  ; 0           ; 1          ; 0          ; 1           ;
+; state.pause ; 1           ; 0          ; 0          ; 1           ;
++-------------+-------------+------------+------------+-------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |main_dd|MOUSE:inst1|mouse_state                                                                                                                                                        ;
++-------------------------------+---------------------------+--------------------------+-------------------------------+---------------------------+--------------------------+---------------------------+
+; Name                          ; mouse_state.INPUT_PACKETS ; mouse_state.WAIT_CMD_ACK ; mouse_state.WAIT_OUTPUT_READY ; mouse_state.LOAD_COMMAND2 ; mouse_state.LOAD_COMMAND ; mouse_state.INHIBIT_TRANS ;
++-------------------------------+---------------------------+--------------------------+-------------------------------+---------------------------+--------------------------+---------------------------+
+; mouse_state.INHIBIT_TRANS     ; 0                         ; 0                        ; 0                             ; 0                         ; 0                        ; 0                         ;
+; mouse_state.LOAD_COMMAND      ; 0                         ; 0                        ; 0                             ; 0                         ; 1                        ; 1                         ;
+; mouse_state.LOAD_COMMAND2     ; 0                         ; 0                        ; 0                             ; 1                         ; 0                        ; 1                         ;
+; mouse_state.WAIT_OUTPUT_READY ; 0                         ; 0                        ; 1                             ; 0                         ; 0                        ; 1                         ;
+; mouse_state.WAIT_CMD_ACK      ; 0                         ; 1                        ; 0                             ; 0                         ; 0                        ; 1                         ;
+; mouse_state.INPUT_PACKETS     ; 1                         ; 0                        ; 0                             ; 0                         ; 0                        ; 1                         ;
++-------------------------------+---------------------------+--------------------------+-------------------------------+---------------------------+--------------------------+---------------------------+
+
+
 +-----------------------------------------------------------------------------------------------------------------------+
 ; User-Specified and Inferred Latches                                                                                   ;
 +-----------------------------------------------------+----------------------------------------+------------------------+
 ; Latch Name                                          ; Latch Enable Signal                    ; Free of Timing Hazards ;
 +-----------------------------------------------------+----------------------------------------+------------------------+
-; flappy_text:inst5|font_col[2]                       ; flappy_text:inst5|character_address[5] ; yes                    ;
-; flappy_text:inst5|font_col[1]                       ; flappy_text:inst5|character_address[5] ; yes                    ;
-; flappy_text:inst5|font_row[0]                       ; flappy_text:inst5|character_address[5] ; yes                    ;
-; flappy_text:inst5|font_row[1]                       ; flappy_text:inst5|character_address[5] ; yes                    ;
-; flappy_text:inst5|font_row[2]                       ; flappy_text:inst5|character_address[5] ; yes                    ;
-; flappy_text:inst5|character_address[0]              ; flappy_text:inst5|character_address[5] ; yes                    ;
-; flappy_text:inst5|character_address[1]              ; flappy_text:inst5|character_address[5] ; yes                    ;
-; flappy_text:inst5|character_address[2]              ; flappy_text:inst5|character_address[5] ; yes                    ;
-; flappy_text:inst5|character_address[3]              ; flappy_text:inst5|character_address[5] ; yes                    ;
-; flappy_text:inst5|character_address[4]              ; flappy_text:inst5|character_address[5] ; yes                    ;
-; flappy_text:inst5|character_address[5]              ; flappy_text:inst5|character_address[5] ; yes                    ;
-; flappy_text:inst5|font_col[0]                       ; flappy_text:inst5|character_address[5] ; yes                    ;
-; Number of user-specified and inferred latches = 12  ;                                        ;                        ;
+; ball:inst10|ball_on                                 ; flappy_text:inst3|Equal3               ; yes                    ;
+; flappy_text:inst3|font_col[2]                       ; flappy_text:inst3|character_address[5] ; yes                    ;
+; flappy_text:inst3|font_col[1]                       ; flappy_text:inst3|character_address[5] ; yes                    ;
+; flappy_text:inst3|font_row[0]                       ; flappy_text:inst3|character_address[5] ; yes                    ;
+; flappy_text:inst3|font_row[1]                       ; flappy_text:inst3|character_address[5] ; yes                    ;
+; flappy_text:inst3|font_row[2]                       ; flappy_text:inst3|character_address[5] ; yes                    ;
+; flappy_text:inst3|character_address[0]              ; flappy_text:inst3|character_address[5] ; yes                    ;
+; flappy_text:inst3|character_address[1]              ; flappy_text:inst3|character_address[5] ; yes                    ;
+; flappy_text:inst3|character_address[2]              ; flappy_text:inst3|character_address[5] ; yes                    ;
+; flappy_text:inst3|character_address[3]              ; flappy_text:inst3|character_address[5] ; yes                    ;
+; flappy_text:inst3|character_address[4]              ; flappy_text:inst3|character_address[5] ; yes                    ;
+; flappy_text:inst3|character_address[5]              ; flappy_text:inst3|character_address[5] ; yes                    ;
+; flappy_text:inst3|font_col[0]                       ; flappy_text:inst3|character_address[5] ; yes                    ;
+; Number of user-specified and inferred latches = 13  ;                                        ;                        ;
 +-----------------------------------------------------+----------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; VGA_SYNC:inst1|blue_out               ; Stuck at GND due to stuck port data_in ;
-; VGA_SYNC:inst1|pixel_row[0,1]         ; Lost fanout                            ;
-; VGA_SYNC:inst1|pixel_row[9]           ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 4 ;                                        ;
-+---------------------------------------+----------------------------------------+
++-----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                ;
++----------------------------------------+------------------------------------------+
+; Register name                          ; Reason for Removal                       ;
++----------------------------------------+------------------------------------------+
+; MOUSE:inst1|CHAROUT[4..7]              ; Stuck at VCC due to stuck port data_in   ;
+; MOUSE:inst1|CHAROUT[3]                 ; Stuck at GND due to stuck port data_in   ;
+; MOUSE:inst1|CHAROUT[2]                 ; Stuck at VCC due to stuck port data_in   ;
+; MOUSE:inst1|CHAROUT[0,1]               ; Stuck at GND due to stuck port data_in   ;
+; MOUSE:inst1|SHIFTOUT[10]               ; Stuck at VCC due to stuck port data_in   ;
+; ball:inst10|ball_y_motion[3..9]        ; Merged with ball:inst10|ball_y_motion[2] ;
+; ball:inst10|ball_y_motion[0]           ; Stuck at GND due to stuck port data_in   ;
+; ball:inst10|ball_y_pos[0]              ; Stuck at GND due to stuck port data_in   ;
+; ball:inst10|ball_y_motion[1]           ; Stuck at VCC due to stuck port data_in   ;
+; VGA_SYNC:inst6|pixel_row[9]            ; Stuck at GND due to stuck port data_in   ;
+; game_state_FSM:inst2|state.dead        ; Lost fanout                              ;
+; Total Number of Removed Registers = 21 ;                                          ;
++----------------------------------------+------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                    ;
++---------------------------+---------------------------+----------------------------------------+
+; Register name             ; Reason for Removal        ; Registers Removed due to This Register ;
++---------------------------+---------------------------+----------------------------------------+
+; ball:inst10|ball_y_pos[0] ; Stuck at GND              ; ball:inst10|ball_y_motion[1]           ;
+;                           ; due to stuck port data_in ;                                        ;
++---------------------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -325,43 +382,60 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 104   ;
+; Total registers                              ; 198   ;
 ; Number of registers using Synchronous Clear  ; 52    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 49    ;
+; Number of registers using Asynchronous Clear ; 65    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 48    ;
+; Number of registers using Clock Enable       ; 113   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; timer:inst6|tEnable3                   ; 4       ;
-; timer:inst6|init                       ; 12      ;
-; timer:inst6|tEnable2                   ; 4       ;
-; timer:inst6|tEnable1                   ; 4       ;
-; Total number of inverted registers = 4 ;         ;
-+----------------------------------------+---------+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; timer:inst77|tEnable3                   ; 4       ;
+; timer:inst77|init                       ; 12      ;
+; timer:inst77|tEnable2                   ; 4       ;
+; timer:inst77|tEnable1                   ; 4       ;
+; ball:inst10|ball_x_pos[8]               ; 4       ;
+; ball:inst10|ball_x_pos[4]               ; 3       ;
+; ball:inst10|ball_x_pos[2]               ; 4       ;
+; ball:inst10|ball_x_pos[3]               ; 5       ;
+; ball:inst10|ball_x_pos[5]               ; 4       ;
+; ball:inst10|ball_y_pos[2]               ; 6       ;
+; ball:inst10|ball_y_pos[6]               ; 5       ;
+; ball:inst10|ball_y_pos[5]               ; 6       ;
+; MOUSE:inst1|send_char                   ; 3       ;
+; MOUSE:inst1|SHIFTOUT[3]                 ; 1       ;
+; MOUSE:inst1|SHIFTOUT[5]                 ; 1       ;
+; MOUSE:inst1|SHIFTOUT[6]                 ; 1       ;
+; MOUSE:inst1|SHIFTOUT[7]                 ; 1       ;
+; MOUSE:inst1|SHIFTOUT[8]                 ; 1       ;
+; Total number of inverted registers = 18 ;         ;
++-----------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |main_dd|VGA_SYNC:inst1|v_count[1]                   ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |main_dd|timer:inst6|BCD2SevenSeg:dummy7|SevenSeg[0] ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |main_dd|timer:inst6|BCD2SevenSeg:dummy6|SevenSeg[2] ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |main_dd|timer:inst6|BCD2SevenSeg:dummy5|SevenSeg[0] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |main_dd|VGA_SYNC:inst6|v_count[0]                    ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |main_dd|ball:inst10|ball_y_motion[1]                 ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |main_dd|timer:inst77|BCD2SevenSeg:dummy7|SevenSeg[0] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |main_dd|timer:inst77|BCD2SevenSeg:dummy6|SevenSeg[2] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |main_dd|timer:inst77|BCD2SevenSeg:dummy5|SevenSeg[2] ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; No         ; |main_dd|flappy_text:inst3|font_row[0]                ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |main_dd|game_state_FSM:inst2|state                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------+
-; Source assignments for char_rom:inst2|altsyncram:altsyncram_component|altsyncram_d5g1:auto_generated ;
+; Source assignments for char_rom:inst4|altsyncram:altsyncram_component|altsyncram_d5g1:auto_generated ;
 +---------------------------------+--------------------+------+----------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                     ;
 +---------------------------------+--------------------+------+----------------------------------------+
@@ -617,7 +691,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +---------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: char_rom:inst2|altsyncram:altsyncram_component ;
+; Parameter Settings for User Entity Instance: char_rom:inst4|altsyncram:altsyncram_component ;
 +------------------------------------+----------------------+---------------------------------+
 ; Parameter Name                     ; Value                ; Type                            ;
 +------------------------------------+----------------------+---------------------------------+
@@ -683,7 +757,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Name                                      ; Value                                          ;
 +-------------------------------------------+------------------------------------------------+
 ; Number of entity instances                ; 1                                              ;
-; Entity Instance                           ; char_rom:inst2|altsyncram:altsyncram_component ;
+; Entity Instance                           ; char_rom:inst4|altsyncram:altsyncram_component ;
 ;     -- OPERATION_MODE                     ; ROM                                            ;
 ;     -- WIDTH_A                            ; 8                                              ;
 ;     -- NUMWORDS_A                         ; 512                                            ;
@@ -697,61 +771,59 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+------------------------------------------------+
 
 
-+-----------------------------------------------------------+
-; Port Connectivity Checks: "timer:inst6|BCDCounter:dummy4" ;
-+--------------+-------+----------+-------------------------+
-; Port         ; Type  ; Severity ; Details                 ;
-+--------------+-------+----------+-------------------------+
-; minnum       ; Input ; Info     ; Stuck at GND            ;
-; maxnum[2..1] ; Input ; Info     ; Stuck at GND            ;
-; maxnum[3]    ; Input ; Info     ; Stuck at VCC            ;
-; maxnum[0]    ; Input ; Info     ; Stuck at VCC            ;
-+--------------+-------+----------+-------------------------+
-
-
-+-----------------------------------------------------------+
-; Port Connectivity Checks: "timer:inst6|BCDCounter:dummy3" ;
-+-----------+-------+----------+----------------------------+
-; Port      ; Type  ; Severity ; Details                    ;
-+-----------+-------+----------+----------------------------+
-; minnum    ; Input ; Info     ; Stuck at GND               ;
-; maxnum[3] ; Input ; Info     ; Stuck at GND               ;
-; maxnum[2] ; Input ; Info     ; Stuck at VCC               ;
-; maxnum[1] ; Input ; Info     ; Stuck at GND               ;
-; maxnum[0] ; Input ; Info     ; Stuck at VCC               ;
-+-----------+-------+----------+----------------------------+
-
-
-+-----------------------------------------------------------+
-; Port Connectivity Checks: "timer:inst6|BCDCounter:dummy2" ;
-+--------------+-------+----------+-------------------------+
-; Port         ; Type  ; Severity ; Details                 ;
-+--------------+-------+----------+-------------------------+
-; minnum       ; Input ; Info     ; Stuck at GND            ;
-; maxnum[1..0] ; Input ; Info     ; Stuck at VCC            ;
-; maxnum[3..2] ; Input ; Info     ; Stuck at GND            ;
-+--------------+-------+----------+-------------------------+
++------------------------------------------------------------+
+; Port Connectivity Checks: "timer:inst77|BCDCounter:dummy4" ;
++--------------+-------+----------+--------------------------+
+; Port         ; Type  ; Severity ; Details                  ;
++--------------+-------+----------+--------------------------+
+; minnum       ; Input ; Info     ; Stuck at GND             ;
+; maxnum[2..1] ; Input ; Info     ; Stuck at GND             ;
+; maxnum[3]    ; Input ; Info     ; Stuck at VCC             ;
+; maxnum[0]    ; Input ; Info     ; Stuck at VCC             ;
++--------------+-------+----------+--------------------------+
 
 
 +------------------------------------------------------------+
-; Port Connectivity Checks: "timer:inst6|ClockDivider:dummy" ;
-+----------------+-------+----------+------------------------+
-; Port           ; Type  ; Severity ; Details                ;
-+----------------+-------+----------+------------------------+
-; factor[20..19] ; Input ; Info     ; Stuck at VCC           ;
-; factor[10..9]  ; Input ; Info     ; Stuck at VCC           ;
-; factor[31..24] ; Input ; Info     ; Stuck at GND           ;
-; factor[22..21] ; Input ; Info     ; Stuck at GND           ;
-; factor[18..16] ; Input ; Info     ; Stuck at GND           ;
-; factor[14..13] ; Input ; Info     ; Stuck at GND           ;
-; factor[6..0]   ; Input ; Info     ; Stuck at GND           ;
-; factor[23]     ; Input ; Info     ; Stuck at VCC           ;
-; factor[15]     ; Input ; Info     ; Stuck at VCC           ;
-; factor[12]     ; Input ; Info     ; Stuck at VCC           ;
-; factor[11]     ; Input ; Info     ; Stuck at GND           ;
-; factor[8]      ; Input ; Info     ; Stuck at GND           ;
-; factor[7]      ; Input ; Info     ; Stuck at VCC           ;
-+----------------+-------+----------+------------------------+
+; Port Connectivity Checks: "timer:inst77|BCDCounter:dummy3" ;
++-----------+-------+----------+-----------------------------+
+; Port      ; Type  ; Severity ; Details                     ;
++-----------+-------+----------+-----------------------------+
+; minnum    ; Input ; Info     ; Stuck at GND                ;
+; maxnum[3] ; Input ; Info     ; Stuck at GND                ;
+; maxnum[2] ; Input ; Info     ; Stuck at VCC                ;
+; maxnum[1] ; Input ; Info     ; Stuck at GND                ;
+; maxnum[0] ; Input ; Info     ; Stuck at VCC                ;
++-----------+-------+----------+-----------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "timer:inst77|BCDCounter:dummy2" ;
++--------------+-------+----------+--------------------------+
+; Port         ; Type  ; Severity ; Details                  ;
++--------------+-------+----------+--------------------------+
+; minnum       ; Input ; Info     ; Stuck at GND             ;
+; maxnum[1..0] ; Input ; Info     ; Stuck at VCC             ;
+; maxnum[3..2] ; Input ; Info     ; Stuck at GND             ;
++--------------+-------+----------+--------------------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "timer:inst77|ClockDivider:dummy" ;
++----------------+-------+----------+-------------------------+
+; Port           ; Type  ; Severity ; Details                 ;
++----------------+-------+----------+-------------------------+
+; factor[22..18] ; Input ; Info     ; Stuck at VCC            ;
+; factor[14..11] ; Input ; Info     ; Stuck at VCC            ;
+; factor[31..25] ; Input ; Info     ; Stuck at GND            ;
+; factor[10..7]  ; Input ; Info     ; Stuck at GND            ;
+; factor[5..0]   ; Input ; Info     ; Stuck at GND            ;
+; factor[24]     ; Input ; Info     ; Stuck at VCC            ;
+; factor[23]     ; Input ; Info     ; Stuck at GND            ;
+; factor[17]     ; Input ; Info     ; Stuck at GND            ;
+; factor[16]     ; Input ; Info     ; Stuck at VCC            ;
+; factor[15]     ; Input ; Info     ; Stuck at GND            ;
+; factor[6]      ; Input ; Info     ; Stuck at VCC            ;
++----------------+-------+----------+-------------------------+
 
 
 +-----------------------------------------------------+
@@ -759,33 +831,34 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 104                         ;
-;     CLR               ; 6                           ;
+; arriav_ff             ; 198                         ;
+;     CLR               ; 3                           ;
 ;     CLR SCLR          ; 32                          ;
-;     ENA               ; 27                          ;
-;     ENA CLR           ; 11                          ;
+;     ENA               ; 73                          ;
+;     ENA CLR           ; 30                          ;
 ;     ENA SCLR          ; 10                          ;
 ;     SCLR              ; 10                          ;
-;     plain             ; 8                           ;
-; arriav_lcell_comb     ; 185                         ;
-;     arith             ; 52                          ;
-;         1 data inputs ; 52                          ;
-;     extend            ; 6                           ;
-;         7 data inputs ; 6                           ;
-;     normal            ; 127                         ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 9                           ;
-;         2 data inputs ; 3                           ;
-;         3 data inputs ; 27                          ;
-;         4 data inputs ; 44                          ;
-;         5 data inputs ; 20                          ;
-;         6 data inputs ; 23                          ;
-; boundary_port         ; 38                          ;
+;     plain             ; 40                          ;
+; arriav_io_obuf        ; 2                           ;
+; arriav_lcell_comb     ; 367                         ;
+;     arith             ; 102                         ;
+;         1 data inputs ; 80                          ;
+;         2 data inputs ; 22                          ;
+;     extend            ; 5                           ;
+;         7 data inputs ; 5                           ;
+;     normal            ; 260                         ;
+;         1 data inputs ; 22                          ;
+;         2 data inputs ; 15                          ;
+;         3 data inputs ; 43                          ;
+;         4 data inputs ; 84                          ;
+;         5 data inputs ; 50                          ;
+;         6 data inputs ; 46                          ;
+; boundary_port         ; 43                          ;
 ; generic_pll           ; 1                           ;
 ; stratixv_ram_block    ; 8                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 2.58                        ;
+; Max LUT depth         ; 5.40                        ;
+; Average LUT depth     ; 2.80                        ;
 +-----------------------+-----------------------------+
 
 
@@ -804,10 +877,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun May 12 19:01:34 2024
+    Info: Processing started: Mon May 13 18:20:57 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off D_H -c D_H
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file game_state_fsm.vhd
+    Info (12022): Found design unit 1: game_state_FSM-FSM File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/game_state_FSM.vhd Line: 18
+    Info (12023): Found entity 1: game_state_FSM File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/game_state_FSM.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file charrender.vhdl
     Info (12022): Found design unit 1: CharRender-aCharRender File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/CharRender.vhdl Line: 16
     Info (12023): Found entity 1: CharRender File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/CharRender.vhdl Line: 6
@@ -818,7 +894,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file bcd2sev
     Info (12022): Found design unit 1: BCD2SevenSeg-aBCD2SevenSeg File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/BCD2SevenSeg.vhd Line: 14
     Info (12023): Found entity 1: BCD2SevenSeg File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/BCD2SevenSeg.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file timer.vhdl
-    Info (12022): Found design unit 1: timer-atimer File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/timer.vhdl Line: 18
+    Info (12022): Found design unit 1: timer-atimer File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/timer.vhdl Line: 19
     Info (12023): Found entity 1: timer File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/timer.vhdl Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file bcdcounter.vhdl
     Info (12022): Found design unit 1: BCDCounter-aBCDCounter File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/BCDCounter.vhdl Line: 15
@@ -832,18 +908,12 @@ Info (12021): Found 2 design units, including 1 entities, in source file vga_syn
 Info (12021): Found 2 design units, including 1 entities, in source file mouse.vhd
     Info (12022): Found design unit 1: MOUSE-behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/mouse.vhd Line: 18
     Info (12023): Found entity 1: MOUSE File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/mouse.vhd Line: 9
-Info (12021): Found 2 design units, including 1 entities, in source file main_d.vhd
-    Info (12022): Found design unit 1: main_d-a File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/main_d.vhd Line: 17
-    Info (12023): Found entity 1: main_d File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/main_d.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file char_rom.vhd
     Info (12022): Found design unit 1: char_rom-SYN File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/char_rom.vhd Line: 20
     Info (12023): Found entity 1: char_rom File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/char_rom.vhd Line: 9
-Info (12021): Found 2 design units, including 1 entities, in source file bouncy_ball.vhd
-    Info (12022): Found design unit 1: bouncy_ball-behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/bouncy_ball.vhd Line: 14
-    Info (12023): Found entity 1: bouncy_ball File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/bouncy_ball.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file ball.vhd
-    Info (12022): Found design unit 1: ball-behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/ball.vhd Line: 14
-    Info (12023): Found entity 1: ball File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/ball.vhd Line: 7
+    Info (12022): Found design unit 1: ball-behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/ball.vhd Line: 17
+    Info (12023): Found entity 1: ball File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/ball.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file dp_clk.vhd
     Info (12022): Found design unit 1: DP_CLK-rtl File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/DP_CLK.vhd Line: 20
     Info (12023): Found entity 1: DP_CLK File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/DP_CLK.vhd Line: 11
@@ -855,10 +925,11 @@ Info (12021): Found 2 design units, including 1 entities, in source file pipes.v
     Info (12022): Found design unit 1: PipeGame-Behavioral File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/pipes.vhd Line: 14
     Info (12023): Found entity 1: PipeGame File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/pipes.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file flappy_text.vhd
-    Info (12022): Found design unit 1: flappy_text-behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 14
+    Info (12022): Found design unit 1: flappy_text-behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 15
     Info (12023): Found entity 1: flappy_text File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 6
 Info (12127): Elaborating entity "main_dd" for the top level hierarchy
-Info (12128): Elaborating entity "VGA_SYNC" for hierarchy "VGA_SYNC:inst1"
+Warning (275011): Block or symbol "game_state_FSM" of instance "inst2" overlaps another block or symbol
+Info (12128): Elaborating entity "VGA_SYNC" for hierarchy "VGA_SYNC:inst6"
 Info (12128): Elaborating entity "DP_CLK" for hierarchy "DP_CLK:inst"
 Info (12128): Elaborating entity "DP_CLK_0002" for hierarchy "DP_CLK:inst|DP_CLK_0002:dp_clk_inst" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/DP_CLK.vhd Line: 32
 Info (12128): Elaborating entity "altera_pll" for hierarchy "DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/DP_CLK/DP_CLK_0002.v Line: 85
@@ -925,10 +996,33 @@ Info (12133): Instantiated megafunction "DP_CLK:inst|DP_CLK_0002:dp_clk_inst|alt
     Info (12134): Parameter "duty_cycle17" = "50"
     Info (12134): Parameter "pll_type" = "General"
     Info (12134): Parameter "pll_subtype" = "General"
-Info (12128): Elaborating entity "char_rom" for hierarchy "char_rom:inst2"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "char_rom:inst2|altsyncram:altsyncram_component" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/char_rom.vhd Line: 51
-Info (12130): Elaborated megafunction instantiation "char_rom:inst2|altsyncram:altsyncram_component" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/char_rom.vhd Line: 51
-Info (12133): Instantiated megafunction "char_rom:inst2|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/char_rom.vhd Line: 51
+Info (12128): Elaborating entity "ball" for hierarchy "ball:inst10"
+Warning (10540): VHDL Signal Declaration warning at ball.vhd(21): used explicit default value for signal "size" because signal was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/ball.vhd Line: 21
+Warning (10492): VHDL Process Statement warning at ball.vhd(30): signal "game_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/ball.vhd Line: 30
+Warning (10492): VHDL Process Statement warning at ball.vhd(32): signal "ball_x_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/ball.vhd Line: 32
+Warning (10492): VHDL Process Statement warning at ball.vhd(32): signal "pixel_column" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/ball.vhd Line: 32
+Warning (10492): VHDL Process Statement warning at ball.vhd(32): signal "size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/ball.vhd Line: 32
+Warning (10492): VHDL Process Statement warning at ball.vhd(32): signal "ball_y_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/ball.vhd Line: 32
+Warning (10492): VHDL Process Statement warning at ball.vhd(32): signal "pixel_row" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/ball.vhd Line: 32
+Warning (10492): VHDL Process Statement warning at ball.vhd(39): signal "displayText" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/ball.vhd Line: 39
+Warning (10492): VHDL Process Statement warning at ball.vhd(39): signal "ball_on" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/ball.vhd Line: 39
+Warning (10492): VHDL Process Statement warning at ball.vhd(41): signal "ball_on" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/ball.vhd Line: 41
+Warning (10492): VHDL Process Statement warning at ball.vhd(42): signal "displayText" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/ball.vhd Line: 42
+Warning (10492): VHDL Process Statement warning at ball.vhd(46): signal "displayText" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/ball.vhd Line: 46
+Warning (10492): VHDL Process Statement warning at ball.vhd(48): signal "mbL" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/ball.vhd Line: 48
+Warning (10492): VHDL Process Statement warning at ball.vhd(49): signal "displayText" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/ball.vhd Line: 49
+Warning (10631): VHDL Process Statement warning at ball.vhd(28): inferring latch(es) for signal or variable "ball_on", which holds its previous value in one or more paths through the process File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/ball.vhd Line: 28
+Info (10041): Inferred latch for "ball_on" at ball.vhd(28) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/ball.vhd Line: 28
+Info (12128): Elaborating entity "MOUSE" for hierarchy "MOUSE:inst1"
+Warning (10036): Verilog HDL or VHDL warning at mouse.vhd(25): object "CHARIN" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/mouse.vhd Line: 25
+Warning (10492): VHDL Process Statement warning at mouse.vhd(151): signal "CHAROUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/mouse.vhd Line: 151
+Warning (10492): VHDL Process Statement warning at mouse.vhd(155): signal "CHAROUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/mouse.vhd Line: 155
+Warning (10492): VHDL Process Statement warning at mouse.vhd(156): signal "CHAROUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/mouse.vhd Line: 156
+Warning (10492): VHDL Process Statement warning at mouse.vhd(157): signal "CHAROUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/mouse.vhd Line: 157
+Info (12128): Elaborating entity "char_rom" for hierarchy "char_rom:inst4"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "char_rom:inst4|altsyncram:altsyncram_component" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/char_rom.vhd Line: 51
+Info (12130): Elaborated megafunction instantiation "char_rom:inst4|altsyncram:altsyncram_component" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/char_rom.vhd Line: 51
+Info (12133): Instantiated megafunction "char_rom:inst4|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/char_rom.vhd Line: 51
     Info (12134): Parameter "address_aclr_a" = "NONE"
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
@@ -945,72 +1039,89 @@ Info (12133): Instantiated megafunction "char_rom:inst2|altsyncram:altsyncram_co
     Info (12134): Parameter "width_byteena_a" = "1"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_d5g1.tdf
     Info (12023): Found entity 1: altsyncram_d5g1 File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/db/altsyncram_d5g1.tdf Line: 27
-Info (12128): Elaborating entity "altsyncram_d5g1" for hierarchy "char_rom:inst2|altsyncram:altsyncram_component|altsyncram_d5g1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12128): Elaborating entity "flappy_text" for hierarchy "flappy_text:inst5"
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(36): used initial value expression for variable "vA" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 36
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(37): used initial value expression for variable "vB" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 37
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(39): used initial value expression for variable "vD" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 39
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(41): used initial value expression for variable "vF" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 41
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(44): used initial value expression for variable "vI" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 44
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(47): used initial value expression for variable "vL" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 47
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(49): used initial value expression for variable "vN" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 49
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(50): used initial value expression for variable "vO" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 50
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(51): used initial value expression for variable "vP" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 51
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(53): used initial value expression for variable "vR" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 53
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(54): used initial value expression for variable "vS" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 54
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(55): used initial value expression for variable "vT" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 55
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(60): used initial value expression for variable "vY" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 60
-Warning (10631): VHDL Process Statement warning at flappy_text.vhd(31): inferring latch(es) for signal or variable "character_address", which holds its previous value in one or more paths through the process File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 31
-Warning (10631): VHDL Process Statement warning at flappy_text.vhd(31): inferring latch(es) for signal or variable "font_row", which holds its previous value in one or more paths through the process File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 31
-Warning (10631): VHDL Process Statement warning at flappy_text.vhd(31): inferring latch(es) for signal or variable "font_col", which holds its previous value in one or more paths through the process File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 31
-Info (10041): Inferred latch for "font_col[0]" at flappy_text.vhd(31) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 31
-Info (10041): Inferred latch for "font_col[1]" at flappy_text.vhd(31) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 31
-Info (10041): Inferred latch for "font_col[2]" at flappy_text.vhd(31) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 31
-Info (10041): Inferred latch for "font_row[0]" at flappy_text.vhd(31) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 31
-Info (10041): Inferred latch for "font_row[1]" at flappy_text.vhd(31) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 31
-Info (10041): Inferred latch for "font_row[2]" at flappy_text.vhd(31) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 31
-Info (10041): Inferred latch for "character_address[0]" at flappy_text.vhd(31) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 31
-Info (10041): Inferred latch for "character_address[1]" at flappy_text.vhd(31) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 31
-Info (10041): Inferred latch for "character_address[2]" at flappy_text.vhd(31) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 31
-Info (10041): Inferred latch for "character_address[3]" at flappy_text.vhd(31) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 31
-Info (10041): Inferred latch for "character_address[4]" at flappy_text.vhd(31) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 31
-Info (10041): Inferred latch for "character_address[5]" at flappy_text.vhd(31) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 31
-Info (12128): Elaborating entity "timer" for hierarchy "timer:inst6"
-Warning (10492): VHDL Process Statement warning at timer.vhdl(103): signal "vQ1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/timer.vhdl Line: 103
-Warning (10492): VHDL Process Statement warning at timer.vhdl(103): signal "vQ2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/timer.vhdl Line: 103
-Warning (10492): VHDL Process Statement warning at timer.vhdl(103): signal "vQ3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/timer.vhdl Line: 103
-Info (12128): Elaborating entity "ClockDivider" for hierarchy "timer:inst6|ClockDivider:dummy" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/timer.vhdl Line: 48
-Info (12128): Elaborating entity "BCDCounter" for hierarchy "timer:inst6|BCDCounter:dummy2" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/timer.vhdl Line: 49
+Info (12128): Elaborating entity "altsyncram_d5g1" for hierarchy "char_rom:inst4|altsyncram:altsyncram_component|altsyncram_d5g1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12128): Elaborating entity "flappy_text" for hierarchy "flappy_text:inst3"
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(37): used initial value expression for variable "vA" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 37
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(38): used initial value expression for variable "vB" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 38
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(40): used initial value expression for variable "vD" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 40
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(41): used initial value expression for variable "vE" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 41
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(42): used initial value expression for variable "vF" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 42
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(45): used initial value expression for variable "vI" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 45
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(48): used initial value expression for variable "vL" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 48
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(50): used initial value expression for variable "vN" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 50
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(51): used initial value expression for variable "vO" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 51
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(52): used initial value expression for variable "vP" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 52
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(54): used initial value expression for variable "vR" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 54
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(55): used initial value expression for variable "vS" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 55
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(56): used initial value expression for variable "vT" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 56
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(57): used initial value expression for variable "vU" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 57
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(61): used initial value expression for variable "vY" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 61
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(65): signal "game_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 65
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(155): signal "game_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 155
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(177): signal "game_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 177
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(201): signal "game_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 201
+Warning (10631): VHDL Process Statement warning at flappy_text.vhd(32): inferring latch(es) for signal or variable "character_address", which holds its previous value in one or more paths through the process File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 32
+Warning (10631): VHDL Process Statement warning at flappy_text.vhd(32): inferring latch(es) for signal or variable "font_row", which holds its previous value in one or more paths through the process File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 32
+Warning (10631): VHDL Process Statement warning at flappy_text.vhd(32): inferring latch(es) for signal or variable "font_col", which holds its previous value in one or more paths through the process File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 32
+Info (10041): Inferred latch for "font_col[0]" at flappy_text.vhd(32) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 32
+Info (10041): Inferred latch for "font_col[1]" at flappy_text.vhd(32) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 32
+Info (10041): Inferred latch for "font_col[2]" at flappy_text.vhd(32) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 32
+Info (10041): Inferred latch for "font_row[0]" at flappy_text.vhd(32) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 32
+Info (10041): Inferred latch for "font_row[1]" at flappy_text.vhd(32) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 32
+Info (10041): Inferred latch for "font_row[2]" at flappy_text.vhd(32) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 32
+Info (10041): Inferred latch for "character_address[0]" at flappy_text.vhd(32) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 32
+Info (10041): Inferred latch for "character_address[1]" at flappy_text.vhd(32) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 32
+Info (10041): Inferred latch for "character_address[2]" at flappy_text.vhd(32) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 32
+Info (10041): Inferred latch for "character_address[3]" at flappy_text.vhd(32) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 32
+Info (10041): Inferred latch for "character_address[4]" at flappy_text.vhd(32) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 32
+Info (10041): Inferred latch for "character_address[5]" at flappy_text.vhd(32) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 32
+Info (12128): Elaborating entity "game_state_FSM" for hierarchy "game_state_FSM:inst2"
+Warning (10541): VHDL Signal Declaration warning at game_state_FSM.vhd(11): used implicit default value for signal "reset" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/game_state_FSM.vhd Line: 11
+Warning (10541): VHDL Signal Declaration warning at game_state_FSM.vhd(14): used implicit default value for signal "is_paused" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/game_state_FSM.vhd Line: 14
+Warning (10542): VHDL Variable Declaration warning at game_state_FSM.vhd(24): used initial value expression for variable "lastMBL" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/game_state_FSM.vhd Line: 24
+Warning (10036): Verilog HDL or VHDL warning at game_state_FSM.vhd(25): object "onMBLPress" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/game_state_FSM.vhd Line: 25
+Warning (10036): Verilog HDL or VHDL warning at game_state_FSM.vhd(26): object "whileMBLDown" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/game_state_FSM.vhd Line: 26
+Warning (10542): VHDL Variable Declaration warning at game_state_FSM.vhd(27): used initial value expression for variable "lastMBR" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/game_state_FSM.vhd Line: 27
+Warning (10036): Verilog HDL or VHDL warning at game_state_FSM.vhd(28): object "onMBRPress" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/game_state_FSM.vhd Line: 28
+Warning (10036): Verilog HDL or VHDL warning at game_state_FSM.vhd(29): object "whileMBRDown" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/game_state_FSM.vhd Line: 29
+Warning (10631): VHDL Process Statement warning at game_state_FSM.vhd(110): inferring latch(es) for signal or variable "mode", which holds its previous value in one or more paths through the process File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/game_state_FSM.vhd Line: 110
+Info (10041): Inferred latch for "mode" at game_state_FSM.vhd(110) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/game_state_FSM.vhd Line: 110
+Info (12128): Elaborating entity "timer" for hierarchy "timer:inst77"
+Warning (10492): VHDL Process Statement warning at timer.vhdl(102): signal "vQ1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/timer.vhdl Line: 102
+Warning (10492): VHDL Process Statement warning at timer.vhdl(102): signal "vQ2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/timer.vhdl Line: 102
+Warning (10492): VHDL Process Statement warning at timer.vhdl(102): signal "vQ3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/timer.vhdl Line: 102
+Info (12128): Elaborating entity "ClockDivider" for hierarchy "timer:inst77|ClockDivider:dummy" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/timer.vhdl Line: 49
+Info (12128): Elaborating entity "BCDCounter" for hierarchy "timer:inst77|BCDCounter:dummy2" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/timer.vhdl Line: 50
 Warning (10492): VHDL Process Statement warning at BCDCounter.vhdl(21): signal "minNum" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/BCDCounter.vhdl Line: 21
-Info (12128): Elaborating entity "BCD2SevenSeg" for hierarchy "timer:inst6|BCD2SevenSeg:dummy5" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/timer.vhdl Line: 52
-Warning (13012): Latch flappy_text:inst5|font_col[2] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 31
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst1|pixel_row[5] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd Line: 88
-Warning (13012): Latch flappy_text:inst5|font_col[1] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 31
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst1|pixel_row[5] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd Line: 88
-Warning (13012): Latch flappy_text:inst5|font_row[0] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 31
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst1|pixel_row[5] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd Line: 88
-Warning (13012): Latch flappy_text:inst5|font_row[1] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 31
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst1|pixel_row[5] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd Line: 88
-Warning (13012): Latch flappy_text:inst5|font_row[2] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 31
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst1|pixel_row[5] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd Line: 88
-Warning (13012): Latch flappy_text:inst5|character_address[0] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 31
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst1|pixel_row[5] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd Line: 88
-Warning (13012): Latch flappy_text:inst5|character_address[1] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 31
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst1|pixel_row[5] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd Line: 88
-Warning (13012): Latch flappy_text:inst5|character_address[2] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 31
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst1|pixel_row[5] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd Line: 88
-Warning (13012): Latch flappy_text:inst5|character_address[3] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 31
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst1|pixel_row[5] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd Line: 88
-Warning (13012): Latch flappy_text:inst5|character_address[4] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 31
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst1|pixel_row[5] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd Line: 88
-Warning (13012): Latch flappy_text:inst5|character_address[5] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 31
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst1|pixel_row[5] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd Line: 88
-Warning (13012): Latch flappy_text:inst5|font_col[0] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 31
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst1|pixel_row[5] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd Line: 88
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "blue_out" is stuck at GND
+Info (12128): Elaborating entity "BCD2SevenSeg" for hierarchy "timer:inst77|BCD2SevenSeg:dummy5" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/timer.vhdl Line: 53
+Warning (13012): Latch flappy_text:inst3|font_col[2] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst6|pixel_row[5] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd Line: 88
+Warning (13012): Latch flappy_text:inst3|font_col[1] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst6|pixel_row[5] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd Line: 88
+Warning (13012): Latch flappy_text:inst3|font_row[0] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst6|pixel_row[5] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd Line: 88
+Warning (13012): Latch flappy_text:inst3|font_row[1] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst6|pixel_row[5] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd Line: 88
+Warning (13012): Latch flappy_text:inst3|font_row[2] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst6|pixel_row[5] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd Line: 88
+Warning (13012): Latch flappy_text:inst3|character_address[0] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_state_FSM:inst2|state.intro File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/game_state_FSM.vhd Line: 20
+Warning (13012): Latch flappy_text:inst3|character_address[1] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_state_FSM:inst2|state.intro File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/game_state_FSM.vhd Line: 20
+Warning (13012): Latch flappy_text:inst3|character_address[2] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_state_FSM:inst2|state.intro File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/game_state_FSM.vhd Line: 20
+Warning (13012): Latch flappy_text:inst3|character_address[3] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_state_FSM:inst2|state.intro File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/game_state_FSM.vhd Line: 20
+Warning (13012): Latch flappy_text:inst3|character_address[4] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_state_FSM:inst2|state.intro File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/game_state_FSM.vhd Line: 20
+Warning (13012): Latch flappy_text:inst3|character_address[5] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_state_FSM:inst2|state.intro File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/game_state_FSM.vhd Line: 20
+Warning (13012): Latch flappy_text:inst3|font_col[0] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/flappy_text.vhd Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst6|pixel_row[5] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/vga_sync.vhd Line: 88
+Info (13000): Registers with preset signals will power-up high File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/D_H/mouse.vhd Line: 146
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Warning (20013): Ignored 24 assignments for entity "DE0_CV_Default" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE0_CV_Default -section_id Top was ignored
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity DE0_CV_Default -section_id Top was ignored
@@ -1040,15 +1151,16 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 3 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning: RST port on the PLL is not properly connected on instance DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i|general[0].gpll. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altera_pll.v Line: 748
     Info: Must be connected
-Info (21057): Implemented 261 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
+Info (21057): Implemented 477 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
     Info (21059): Implemented 36 output pins
-    Info (21061): Implemented 214 logic cells
+    Info (21060): Implemented 2 bidirectional pins
+    Info (21061): Implemented 425 logic cells
     Info (21064): Implemented 8 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 73 warnings
-    Info: Peak virtual memory: 4908 megabytes
-    Info: Processing ended: Sun May 12 19:01:41 2024
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 107 warnings
+    Info: Peak virtual memory: 4948 megabytes
+    Info: Processing ended: Mon May 13 18:21:04 2024
     Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:13
 

@@ -5,7 +5,8 @@ use IEEE.std_logic_unsigned.all;
 entity timer is
 	port(
 		clock50 : in std_logic; -- Clock
-		KEY0 : in std_logic; -- Start
+		Reset : in std_logic; -- Start
+		Enable : in std_logic;
 		timeOut : out std_logic;
 		HEX2 : out std_logic_vector(6 downto 0); -- m
 		HEX1 : out std_logic_vector(6 downto 0); --st
@@ -42,10 +43,10 @@ architecture atimer of timer is
 	signal init : std_logic;
     signal vEnable1, vEnable2, vEnable3 : std_logic;
     signal vQ1, vQ2, vQ3 : std_logic_vector(3 downto 0);
-	signal vClk, Reset : std_logic;
+	signal vClk : std_logic;
 begin
--- 50000000 to 1 s
-	dummy : ClockDivider port map(clock50, Reset, 10000000, vClk);
+-- set to 50000000 for 1 s
+	dummy : ClockDivider port map(clock50, Reset, 25000000, vClk);
 	dummy2 : BCDCounter port map(vClk, init, vEnable1, "0000", "0011", vQ1); -- m
     dummy3 : BCDCounter port map(vClk, init, vEnable2, "0000", "0101", vQ2); -- st
     dummy4 : BCDCounter port map(vClk, init, vEnable3, "0000", "1001", vQ3); -- so
@@ -53,12 +54,11 @@ begin
 	dummy6 : BCD2SevenSeg port map(vQ2, HEX1);
 	dummy7 : BCD2SevenSeg port map(vQ3, HEX0);
 	
-    process (vClk, KEY0)
+    process (vClk, Reset, Enable)
 		variable tEnable1, tEnable2, tEnable3 : std_logic; 
     begin
 		
-        if (KEY0 = '0') then
-			Reset <= '1';
+        if (Reset = '1') then
             init <= '1';
 				tEnable1 := '1';
 				tEnable2 := '1';
@@ -66,38 +66,37 @@ begin
 			timeOut <= '0';
 			
         elsif (rising_edge(vClk)) then
-			Reset <= '0';
-			init <= '0';
-			-- if num is 3:59 stop all
-			if (vQ3 = "1001" and vQ2 = "0101" and vQ1 = "0011") then
-				tEnable1 := '0';
-				tEnable2 := '0';
-				tEnable3 := '0';
-				timeOut <= '1';
-				LEDR <= "1111111111";
-			-- if the second one is 9 second turn on the second ten seven seg
-			elsif (vQ3 = "1000") then
-				LEDR <= "0000000000";
-				-- if tens second sevenseg is 5 turn on the minute counter
-				if (vQ2 = "0101") then
-					tEnable1 := '1';
-					tEnable2 := '1';
-					tEnable3 := '1';
-				 -- if 59 turn increase minute
-				else
+			if (Enable = '1') then
+				init <= '0';
+				-- if num is 3:59 stop all
+				if (vQ3 = "1001" and vQ2 = "0101" and vQ1 = "0011") then
 					tEnable1 := '0';
-					tEnable2 := '1';
+					tEnable2 := '0';
+					tEnable3 := '0';
+					timeOut <= '1';
+					LEDR <= "1111111111";
+				-- if the second one is 9 second turn on the second ten seven seg
+				elsif (vQ3 = "1000") then
+					LEDR <= "0000000000";
+					-- if tens second sevenseg is 5 turn on the minute counter
+					if (vQ2 = "0101") then
+						tEnable1 := '1';
+						tEnable2 := '1';
+						tEnable3 := '1';
+					 -- if 59 turn increase minute
+					else
+						tEnable1 := '0';
+						tEnable2 := '1';
+						tEnable3 := '1';
+					end if;
+				-- else enable second again
+				else
+					LEDR <= "0000000000";
+					tEnable1 := '0';
+					tEnable2 := '0';
 					tEnable3 := '1';
 				end if;
-			-- else enable second again
-			else
-				LEDR <= "0000000000";
-				tEnable1 := '0';
-				tEnable2 := '0';
-				tEnable3 := '1';
 			end if;
-		else
-			Reset <= '0';
 		end if;
 
 		debugTime <= vQ1 & vQ2 & vQ3;

@@ -1,0 +1,16 @@
+
+State Machine - |main_dd|game_state_FSM:inst2|state
+Name state.pause state.dead state.play state.intro 
+state.intro 0 0 0 0 
+state.play 0 0 1 1 
+state.dead 0 1 0 1 
+state.pause 1 0 0 1 
+
+State Machine - |main_dd|MOUSE:inst1|mouse_state
+Name mouse_state.INPUT_PACKETS mouse_state.WAIT_CMD_ACK mouse_state.WAIT_OUTPUT_READY mouse_state.LOAD_COMMAND2 mouse_state.LOAD_COMMAND mouse_state.INHIBIT_TRANS 
+mouse_state.INHIBIT_TRANS 0 0 0 0 0 0 
+mouse_state.LOAD_COMMAND 0 0 0 0 1 1 
+mouse_state.LOAD_COMMAND2 0 0 0 1 0 1 
+mouse_state.WAIT_OUTPUT_READY 0 0 1 0 0 1 
+mouse_state.WAIT_CMD_ACK 0 1 0 0 0 1 
+mouse_state.INPUT_PACKETS 1 0 0 0 0 1 
