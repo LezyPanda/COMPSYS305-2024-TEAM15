@@ -10,14 +10,14 @@ ENTITY ball IS
 		game_state					: in std_logic_vector(1 downto 0);
 		pixel_row, pixel_column		: IN std_logic_vector(9 DOWNTO 0);
 		displayText : in std_logic;
-		red, green, blue 			: OUT std_logic
+		red, green, blue 			: out std_logic_vector(3 downto 0)
 	);		
 END ball;
 
 architecture behavior of ball is
 
 
-	SIGNAL ball_on					: std_logic;
+	SIGNAL ball_on					: std_logic_vector(3 downto 0);
 	SIGNAL size 					: std_logic_vector(9 DOWNTO 0)	:= CONV_STD_LOGIC_VECTOR(8, 10);  
 	SiGNAL ball_x_pos				: std_logic_vector(10 DOWNTO 0)  := CONV_STD_LOGIC_VECTOR(316, 11);
 	SIGNAL ball_y_pos				: std_logic_vector(9 DOWNTO 0) 	:= CONV_STD_LOGIC_VECTOR(100, 10);
@@ -30,23 +30,17 @@ BEGIN
 		if (game_state = "01") then
 			-- x_pos - size <= pixel_column <= x_pos + size
 			if (('0' & ball_x_pos <= pixel_column + size) and ('0' & pixel_column <= ball_x_pos + size) and ('0' & ball_y_pos <= pixel_row + size) and ('0' & pixel_row <= ball_y_pos + size) ) then
-				ball_on <= '1';
+				ball_on <= "1111";
 			else
-				ball_on <= '0';
+				ball_on <= "0000";
 			end if;
-			-- Colours for pixel data on video signal
-			-- Keeping background white and square in red
-			red <= displayText or ball_on;
-			-- Turn off Green and Blue when displaying square
-			green <= ball_on;
-			blue <= displayText;
+			red <= (displayText & displayText & displayText & displayText) or ball_on	or "0010";
+			green <= ball_on																				or "0001";
+			blue <= (displayText & displayText & displayText & displayText)				or "0110";
 		else
-			-- Colours for pixel data on video signal
-			-- Keeping background white and square in red
-			red <= displayText;
-			-- Turn off Green and Blue when displaying square
-			green <= mbL;
-			blue <= displayText;
+			red <= (displayText & displayText & displayText & displayText) 				or "0010";
+			green <= "0000"																				or "0001";
+			blue <= (displayText & displayText & displayText & displayText)				or "0110";
 		end if;
 
 	end process;
