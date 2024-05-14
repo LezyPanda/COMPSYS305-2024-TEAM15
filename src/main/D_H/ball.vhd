@@ -9,7 +9,7 @@ ENTITY ball IS
 		mbL, mbR						: in std_logic;
 		game_state					: in std_logic_vector(1 downto 0);
 		pixel_row, pixel_column		: IN std_logic_vector(9 DOWNTO 0);
-		displayText : in std_logic;
+		displayText, pipe : in std_logic;
 		red, green, blue 			: out std_logic_vector(3 downto 0)
 	);		
 END ball;
@@ -42,12 +42,19 @@ BEGIN
 			else
 				if (displayText = '1') then
 					red <= (displayText & displayText & displayText & displayText);
+					green <= "0001";
 					blue <= (displayText & displayText & displayText & displayText);
 				else
-					red <= "0010";
-					blue <= "0110";
+					if (pipe = '1') then
+						red <= "0010";
+						green <= "1100";
+						blue <= "0010";
+					else
+						red <= "0010";
+						green <= "0001";
+						blue <= "0110";
+					end if;
 				end if;
-				green <= "0001";
 			end if;
 			
 		else

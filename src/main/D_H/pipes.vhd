@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.STD_LOGIC_ARITH.all;
 USE IEEE.STD_LOGIC_UNSIGNED.all;
 
-entity PipeGame is
+entity pipes is
 	Port (
 		-- clk, v_sync to vga, state and mode to fsm, reset can be disconeccted
 		clk,v_sync,reset,mode : in STD_LOGIC;
@@ -13,13 +13,11 @@ entity PipeGame is
 		-- pipe gap connected to LFSR
 		pipe_gap :std_logic_vector (5 DOWNTO 0);
 		-- vga
-		red, green, blue : OUT std_logic;
-		-- intended for bird/ball but can be disconnected for now
 		pipe_out :out std_logic
 	);
-end PipeGame;
+end pipes;
 
-architecture Behavioral of PipeGame is
+architecture Behavioral of pipes is
 	-- Constants for display size, pipe dimensions, and number of pipes (tobe used later)
 	constant DISP_WIDTH : integer := 640;
 	constant DISP_HEIGHT : integer := 480;
