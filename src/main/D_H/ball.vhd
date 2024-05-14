@@ -34,13 +34,31 @@ BEGIN
 			else
 				ball_on <= "0000";
 			end if;
-			red <= (displayText & displayText & displayText & displayText) or ball_on	or "0010";
-			green <= ball_on																				or "0001";
-			blue <= (displayText & displayText & displayText & displayText)				or "0110";
+			
+			if (ball_on = "1111") then
+				red <= ball_on;
+				green <= ball_on;
+				blue <= "0000";
+			else
+				if (displayText = '1') then
+					red <= (displayText & displayText & displayText & displayText);
+					blue <= (displayText & displayText & displayText & displayText);
+				else
+					red <= "0010";
+					blue <= "0110";
+				end if;
+				green <= "0001";
+			end if;
+			
 		else
-			red <= (displayText & displayText & displayText & displayText) 				or "0010";
-			green <= "0000"																				or "0001";
-			blue <= (displayText & displayText & displayText & displayText)				or "0110";
+			if (displayText = '1') then
+				red <= (displayText & displayText & displayText & displayText);
+				blue <= (displayText & displayText & displayText & displayText);
+			else
+				red <= "0010";
+				blue <= "0110";
+			end if;
+			green <= "0001";
 		end if;
 
 	end process;
@@ -49,20 +67,22 @@ BEGIN
 	begin
 		-- Move ball once every vertical sync
 		if (rising_edge(vertSync)) then			
-			-- Bounce off top or bottom of the screen
-			if ( (ball_y_pos >= CONV_STD_LOGIC_VECTOR(479,10) - size) ) then
-				ball_y_motion <= - CONV_STD_LOGIC_VECTOR(2,10);
-			elsif (ball_y_pos <= size) then 
-				ball_y_motion <= CONV_STD_LOGIC_VECTOR(2,10);
-			end if;
-			-- Compute next ball Y position
-			ball_y_pos <= ball_y_pos + ball_y_motion;
-			
-			if (mbL = '1') then
-				ball_x_pos <= ball_x_pos + "1";
-			end if;
-			if (mbR = '1') then
-				ball_x_pos <= ball_x_pos - "1";
+			if (game_state = "01") then
+				-- Bounce off top or bottom of the screen
+				if ( (ball_y_pos >= CONV_STD_LOGIC_VECTOR(479,10) - size) ) then
+					ball_y_motion <= - CONV_STD_LOGIC_VECTOR(2,10);
+				elsif (ball_y_pos <= size) then 
+					ball_y_motion <= CONV_STD_LOGIC_VECTOR(2,10);
+				end if;
+				-- Compute next ball Y position
+				ball_y_pos <= ball_y_pos + ball_y_motion;
+				
+				if (mbL = '1') then
+					ball_x_pos <= ball_x_pos + "1";
+				end if;
+				if (mbR = '1') then
+					ball_x_pos <= ball_x_pos - "1";
+				end if;
 			end if;
 		end if;
 		
