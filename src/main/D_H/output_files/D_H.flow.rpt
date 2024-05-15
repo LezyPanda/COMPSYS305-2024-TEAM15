@@ -1,5 +1,5 @@
 Flow report for D_H
-Tue May 14 23:47:20 2024
+Wed May 15 22:32:33 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,15 +40,15 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Tue May 14 23:47:15 2024       ;
+; Flow Status                     ; Successful - Wed May 15 22:32:28 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; D_H                                         ;
 ; Top-level Entity Name           ; main_dd                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CEBA4F23C7                                 ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 314 / 18,480 ( 2 % )                        ;
-; Total registers                 ; 354                                         ;
+; Logic utilization (in ALMs)     ; 308 / 18,480 ( 2 % )                        ;
+; Total registers                 ; 352                                         ;
 ; Total pins                      ; 52 / 224 ( 23 % )                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 4,096 / 3,153,920 ( < 1 % )                 ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/14/2024 23:46:30 ;
+; Start date & time ; 05/15/2024 22:31:28 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; D_H                 ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+----------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name    ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+----------------+------------+
-; COMPILER_SIGNATURE_ID               ; 4931002573328.171568719016764          ; --            ; --             ; --         ;
+; COMPILER_SIGNATURE_ID               ; 4931004161653.171576908814260          ; --            ; --             ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --             ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --             ; --         ;
 ; MISC_FILE                           ; DP_CLK.cmp                             ; --            ; --             ; --         ;
@@ -103,11 +103,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4946 MB             ; 00:00:15                           ;
-; Fitter               ; 00:00:34     ; 1.1                     ; 7358 MB             ; 00:02:43                           ;
-; Assembler            ; 00:00:02     ; 1.0                     ; 4813 MB             ; 00:00:02                           ;
-; Timing Analyzer      ; 00:00:04     ; 1.7                     ; 5240 MB             ; 00:00:06                           ;
-; Total                ; 00:00:47     ; --                      ; --                  ; 00:03:06                           ;
+; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4939 MB             ; 00:00:05                           ;
+; Fitter               ; 00:00:47     ; 1.1                     ; 7633 MB             ; 00:00:52                           ;
+; Assembler            ; 00:00:03     ; 1.0                     ; 4819 MB             ; 00:00:02                           ;
+; Timing Analyzer      ; 00:00:05     ; 1.7                     ; 5272 MB             ; 00:00:05                           ;
+; Total                ; 00:01:03     ; --                      ; --                  ; 00:01:04                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -116,10 +116,10 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-K701K8L  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-K701K8L  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-K701K8L  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-K701K8L  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; LukeRyan         ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; LukeRyan         ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; LukeRyan         ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; LukeRyan         ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

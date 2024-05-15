@@ -15,14 +15,17 @@ ENTITY ball IS
 END ball;
 
 architecture behavior of ball is
-
-
+	
+	signal prev_click : std_logic := '0';
 	SIGNAL ball_on					: std_logic_vector(3 downto 0);
 	SIGNAL size 					: std_logic_vector(9 DOWNTO 0)	:= CONV_STD_LOGIC_VECTOR(8, 10);  
 	SiGNAL ball_x_pos				: std_logic_vector(10 DOWNTO 0)  := CONV_STD_LOGIC_VECTOR(316, 11);
 	SIGNAL ball_y_pos				: std_logic_vector(9 DOWNTO 0) 	:= CONV_STD_LOGIC_VECTOR(100, 10);
 	SIGNAL ball_y_motion			: std_logic_vector(9 DOWNTO 0);
 
+	constant JUMP_SPEED : std_logic_vector(9 downto 0) := conv_std_logic_vector(10, 10);
+	constant MAX_FALLING_SPEED : std_logic_vector(9 downto 0) := conv_std_logic_vector(10, 10);
+	constant FALLING_ACCELERATION : std_logic_vector(9 downto 0) := conv_std_logic_vector(2, 10);
 BEGIN
 	
 	process(clk)
@@ -70,31 +73,44 @@ BEGIN
 
 	end process;
 	
-	process (vertSync, ball_x_pos, ball_y_pos)  	
+	Move_Ball : process (vertSync)
 	begin
-		-- Move ball once every vertical sync
-		if (rising_edge(vertSync)) then			
-			if (game_state = "01") then
-				-- Bounce off top or bottom of the screen
-				if ( (ball_y_pos >= CONV_STD_LOGIC_VECTOR(479,10) - size) ) then
-					ball_y_motion <= - CONV_STD_LOGIC_VECTOR(2,10);
-				elsif (ball_y_pos <= size) then 
-					ball_y_motion <= CONV_STD_LOGIC_VECTOR(2,10);
+		if (rising_edge(vertSync)) then
+			if (((mbL or mbR) = '1') and (prev_click = '0')) then -- prev_click is a check for whether mouse is currently being clicked or not
+				-- allow bird to jump up 
+				if ((game_state /= "11") or (game_state /= "10") or (game_state /= "00")) then
+						if (ball_y_pos > 0) then 
+							ball_y_motion <= -JUMP_SPEED; -- set jump speed
+						else
+							ball_y_motion <= (others => '0'); -- stop motion
+						end if;
 				end if;
-				-- Compute next ball Y position
-				ball_y_pos <= ball_y_pos + ball_y_motion;
-				
-				if (mbL = '1') then
-					ball_x_pos <= ball_x_pos + "1";
-				end if;
-				if (mbR = '1') then
-					ball_x_pos <= ball_x_pos - "1";
+			else
+				-- apply gravity to bird when the mouse is not be clicked 
+				if ((ball_y_pos < (conv_std_logic_vector(479,10) - size)) and (game_state /= "11" or game_state /= "10" or game_state /= "00")) then -- check if bird is at ground (pixel 479 = "111011111") and is only in play state
+					if (ball_y_motion < MAX_FALLING_SPEED) then -- max 
+						ball_y_motion <= ball_y_motion + FALLING_ACCELERATION; -- accelerating the fall downwards
+					end if;
+				else
+					ball_y_motion <= (others => '0');
 				end if;
 			end if;
-		end if;
-		
 
-		
-	end process;
+			-- Bounce off top or bottom of the screen
+			if ( (ball_y_pos >= CONV_STD_LOGIC_VECTOR(479,10) - size) ) then
+				ball_y_motion <= -conv_std_logic_vector(2, 10);
+			elsif (ball_y_pos <= size) then 
+				ball_y_motion <= CONV_STD_LOGIC_VECTOR(2,10);
+			end if;
+
+			-- setting position of bird
+			if (game_state = "10") then -- pause state
+				ball_y_pos <= ball_y_pos; -- pause bird in idle position
+			else 
+				ball_y_pos <= ball_y_pos + ball_y_motion;
+			end if;
+			prev_click <= mbL or mbR;
+		end if;
+	end process Move_Ball;
 END behavior;
 
