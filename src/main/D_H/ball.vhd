@@ -123,9 +123,9 @@ BEGin
 				
 				-- On Above Sky
 				if (newBallY < SKY_BOUND) then
-					newBallY := SKY_BOUND;
+					newBallY := SKY_BOUND + BALL_SIZE;
 				-- On Below Ground
-				elsif (newBallY > GROUND_BOUND - BALL_SIZE) then
+				elsif (newBallY > ('0' & (GROUND_BOUND - BALL_SIZE))) then
 					newBallY := GROUND_BOUND - BALL_SIZE;
 					ballYMotion <= ZERO_MOTION;
 				end if;
