@@ -252,6 +252,7 @@ begin
 					font_col <= pixel_column(3 downto 1);
 				end if;
 			else
+			--normal mode
 				lives := 3;
 				max_lives := 3;
 				if (pixel_row >= CONV_STD_LOGIC_VECTOR(y, 10)) and (pixel_row <= CONV_STD_LOGIC_VECTOR(y + s - 1, 10)) then
