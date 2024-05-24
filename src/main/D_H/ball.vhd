@@ -36,6 +36,9 @@ BEGIN
 			-- x_pos - size <= pixel_column <= x_pos + size
 			if (('0' & ball_x_pos <= pixel_column + size) and ('0' & pixel_column <= ball_x_pos + size) and ('0' & ball_y_pos <= pixel_row + size) and ('0' & pixel_row <= ball_y_pos + size) ) then
 				ball_on <= "1111";
+				if (pipe = '1') then
+					ball_x_pos <= DEFAULT_BALL_Y;
+				end if;
 			else
 				ball_on <= "0000";
 			end if;
@@ -99,10 +102,7 @@ BEGIN
 					end if;
 				end if;
 			
-				if (('0' & ball_x_pos <= pixel_column + size) and ('0' & pixel_column <= ball_x_pos + size) and ('0' & ball_y_pos <= pixel_row + size) and ('0' & pixel_row <= ball_y_pos + size) and pipe = '1') then
-					ball_y_pos <= DEFAULT_BALL_Y;
-				else
-					ball_y_pos <= ball_y_pos + ball_y_motion;
+				ball_y_pos <= ball_y_pos + ball_y_motion;
 				end if;
 			end if;
 			prev_click <= mbL or mbR;
