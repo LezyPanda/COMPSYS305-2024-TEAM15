@@ -29,7 +29,7 @@ begin
 		variable whileMBRDown 	: std_logic := '0';
 	begin
 		if rising_edge(clk) then
-		
+		-- Mouse states
 			if (mbL = '1') then
 				whileMBLDown := '1';
 				if (lastMBL = '0') then
@@ -54,6 +54,7 @@ begin
 				onMBRPress := '0';
 			end if;
 			
+	-- Button states		
 			if (button1 = '0') then
 				state <= intro;
 				resetTimer <= '1';
@@ -70,6 +71,7 @@ begin
 				resetTimer <= '1';
 				enableTimer <= '0';
 			end if;
+		
 			-- next state
 			-- current state is intro if button is pressed, game will reset to beginning and go to start screen
 			--case state is 
