@@ -16,17 +16,18 @@ END ball;
 
 architecture behavior of ball is
 	
+	constant JUMP_SPEED : std_logic_vector(9 downto 0) := conv_std_logic_vector(15, 10);
+	constant TERMINAL_VELOCITY : std_logic_vector(9 downto 0) := conv_std_logic_vector(6, 10);
+	constant FALLING_ACCELERATION : std_logic_vector(9 downto 0) := conv_std_logic_vector(1, 10);
+	constant DEFAULT_BALL_Y : std_logic_vector(9 DOWNTO 0) 	:= CONV_STD_LOGIC_VECTOR(480 / 2, 10);
+	
 	signal initial_click : std_logic := '0';
 	signal prev_click : std_logic := '0';
 	SIGNAL ball_on					: std_logic_vector(3 downto 0);
 	SIGNAL size 					: std_logic_vector(9 DOWNTO 0)	:= CONV_STD_LOGIC_VECTOR(8, 10);  
 	SiGNAL ball_x_pos				: std_logic_vector(10 DOWNTO 0)  := CONV_STD_LOGIC_VECTOR(316, 11);
-	SIGNAL ball_y_pos				: std_logic_vector(9 DOWNTO 0) 	:= CONV_STD_LOGIC_VECTOR(100, 10);
+	SIGNAL ball_y_pos				: std_logic_vector(9 DOWNTO 0) 	:= DEFAULT_BALL_Y;
 	SIGNAL ball_y_motion			: std_logic_vector(9 DOWNTO 0);
-
-	constant JUMP_SPEED : std_logic_vector(9 downto 0) := conv_std_logic_vector(15, 10);
-	constant TERMINAL_VELOCITY : std_logic_vector(9 downto 0) := conv_std_logic_vector(6, 10);
-	constant FALLING_ACCELERATION : std_logic_vector(9 downto 0) := conv_std_logic_vector(1, 10);
 BEGIN
 	
 	process(clk)
@@ -76,10 +77,8 @@ BEGIN
 	
 	Move_Ball : process (vertSync)
 	begin
-		if ((initial_click = '0') and ((mbL or mbR) /= '1')) then
-			ball_y_pos <= CONV_STD_LOGIC_VECTOR(500,10);
-		else
-			if (rising_edge(vertSync)) then
+		if (rising_edge(vertSync)) then
+			if (game_state = "01") then
 				if (((mbL or mbR) = '1') and (prev_click = '0')) then -- prev_click is a check for whether mouse is currently being clicked or not
 					-- allow ball to jump up 
 					if ((game_state /= "11") and (game_state /= "10") and (game_state /= "00")) then
@@ -99,26 +98,16 @@ BEGIN
 						ball_y_motion <= (others => '0');
 					end if;
 				end if;
-
-				-- Bounce off top of the screen or ball collides 
-				if ((ball_y_pos >= CONV_STD_LOGIC_VECTOR(479,10) - size)) then
-					game_state <= "11";
-				elsif (ball_y_pos <= size) then 
-					ball_y_motion <= CONV_STD_LOGIC_VECTOR(2,10);
-				end if;
-				
-				--ball collision
-				if (
-
-				-- setting position of ball
-				if (game_state = "10") then -- pause state
-					ball_y_pos <= ball_y_pos; -- pause ball in idle position
-				else 
+			
+				if (ball_on = "1111" and pipe = '1') then
+					ball_y_pos <= DEFAULT_BALL_Y;
+				else
 					ball_y_pos <= ball_y_pos + ball_y_motion;
 				end if;
-				prev_click <= mbL or mbR;
-				initial_click <= '1';
 			end if;
+			prev_click <= mbL or mbR;
+			initial_click <= '1';
+			
 		end if;
 	end process Move_Ball;
 END behavior;
