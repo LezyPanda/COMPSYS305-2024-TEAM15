@@ -37,7 +37,7 @@ BEGIN
 			if (('0' & ball_x_pos <= pixel_column + size) and ('0' & pixel_column <= ball_x_pos + size) and ('0' & ball_y_pos <= pixel_row + size) and ('0' & pixel_row <= ball_y_pos + size) ) then
 				ball_on <= "1111";
 				if (pipe = '1') then
-					ball_x_pos <= DEFAULT_BALL_Y;
+					ball_x_pos <= CONV_STD_LOGIC_VECTOR(316, 11);
 				end if;
 			else
 				ball_on <= "0000";
@@ -104,7 +104,6 @@ BEGIN
 			
 				ball_y_pos <= ball_y_pos + ball_y_motion;
 				end if;
-			end if;
 			prev_click <= mbL or mbR;
 			initial_click <= '1';
 			
