@@ -32,7 +32,7 @@ architecture behavior of ball is
 BEGin
 	
 	-- Rendering
-	process(ballY, pixel_column, pixel_row, displayText, pipe)
+	process(game_state, ballY, pixel_column, pixel_row, displayText, pipe)
 		variable r, g, b : std_logic_vector(3 downto 0) := "0000";
 	begin
 	
@@ -40,12 +40,12 @@ BEGin
 		-- Playing Screen
 		if (game_state = "01") then
 			-- Space
-			if (pixel_row < SKY_BOUND + BALL_SIZE) then
+			if ('0' & pixel_row <= SKY_BOUND + BALL_SIZE) then
 				r := "0001";
 				g := "0001";
 				b := "1000";
 			-- Sky
-			elsif (pixel_row < GROUND_BOUND) then
+			elsif ('0' & pixel_row <= GROUND_BOUND) then
 				r := "0111";
 				g := "1111";
 				b := "1111";
@@ -58,8 +58,8 @@ BEGin
 		-- Other Screens
 		else
 			r := "0010";
-			b := "0110";
 			g := "0001";
+			b := "0110";
 		end if;
 
 		
@@ -87,8 +87,8 @@ BEGin
 		-- Text Colours
 		if (displayText = '1') then
 			r := "1111";
-			b := "1111";
 			g := "0001";
+			b := "1111";
 		end if;
 		
 		red <= r;
