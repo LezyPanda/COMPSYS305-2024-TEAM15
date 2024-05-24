@@ -15,7 +15,6 @@ ENTITY ball IS
 END ball;
 
 architecture behavior of ball is
-	
 	constant JUMP_HEIGHT : std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(15, 10);
 	constant MAX_SPEED : std_logic_vector(9 downto 0) 		:= conv_std_logic_vector(6, 10);
 	constant GRAVITY : std_logic_vector(9 downto 0) 		:= conv_std_logic_vector(1, 10);
@@ -37,10 +36,32 @@ BEGin
 		variable r, g, b : std_logic_vector(3 downto 0) := "0000";
 	begin
 	
-		-- Default Background Colours
-		r := "0010";
-		b := "0110";
-		g := "0001";
+		-- Background Rendering
+		-- Playing Screen
+		if (game_state = "01") then
+			-- Space
+			if (pixel_row < SKY_BOUND) then
+				r := "0001";
+				g := "0001";
+				b := "1000";
+			-- Sky
+			elsif (pixel_row < GROUND_BOUND) then
+				r := "0111";
+				g := "1111";
+				b := "1111";
+			-- Ground
+			else
+				r := "1011";
+				g := "1000";
+				b := "0000";
+			end if;
+		-- Other Screens
+		else
+			r := "0010";
+			b := "0110";
+			g := "0001";
+		end if;
+
 		
 		-- Playing
 		if (game_state = "01") then
