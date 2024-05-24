@@ -40,7 +40,7 @@ BEGin
 		-- Playing Screen
 		if (game_state = "01") then
 			-- Space
-			if (pixel_row < SKY_BOUND) then
+			if (pixel_row < SKY_BOUND + BALL_SIZE) then
 				r := "0001";
 				g := "0001";
 				b := "1000";
@@ -129,7 +129,7 @@ BEGin
 					ballYMotion <= ZERO_MOTION;
 				end if;
 				
-				ballY <= ballY + ballYMotion;
+				ballY <= newBallY;
 			end if;
 			
 			mouseClicked <= mbL or mbR;
