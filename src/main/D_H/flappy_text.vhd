@@ -60,6 +60,8 @@ begin
 		variable vX : std_logic_vector(5 downto 0) := CONV_STD_LOGIC_VECTOR(24, 6);
 		variable vY : std_logic_vector(5 downto 0) := CONV_STD_LOGIC_VECTOR(25, 6);
 		variable vZ : std_logic_vector(5 downto 0) := CONV_STD_LOGIC_VECTOR(26, 6);
+		variable vHeart : std_logic_vector(5 downto 0) := CONV_STD_LOGIC_VECTOR(34, 6);
+
 	begin
 		-- Start Stage
 		if (game_state = "00") then
@@ -79,7 +81,7 @@ begin
 				elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 4, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 5 - 1, 10)) then
 					character_address <= vP;
 				elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 5, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 6 - 1, 10)) then
-					character_address <= vY;
+					character_address <= vY; 
 				else
 					character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
 				end if;
@@ -122,6 +124,8 @@ begin
 					character_address <= vR;
 				elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 4, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 5 - 1, 10)) then
 					character_address <= vT;
+				elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 5, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 6 - 1, 10)) then
+					character_address <= vHeart;
 				else
 					character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
 				end if;
