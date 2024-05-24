@@ -99,7 +99,7 @@ BEGIN
 					end if;
 				end if;
 			
-				if (ball_on = "1111" and pipe = '1') then
+				if (('0' & ball_x_pos <= pixel_column + size) and ('0' & pixel_column <= ball_x_pos + size) and ('0' & ball_y_pos <= pixel_row + size) and ('0' & pixel_row <= ball_y_pos + size) and pipe = '1') then
 					ball_y_pos <= DEFAULT_BALL_Y;
 				else
 					ball_y_pos <= ball_y_pos + ball_y_motion;
