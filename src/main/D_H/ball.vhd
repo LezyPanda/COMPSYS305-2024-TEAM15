@@ -6,109 +6,113 @@ USE IEEE.STD_LOGIC_SIGNED.all;
 ENTITY ball IS
 	PORT( 
 		clk, vertSync 				: in std_logic;
-		mbL, mbR						: in std_logic;
+		mbL, mbR					: in std_logic;
 		game_state					: in std_logic_vector(1 downto 0);
-		pixel_row, pixel_column		: IN std_logic_vector(9 DOWNTO 0);
-		displayText, pipe : in std_logic;
+		pixel_row, pixel_column		: in std_logic_vector(9 downto 0);
+		displayText, pipe 			: in std_logic;
 		red, green, blue 			: out std_logic_vector(3 downto 0)
 	);		
 END ball;
 
 architecture behavior of ball is
 	
-	constant JUMP_SPEED : std_logic_vector(9 downto 0) := conv_std_logic_vector(15, 10);
-	constant TERMINAL_VELOCITY : std_logic_vector(9 downto 0) := conv_std_logic_vector(6, 10);
-	constant FALLING_ACCELERATION : std_logic_vector(9 downto 0) := conv_std_logic_vector(1, 10);
-	constant DEFAULT_BALL_Y : std_logic_vector(9 DOWNTO 0) 	:= CONV_STD_LOGIC_VECTOR(480 / 2, 10);
+	constant JUMP_HEIGHT : std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(15, 10);
+	constant MAX_SPEED : std_logic_vector(9 downto 0) 		:= conv_std_logic_vector(6, 10);
+	constant GRAVITY : std_logic_vector(9 downto 0) 		:= conv_std_logic_vector(1, 10);
+	constant DEFAULT_BALL_X : std_logic_vector(10 downto 0) := conv_std_logic_vector(20, 11);
+	constant DEFAULT_BALL_Y : std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(480 / 2, 10);
+	constant BALL_SIZE		: std_logic_vector(9 downto 0)	:= conv_std_logic_vector(8, 10);
+	constant SKY_BOUND 		: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(0, 10);
+	constant GROUND_BOUND 	: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(480, 10) - BALL_SIZE;
+	constant ZERO_MOTION 	: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(0, 10);
 	
-	signal initial_click : std_logic := '0';
-	signal prev_click : std_logic := '0';
-	SIGNAL ball_on					: std_logic_vector(3 downto 0);
-	SIGNAL size 					: std_logic_vector(9 DOWNTO 0)	:= CONV_STD_LOGIC_VECTOR(8, 10);  
-	SiGNAL ball_x_pos				: std_logic_vector(10 DOWNTO 0)  := CONV_STD_LOGIC_VECTOR(316, 11);
-	SIGNAL ball_y_pos				: std_logic_vector(9 DOWNTO 0) 	:= DEFAULT_BALL_Y;
-	SIGNAL ball_y_motion			: std_logic_vector(9 DOWNTO 0);
-BEGIN
 	
-	process(clk)
+	signal mouseClicked 	: std_logic 					:= '0';
+	signal ballY			: std_logic_vector(9 downto 0) 	:= DEFAULT_BALL_Y;
+	signal ballYMotion		: std_logic_vector(9 downto 0)	:= ZERO_MOTION;
+BEGin
+	
+	-- Rendering
+	process(ballY, pixel_column, pixel_row, displayText, pipe)
+		variable r, g, b : std_logic_vector(3 downto 0) := "0000";
 	begin
+	
+		-- Default Background Colours
+		r := "0010";
+		b := "0110";
+		g := "0001";
+		
+		-- Playing
 		if (game_state = "01") then
-			-- x_pos - size <= pixel_column <= x_pos + size
-			if (('0' & ball_x_pos <= pixel_column + size) and ('0' & pixel_column <= ball_x_pos + size) and ('0' & ball_y_pos <= pixel_row + size) and ('0' & pixel_row <= ball_y_pos + size) ) then
-				ball_on <= "1111";
-				if (pipe = '1') then
-					ball_x_pos <= DEFAULT_BALL_Y;
-				end if;
-			else
-				ball_on <= "0000";
+		
+			-- Pipe Colours
+			if (pipe = '1') then
+				r := "0010";
+				g := "1100";
+				b := "0010";
 			end if;
 			
-			if (ball_on = "1111") then
-				red <= ball_on;
-				green <= ball_on;
-				blue <= "0000";
-			else
-				if (displayText = '1') then
-					red <= (displayText & displayText & displayText & displayText);
-					green <= "0001";
-					blue <= (displayText & displayText & displayText & displayText);
-				else
-					if (pipe = '1') then
-						red <= "0010";
-						green <= "1100";
-						blue <= "0010";
-					else
-						red <= "0010";
-						green <= "0001";
-						blue <= "0110";
-					end if;
-				end if;
+			-- Ball Colours
+			if (('0' & DEFAULT_BALL_X <= pixel_column + BALL_SIZE) and 
+				('0' & pixel_column <= DEFAULT_BALL_X + BALL_SIZE) and 
+				('0' & ballY <= pixel_row + BALL_SIZE) and 
+				('0' & pixel_row <= ballY + BALL_SIZE) ) then
+				r := "1111";
+				g := "1111";
+				b := "0000";
 			end if;
-			
-		else
-			if (displayText = '1') then
-				red <= (displayText & displayText & displayText & displayText);
-				blue <= (displayText & displayText & displayText & displayText);
-			else
-				red <= "0010";
-				blue <= "0110";
-			end if;
-			green <= "0001";
 		end if;
+		
+		-- Text Colours
+		if (displayText = '1') then
+			r := "1111";
+			b := "1111";
+			g := "0001";
+		end if;
+		
+		red <= r;
+		green <= g;
+		blue <= b;
 
 	end process;
 	
-	Move_Ball : process (vertSync)
+	
+	-- Frame Tick
+	process (vertSync)
+		variable newBallY : std_logic_vector(9 downto 0);
 	begin
 		if (rising_edge(vertSync)) then
+			-- Playing
 			if (game_state = "01") then
-				if (((mbL or mbR) = '1') and (prev_click = '0')) then -- prev_click is a check for whether mouse is currently being clicked or not
-					-- allow ball to jump up 
-					if ((game_state /= "11") and (game_state /= "10") and (game_state /= "00")) then
-							if (ball_y_pos > 0) then 
-								ball_y_motion <= -JUMP_SPEED; -- set jump speed
-							else
-								ball_y_motion <= (others => '0'); -- stop motion
-							end if;
-					end if;
+				
+				-- On-Click
+				if ((mbL or mbR) = '1' and (mouseClicked = '0')) then
+					-- Jump
+					ballYMotion <= -JUMP_HEIGHT;
 				else
-					-- apply gravity to ball when the mouse is not be clicked 
-					if ((ball_y_pos < (conv_std_logic_vector(479,10) - size)) and (game_state /= "11" and game_state /= "10" and game_state /= "00")) then -- check if ball is at ground (pixel 479 = "111011111") and is only in play state
-						if (ball_y_motion < TERMINAL_VELOCITY) then -- max 
-							ball_y_motion <= ball_y_motion + FALLING_ACCELERATION; -- accelerating the fall downwards
-						end if;
-					else
-						ball_y_motion <= (others => '0');
+					-- Apply gravity if not yet reached max speed
+					if (ballYMotion < MAX_SPEED) then
+						ballYMotion <= ballYMotion + GRAVITY;
 					end if;
 				end if;
 			
-				ball_y_pos <= ball_y_pos + ball_y_motion;
+				-- New Ball Position
+				newBallY := newBallY + ballYMotion;
+				
+				-- On Above Sky
+				if (newBallY < SKY_BOUND) then
+					newBallY := SKY_BOUND;
+				-- On Below Ground
+				elsif (newBallY > GROUND_BOUND) then
+					newBallY := GROUND_BOUND;
+					ballYMotion <= ZERO_MOTION;
 				end if;
+				
+				ballY <= ballY + ballYMotion;
 			end if;
-			prev_click <= mbL or mbR;
-			initial_click <= '1';
 			
+			mouseClicked <= mbL or mbR;
 		end if;
-	end process Move_Ball;
+	end process;
 END behavior;
 
