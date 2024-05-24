@@ -18,11 +18,12 @@ architecture behavior of ball is
 	constant JUMP_HEIGHT : std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(15, 10);
 	constant MAX_SPEED : std_logic_vector(9 downto 0) 		:= conv_std_logic_vector(6, 10);
 	constant GRAVITY : std_logic_vector(9 downto 0) 		:= conv_std_logic_vector(1, 10);
-	constant DEFAULT_BALL_X : std_logic_vector(10 downto 0) := conv_std_logic_vector(20, 11);
+	constant DEFAULT_BALL_X : std_logic_vector(10 downto 0) := conv_std_logic_vector(190, 11);
 	constant DEFAULT_BALL_Y : std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(480 / 2, 10);
 	constant BALL_SIZE		: std_logic_vector(9 downto 0)	:= conv_std_logic_vector(8, 10);
-	constant SKY_BOUND 		: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(0, 10);
-	constant GROUND_BOUND 	: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(480, 10) - BALL_SIZE;
+	constant BOUNDRY_SIZE	: integer								:= 24;
+	constant SKY_BOUND 		: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(BOUNDRY_SIZE, 10);
+	constant GROUND_BOUND 	: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(480, 10) - BOUNDRY_SIZE;
 	constant ZERO_MOTION 	: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(0, 10);
 	
 	
@@ -124,8 +125,8 @@ BEGin
 				if (newBallY < SKY_BOUND) then
 					newBallY := SKY_BOUND;
 				-- On Below Ground
-				elsif (newBallY > GROUND_BOUND) then
-					newBallY := GROUND_BOUND;
+				elsif (newBallY > GROUND_BOUND - BALL_SIZE) then
+					newBallY := GROUND_BOUND - BALL_SIZE;
 					ballYMotion <= ZERO_MOTION;
 				end if;
 				
