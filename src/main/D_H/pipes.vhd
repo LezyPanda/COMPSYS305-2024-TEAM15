@@ -24,13 +24,6 @@ end pipes;
 
 architecture Behavioral of pipes is
 
-  COMPONENT LFSR IS
-  port (
-    clk		: in std_logic;
-    output	: out std_logic_vector (5 downto 0)
-  );
-  END COMPONENT;
-  
 	-- Constants
 	constant DISP_WIDTH 		: integer 	:= 640;
 	constant DISP_HEIGHT 		: integer 	:= 480;
@@ -61,10 +54,7 @@ architecture Behavioral of pipes is
 	-- check if game is running
 	signal running 				: std_logic := '1';
 	signal start_pipe, paused, dead : std_logic := '0';
-	
-	SIGNAL output_s: std_logic_vector(5 DOWNTO 0);
 begin
- CompToTest: LFSR PORT MAP (v_sync, output_s);
  
 	-- Rendering
 	process(state, pipeX, pipe2X, pixel_column, pixel_row)
@@ -104,18 +94,17 @@ begin
 	
 	process(v_sync)
 		variable randY			: std_logic_vector(9 downto 0) := conv_std_logic_vector(64, 10);
-		variable pipeActive, pipe2Active : std_logic := '1';
 		variable vhealth : std_logic_vector(5 downto 0) := conv_std_logic_vector(34, 6);
 	begin 
 		-- Playing
 		if (rising_edge(v_sync) and state = "01") then 
 			
 			-- Random Height
-			randY := VALID_GAP_Y_BOT - ("0000" & output_s);
+			randY := VALID_GAP_Y_BOT - ("0000" & pipe_gap);
 			
 			
 			-- If Pipe 1 Out-of-Bound, Resets, Otherwise Move
-			if (pipeX + PIPE_WIDTH < '0' + LEFT_BOUND) then
+			if (pipeX + PIPE_WIDTH <= '0' + LEFT_BOUND) then
 				pipeX <= conv_std_logic_vector(DISP_WIDTH, 10);
 				pipeY <= randY;
 			else
@@ -123,7 +112,7 @@ begin
 			end if;
 			
 			-- If Pipe 2 Out-of-Bound, Resets, Otherwise Move
-			if (pipe2X + PIPE_WIDTH < '0' + LEFT_BOUND) then
+			if (pipe2X + PIPE_WIDTH <= '0' + LEFT_BOUND) then
 				pipe2X <= conv_std_logic_vector(DISP_WIDTH, 10);
 				pipe2Y <= randY;
 			else
@@ -131,7 +120,7 @@ begin
 			end if;
 			
 			-- If Pipe 2 Out-of-Bound, Resets, Otherwise Move
-			if (pipe3X + PIPE_WIDTH < '0' + LEFT_BOUND) then
+			if (pipe3X + PIPE_WIDTH <= '0' + LEFT_BOUND) then
 				pipe3X <= conv_std_logic_vector(DISP_WIDTH, 10);
 				pipe3Y <= randY;
 			else
