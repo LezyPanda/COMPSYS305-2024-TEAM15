@@ -18,107 +18,145 @@ o-quiet -auto_acc_if_foreign -work work
 tCvgOpt 0
 n@_opt
 OE;O;2020.2;71
+R0
+Elfsr
+Z1 w1716531819
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z4 dC:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H
+Z5 8C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/LFSR.vhd
+Z6 FC:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/LFSR.vhd
+l0
+L4
+Vc4FAbZ1JVjYPM1DISIj0a2
+!s100 U?YzXQ45Z:DO5GbBOR?;@0
+Z7 OV;C;10.5b;63
+32
+Z8 !s110 1716610354
+!i10b 1
+Z9 !s108 1716610354.000000
+Z10 !s90 -reportprogress|300|-work|work|C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/LFSR.vhd|
+Z11 !s107 C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/LFSR.vhd|
+!i113 1
+Z12 o-work work
+Z13 tExplicit 1 CvgOpt 0
+Alfsr_beh
+R2
+R3
+DEx4 work 4 lfsr 0 22 c4FAbZ1JVjYPM1DISIj0a2
+l12
+L9
+VONS_TO:ZNTGjQ:YHi]H@<3
+!s100 fWl]GN1[S<2UkdU=bYeh`0
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
 Elfsr10
 w1715128716
-Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z2 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+R2
+Z14 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 !i122 0
 R0
-Z3 8C:/Users/dho524/OneDrive - The University of Auckland/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/LFSR10.vhd
-Z4 FC:/Users/dho524/OneDrive - The University of Auckland/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/LFSR10.vhd
+Z15 8C:/Users/dho524/OneDrive - The University of Auckland/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/LFSR10.vhd
+Z16 FC:/Users/dho524/OneDrive - The University of Auckland/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/LFSR10.vhd
 l0
 L4 1
 V_lzjhQF5oQcl_zQ]@2A6[2
 !s100 Yjl0dGg`Y[lMmLnIg6@<02
-Z5 OE;C;2020.2;71
+Z17 OE;C;2020.2;71
 32
 !s110 1715129044
 !i10b 1
 !s108 1715129044.000000
-Z6 !s90 -reportprogress|300|-work|work|C:/Users/dho524/OneDrive - The University of Auckland/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/LFSR10.vhd|
-Z7 !s107 C:/Users/dho524/OneDrive - The University of Auckland/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/LFSR10.vhd|
+Z18 !s90 -reportprogress|300|-work|work|C:/Users/dho524/OneDrive - The University of Auckland/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/LFSR10.vhd|
+Z19 !s107 C:/Users/dho524/OneDrive - The University of Auckland/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/LFSR10.vhd|
 !i113 0
-Z8 o-work work
-Z9 tExplicit 1 CvgOpt 0
+R12
+R13
 Elfsr8
-Z10 w1715215348
-R1
+Z20 w1715215348
 R2
+R14
 !i122 16
 R0
-R3
-R4
+R15
+R16
 l0
 L4 1
 VG91YY9XG];eaXJehdD:B53
 !s100 UISC>oIGm1lLS6d<0cnoF1
-R5
+R17
 32
-Z11 !s110 1715215365
+Z21 !s110 1715215365
 !i10b 1
-Z12 !s108 1715215365.000000
-R6
-R7
+Z22 !s108 1715215365.000000
+R18
+R19
 !i113 0
-R8
-R9
+R12
+R13
 Alfsr8_beh
-R1
 R2
+R14
 DEx4 work 5 lfsr8 0 22 G91YY9XG];eaXJehdD:B53
 !i122 16
 l12
 L9 19
 V@zmGEhZmPb`3]lZ3G^cJ20
 !s100 F6`Ij^c3]9KF4Z7<Q_>Oo2
-R5
+R17
 32
-R11
+R21
 !i10b 1
-R12
-R6
-R7
+R22
+R18
+R19
 !i113 0
-R8
-R9
+R12
+R13
 Etestbench
-Z13 w1715215333
-R1
+Z23 w1716610344
 R2
-!i122 17
-R0
-Z14 8C:/Users/dho524/OneDrive - The University of Auckland/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/LSFRTB.vhd
-Z15 FC:/Users/dho524/OneDrive - The University of Auckland/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/LSFRTB.vhd
+R3
+R4
+Z24 8C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/LSFRTB.vhd
+Z25 FC:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/LSFRTB.vhd
 l0
-L4 1
+L4
 VQXkN_N<^zjfJ:W3`25]kl0
 !s100 A5gJ5kEgGHZZBj<]1]aa40
-R5
+R7
 32
-R11
-!i10b 1
-R12
-Z16 !s90 -reportprogress|300|-work|work|C:/Users/dho524/OneDrive - The University of Auckland/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/LSFRTB.vhd|
-Z17 !s107 C:/Users/dho524/OneDrive - The University of Auckland/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/LSFRTB.vhd|
-!i113 0
 R8
+!i10b 1
 R9
+Z26 !s90 -reportprogress|300|-work|work|C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/LSFRTB.vhd|
+Z27 !s107 C:/Users/DH/Documents/GitHub/COMPSYS305-2024-TEAM15/src/main/D_H/LSFRTB.vhd|
+!i113 1
+R12
+R13
 Atbarch
-R1
 R2
-DEx4 work 9 testbench 0 22 QXkN_N<^zjfJ:W3`25]kl0
-!i122 17
+R3
+Z28 DEx4 work 9 testbench 0 22 QXkN_N<^zjfJ:W3`25]kl0
 l16
-L7 34
-Vgl3jZODLi`c=l[cZg>gdJ3
-!s100 jOgKgNgV8lnNVh?7UR@d53
-R5
+L7
+VZY3O3^jMVThE74@b`[;<90
+!s100 hF[WHYMFW]mGzJ0Q]idof2
+R7
 32
-R11
-!i10b 1
-R12
-R16
-R17
-!i113 0
 R8
+!i10b 1
 R9
+R26
+R27
+!i113 1
+R12
+R13

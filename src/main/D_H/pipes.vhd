@@ -11,7 +11,7 @@ entity pipes is
 		--vga sync
 		pixel_row, pixel_column	: in std_logic_vector(9 DOWNTO 0);
 		-- pipe gap connected to LFSR
-		pipe_gap :std_logic_vector (5 DOWNTO 0);
+		pipe_gap :in std_logic_vector (5 DOWNTO 0);
 		-- vga
 		pipe_out :out std_logic
 	);
@@ -65,7 +65,7 @@ pipe_process : process(move_pipe)
 		
 		-- pipe rendering
 		if(pixel_column >= CONV_STD_LOGIC_VECTOR(pipe_width_start,10) and pixel_column < CONV_STD_LOGIC_VECTOR(pipe_width_end,10))then
-				if(pixel_row <= CONV_STD_LOGIC_VECTOR(pipe_height_gap,10) or pixel_row >CONV_STD_LOGIC_VECTOR(pipe_height_gap +150,10))then
+				if(pixel_row <= CONV_STD_LOGIC_VECTOR(pipe_height_gap,10) or pixel_row >CONV_STD_LOGIC_VECTOR(pipe_height_gap,10))then
 					pipe_out <= '1';
 				end if;
 			end if;

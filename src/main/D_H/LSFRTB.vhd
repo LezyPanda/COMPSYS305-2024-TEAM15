@@ -5,7 +5,7 @@ ENTITY Testbench IS
 END Testbench;
 
 ARCHITECTURE TBarch OF Testbench IS
-  COMPONENT LFSR8 IS
+  COMPONENT LFSR IS
     PORT (Clk, Rst: IN std_logic;
           output: OUT std_logic_vector (5 DOWNTO 0));
   END COMPONENT;
@@ -14,7 +14,7 @@ ARCHITECTURE TBarch OF Testbench IS
   SIGNAL output_s: std_logic_vector(5 DOWNTO 0);
 
 BEGIN
-  CompToTest: LFSR8 PORT MAP (Clk_s, Rst_s, output_s);
+  CompToTest: LFSR PORT MAP (Clk_s, Rst_s, output_s);
    
   Clk_proc: PROCESS
   BEGIN
