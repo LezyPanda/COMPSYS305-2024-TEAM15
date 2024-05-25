@@ -6,15 +6,17 @@ END Testbench;
 
 ARCHITECTURE TBarch OF Testbench IS
   COMPONENT LFSR IS
-    PORT (Clk, Rst: IN std_logic;
-          output: OUT std_logic_vector (5 DOWNTO 0));
+  port (
+    clk		: in std_logic;
+    output	: out std_logic_vector (5 downto 0)
+  );
   END COMPONENT;
 
-  SIGNAL Clk_s, Rst_s: std_logic;
+  SIGNAL Clk_s: std_logic;
   SIGNAL output_s: std_logic_vector(5 DOWNTO 0);
 
 BEGIN
-  CompToTest: LFSR PORT MAP (Clk_s, Rst_s, output_s);
+  CompToTest: LFSR PORT MAP (Clk_s, output_s);
    
   Clk_proc: PROCESS
   BEGIN
