@@ -27,8 +27,8 @@ architecture Behavioral of pipes is
 	constant DISP_WIDTH 		: integer 	:= 640;
 	constant DISP_HEIGHT 		: integer 	:= 480;
 	constant MIN_PIPE_HEIGHT 	: integer 	:= 32;
-	constant GAP_HEIGHT 		: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(150, 10);
-	constant VALID_GAP_Y_BOT 	: std_logic_vector(9 downto 0)  := conv_std_logic_vector(DISP_HEIGHT - 56, 10);
+	constant VALID_GAP_Y_BOT 	: integer  	:= DISP_HEIGHT - 64;
+	constant GAP_HEIGHT 		: integer  	:= 150;
 	constant LEFT_BOUND 		: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(0, 10);
 	constant PIPE_WIDTH 		: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(32, 10);
 
@@ -89,7 +89,7 @@ begin
 		if (rising_edge(v_sync) and state = "01") then 
 			
 			-- Random Height
-			randY := ("000" & pipe_gap) + VALID_GAP_Y_BOT;
+			randY := VALID_GAP_Y_BOT - ("0000" & pipe_gap);
 			
 			
 			-- If Pipe 1 Out-of-Bound, Resets, Otherwise Move
