@@ -132,7 +132,7 @@ begin
 				font_col <= pixel_column(5 downto 3);
 			end if;
 			
-			-- "START"
+			-- "START" keyx
 			x := 160;
 			y := 288;
 			s := 32;
@@ -168,7 +168,7 @@ begin
 			
 			if(mode = '1') then 
 			
-				-- "TRAIN"
+				-- "TRAIN" keyx
 				x := 160;
 				y := 352;
 				s := 32;
@@ -283,7 +283,7 @@ begin
 						character_address <= vHeart;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 4, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 5 - 1, 10)) then
 						character_address <= vHeart;
-					
+					--pause
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 10, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 11, 10)) then
 						character_address <= vP;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 11, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 12 - 1, 10)) then
@@ -306,7 +306,7 @@ begin
 							character_address <= v2;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 20, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 21 - 1, 10)) then
 							character_address <= vbclose;	
-					
+					-- time
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(x + s * 29, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 30 - 1, 10)) then
                     case minute is
                         when "0000" => character_address <= v0;
@@ -364,7 +364,7 @@ begin
 							character_address <= vHeart;
 						elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 2, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 3 - 1, 10)) then
 							character_address <= vHeart;
-						
+					-- pause	
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 10, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 11, 10)) then
 						character_address <= vP;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 11, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 12 - 1, 10)) then
@@ -388,7 +388,7 @@ begin
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 20, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 21 - 1, 10)) then
 							character_address <= vbclose;	
 					
-								
+						--	time
 						elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(x + s * 29, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 30 - 1, 10)) then
                     case minute is
                         when "0000" => character_address <= v0;
