@@ -129,7 +129,7 @@ begin
 			-- If Pipe 2 Out-of-Bound, Resets, Otherwise Move
 			if (pipe3X2 <= LEFT_BOUND) then
 				pipe3X <= conv_std_logic_vector(DISP_WIDTH, 10);
-				pipe2X2 <= conv_std_logic_vector(DISP_WIDTH + PIPE_WIDTH, 10);
+				pipe3X2 <= conv_std_logic_vector(DISP_WIDTH + PIPE_WIDTH, 10);
 				pipe3Y <= randY;
 			else
 				pipe3X <= pipe3X - pipeSpeed;
