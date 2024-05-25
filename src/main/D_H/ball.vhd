@@ -21,9 +21,8 @@ architecture behavior of ball is
 	constant DEFAULT_BALL_X : std_logic_vector(10 downto 0) := conv_std_logic_vector(190, 11);
 	constant DEFAULT_BALL_Y : std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(480 / 2, 10);
 	constant BALL_SIZE		: std_logic_vector(9 downto 0)	:= conv_std_logic_vector(8, 10);
-	constant BOUNDRY_SIZE	: integer								:= 24;
-	constant SKY_BOUND 		: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(BOUNDRY_SIZE, 10);
-	constant GROUND_BOUND 	: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(480, 10) - BOUNDRY_SIZE;
+	constant SKY_BOUND 		: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(32, 10);
+	constant GROUND_BOUND 	: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(480 - 24, 10);
 	constant ZERO_MOTION 	: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(0, 10);
 	
 	
@@ -123,10 +122,10 @@ BEGin
 				
 				-- On Above Sky
 				if (('0' & newBallY) <= SKY_BOUND+ BALL_SIZE) then
-					newBallY := SKY_BOUND + BALL_SIZE;
+					newBallY := DEFAULT_BALL_Y;
 				-- On Below Ground
 				elsif (newBallY > ('0' & (GROUND_BOUND - BALL_SIZE))) then
-					newBallY := GROUND_BOUND - BALL_SIZE;
+					newBallY := DEFAULT_BALL_Y;
 					ballYMotion <= ZERO_MOTION;
 				end if;
 				
