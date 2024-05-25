@@ -62,7 +62,7 @@ begin
 		-- Pipe 1
 		if (
 			(pipeX <= pixel_column) and ('0' & pixel_column <= pipeX + PIPE_WIDTH) and 
-			(('0' & pixel_row <= pipeY + GAP_HEIGHT) or (pixel_row >= pipeY))
+			(('0' & pixel_row <= pipeY - GAP_HEIGHT) or (pixel_row >= pipeY))
 			) then
 			vPipeOut := '1';
 		end if;
@@ -70,7 +70,7 @@ begin
 		-- Pipe 2
 		if (
 			(pipe2X <= pixel_column) and ('0' & pixel_column <= pipe2X + PIPE_WIDTH) and 
-			(('0' & pixel_row <= pipe2Y + GAP_HEIGHT) or (pixel_row >= pipe2Y))
+			(('0' & pixel_row <= pipe2Y - GAP_HEIGHT) or (pixel_row >= pipe2Y))
 			) then
 			vPipeOut := '1';
 		end if;
