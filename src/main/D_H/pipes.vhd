@@ -28,7 +28,7 @@ architecture Behavioral of pipes is
 	constant DISP_HEIGHT 		: integer 	:= 480;
 	constant MIN_PIPE_HEIGHT 	: integer 	:= 32;
 	constant GAP_HEIGHT 		: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(150, 10);
-	constant VALID_GAP_Y_BOT 	: std_logic_vector(8 downto 0)  := conv_std_logic_vector(DISP_HEIGHT - 56, 9);
+	constant VALID_GAP_Y_BOT 	: std_logic_vector(9 downto 0)  := conv_std_logic_vector(DISP_HEIGHT - 56, 10);
 	constant LEFT_BOUND 		: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(0, 10);
 	constant PIPE_WIDTH 		: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(32, 10);
 
