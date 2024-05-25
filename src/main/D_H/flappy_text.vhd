@@ -9,8 +9,6 @@ ENTITY flappy_text IS
 		  mode							: in std_logic;
 		  pixel_row, pixel_column	: in std_logic_vector(9 downto 0);
 		  timeset                  : in std_logic_vector(11 downto 0);
-		  healthx : in integer;
-		  healthy : in integer;
 		  character_address			: out std_logic_vector(5 downto 0);
 		  font_row, font_col			: out std_logic_vector(2 downto 0)
 	  );
@@ -436,19 +434,7 @@ begin
 						font_row <= pixel_row(3 downto 1);
 						font_col <= pixel_column(3 downto 1);
 					end if;
-		-- time display
-			
-				
-				-- add health thing here
-			if (pixel_row >= CONV_STD_LOGIC_VECTOR(healthy, 10)) and (pixel_row <= CONV_STD_LOGIC_VECTOR(healthy + 16 - 1, 10)) then
-					if (pixel_column >= CONV_STD_LOGIC_VECTOR(healthx + 16 * 0, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(healthx + 16 * 1, 10)) then
-						character_address <= vHeart;
-					else
-						character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
-					end if;
-					font_row <= pixel_row(3 downto 1);
-					font_col <= pixel_column(3 downto 1);	
-			end if;
+		
 		
 		end if;
 		-- Pause Stage

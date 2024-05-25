@@ -959,9 +959,9 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 856 152 1120 328)
+	(rect 856 152 1120 296)
 	(text "flappy_text" (rect 5 0 61 12)(font "Arial" ))
-	(text "inst3" (rect 8 160 31 172)(font "Arial" ))
+	(text "inst3" (rect 8 128 31 140)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -998,20 +998,6 @@ refer to the applicable agreement for further details.
 		(line (pt 0 96)(pt 16 96)(line_width 3))
 	)
 	(port
-		(pt 0 112)
-		(input)
-		(text "healthx[31..0]" (rect 0 0 67 12)(font "Arial" ))
-		(text "healthx[31..0]" (rect 21 107 88 119)(font "Arial" ))
-		(line (pt 0 112)(pt 16 112)(line_width 3))
-	)
-	(port
-		(pt 0 128)
-		(input)
-		(text "healthy[31..0]" (rect 0 0 68 12)(font "Arial" ))
-		(text "healthy[31..0]" (rect 21 123 89 135)(font "Arial" ))
-		(line (pt 0 128)(pt 16 128)(line_width 3))
-	)
-	(port
 		(pt 264 32)
 		(output)
 		(text "character_address[5..0]" (rect 0 0 116 12)(font "Arial" ))
@@ -1033,7 +1019,7 @@ refer to the applicable agreement for further details.
 		(line (pt 264 64)(pt 248 64)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 248 160))
+		(rectangle (rect 16 16 248 128))
 	)
 )
 (connector
@@ -1629,37 +1615,15 @@ refer to the applicable agreement for further details.
 	(pt 1064 464)
 )
 (connector
-	(pt 856 264)
-	(pt 824 264)
-	(bus)
-)
-(connector
-	(pt 856 280)
-	(pt 848 280)
-	(bus)
-)
-(connector
-	(text "hx[31..0]" (rect 808 260 825 300)(font "Intel Clear" )(vertical))
-	(pt 824 304)
-	(pt 824 264)
-	(bus)
-)
-(connector
 	(text "hx[31..0]" (rect 1000 464 1040 481)(font "Intel Clear" ))
 	(pt 1000 480)
 	(pt 1016 480)
 	(bus)
 )
 (connector
-	(text "hy[31..0]" (rect 1000 480 1041 497)(font "Intel Clear" ))
+	(text "<<__$DEF_ALIAS2478>>" (rect 1000 480 1118 497)(font "Intel Clear" )(invisible))
 	(pt 1000 496)
 	(pt 1016 496)
-	(bus)
-)
-(connector
-	(text "hy[31..0]" (rect 832 259 849 300)(font "Intel Clear" )(vertical))
-	(pt 848 280)
-	(pt 848 304)
 	(bus)
 )
 (junction (pt 344 184))
