@@ -28,7 +28,7 @@ architecture Behavioral of pipes is
 	constant DISP_WIDTH 		: integer 	:= 640;
 	constant DISP_HEIGHT 		: integer 	:= 480;
 	constant MIN_PIPE_HEIGHT 	: integer 	:= 32;
-	constant VALID_GAP_Y_BOT 	: integer  	:= DISP_HEIGHT - 100;
+	constant VALID_GAP_Y_BOT 	: integer  	:= DISP_HEIGHT - 80;
 	constant GAP_HEIGHT 		: integer  	:= 150;
 	constant PIPE_WIDTH 		: integer 	:= 32;
 	constant PIPES_SPACING		: integer 	:= 160;
@@ -39,14 +39,17 @@ architecture Behavioral of pipes is
 	signal pipe2X 				: std_logic_vector(10 downto 0) 	:= conv_std_logic_vector(600 + PIPES_SPACING * 1, 11);
 	signal pipe3X 				: std_logic_vector(10 downto 0) 	:= conv_std_logic_vector(600 + PIPES_SPACING * 2, 11);
 	signal pipe4X 				: std_logic_vector(10 downto 0) 	:= conv_std_logic_vector(600 + PIPES_SPACING * 3, 11);
+	signal pipe5X 				: std_logic_vector(10 downto 0) 	:= conv_std_logic_vector(600 + PIPES_SPACING * 4, 11);
 	signal pipeX2				: std_logic_vector(10 downto 0) 	:= conv_std_logic_vector(600 + PIPES_SPACING * 0 + PIPE_WIDTH, 11);
 	signal pipe2X2 				: std_logic_vector(10 downto 0) 	:= conv_std_logic_vector(600 + PIPES_SPACING * 1 + PIPE_WIDTH, 11);
 	signal pipe3X2 				: std_logic_vector(10 downto 0) 	:= conv_std_logic_vector(600 + PIPES_SPACING * 2 + PIPE_WIDTH, 11);
 	signal pipe4X2 				: std_logic_vector(10 downto 0) 	:= conv_std_logic_vector(600 + PIPES_SPACING * 3 + PIPE_WIDTH, 11);
+	signal pipe5X2 				: std_logic_vector(10 downto 0) 	:= conv_std_logic_vector(600 + PIPES_SPACING * 4 + PIPE_WIDTH, 11);
 	signal pipeY  				: std_logic_vector(9 downto 0)  := conv_std_logic_vector(240, 10);
 	signal pipe2Y  				: std_logic_vector(9 downto 0)  := conv_std_logic_vector(240, 10);
 	signal pipe3Y  				: std_logic_vector(9 downto 0)  := conv_std_logic_vector(240, 10);
 	signal pipe4Y  				: std_logic_vector(9 downto 0)  := conv_std_logic_vector(240, 10);
+	signal pipe5Y  				: std_logic_vector(9 downto 0)  := conv_std_logic_vector(240, 10);
 	
 	-- Game
 	signal pipeSpeed       		: std_logic_vector(10 downto 0) := conv_std_logic_vector(3, 11);
@@ -63,7 +66,7 @@ architecture Behavioral of pipes is
 begin
  
 	-- Rendering
-	process(state, pipeX, pipe2X, pipe3X, pipe4x, pixel_column, pixel_row)
+	process(state, pipeX, pipe2X, pipe3X, pipe4x, pipe5x, pixel_column, pixel_row)
 		variable r, g, b : std_logic_vector(3 downto 0) := "0000";
 		variable vPipeOut : std_logic := '0';
 	begin
@@ -101,6 +104,14 @@ begin
 			vPipeOut := '1';
 		end if;
 		
+		-- Pipe 5
+		if (
+			(pipe5X <= '0' & pixel_column) and ('0' & pixel_column <= pipe5X2) and 
+			(('0' & pixel_row <= pipe5Y - GAP_HEIGHT) or (pixel_row >= pipe5Y))
+			) then
+			vPipeOut := '1';
+		end if;
+		
 		pipe_out <= vPipeOut;
 
 	end process;
@@ -114,13 +125,13 @@ begin
 		if (rising_edge(v_sync) and state = "01") then 
 			
 			-- Random Height
-			randY := VALID_GAP_Y_BOT - ("0000" & pipe_gap);
+			randY := VALID_GAP_Y_BOT - (("0000" & pipe_gap) + ("0000" & pipe_gap));
 			
 			
 			-- If Pipe 1 Out-of-Bound, Resets, Otherwise Move
 			if (pipeX2 <= leftBound) then
-				pipeX <= conv_std_logic_vector(DISP_WIDTH, 11);
-				pipeX2 <= conv_std_logic_vector(DISP_WIDTH + PIPE_WIDTH, 11);
+				pipeX <= conv_std_logic_vector(DISP_WIDTH + PIPE_WIDTH * 1, 11);
+				pipeX2 <= conv_std_logic_vector(DISP_WIDTH + PIPE_WIDTH * 2, 11);
 				pipeY <= randY;
 			else
 				pipeX <= pipeX - pipeSpeed;
@@ -129,8 +140,8 @@ begin
 			
 			-- If Pipe 2 Out-of-Bound, Resets, Otherwise Move
 			if (pipe2X2 <= leftBound) then
-				pipe2X <= conv_std_logic_vector(DISP_WIDTH, 11);
-				pipe2X2 <= conv_std_logic_vector(DISP_WIDTH + PIPE_WIDTH, 11);
+				pipe2X <= conv_std_logic_vector(DISP_WIDTH + PIPE_WIDTH * 1, 11);
+				pipe2X2 <= conv_std_logic_vector(DISP_WIDTH + PIPE_WIDTH * 2, 11);
 				pipe2Y <= randY;
 			else
 				pipe2X <= pipe2X - pipeSpeed;
@@ -139,8 +150,8 @@ begin
 			
 			-- If Pipe 3 Out-of-Bound, Resets, Otherwise Move
 			if (pipe3X2 <= leftBound) then
-				pipe3X <= conv_std_logic_vector(DISP_WIDTH, 11);
-				pipe3X2 <= conv_std_logic_vector(DISP_WIDTH + PIPE_WIDTH, 11);
+				pipe3X <= conv_std_logic_vector(DISP_WIDTH + PIPE_WIDTH * 1, 11);
+				pipe3X2 <= conv_std_logic_vector(DISP_WIDTH + PIPE_WIDTH * 2, 11);
 				pipe3Y <= randY;
 			else
 				pipe3X <= pipe3X - pipeSpeed;
@@ -149,12 +160,22 @@ begin
 			
 			-- If Pipe 4 Out-of-Bound, Resets, Otherwise Move
 			if (pipe4X2 <= leftBound) then
-				pipe4X <= conv_std_logic_vector(DISP_WIDTH, 11);
-				pipe4X2 <= conv_std_logic_vector(DISP_WIDTH + PIPE_WIDTH, 11);
+				pipe4X <= conv_std_logic_vector(DISP_WIDTH + PIPE_WIDTH * 1, 11);
+				pipe4X2 <= conv_std_logic_vector(DISP_WIDTH + PIPE_WIDTH * 2, 11);
 				pipe4Y <= randY;
 			else
 				pipe4X <= pipe4X - pipeSpeed;
 				pipe4X2 <= pipe4X2 - pipeSpeed;
+			end if;
+	
+			-- If Pipe 5 Out-of-Bound, Resets, Otherwise Move
+			if (pipe5X2 <= leftBound) then
+				pipe5X <= conv_std_logic_vector(DISP_WIDTH + PIPE_WIDTH * 1, 11);
+				pipe5X2 <= conv_std_logic_vector(DISP_WIDTH + PIPE_WIDTH * 2, 11);
+				pipe5Y <= randY;
+			else
+				pipe5X <= pipe5X - pipeSpeed;
+				pipe5X2 <= pipe5X2 - pipeSpeed;
 			end if;
 								
 								
