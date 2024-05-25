@@ -7,8 +7,8 @@ ENTITY LFSR IS
 END LFSR;
 
 ARCHITECTURE LFSR_beh OF LFSR IS
-  SIGNAL Currstate, Nextstate: std_logic_vector (5 DOWNTO 0);
-  SIGNAL feedback: std_logic;
+  SIGNAL Currstate, Nextstate: std_logic_vector (5 DOWNTO 0) := "000000";
+  SIGNAL feedback: std_logic := '0';
 BEGIN
 
   StateReg: PROCESS (Clk,Rst)

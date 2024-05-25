@@ -31,13 +31,16 @@ architecture Behavioral of pipes is
 	constant GAP_HEIGHT 		: integer  	:= 150;
 	constant LEFT_BOUND 		: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(0, 10);
 	constant PIPE_WIDTH 		: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(32, 10);
+	constant PIPES_SPACING		: integer 	:= 200;
 
 	
 	-- Pipes
-	signal pipeX				: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(640, 10);
-	signal pipe2X 				: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(800, 10);
+	signal pipeX				: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(600 + PIPES_SPACING * 0, 10);
+	signal pipe2X 				: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(600 + PIPES_SPACING * 1, 10);
+	signal pipe3X 				: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(600 + PIPES_SPACING * 2, 10);
 	signal pipeY  				: std_logic_vector(9 downto 0)  := conv_std_logic_vector(240, 10);
 	signal pipe2Y  				: std_logic_vector(9 downto 0)  := conv_std_logic_vector(240, 10);
+	signal pipe3Y  				: std_logic_vector(9 downto 0)  := conv_std_logic_vector(240, 10);
 	
 	-- Game
 	signal pipeSpeed       		: std_logic_vector(9 downto 0) := conv_std_logic_vector(3, 10);
@@ -75,6 +78,14 @@ begin
 			vPipeOut := '1';
 		end if;
 		
+		-- Pipe 3
+		if (
+			(pipe3X <= pixel_column) and ('0' & pixel_column <= pipe3X + PIPE_WIDTH) and 
+			(('0' & pixel_row <= pipe3Y - GAP_HEIGHT) or (pixel_row >= pipe3Y))
+			) then
+			vPipeOut := '1';
+		end if;
+		
 		pipe_out <= vPipeOut;
 
 	end process;
@@ -106,6 +117,14 @@ begin
 				pipe2Y <= randY;
 			else
 				pipe2X <= pipe2X - pipeSpeed;
+			end if;
+			
+			-- If Pipe 2 Out-of-Bound, Resets, Otherwise Move
+			if (pipe3X + PIPE_WIDTH < LEFT_BOUND) then
+				pipe3X <= conv_std_logic_vector(DISP_WIDTH, 10);
+				pipe3Y <= randY;
+			else
+				pipe3X <= pipe3X - pipeSpeed;
 			end if;
 								
 			if (vhealthx < 1 or healthpicked = '1') then
