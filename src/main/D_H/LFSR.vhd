@@ -1,27 +1,25 @@
-LIBRARY ieee;
-USE ieee.std_logic_1164.ALL;
+library ieee;
+use ieee.std_logic_1164.all;
 
-ENTITY LFSR IS
-  PORT (Clk, Rst: IN std_logic := '0';
-        output: OUT std_logic_vector ( 5 DOWNTO 0));
-END LFSR;
+entity LFSR is
+  port (
+    clk		: in std_logic 						:= '0';
+    output	: out std_logic_vector (5 downto 0) := "000001"
+  );
+end LFSR;
 
-ARCHITECTURE LFSR_beh OF LFSR IS
-  SIGNAL Currstate, Nextstate: std_logic_vector (5 DOWNTO 0) := "000000";
-  SIGNAL feedback: std_logic := '0';
-BEGIN
-
-  StateReg: PROCESS (Clk,Rst)
-  BEGIN
-    IF (Rst = '1') THEN
-      Currstate <= (0 => '1', OTHERS =>'0');
-    ELSIF (Clk = '1' AND Clk'EVENT) THEN
-      Currstate <= Nextstate;
-    END IF;
-  END PROCESS;
-  
-  feedback <= Currstate(4) XOR Currstate(3) XOR Currstate(2) XOR Currstate(0);
-  Nextstate <= feedback & Currstate(5 DOWNTO 1);
-  output <= Currstate;
-
-END LFSR_beh;
+architecture aLFSR of LFSR is
+  signal currstate 	: std_logic_vector (5 downto 0) := "000001";
+  signal nextstate 	: std_logic_vector (5 downto 0) := "000010";
+  signal feedback 	: std_logic 					:= '0';
+begin
+	process (clk)
+		begin
+			if (rising_edge(clk)) then
+				currstate <= nextstate;
+				feedback <= currstate(4) xor currstate(3) xor currstate(2) xor currstate(0);
+				nextstate <= feedback & currstate(5 downto 1);
+				output <= currstate;
+		end if;
+	end process;
+end aLFSR;

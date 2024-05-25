@@ -20,31 +20,24 @@ refer to the applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 176 96)
+	(rect 16 16 168 96)
 	(text "LFSR" (rect 5 0 30 12)(font "Arial" ))
 	(text "inst" (rect 8 64 20 76)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
-		(text "Clk" (rect 0 0 12 12)(font "Arial" ))
-		(text "Clk" (rect 21 27 33 39)(font "Arial" ))
+		(text "clk" (rect 0 0 10 12)(font "Arial" ))
+		(text "clk" (rect 21 27 31 39)(font "Arial" ))
 		(line (pt 0 32)(pt 16 32)(line_width 1))
 	)
 	(port
-		(pt 0 48)
-		(input)
-		(text "Rst" (rect 0 0 15 12)(font "Arial" ))
-		(text "Rst" (rect 21 43 36 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 1))
-	)
-	(port
-		(pt 160 32)
+		(pt 152 32)
 		(output)
 		(text "output[5..0]" (rect 0 0 43 12)(font "Arial" ))
-		(text "output[5..0]" (rect 96 27 139 39)(font "Arial" ))
-		(line (pt 160 32)(pt 144 32)(line_width 3))
+		(text "output[5..0]" (rect 88 27 131 39)(font "Arial" ))
+		(line (pt 152 32)(pt 136 32)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 144 64)(line_width 1))
+		(rectangle (rect 16 16 136 64)(line_width 1))
 	)
 )
