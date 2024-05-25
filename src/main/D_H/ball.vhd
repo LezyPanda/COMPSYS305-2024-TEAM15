@@ -41,7 +41,7 @@ BEGin
 		-- Playing Screen
 		if (game_state = "01") then
 			-- Space
-			if ('0' & pixel_row <= SKY_BOUND + BALL_SIZE) then
+			if ('0' & pixel_row <= SKY_BOUND) then
 				r := "0001";
 				g := "0001";
 				b := "1000";
