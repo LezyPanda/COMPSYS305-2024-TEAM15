@@ -23,6 +23,14 @@ entity pipes is
 end pipes;
 
 architecture Behavioral of pipes is
+
+  COMPONENT LFSR IS
+  port (
+    clk		: in std_logic;
+    output	: out std_logic_vector (5 downto 0)
+  );
+  END COMPONENT;
+  
 	-- Constants
 	constant DISP_WIDTH 		: integer 	:= 640;
 	constant DISP_HEIGHT 		: integer 	:= 480;
@@ -53,8 +61,11 @@ architecture Behavioral of pipes is
 	-- check if game is running
 	signal running 				: std_logic := '1';
 	signal start_pipe, paused, dead : std_logic := '0';
+	
+	SIGNAL output_s: std_logic_vector(5 DOWNTO 0);
 begin
-
+ CompToTest: LFSR PORT MAP (v_sync, output_s);
+ 
 	-- Rendering
 	process(state, pipeX, pipe2X, pixel_column, pixel_row)
 		variable r, g, b : std_logic_vector(3 downto 0) := "0000";
@@ -100,7 +111,7 @@ begin
 		if (rising_edge(v_sync) and state = "01") then 
 			
 			-- Random Height
-			randY := VALID_GAP_Y_BOT - ("0000" & pipe_gap);
+			randY := VALID_GAP_Y_BOT - ("0000" & output_s);
 			
 			
 			-- If Pipe 1 Out-of-Bound, Resets, Otherwise Move
