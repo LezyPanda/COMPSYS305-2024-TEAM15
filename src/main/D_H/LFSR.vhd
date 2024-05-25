@@ -2,7 +2,7 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 
 ENTITY LFSR IS
-  PORT (Clk, Rst: IN std_logic;
+  PORT (Clk, Rst: IN std_logic := '0';
         output: OUT std_logic_vector ( 5 DOWNTO 0));
 END LFSR;
 
