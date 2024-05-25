@@ -32,7 +32,7 @@ architecture Behavioral of pipes is
 	constant GAP_HEIGHT 		: integer  	:= 150;
 	constant LEFT_BOUND 		: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(3, 10);
 	constant PIPE_WIDTH 		: integer 	:= 32;
-	constant PIPES_SPACING		: integer 	:= 200;
+	constant PIPES_SPACING		: integer 	:= 190;
 
 	
 	-- Pipes
@@ -135,6 +135,7 @@ begin
 				pipe3X <= pipe3X - pipeSpeed;
 				pipe3X2 <= pipe3X2 - pipeSpeed;
 			end if;
+								
 								
 			if (vhealthx < 1 or healthpicked = '1') then
 				vhealthx <= 640;
