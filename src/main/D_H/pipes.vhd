@@ -89,7 +89,7 @@ begin
 		if (rising_edge(v_sync) and state = "01") then 
 			
 			-- Random Height
-			randY := ("000" & pipe_gap) + VALID_GAP_X_BOT;
+			randY := ("000" & pipe_gap) + VALID_GAP_Y_BOT;
 			
 			
 			-- If Pipe 1 Out-of-Bound, Resets, Otherwise Move
