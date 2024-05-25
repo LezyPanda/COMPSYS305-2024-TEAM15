@@ -28,10 +28,10 @@ architecture Behavioral of pipes is
 	constant DISP_WIDTH 		: integer 	:= 640;
 	constant DISP_HEIGHT 		: integer 	:= 480;
 	constant MIN_PIPE_HEIGHT 	: integer 	:= 32;
-	constant VALID_GAP_Y_BOT 	: integer  	:= DISP_HEIGHT - 72;
+	constant VALID_GAP_Y_BOT 	: integer  	:= DISP_HEIGHT - 80;
 	constant GAP_HEIGHT 		: integer  	:= 150;
-	constant LEFT_BOUND 		: std_logic_vector(10 downto 0) 	:= conv_std_logic_vector(3, 11);
-	constant PIPE_WIDTH 		: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(32, 10);
+	constant LEFT_BOUND 		: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(3, 10);
+	constant PIPE_WIDTH 		: integer 	:= 32;
 	constant PIPES_SPACING		: integer 	:= 200;
 
 	
@@ -39,6 +39,9 @@ architecture Behavioral of pipes is
 	signal pipeX				: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(600 + PIPES_SPACING * 0, 10);
 	signal pipe2X 				: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(600 + PIPES_SPACING * 1, 10);
 	signal pipe3X 				: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(600 + PIPES_SPACING * 2, 10);
+	signal pipeX2				: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(600 + PIPES_SPACING * 0 + PIPE_WIDTH, 10);
+	signal pipe2X2 				: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(600 + PIPES_SPACING * 1 + PIPE_WIDTH, 10);
+	signal pipe3X2 				: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(600 + PIPES_SPACING * 2 + PIPE_WIDTH, 10);
 	signal pipeY  				: std_logic_vector(9 downto 0)  := conv_std_logic_vector(240, 10);
 	signal pipe2Y  				: std_logic_vector(9 downto 0)  := conv_std_logic_vector(240, 10);
 	signal pipe3Y  				: std_logic_vector(9 downto 0)  := conv_std_logic_vector(240, 10);
@@ -57,7 +60,7 @@ architecture Behavioral of pipes is
 begin
  
 	-- Rendering
-	process(state, pipeX, pipe2X, pixel_column, pixel_row)
+	process(state, pipeX, pipe2X, pipe3X, pixel_column, pixel_row)
 		variable r, g, b : std_logic_vector(3 downto 0) := "0000";
 		variable vPipeOut : std_logic := '0';
 	begin
@@ -65,7 +68,7 @@ begin
 		
 		-- Pipe 1
 		if (
-			(pipeX <= pixel_column) and ('0' & pixel_column <= pipeX + PIPE_WIDTH) and 
+			(pipeX <= pixel_column) and (pixel_column <= pipeX2) and 
 			(('0' & pixel_row <= pipeY - GAP_HEIGHT) or (pixel_row >= pipeY))
 			) then
 			vPipeOut := '1';
@@ -73,7 +76,7 @@ begin
 		
 		-- Pipe 2
 		if (
-			(pipe2X <= pixel_column) and ('0' & pixel_column <= pipe2X + PIPE_WIDTH) and 
+			(pipe2X <= pixel_column) and (pixel_column <= pipe2X2) and 
 			(('0' & pixel_row <= pipe2Y - GAP_HEIGHT) or (pixel_row >= pipe2Y))
 			) then
 			vPipeOut := '1';
@@ -81,7 +84,7 @@ begin
 		
 		-- Pipe 3
 		if (
-			(pipe3X <= pixel_column) and ('0' & pixel_column <= pipe3X + PIPE_WIDTH) and 
+			(pipe3X <= pixel_column) and (pixel_column <= pipe3X2) and 
 			(('0' & pixel_row <= pipe3Y - GAP_HEIGHT) or (pixel_row >= pipe3Y))
 			) then
 			vPipeOut := '1';
@@ -104,27 +107,33 @@ begin
 			
 			
 			-- If Pipe 1 Out-of-Bound, Resets, Otherwise Move
-			if (pipeX + PIPE_WIDTH <= LEFT_BOUND) then
+			if (pipeX2 <= LEFT_BOUND) then
 				pipeX <= conv_std_logic_vector(DISP_WIDTH, 10);
+				pipeX2 <= conv_std_logic_vector(DISP_WIDTH + PIPE_WIDTH, 10);
 				pipeY <= randY;
 			else
 				pipeX <= pipeX - pipeSpeed;
+				pipeX2 <= pipeX2 - pipeSpeed;
 			end if;
 			
 			-- If Pipe 2 Out-of-Bound, Resets, Otherwise Move
-			if (pipe2X + PIPE_WIDTH <= LEFT_BOUND) then
+			if (pipe2X2 <= LEFT_BOUND) then
 				pipe2X <= conv_std_logic_vector(DISP_WIDTH, 10);
+				pipe2X2 <= conv_std_logic_vector(DISP_WIDTH + PIPE_WIDTH, 10);
 				pipe2Y <= randY;
 			else
 				pipe2X <= pipe2X - pipeSpeed;
+				pipe2X2 <= pipe2X2 - pipeSpeed;
 			end if;
 			
 			-- If Pipe 2 Out-of-Bound, Resets, Otherwise Move
-			if (pipe3X + PIPE_WIDTH <= LEFT_BOUND) then
+			if (pipe3X2 <= LEFT_BOUND) then
 				pipe3X <= conv_std_logic_vector(DISP_WIDTH, 10);
+				pipe2X2 <= conv_std_logic_vector(DISP_WIDTH + PIPE_WIDTH, 10);
 				pipe3Y <= randY;
 			else
 				pipe3X <= pipe3X - pipeSpeed;
+				pipe3X2 <= pipe3X2 - pipeSpeed;
 			end if;
 								
 			if (vhealthx < 1 or healthpicked = '1') then
