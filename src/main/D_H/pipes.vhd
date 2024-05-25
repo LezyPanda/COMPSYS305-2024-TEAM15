@@ -28,9 +28,9 @@ architecture Behavioral of pipes is
 	constant DISP_WIDTH 		: integer 	:= 640;
 	constant DISP_HEIGHT 		: integer 	:= 480;
 	constant MIN_PIPE_HEIGHT 	: integer 	:= 32;
-	constant VALID_GAP_Y_BOT 	: integer  	:= DISP_HEIGHT - 64;
+	constant VALID_GAP_Y_BOT 	: integer  	:= DISP_HEIGHT - 72;
 	constant GAP_HEIGHT 		: integer  	:= 150;
-	constant LEFT_BOUND 		: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(0, 10);
+	constant LEFT_BOUND 		: std_logic_vector(10 downto 0) 	:= conv_std_logic_vector(3, 11);
 	constant PIPE_WIDTH 		: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(32, 10);
 	constant PIPES_SPACING		: integer 	:= 200;
 
@@ -104,7 +104,7 @@ begin
 			
 			
 			-- If Pipe 1 Out-of-Bound, Resets, Otherwise Move
-			if (pipeX + PIPE_WIDTH <= '0' + LEFT_BOUND) then
+			if (pipeX + PIPE_WIDTH <= LEFT_BOUND) then
 				pipeX <= conv_std_logic_vector(DISP_WIDTH, 10);
 				pipeY <= randY;
 			else
@@ -112,7 +112,7 @@ begin
 			end if;
 			
 			-- If Pipe 2 Out-of-Bound, Resets, Otherwise Move
-			if (pipe2X + PIPE_WIDTH <= '0' + LEFT_BOUND) then
+			if (pipe2X + PIPE_WIDTH <= LEFT_BOUND) then
 				pipe2X <= conv_std_logic_vector(DISP_WIDTH, 10);
 				pipe2Y <= randY;
 			else
@@ -120,7 +120,7 @@ begin
 			end if;
 			
 			-- If Pipe 2 Out-of-Bound, Resets, Otherwise Move
-			if (pipe3X + PIPE_WIDTH <= '0' + LEFT_BOUND) then
+			if (pipe3X + PIPE_WIDTH <= LEFT_BOUND) then
 				pipe3X <= conv_std_logic_vector(DISP_WIDTH, 10);
 				pipe3Y <= randY;
 			else
