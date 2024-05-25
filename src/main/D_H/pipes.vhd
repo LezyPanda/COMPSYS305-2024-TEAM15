@@ -23,7 +23,7 @@ entity pipes is
 end pipes;
 
 architecture Behavioral of pipes is
-	-- Constants for display size, pipe dimensions, and number of pipes (tobe used later)
+	-- Constants
 	constant DISP_WIDTH 		: integer 	:= 640;
 	constant DISP_HEIGHT 		: integer 	:= 480;
 	constant MIN_PIPE_HEIGHT 	: integer 	:= 32;
@@ -33,13 +33,13 @@ architecture Behavioral of pipes is
 	constant PIPE_WIDTH 		: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(32, 10);
 
 	
-	
-	-- Signals for pipe positions and heights
+	-- Pipes
 	signal pipeX				: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(640, 10);
 	signal pipe2X 				: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(800, 10);
 	signal pipeY  				: std_logic_vector(9 downto 0)  := conv_std_logic_vector(240, 10);
 	signal pipe2Y  				: std_logic_vector(9 downto 0)  := conv_std_logic_vector(240, 10);
 	
+	-- Game
 	signal pipeSpeed       		: std_logic_vector(9 downto 0) := conv_std_logic_vector(15, 10);
 	
 	-- health item
@@ -55,7 +55,10 @@ begin
 	-- Rendering
 	process(state, pipeX, pipe2X, pixel_column, pixel_row)
 		variable r, g, b : std_logic_vector(3 downto 0) := "0000";
+		variable vPipeOut : std_logic := '0';
 	begin
+		vPipeOut := '0';
+		
 		-- Pipe 1
 		if (
 			(pipeX <= pixel_column) and 
@@ -63,7 +66,7 @@ begin
 			(('0' & pixel_row <= pipeY + GAP_HEIGHT) or
 			(pixel_row >= pipeY)
 			)) then
-			pipe_out <= '1';
+			vPipeOut := '1';
 		end if;
 		
 		-- Pipe 2
@@ -73,8 +76,10 @@ begin
 			(('0' & pixel_row <= pipe2Y + GAP_HEIGHT) or
 			(pixel_row >= pipe2Y)
 			)) then
-			pipe_out <= '1';
+			vPipeOut := '1';
 		end if;
+		
+		pipe_out <= vPipeOut;
 
 	end process;
 	
@@ -84,15 +89,23 @@ begin
 		variable pipeActive, pipe2Active : std_logic := '1';
 		variable vhealth : std_logic_vector(5 downto 0) := conv_std_logic_vector(34, 6);
 	begin 
+		-- Playing
 		if (rising_edge(v_sync) and state = "01") then 
+			
+			-- Random Height
 			randY := ("0000" & pipe_gap) + VALID_GAP_X_BOT;
+			
+			
+			-- If Pipe 1 Out-of-Bound, Resets, Otherwise Move
 			if (pipeX + PIPE_WIDTH < LEFT_BOUND) then
+				-- Reset Its Position
 				pipeX <= conv_std_logic_vector(DISP_WIDTH, 10);
 				pipeY <= randY;
 			else
 				pipeX <= pipeX - pipeSpeed;
 			end if;
 			
+			-- If Pipe 2 Out-of-Bound, Resets, Otherwise Move
 			if (pipe2X + PIPE_WIDTH < LEFT_BOUND) then
 				pipe2X <= conv_std_logic_vector(DISP_WIDTH, 10);
 				pipe2Y <= randY;
