@@ -37,7 +37,7 @@ architecture Behavioral of pipes is
 	signal pipe_width_start2 : integer := 800;
 	signal pipe_width_end2   : integer := 832;
 	
-	signal pipe_height_gap2  : integer := 222;
+	signal pipe_height_gap2  : integer := 180;
 	signal pipe_height_gap  : integer := 222;
 	
 	signal pipe_speed       : integer := 150;
@@ -97,7 +97,7 @@ pipe_process : process(move_pipe)
 				pipe_width_start2 <= 640;
 				pipe_width_end2 <= 672;
 				-- to be changed
-				pipe_height_gap2 <= 180;
+				pipe_height_gap2 <= 170;
 			end if;
 			
 			
@@ -114,7 +114,7 @@ pipe_process : process(move_pipe)
 				end if;
 			end if;
 		if(pixel_column >= CONV_STD_LOGIC_VECTOR(pipe_width_start2,10) and pixel_column < CONV_STD_LOGIC_VECTOR(pipe_width_end2,10))then
-				if(pixel_row <= CONV_STD_LOGIC_VECTOR(pipe_height_gap2,10) or pixel_row >CONV_STD_LOGIC_VECTOR(pipe_height_gap2,10)+ 150)then
+				if(pixel_row <= CONV_STD_LOGIC_VECTOR(pipe_height_gap2,10) or pixel_row >CONV_STD_LOGIC_VECTOR(pipe_height_gap2,10)+ 130)then
 					pipe_out <= '1';
 				end if;
 			end if;
