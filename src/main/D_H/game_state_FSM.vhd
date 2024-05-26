@@ -58,7 +58,7 @@ begin
 					reset <= '0';
 					if (lives <= "000") then
 						state := dead;
-					elsif (bPress = '1') then
+					elsif (b2Press = '1') then
 						state := pause;
 					end if;						
 				when pause =>

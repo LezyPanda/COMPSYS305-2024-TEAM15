@@ -337,7 +337,7 @@ begin
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 18, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 19 - 1, 10)) then
 							character_address <= vY;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 19, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 20 - 1, 10)) then
-							character_address <= v0;
+							character_address <= v1;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 20, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 21 - 1, 10)) then
 							character_address <= vbclose;	
 					-- time
@@ -432,7 +432,7 @@ begin
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 18, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 19 - 1, 10)) then
 							character_address <= vY;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 19, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 20 - 1, 10)) then
-							character_address <= v0;
+							character_address <= v1;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 20, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 21 - 1, 10)) then
 							character_address <= vbclose;	
 					
@@ -485,7 +485,7 @@ begin
 						font_col <= pixel_column(3 downto 1);
 				end if;
 		end if;
-		-- Pause Stage
+		--  Stage
 		if (game_state = "10") then
 			-- "PAUSE"
 			x := 196;
