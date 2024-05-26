@@ -5,8 +5,8 @@ USE IEEE.STD_LOGIC_SIGNED.all;
 
 ENTITY ball IS
 	PORT( 
-		clk, vertSync 				: in std_logic;
-		mbL, mbR					: in std_logic;
+		clk, vertSync, reset		: in std_logic;
+		mbL, mbR, mode				: in std_logic;
 		game_state					: in std_logic_vector(1 downto 0);
 		pixel_row, pixel_column		: in std_logic_vector(9 downto 0);
 		displayText, pipe 			: in std_logic;
@@ -41,7 +41,7 @@ BEGin
 	
 		-- Background Rendering
 		-- Playing Screen
-		if (game_state = "01") then
+		if (game_state = "01" or game_state = "10") then
 			-- Space
 			if ('0' & pixel_row <= SKY_BOUND) then
 				r := "0001";
@@ -67,7 +67,7 @@ BEGin
 
 		
 		-- Playing
-		if (game_state = "01") then
+		if (game_state = "01" or game_state = "10") then
 		
 			-- Pipe Colours
 			if (pipe = '1') then
@@ -102,14 +102,20 @@ BEGin
 	
 	
 	-- Frame Tick
-	process (vertSync)
+	process (vertSync, reset)
 		variable newBallY 	: std_logic_vector(9 downto 0);
 		variable hitPipes	: std_logic := '0';
 		variable vLives		: std_logic_vector(2 downto 0)	:= conv_std_logic_vector(5, 3);
 	begin
 		if (rising_edge(vertSync)) then
+			if (reset = '1') then
+				if (mode = '1') then
+					vLives := "101";
+				else
+					vLives := "011";
+				end if;
 			-- Playing
-			if (game_state = "01") then
+			elsif (game_state = "01") then
 				
 				-- On-Click
 				if ((mbL or mbR) = '1' and (mouseClicked = '0')) then

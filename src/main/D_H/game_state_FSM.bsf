@@ -75,16 +75,16 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 144)
 		(input)
-		(text "check_dead" (rect 0 0 48 12)(font "Arial" ))
-		(text "check_dead" (rect 21 139 69 151)(font "Arial" ))
+		(text "mode_select" (rect 0 0 50 12)(font "Arial" ))
+		(text "mode_select" (rect 21 139 71 151)(font "Arial" ))
 		(line (pt 0 144)(pt 16 144)(line_width 1))
 	)
 	(port
 		(pt 0 160)
 		(input)
-		(text "mode_select" (rect 0 0 50 12)(font "Arial" ))
-		(text "mode_select" (rect 21 155 71 167)(font "Arial" ))
-		(line (pt 0 160)(pt 16 160)(line_width 1))
+		(text "lives[2..0]" (rect 0 0 37 12)(font "Arial" ))
+		(text "lives[2..0]" (rect 21 155 58 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160)(line_width 3))
 	)
 	(port
 		(pt 208 32)
