@@ -485,7 +485,7 @@ begin
 						font_col <= pixel_column(3 downto 1);
 				end if;
 		end if;
-		--  Stage
+		-- Pause Stage
 		if (game_state = "10") then
 			-- "PAUSE"
 			x := 196;
