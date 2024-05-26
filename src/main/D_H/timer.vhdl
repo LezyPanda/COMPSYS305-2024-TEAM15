@@ -91,6 +91,10 @@ begin
 					tEnable2 := '0';
 					tEnable3 := '1';
 				end if;
+			else
+				tEnable1 := '0';
+				tEnable2 := '0';
+				tEnable3 := '0';
 			end if;
 		end if;
 
