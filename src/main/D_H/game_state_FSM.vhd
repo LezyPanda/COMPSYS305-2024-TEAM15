@@ -5,9 +5,10 @@ entity game_state_FSM is
 	port(
 		vSync		        					: in std_logic;
 		mbL, mbR								: in std_logic;
-		button1, button2, button3, button4	 	: in std_logic;
+		button1, button2, button3, button4, SW0	: in std_logic;
 		lives									: in std_logic_vector(2 downto 0);
 		state_out         						: out std_logic_vector(1 downto 0);
+		mode									: out std_logic	:= '0';
 		timer									: out std_logic	:= '0';
 		reset									: out std_logic
 	);
@@ -82,6 +83,7 @@ begin
 					if (bPress = '1') then
 						reset <= '1';
 						timer <= '1';
+						mode <= SW0;
 						state := play;
 					end if;
 				when play =>
