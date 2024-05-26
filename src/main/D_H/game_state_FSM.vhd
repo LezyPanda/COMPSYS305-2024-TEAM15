@@ -86,20 +86,20 @@ begin
 					reset <= '0';
 					if (lives <= "000") then
 						state := dead;
-					elsif (b2Press = '1') then
+					elsif (b3Press = '1') then
 						state := pause;
 					end if;						
 				when pause =>
-					if (b3Press = '1') then
+					if (bPress = '1') then
 						state := play;
-					elsif (b4Press = '1') then
+					elsif (b1Press = '1') then
 						state := intro;
 					end if;
 				when dead =>
 					if (bPress = '1') then
 						state := play;
 						reset <= '1';
-					elsif (b2Press = '1') then
+					elsif (b1Press = '1') then
 						state := intro;
 					end if;
 			end case; 
