@@ -88,9 +88,9 @@ BEGin
 			
 			-- Pickups
 			if (pickup = '1') then
-				r := "0010";
-				g := "1100";
-				b := "0010";
+				r := "1100";
+				g := "0001";
+				b := "1000";
 			end if;
 		end if;
 		
@@ -155,7 +155,7 @@ BEGin
 						hitPipes := '1';
 						vLives := vLives - 1;
 					end if;
-				elsif (pickup = '1') then
+				elsif (pickupHit = '1') then
 					vLives := vLives + 1;
 					if (vLives > 5 and mode = '1') then
 						vLives := conv_std_logic_vector(5, 3);
