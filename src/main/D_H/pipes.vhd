@@ -140,7 +140,7 @@ begin
 	end process;
 	
 	
-	process(v_sync)
+	process(v_sync, reset, mode)
 		variable randY		: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(64, 10);
 		variable vhealth 	: std_logic_vector(5 downto 0) 	:= conv_std_logic_vector(34, 6);
 		variable vBallHit 	: std_logic						:= '0';

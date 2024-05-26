@@ -109,7 +109,7 @@ BEGin
 	
 	
 	-- Frame Tick
-	process (vertSync, reset)
+	process (vertSync, reset, mode, ballHit, pickupHit)
 		variable newBallY 	: std_logic_vector(9 downto 0);
 		variable hitPipes	: std_logic := '0';
 		variable hitPickups	: std_logic := '0';
@@ -120,8 +120,8 @@ BEGin
 				vLives := "101";
 			else
 				vLives := "011";
-			newBallY := DEFAULT_BALL_Y;
 			end if;
+			newBallY := DEFAULT_BALL_Y;
 		elsif (rising_edge(vertSync)) then
 
 			-- Playing
@@ -165,7 +165,7 @@ BEGin
 				if (pickupHit = '1') then
 					if (hitPickups = '0') then
 						hitPickups := '1';
-						if ((vLives < "101" and mode = '1') or (vLives < "011" and mode = '0')) then
+						if ((vLives < 5 and mode = '1') or (vLives < 3 and mode = '0')) then
 							vLives := vLives + 1;
 						end if;
 					end if;
