@@ -231,6 +231,8 @@ begin
 				) then
 				vBallHit := '1';
 			end if;
+			
+			ballHit <= vBallHit;
 								
 								
 			if (vhealthx < 1 or healthpicked = '1') then
