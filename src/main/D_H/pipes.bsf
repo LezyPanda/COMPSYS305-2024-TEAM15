@@ -87,6 +87,13 @@ refer to the applicable agreement for further details.
 		(line (pt 0 160)(pt 16 160)(line_width 3))
 	)
 	(port
+		(pt 0 176)
+		(input)
+		(text "ballY[9..0]" (rect 0 0 38 12)(font "Arial" ))
+		(text "ballY[9..0]" (rect 21 171 59 183)(font "Arial" ))
+		(line (pt 0 176)(pt 16 176)(line_width 3))
+	)
+	(port
 		(pt 224 32)
 		(output)
 		(text "pipe_out" (rect 0 0 33 12)(font "Arial" ))
@@ -96,16 +103,23 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 224 48)
 		(output)
-		(text "healthx[31..0]" (rect 0 0 50 12)(font "Arial" ))
-		(text "healthx[31..0]" (rect 153 43 203 55)(font "Arial" ))
-		(line (pt 224 48)(pt 208 48)(line_width 3))
+		(text "ballHit" (rect 0 0 22 12)(font "Arial" ))
+		(text "ballHit" (rect 181 43 203 55)(font "Arial" ))
+		(line (pt 224 48)(pt 208 48)(line_width 1))
 	)
 	(port
 		(pt 224 64)
 		(output)
-		(text "healthy[31..0]" (rect 0 0 51 12)(font "Arial" ))
-		(text "healthy[31..0]" (rect 152 59 203 71)(font "Arial" ))
+		(text "healthx[31..0]" (rect 0 0 50 12)(font "Arial" ))
+		(text "healthx[31..0]" (rect 153 59 203 71)(font "Arial" ))
 		(line (pt 224 64)(pt 208 64)(line_width 3))
+	)
+	(port
+		(pt 224 80)
+		(output)
+		(text "healthy[31..0]" (rect 0 0 51 12)(font "Arial" ))
+		(text "healthy[31..0]" (rect 152 75 203 87)(font "Arial" ))
+		(line (pt 224 80)(pt 208 80)(line_width 3))
 	)
 	(drawing
 		(rectangle (rect 16 16 208 192)(line_width 1))

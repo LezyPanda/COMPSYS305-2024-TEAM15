@@ -14,8 +14,12 @@ entity pipes is
 		timecheck 				: in std_logic_vector(11 DOWNTO 0);
 		-- pipe gap connected to LFSR
 		pipe_gap 				: in std_logic_vector (5 DOWNTO 0);
+		-- Ball Y Pos
+		ballY					: in std_logic_vector(9 downto 0);
 		-- vga
 		pipe_out 				: out std_logic;
+		-- Ball Collision
+		ballHit					: out std_logic;
 		-- health item 
 		healthx 				: out integer;
 		healthy 				: out integer
@@ -32,6 +36,9 @@ architecture Behavioral of pipes is
 	constant GAP_HEIGHT 		: integer  	:= 150;
 	constant PIPE_WIDTH 		: integer 	:= 32;
 	constant PIPE_SPACING		: integer 	:= 160;
+	constant DEFAULT_BALL_X : std_logic_vector(10 downto 0) := conv_std_logic_vector(190, 11);
+	constant DEFAULT_BALL_X2 : std_logic_vector(10 downto 0) := conv_std_logic_vector(206, 11);
+	constant BALL_SIZE		: std_logic_vector(9 downto 0)	:= conv_std_logic_vector(16, 10);
 
 	
 	-- Pipes
@@ -74,7 +81,8 @@ begin
 		
 		-- Pipe 1
 		if (
-			(pipeX <= '0' & pixel_column) and ('0' & pixel_column <= pipeX2) and 
+			(pipeX <= '0' & pixel_column) and ('0' & pixel_column <= pipeX2) 
+			and 
 			(('0' & pixel_row <= pipeY - GAP_HEIGHT) or (pixel_row >= pipeY))
 			) then
 			vPipeOut := '1';
@@ -82,7 +90,8 @@ begin
 		
 		-- Pipe 2
 		if (
-			(pipe2X <= '0' & pixel_column) and ('0' & pixel_column <= pipe2X2) and 
+			(pipe2X <= '0' & pixel_column) and ('0' & pixel_column <= pipe2X2) 
+			and 
 			(('0' & pixel_row <= pipe2Y - GAP_HEIGHT) or (pixel_row >= pipe2Y))
 			) then
 			vPipeOut := '1';
@@ -90,7 +99,8 @@ begin
 		
 		-- Pipe 3
 		if (
-			(pipe3X <= '0' & pixel_column) and ('0' & pixel_column <= pipe3X2) and 
+			(pipe3X <= '0' & pixel_column) and ('0' & pixel_column <= pipe3X2) 
+			and 
 			(('0' & pixel_row <= pipe3Y - GAP_HEIGHT) or (pixel_row >= pipe3Y))
 			) then
 			vPipeOut := '1';
@@ -98,7 +108,8 @@ begin
 		
 		-- Pipe 4
 		if (
-			(pipe4X <= '0' & pixel_column) and ('0' & pixel_column <= pipe4X2) and 
+			(pipe4X <= '0' & pixel_column) and ('0' & pixel_column <= pipe4X2) 
+			and 
 			(('0' & pixel_row <= pipe4Y - GAP_HEIGHT) or (pixel_row >= pipe4Y))
 			) then
 			vPipeOut := '1';
@@ -106,7 +117,8 @@ begin
 		
 		-- Pipe 5
 		if (
-			(pipe5X <= '0' & pixel_column) and ('0' & pixel_column <= pipe5X2) and 
+			(pipe5X <= '0' & pixel_column) and ('0' & pixel_column <= pipe5X2) 
+			and 
 			(('0' & pixel_row <= pipe5Y - GAP_HEIGHT) or (pixel_row >= pipe5Y))
 			) then
 			vPipeOut := '1';
@@ -118,15 +130,16 @@ begin
 	
 	
 	process(v_sync)
-		variable randY			: std_logic_vector(9 downto 0) := conv_std_logic_vector(64, 10);
-		variable vhealth : std_logic_vector(5 downto 0) := conv_std_logic_vector(34, 6);
+		variable randY		: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(64, 10);
+		variable vhealth 	: std_logic_vector(5 downto 0) 	:= conv_std_logic_vector(34, 6);
+		variable vBallHit 	: std_logic						:= '0';
+		variable ballY2 	: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(0, 10);
 	begin 
 		-- Playing
 		if (rising_edge(v_sync) and state = "01") then 
 			
 			-- Random Height
 			randY := VALID_GAP_Y_BOT - (("0000" & pipe_gap) + ("0000" & pipe_gap));
-			
 			
 			-- If Pipe 1 Out-of-Bound, Resets, Otherwise Move
 			if (pipeX2 <= leftBound) then
@@ -137,7 +150,6 @@ begin
 				pipeX <= pipeX - pipeSpeed;
 				pipeX2 <= pipeX2 - pipeSpeed;
 			end if;
-			
 			-- If Pipe 2 Out-of-Bound, Resets, Otherwise Move
 			if (pipe2X2 <= leftBound) then
 				pipe2X <= conv_std_logic_vector(DISP_WIDTH + PIPE_SPACING - PIPE_WIDTH, 11);
@@ -147,7 +159,6 @@ begin
 				pipe2X <= pipe2X - pipeSpeed;
 				pipe2X2 <= pipe2X2 - pipeSpeed;
 			end if;
-			
 			-- If Pipe 3 Out-of-Bound, Resets, Otherwise Move
 			if (pipe3X2 <= leftBound) then
 				pipe3X <= conv_std_logic_vector(DISP_WIDTH + PIPE_SPACING - PIPE_WIDTH, 11);
@@ -157,7 +168,6 @@ begin
 				pipe3X <= pipe3X - pipeSpeed;
 				pipe3X2 <= pipe3X2 - pipeSpeed;
 			end if;
-			
 			-- If Pipe 4 Out-of-Bound, Resets, Otherwise Move
 			if (pipe4X2 <= leftBound) then
 				pipe4X <= conv_std_logic_vector(DISP_WIDTH + PIPE_SPACING - PIPE_WIDTH, 11);
@@ -167,7 +177,6 @@ begin
 				pipe4X <= pipe4X - pipeSpeed;
 				pipe4X2 <= pipe4X2 - pipeSpeed;
 			end if;
-	
 			-- If Pipe 5 Out-of-Bound, Resets, Otherwise Move
 			if (pipe5X2 <= leftBound) then
 				pipe5X <= conv_std_logic_vector(DISP_WIDTH + PIPE_SPACING - PIPE_WIDTH, 11);
@@ -176,6 +185,51 @@ begin
 			else
 				pipe5X <= pipe5X - pipeSpeed;
 				pipe5X2 <= pipe5X2 - pipeSpeed;
+			end if;
+			
+			
+			-- Ball Collision
+			vBallHit 	:= '0';
+			ballY2		:= ballY + BALL_SIZE;
+			-- Pipe 1
+			if (
+				(('0' & pipeY <= ballY2) or (pipeY - GAP_HEIGHT >= ballY))
+				and
+				(DEFAULT_BALL_X2 >= pipeX and DEFAULT_BALL_X <= pipeX2)
+				) then
+				vBallHit := '1';
+			end if;
+			-- Pipe 2
+			if (
+				(('0' & pipe2Y <= ballY2) or (pipe2Y - GAP_HEIGHT >= ballY))
+				and
+				(DEFAULT_BALL_X2 >= pipe2X and DEFAULT_BALL_X <= pipe2X2)
+				) then
+				vBallHit := '1';
+			end if;
+			-- Pipe 3
+			if (
+				(('0' & pipe3Y <= ballY2) or (pipe3Y - GAP_HEIGHT >= ballY))
+				and
+				(DEFAULT_BALL_X2 >= pipe3X and DEFAULT_BALL_X <= pipe3X2)
+				) then
+				vBallHit := '1';
+			end if;
+			-- Pipe 4
+			if (
+				(('0' & pipe4Y <= ballY2) or (pipe4Y - GAP_HEIGHT >= ballY))
+				and
+				(DEFAULT_BALL_X2 >= pipe4X and DEFAULT_BALL_X <= pipe4X2)
+				) then
+				vBallHit := '1';
+			end if;
+			-- Pipe 5
+			if (
+				(('0' & pipe5Y <= ballY2) or (pipe5Y - GAP_HEIGHT >= ballY))
+				and
+				(DEFAULT_BALL_X2 >= pipe5X and DEFAULT_BALL_X <= pipe5X2)
+				) then
+				vBallHit := '1';
 			end if;
 								
 								

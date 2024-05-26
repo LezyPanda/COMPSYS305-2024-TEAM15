@@ -10,6 +10,8 @@ ENTITY ball IS
 		game_state					: in std_logic_vector(1 downto 0);
 		pixel_row, pixel_column		: in std_logic_vector(9 downto 0);
 		displayText, pipe 			: in std_logic;
+		ballHit						: in std_logic;
+		ballY						: out std_logic_vector(9 downto 0);
 		red, green, blue 			: out std_logic_vector(3 downto 0)
 	);		
 END ball;
@@ -20,19 +22,19 @@ architecture behavior of ball is
 	constant GRAVITY : std_logic_vector(9 downto 0) 		:= conv_std_logic_vector(1, 10);
 	constant DEFAULT_BALL_X : std_logic_vector(10 downto 0) := conv_std_logic_vector(190, 11);
 	constant DEFAULT_BALL_Y : std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(480 / 2, 10);
-	constant BALL_SIZE		: std_logic_vector(9 downto 0)	:= conv_std_logic_vector(8, 10);
+	constant BALL_SIZE		: std_logic_vector(9 downto 0)	:= conv_std_logic_vector(16, 10);
 	constant SKY_BOUND 		: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(32, 10);
 	constant GROUND_BOUND 	: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(480 - 24, 10);
 	constant ZERO_MOTION 	: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(0, 10);
 	
 	
 	signal mouseClicked 	: std_logic 					:= '0';
-	signal ballY			: std_logic_vector(9 downto 0) 	:= DEFAULT_BALL_Y;
+	signal vBallY			: std_logic_vector(9 downto 0) 	:= DEFAULT_BALL_Y;
 	signal ballYMotion		: std_logic_vector(9 downto 0)	:= ZERO_MOTION;
 BEGin
 	
 	-- Rendering
-	process(game_state, ballY, pixel_column, pixel_row, displayText, pipe)
+	process(game_state, vBallY, pixel_column, pixel_row, displayText, pipe)
 		variable r, g, b : std_logic_vector(3 downto 0) := "0000";
 	begin
 	
@@ -74,10 +76,10 @@ BEGin
 			end if;
 			
 			-- Ball Colours
-			if (('0' & DEFAULT_BALL_X <= pixel_column + BALL_SIZE) and 
+			if (('0' & DEFAULT_BALL_X <= pixel_column) and 
 				('0' & pixel_column <= DEFAULT_BALL_X + BALL_SIZE) and 
-				('0' & ballY <= pixel_row + BALL_SIZE) and 
-				('0' & pixel_row <= ballY + BALL_SIZE) ) then
+				(vBallY <= pixel_row) and 
+				('0' & pixel_row <= vBallY + BALL_SIZE) ) then
 				r := "1111";
 				g := "1111";
 				b := "0000";
@@ -121,19 +123,24 @@ BEGin
 				newBallY := newBallY + ballYMotion;
 				
 				-- On Above Sky
-				if (('0' & newBallY) <= SKY_BOUND+ BALL_SIZE) then
+				if (newBallY <= SKY_BOUND) then
 					newBallY := DEFAULT_BALL_Y;
 				-- On Below Ground
-				elsif (newBallY > ('0' & (GROUND_BOUND - BALL_SIZE))) then
+				elsif (newBallY + BALL_SIZE >= '0' & GROUND_BOUND) then
+					newBallY := DEFAULT_BALL_Y;
+					ballYMotion <= ZERO_MOTION;
+				-- On Hit-Pipe
+				elsif (ballHit = '1') then
 					newBallY := DEFAULT_BALL_Y;
 					ballYMotion <= ZERO_MOTION;
 				end if;
 				
-				ballY <= newBallY;
+				vBallY <= newBallY;
 			end if;
 			
 			mouseClicked <= mbL or mbR;
 		end if;
+		ballY <= vBallY;
 	end process;
 END behavior;
 
