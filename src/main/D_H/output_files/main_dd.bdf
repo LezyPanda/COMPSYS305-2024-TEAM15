@@ -1642,6 +1642,11 @@ refer to the applicable agreement for further details.
 	(pt 1408 584)
 	(pt 1376 584)
 )
+(connector
+	(text "vSync" (rect 442 168 470 185)(font "Intel Clear" ))
+	(pt 512 184)
+	(pt 432 184)
+)
 (junction (pt 768 184))
 (junction (pt 464 -8))
 (junction (pt 448 8))
