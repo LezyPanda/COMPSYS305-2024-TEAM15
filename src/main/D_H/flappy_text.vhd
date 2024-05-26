@@ -185,9 +185,9 @@ begin
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 6, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 7 - 1, 10)) then
 						character_address <= vbopen;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 7, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 8 - 1, 10)) then
-						character_address <= vS;
+						character_address <= vK;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 8, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 9 - 1, 10)) then
-						character_address <= vW;
+						character_address <= vY;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 9, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 10 - 1, 10)) then
 						character_address <= v0;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 10, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 11 - 1, 10)) then
@@ -220,11 +220,11 @@ begin
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 7, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 8 - 1, 10)) then
 						character_address <= vbopen;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 8, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 9 - 1, 10)) then
-						character_address <= vS;
+						character_address <= vK;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 9, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 10 - 1, 10)) then
-						character_address <= vW;
+						character_address <= vY;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 10, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 11 - 1, 10)) then
-						character_address <= v0;
+						character_address <= v1;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 11, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 12 - 1, 10)) then
 						character_address <= vbclose;
 					else
@@ -535,13 +535,11 @@ begin
 				elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 10, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 11 - 1, 10)) then
 						character_address <= vK;
 				elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 11, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 12 - 1, 10)) then
-						character_address <= vE;
-				elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 12, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 13 - 1, 10)) then
 						character_address <= vY;
+				elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 12, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 13 - 1, 10)) then
+						character_address <= v0;
 				elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 13, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 14 - 1, 10)) then
-						character_address <= v3;
-				elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 14, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 15 - 1, 10)) then
-						character_address <= vbclose;	
+						character_address <= vbclose;
 				else
 					character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
 				end if;
@@ -569,12 +567,10 @@ begin
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 6, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 7 - 1, 10)) then
 							character_address <= vK;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 7, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 8 - 1, 10)) then
-							character_address <= vE;
-					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 8, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 9 - 1, 10)) then
 							character_address <= vY;
+					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 8, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 9 - 1, 10)) then
+							character_address <= v1;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 9, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 10 - 1, 10)) then
-							character_address <= v4;
-					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 10, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 11 - 1, 10)) then
 							character_address <= vbclose;	
 					else
 						character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
@@ -627,13 +623,11 @@ begin
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 6, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 7 - 1, 10)) then
 							character_address <= vK;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 7, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 8 - 1, 10)) then
-							character_address <= vE;
-					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 8, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 9 - 1, 10)) then
 							character_address <= vY;
+					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 8, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 9 - 1, 10)) then
+							character_address <= v0;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 9, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 10 - 1, 10)) then
-							character_address <= v3;
-					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 10, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 11 - 1, 10)) then
-							character_address <= vbclose;	
+							character_address <= vbclose;
 					else
 						character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
 					end if;
@@ -661,13 +655,11 @@ begin
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 6, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 7 - 1, 10)) then
 							character_address <= vK;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 7, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 8 - 1, 10)) then
-							character_address <= vE;
-					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 8, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 9 - 1, 10)) then
 							character_address <= vY;
+					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 8, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 9 - 1, 10)) then
+							character_address <= v1;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 9, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 10 - 1, 10)) then
-							character_address <= v4;
-					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 10, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 11 - 1, 10)) then
-							character_address <= vbclose;	
+							character_address <= vbclose;
 					else
 						character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
 					end if;
