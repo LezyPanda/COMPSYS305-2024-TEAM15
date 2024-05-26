@@ -153,11 +153,11 @@ BEGin
 				end if;
 				
 				vBallY <= newBallY;
-				lives <= vLives;
 			end if;
 			
 			mouseClicked <= mbL or mbR;
 		end if;
+		lives <= vLives;
 		ballY <= vBallY;
 	end process;
 END behavior;
