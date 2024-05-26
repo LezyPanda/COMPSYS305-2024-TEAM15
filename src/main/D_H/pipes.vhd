@@ -279,8 +279,8 @@ begin
 					(DEFAULT_BALL_X2 >= pickupX and DEFAULT_BALL_X <= pickupX2)
 					) then
 					vPickupHit := '1';
-					pickupX <= conv_std_logic_vector(728, 11);
-					pickupX2<= conv_std_logic_vector(736, 11);
+					pickupX <= conv_std_logic_vector(770, 11);
+					pickupX2<= conv_std_logic_vector(778, 11);
 				end if;
 			end if;
 			

@@ -112,6 +112,7 @@ BEGin
 	process (vertSync, reset)
 		variable newBallY 	: std_logic_vector(9 downto 0);
 		variable hitPipes	: std_logic := '0';
+		variable hitPickups	: std_logic := '0';
 		variable vLives		: std_logic_vector(2 downto 0)	:= conv_std_logic_vector(5, 3);
 	begin
 		if (reset = '1') then
@@ -156,14 +157,17 @@ BEGin
 						vLives := vLives - 1;
 					end if;
 				elsif (pickupHit = '1') then
-					vLives := vLives + 1;
-					if (vLives > 5 and mode = '1') then
-						vLives := conv_std_logic_vector(5, 3);
-					elsif (vLives > 3 and mode = '0') then
-						vLives := conv_std_logic_vector(3, 3);
+					if (hitPipes = '0') then
+						vLives := vLives + 1;
+						if (vLives > 5 and mode = '1') then
+							vLives := conv_std_logic_vector(5, 3);
+						elsif (vLives > 3 and mode = '0') then
+							vLives := conv_std_logic_vector(3, 3);
+						end if;
 					end if;
 				else
 					hitPipes := '0';
+					hitPickups := '0';
 				end if;
 				
 				vBallY <= newBallY;
