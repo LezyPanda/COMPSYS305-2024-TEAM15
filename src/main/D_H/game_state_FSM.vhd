@@ -53,18 +53,13 @@ begin
 					if (bPress = '1') then
 						state := play;
 						reset <= '1';
-					else
-						reset <= '0';
 					end if;
 				when play =>
+					reset <= '0';
 					if (lives <= "000") then
 						state := dead;
-						reset <= '1';
 					elsif (bPress = '1') then
 						state := pause;
-						reset <= '0';
-					else
-						reset <= '0';
 					end if;						
 				when pause =>
 					if (bPress = '1') then

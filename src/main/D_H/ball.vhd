@@ -107,15 +107,17 @@ BEGin
 		variable hitPipes	: std_logic := '0';
 		variable vLives		: std_logic_vector(2 downto 0)	:= conv_std_logic_vector(5, 3);
 	begin
-		if (rising_edge(vertSync)) then
-			if (reset = '1') then
-				if (mode = '1') then
-					vLives := "101";
-				else
-					vLives := "011";
-				end if;
+		if (reset = '1') then
+			if (mode = '1') then
+				vLives := "101";
+			else
+				vLives := "011";
+			newBallY := DEFAULT_BALL_Y;
+			end if;
+		elsif (rising_edge(vertSync)) then
+
 			-- Playing
-			elsif (game_state = "01") then
+			if (game_state = "01") then
 				
 				-- On-Click
 				if ((mbL or mbR) = '1' and (mouseClicked = '0')) then

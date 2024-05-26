@@ -183,9 +183,9 @@ begin
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 6, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 7 - 1, 10)) then
 						character_address <= vbopen;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 7, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 8 - 1, 10)) then
-						character_address <= vK;
+						character_address <= vS;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 8, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 9 - 1, 10)) then
-						character_address <= vY;
+						character_address <= vW;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 9, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 10 - 1, 10)) then
 						character_address <= v0;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 10, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 11 - 1, 10)) then
@@ -218,11 +218,11 @@ begin
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 7, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 8 - 1, 10)) then
 						character_address <= vbopen;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 8, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 9 - 1, 10)) then
-						character_address <= vK;
+						character_address <= vS;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 9, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 10 - 1, 10)) then
-						character_address <= vY;
+						character_address <= vW;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 10, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 11 - 1, 10)) then
-						character_address <= v1;
+						character_address <= v0;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 11, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 12 - 1, 10)) then
 						character_address <= vbclose;
 					else
@@ -236,7 +236,7 @@ begin
 			
 		end if;
 		-- Play Stage
-		if (game_state = "01") then
+		if (game_state /= "00") then
 			-- "PLAY"
 			x := 196;
 			y := 128;
