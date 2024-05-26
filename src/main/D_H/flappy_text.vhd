@@ -297,7 +297,6 @@ begin
 								when others => character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
 							end case;
 					
-					
 				--pause
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 10, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 11, 10)) then
 						character_address <= vP;
@@ -321,45 +320,6 @@ begin
 							character_address <= v2;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 20, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 21 - 1, 10)) then
 							character_address <= vbclose;	
-					-- time
-					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(x + s * 29, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 30 - 1, 10)) then
-                    case minute is
-                        when "0000" => character_address <= v0;
-                        when "0001" => character_address <= v1;
-                        when "0010" => character_address <= v2;
-                        when "0011" => character_address <= v3;
-                        when others => character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
-                    end case;
-                elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(x + s * 30, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 31 - 1, 10)) then
-                    character_address <= vApostrphy;
-					 elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(x + s * 31, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 32 - 1, 10)) then
-                    case secondten is
-                        when "0000" => character_address <= v0;
-                        when "0001" => character_address <= v1;
-                        when "0010" => character_address <= v2;
-                        when "0011" => character_address <= v3;
-                        when "0100" => character_address <= v4;
-                        when "0101" => character_address <= v5;
-                        when "0110" => character_address <= v6;
-                        when "0111" => character_address <= v7;
-                        when "1000" => character_address <= v8;
-                        when "1001" => character_address <= v9;
-                        when others => character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
-                    end case;	
-                elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(x + s * 32, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 33 - 1, 10)) then
-                    case secondone is
-                        when "0000" => character_address <= v0;
-                        when "0001" => character_address <= v1;
-                        when "0010" => character_address <= v2;
-                        when "0011" => character_address <= v3;
-                        when "0100" => character_address <= v4;
-                        when "0101" => character_address <= v5;
-                        when "0110" => character_address <= v6;
-                        when "0111" => character_address <= v7;
-                        when "1000" => character_address <= v8;
-                        when "1001" => character_address <= v9;
-                        when others => character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
-                    end case;
                 else
                     character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
                 end if;
@@ -368,6 +328,32 @@ begin
 					font_row <= pixel_row(3 downto 1);
 					font_col <= pixel_column(3 downto 1);
 				end if;
+			------------------------------------------------------////////////////////////-----------------------------------------------
+			x := 0;
+			y := 464;
+			s := 16;
+				
+				if (pixel_row >= CONV_STD_LOGIC_VECTOR(y, 10)) and (pixel_row <= CONV_STD_LOGIC_VECTOR(y + s - 1, 10)) then
+				if (pixel_column >= CONV_STD_LOGIC_VECTOR(		x + s * 0, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 1, 10)) then
+					character_address <= vL;
+				elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 1, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 2 - 1, 10)) then
+					character_address <= vE;
+				elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 2, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 3 - 1, 10)) then
+					character_address <= vV;
+				elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 3, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 4 - 1, 10)) then
+					character_address <= vE;
+				elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 4, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 5 - 1, 10)) then
+					character_address <= vL;
+				elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 5, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 6 - 1, 10)) then
+					character_address <= v1;
+				else
+					character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
+				end if;
+				font_row <= pixel_row(3 downto 1);
+				font_col <= pixel_column(3 downto 1);
+			end if;
+				
+				
 			else
 			--normal mode
 				max_lives := 3;
@@ -458,13 +444,51 @@ begin
 					end case;
 				else
 					character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
-				end if;
-						else
-							character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
 						end if;
 						font_row <= pixel_row(3 downto 1);
 						font_col <= pixel_column(3 downto 1);
+					end if;
+			x := 0;
+			y := 464;
+			s := 16;
+				
+				if (pixel_row >= CONV_STD_LOGIC_VECTOR(y, 10)) and (pixel_row <= CONV_STD_LOGIC_VECTOR(y + s - 1, 10)) then
+				if (pixel_column >= CONV_STD_LOGIC_VECTOR(		x + s * 0, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 1, 10)) then
+					character_address <= vL;
+				elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 1, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 2 - 1, 10)) then
+					character_address <= vE;
+				elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 2, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 3 - 1, 10)) then
+					character_address <= vV;
+				elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 3, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 4 - 1, 10)) then
+					character_address <= vE;
+				elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 4, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 5 - 1, 10)) then
+					character_address <= vL;
+				elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 5, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 6 - 1, 10)) then
+					 if("000000110000" > timeset 							 ) then -- less than 30
+								character_address <= v1;
+					 elsif("000100000000" > timeset and timeset > "000000110000" ) then  -- more than 30 less than 1.0
+								character_address <= v2;
+					 elsif("000100110000" > timeset and timeset > "000100000000" ) then  -- more than 1.0 less than 1.3
+								character_address <= v3;
+					elsif("001000000000" > timeset and timeset > "000100110000" ) then -- more  than 1.3 less than 2
+								character_address <= v4;
+					elsif("001000110000" > timeset and timeset > "001000000000" ) then -- more than 2 less than 2.3
+								character_address <= v5;
+					elsif("001100000000" > timeset and timeset > "001000110000" ) then -- more than 2.3 less than 3
+								character_address <= v6;
+					elsif("001100110000" > timeset and timeset > "001100000000" ) then -- more than 3.0 less than 3.3
+								character_address <= v7;
+					else -- more than 3.3
+								character_address <= v8;
+					end if;			
+					 
+				else
+					character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
 				end if;
+				font_row <= pixel_row(3 downto 1);
+				font_col <= pixel_column(3 downto 1);
+			end if;
+			end if;
 		end if;
 		-- Pause Stage
 		if (game_state = "10") then
