@@ -151,23 +151,25 @@ BEGin
 					ballYMotion <= ZERO_MOTION;
 					vLives := vLives - 1;
 				-- On Hit-Pipe
-				elsif (ballHit = '1') then
+				end if;
+				
+				if (ballHit = '1') then
 					if (hitPipes = '0') then
 						hitPipes := '1';
 						vLives := vLives - 1;
 					end if;
-				elsif (pickupHit = '1') then
+				else
+					hitPipes := '0';
+				end if;
+					
+				if (pickupHit = '1') then
 					if (hitPickups = '0') then
 						hitPickups := '1';
-						vLives := vLives + 1;
-						if (vLives > 5 and mode = '1') then
-							vLives := conv_std_logic_vector(5, 3);
-						elsif (vLives > 3 and mode = '0') then
-							vLives := conv_std_logic_vector(3, 3);
+						if ((vLives < 5 and mode = '1') or (vLives < 3 and mode = '0')) then
+							vLives := vLives + 1;
 						end if;
 					end if;
 				else
-					hitPipes := '0';
 					hitPickups := '0';
 				end if;
 				

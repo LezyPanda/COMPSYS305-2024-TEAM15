@@ -66,6 +66,7 @@ architecture Behavioral of pipes is
 	-- health item
 	signal pickupX 				: std_logic_vector(10 downto 0) 	:= conv_std_logic_vector(600 + PIPE_SPACING * 2 + 76, 11);
 	signal pickupX2 			: std_logic_vector(10 downto 0) 	:= conv_std_logic_vector(600 + PIPE_SPACING * 2 + 84, 11);
+	signal pickedUp				: std_logic							:= '0';
 begin
  
 	-- Rendering
@@ -123,6 +124,8 @@ begin
 			
 			-- Health Pickup
 			if (
+				(pickedUp = '0')
+				and
 				(pickupX <= '0' & pixel_column) and ('0' & pixel_column <= pickupX2)
 				and
 				(DEFAULT_PICKUP_Y <= pixel_row) and (pixel_row <= DEFAULT_PICKUP_Y2)
@@ -168,6 +171,7 @@ begin
 			pipe5Y  <= conv_std_logic_vector(320, 10);
 			pickupX <= conv_std_logic_vector(600 + PIPE_SPACING * 2 + 76, 11);
 			pickupX2<= conv_std_logic_vector(600 + PIPE_SPACING * 2 + 84, 11);
+			pickedUp <= '0';
 		elsif (rising_edge(v_sync)) then
 			-- Random Height
 			randY := VALID_GAP_Y_BOT - (("0000" & pipe_gap) + ("0000" & pipe_gap));
@@ -223,6 +227,7 @@ begin
 				if (pickupX2 <= leftBound) then
 					pickupX <= conv_std_logic_vector(DISP_WIDTH + PIPE_SPACING + PIPE_WIDTH * 2, 11);
 					pickupX2 <= conv_std_logic_vector(DISP_WIDTH + PIPE_SPACING + PIPE_WIDTH * 2 + 8, 11);
+					pickedUp <= '0';
 				else
 					pickupX <= pickupX - pipeSpeed;
 					pickupX2 <= pickupX2 - pipeSpeed;
@@ -274,10 +279,13 @@ begin
 				end if;
 				-- Pickup
 				if (
+					(pickedUp = '0')
+					and
 					(ballY2 >= DEFAULT_PICKUP_Y and ballY <= DEFAULT_PICKUP_Y2)
 					and
 					(DEFAULT_BALL_X2 >= pickupX and DEFAULT_BALL_X <= pickupX2)
 					) then
+					pickedUp <= '1';
 					vPickupHit := '1';
 					pickupX <= conv_std_logic_vector(600 + PIPE_SPACING * 2 + 76, 11);
 					pickupX2<= conv_std_logic_vector(600 + PIPE_SPACING * 2 + 84, 11);
