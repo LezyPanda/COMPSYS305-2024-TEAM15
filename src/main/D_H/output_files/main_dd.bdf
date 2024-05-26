@@ -104,6 +104,22 @@ refer to the applicable agreement for further details.
 	(annotation_block (location)(rect 280 288 336 312))
 )
 (pin
+	(input)
+	(rect 648 72 816 88)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "SW0" (rect 5 0 29 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
 	(output)
 	(rect 1768 384 1944 400)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
@@ -944,7 +960,7 @@ refer to the applicable agreement for further details.
 (symbol
 	(rect 512 152 704 328)
 	(text "game_state_FSM" (rect 5 0 91 12)(font "Arial" ))
-	(text "inst2" (rect 8 160 30 177)(font "Intel Clear" ))
+	(text "inst11" (rect 8 160 36 177)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -1014,34 +1030,6 @@ refer to the applicable agreement for further details.
 		(text "reset" (rect 0 0 24 12)(font "Arial" ))
 		(text "reset" (rect 151 43 175 55)(font "Arial" ))
 		(line (pt 192 48)(pt 176 48))
-	)
-	(port
-		(pt 192 64)
-		(output)
-		(text "resetTimer" (rect 0 0 51 12)(font "Arial" ))
-		(text "resetTimer" (rect 128 59 179 71)(font "Arial" ))
-		(line (pt 192 64)(pt 176 64))
-	)
-	(port
-		(pt 192 80)
-		(output)
-		(text "enableTimer" (rect 0 0 59 12)(font "Arial" ))
-		(text "enableTimer" (rect 122 75 181 87)(font "Arial" ))
-		(line (pt 192 80)(pt 176 80))
-	)
-	(port
-		(pt 192 96)
-		(output)
-		(text "mode" (rect 0 0 27 12)(font "Arial" ))
-		(text "mode" (rect 149 91 176 103)(font "Arial" ))
-		(line (pt 192 96)(pt 176 96))
-	)
-	(port
-		(pt 192 112)
-		(output)
-		(text "is_paused" (rect 0 0 49 12)(font "Arial" ))
-		(text "is_paused" (rect 130 107 179 119)(font "Arial" ))
-		(line (pt 192 112)(pt 176 112))
 	)
 	(drawing
 		(rectangle (rect 16 16 176 160))
@@ -1155,14 +1143,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1408 616)
-	(pt 720 616)
-)
-(connector
-	(pt 1408 600)
-	(pt 736 600)
-)
-(connector
 	(pt 344 360)
 	(pt 448 360)
 )
@@ -1189,18 +1169,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 464 -8)
 	(pt 464 200)
-)
-(connector
-	(pt 720 232)
-	(pt 704 232)
-)
-(connector
-	(pt 736 216)
-	(pt 704 216)
-)
-(connector
-	(pt 736 600)
-	(pt 736 216)
 )
 (connector
 	(pt 424 8)
@@ -1245,16 +1213,8 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 752 392)
-	(pt 752 480)
-)
-(connector
 	(pt 448 464)
 	(pt 776 464)
-)
-(connector
-	(pt 752 480)
-	(pt 776 480)
 )
 (connector
 	(text "pixel_row[9..0]" (rect 674 528 743 545)(font "Intel Clear" ))
@@ -1525,50 +1485,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 704 200)
-	(pt 744 200)
-)
-(connector
-	(pt 744 496)
-	(pt 776 496)
-)
-(connector
-	(pt 704 248)
-	(pt 712 248)
-)
-(connector
-	(pt 712 248)
-	(pt 712 512)
-)
-(connector
-	(pt 712 512)
-	(pt 776 512)
-)
-(connector
-	(pt 1128 392)
-	(pt 1128 576)
-)
-(connector
-	(pt 1128 576)
-	(pt 1728 576)
-)
-(connector
-	(pt 752 392)
-	(pt 1128 392)
-)
-(connector
-	(pt 1128 392)
-	(pt 1152 392)
-)
-(connector
-	(pt 1728 424)
-	(pt 1728 432)
-)
-(connector
-	(pt 1728 432)
-	(pt 1728 576)
-)
-(connector
 	(pt 1008 512)
 	(pt 1008 584)
 	(bus)
@@ -1690,46 +1606,6 @@ refer to the applicable agreement for further details.
 	(pt 1152 424)
 )
 (connector
-	(pt 1152 408)
-	(pt 744 408)
-)
-(connector
-	(pt 744 200)
-	(pt 744 408)
-)
-(connector
-	(pt 744 408)
-	(pt 744 496)
-)
-(connector
-	(pt 816 456)
-	(pt 1152 456)
-)
-(connector
-	(pt 816 200)
-	(pt 856 200)
-)
-(connector
-	(pt 720 304)
-	(pt 816 304)
-)
-(connector
-	(pt 720 616)
-	(pt 720 304)
-)
-(connector
-	(pt 720 304)
-	(pt 720 232)
-)
-(connector
-	(pt 816 200)
-	(pt 816 304)
-)
-(connector
-	(pt 816 304)
-	(pt 816 456)
-)
-(connector
 	(pt 480 336)
 	(pt 480 296)
 	(bus)
@@ -1755,19 +1631,73 @@ refer to the applicable agreement for further details.
 	(pt 512 296)
 	(bus)
 )
+(connector
+	(text "reset" (rect 712 184 735 201)(font "Intel Clear" ))
+	(pt 704 200)
+	(pt 728 200)
+)
+(connector
+	(text "mode" (rect 826 64 853 81)(font "Intel Clear" ))
+	(pt 816 80)
+	(pt 848 80)
+)
+(connector
+	(text "mode" (rect 802 184 829 201)(font "Intel Clear" ))
+	(pt 856 200)
+	(pt 792 200)
+)
+(connector
+	(text "vSync" (rect 714 464 742 481)(font "Intel Clear" ))
+	(pt 776 480)
+	(pt 704 480)
+)
+(connector
+	(text "reset" (rect 714 480 737 497)(font "Intel Clear" ))
+	(pt 776 496)
+	(pt 704 496)
+)
+(connector
+	(text "mode" (rect 714 496 741 513)(font "Intel Clear" ))
+	(pt 776 512)
+	(pt 704 512)
+)
+(connector
+	(text "mode" (rect 1106 440 1133 457)(font "Intel Clear" ))
+	(pt 1152 456)
+	(pt 1096 456)
+)
+(connector
+	(text "reset" (rect 1026 392 1049 409)(font "Intel Clear" ))
+	(pt 1152 408)
+	(pt 1016 408)
+)
+(connector
+	(text "vSync" (rect 1026 376 1054 393)(font "Intel Clear" ))
+	(pt 1152 392)
+	(pt 1016 392)
+)
+(connector
+	(text "vSync" (rect 1738 440 1766 457)(font "Intel Clear" ))
+	(pt 1728 456)
+	(pt 1752 456)
+)
+(connector
+	(pt 1728 424)
+	(pt 1728 432)
+)
+(connector
+	(pt 1728 432)
+	(pt 1728 456)
+)
 (junction (pt 344 184))
 (junction (pt 1128 320))
 (junction (pt 1128 360))
 (junction (pt 768 184))
-(junction (pt 1728 432))
 (junction (pt 464 -8))
 (junction (pt 448 8))
 (junction (pt 448 360))
-(junction (pt 1128 392))
 (junction (pt 448 464))
 (junction (pt 768 440))
 (junction (pt 1400 360))
 (junction (pt 840 336))
-(junction (pt 744 408))
-(junction (pt 720 304))
-(junction (pt 816 304))
+(junction (pt 1728 432))

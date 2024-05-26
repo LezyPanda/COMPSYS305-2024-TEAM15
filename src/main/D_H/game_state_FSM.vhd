@@ -8,10 +8,7 @@ entity game_state_FSM is
 		button1, button2, button3, button4	 	: in std_logic;
 		lives									: in std_logic_vector(2 downto 0);
 		state_out         						: out std_logic_vector(1 downto 0);
-		reset									: out std_logic;
-		resetTimer, enableTimer					: out std_logic;
-		mode									: out std_logic;
-		is_paused								: out std_logic
+		reset									: out std_logic
 	);
 end game_state_FSM;
 
@@ -56,11 +53,9 @@ begin
 					if (bPress = '1') then
 						state := play;
 						reset <= '1';
-						mode <= '0';
 					elsif (b2Press = '1') then
 						state := play;
 						reset <= '1';
-						mode <= '1';
 					else
 						reset <= '0';
 					end if;
