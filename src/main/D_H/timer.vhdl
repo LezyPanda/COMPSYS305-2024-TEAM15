@@ -45,7 +45,6 @@ architecture atimer of timer is
     signal vQ1, vQ2, vQ3 : std_logic_vector(3 downto 0);
 	signal vClk : std_logic;
 begin
--- set to 50000000 for 1 s
 	dummy : ClockDivider port map(clock50, Reset, 25000000, vClk);
 	dummy2 : BCDCounter port map(vClk, init, vEnable1, "0000", "0011", vQ1); -- m
     dummy3 : BCDCounter port map(vClk, init, vEnable2, "0000", "0101", vQ2); -- st

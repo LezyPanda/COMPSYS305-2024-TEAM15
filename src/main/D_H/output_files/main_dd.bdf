@@ -1671,7 +1671,7 @@ refer to the applicable agreement for further details.
 	(pt 24 184)
 )
 (connector
-	(text "clock50" (rect 1370 568 1406 585)(font "Intel Clear" ))
+	(text "clk" (rect 1370 568 1384 585)(font "Intel Clear" ))
 	(pt 1408 584)
 	(pt 1360 584)
 )

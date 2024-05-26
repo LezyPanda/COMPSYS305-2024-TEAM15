@@ -8,7 +8,7 @@ entity game_state_FSM is
 		button1, button2, button3, button4	 	: in std_logic;
 		lives									: in std_logic_vector(2 downto 0);
 		state_out         						: out std_logic_vector(1 downto 0);
-		timer									: out std_logic;
+		timer									: out std_logic	:= '0';
 		reset									: out std_logic
 	);
 end game_state_FSM;
@@ -79,31 +79,34 @@ begin
 			
 			case state is
 				when intro => 
-					timer <= '0';
 					if (bPress = '1') then
 						state := play;
 						reset <= '1';
+						timer <= '1';
 					end if;
 				when play =>
 					reset <= '0';
-					timer <= '1';
 					if (lives <= "000") then
 						state := dead;
+						timer <= '0';
 					elsif (b3Press = '1') then
 						state := pause;
+						timer <= '0';
 					end if;						
 				when pause =>
-					timer <= '0';
 					if (bPress = '1') then
 						state := play;
+						timer <= '1';
 					elsif (b2Press = '1') then
 						state := intro;
+						timer <= '0';
 					end if;
 				when dead =>
 					timer <= '0';
 					if (bPress = '1') then
 						state := play;
 						reset <= '1';
+						timer <= '1';
 					elsif (b2Press = '1') then
 						state := intro;
 					end if;
