@@ -239,25 +239,6 @@ begin
 		end if;
 		-- Play Stage
 		if (game_state /= "00") then
-			-- "PLAY"
-			x := 196;
-			y := 128;
-			s := 64;
-			if (pixel_row >= CONV_STD_LOGIC_VECTOR(y, 10)) and (pixel_row <= CONV_STD_LOGIC_VECTOR(y + s - 1, 10)) then
-				if (pixel_column >= CONV_STD_LOGIC_VECTOR(		x + s * 0, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 1, 10)) then
-					character_address <= vP;
-				elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 1, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 2 - 1, 10)) then
-					character_address <= vL;
-				elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 2, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 3 - 1, 10)) then
-					character_address <= vA;
-				elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 3, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 4 - 1, 10)) then
-					character_address <= vY;
-				else
-					character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
-				end if;
-				font_row <= pixel_row(5 downto 3);
-				font_col <= pixel_column(5 downto 3);
-			end if;
 			-- lives set
 			x := 0;
 			y := 16;
