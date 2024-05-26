@@ -157,7 +157,8 @@ BEGin
 						vLives := vLives - 1;
 					end if;
 				elsif (pickupHit = '1') then
-					if (hitPipes = '0') then
+					if (hitPickups = '0') then
+						hitPickups := '1';
 						vLives := vLives + 1;
 						if (vLives > 5 and mode = '1') then
 							vLives := conv_std_logic_vector(5, 3);
