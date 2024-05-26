@@ -53,17 +53,13 @@ begin
 	dummy6 : BCD2SevenSeg port map(vQ2, HEX1);
 	dummy7 : BCD2SevenSeg port map(vQ3, HEX0);
 	
-    process (vClk, Reset, Enable)
+    process (clock50, vClk, Reset, Enable)
 		variable tEnable1, tEnable2, tEnable3 : std_logic; 
     begin
 		
         if (Reset = '1') then
             init <= '1';
-				tEnable1 := '1';
-				tEnable2 := '1';
-				tEnable3 := '1';
 			timeOut <= '0';
-			
         elsif (rising_edge(vClk)) then
 			if (Enable = '1') then
 				init <= '0';

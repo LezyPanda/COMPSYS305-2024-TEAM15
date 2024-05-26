@@ -16,7 +16,7 @@ end game_state_FSM;
 architecture FSM of game_state_FSM is
 	type game_state_type is(intro, play, dead, pause);
 begin 
-	process(vSync)
+	process(vSync, button1, button2, button3, button4, mbL, mbR, lives)
 		variable state : game_state_type := intro;
 		variable bWasDown : std_logic := '0';
 		variable b2WasDown : std_logic := '0';
@@ -80,29 +80,28 @@ begin
 			case state is
 				when intro => 
 					if (bPress = '1') then
-						state := play;
 						reset <= '1';
 						timer <= '1';
+						state := play;
 					end if;
 				when play =>
 					reset <= '0';
 					if (lives <= "000") then
+						timer <= '0';
 						state := dead;
-						timer <= '0';
 					elsif (b3Press = '1') then
-						state := pause;
 						timer <= '0';
+						state := pause;
 					end if;						
 				when pause =>
 					if (bPress = '1') then
-						state := play;
 						timer <= '1';
+						state := play;
 					elsif (b2Press = '1') then
-						state := intro;
 						timer <= '0';
+						state := intro;
 					end if;
 				when dead =>
-					timer <= '0';
 					if (bPress = '1') then
 						state := play;
 						reset <= '1';
