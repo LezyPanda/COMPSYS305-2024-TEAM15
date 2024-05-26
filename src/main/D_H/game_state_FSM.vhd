@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 entity game_state_FSM is
 	port(
-		clk			        					: in std_logic;
+		vSync		        					: in std_logic;
 		mbL, mbR								: in std_logic;
 		button1, button2, button3, button4	 	: in std_logic;
 		lives									: in std_logic_vector(2 downto 0);
@@ -15,14 +15,14 @@ end game_state_FSM;
 architecture FSM of game_state_FSM is
 	type game_state_type is(intro, play, dead, pause);
 begin 
-	process(clk)
+	process(vSync)
 		variable state : game_state_type := intro;
 		variable bWasDown : std_logic := '0';
 		variable b2WasDown : std_logic := '0';
 		variable bPress	: std_logic := '0';
 		variable b2Press	: std_logic := '0';
 	begin	
-		if (rising_edge(clk)) then
+		if (rising_edge(vSync)) then
 		
 			if (button1 = '0') then
 				if (bWasDown = '0') then
@@ -51,9 +51,6 @@ begin
 			case state is
 				when intro => 
 					if (bPress = '1') then
-						state := play;
-						reset <= '1';
-					elsif (b2Press = '1') then
 						state := play;
 						reset <= '1';
 					else

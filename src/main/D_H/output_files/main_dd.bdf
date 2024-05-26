@@ -107,7 +107,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 648 72 816 88)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "SW0" (rect 5 0 29 12)(font "Arial" ))
+	(text "SW0" (rect 5 0 28 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -118,6 +118,7 @@ refer to the applicable agreement for further details.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 584 88 648 112))
 )
 (pin
 	(output)
@@ -960,12 +961,12 @@ refer to the applicable agreement for further details.
 (symbol
 	(rect 512 152 704 328)
 	(text "game_state_FSM" (rect 5 0 91 12)(font "Arial" ))
-	(text "inst11" (rect 8 160 36 177)(font "Intel Clear" ))
+	(text "inst2" (rect 8 160 30 177)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
-		(text "clk" (rect 0 0 14 12)(font "Arial" ))
-		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(text "vSync" (rect 0 0 33 12)(font "Arial" ))
+		(text "vSync" (rect 21 27 54 39)(font "Arial" ))
 		(line (pt 0 32)(pt 16 32))
 	)
 	(port
@@ -1038,34 +1039,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 1768 432)
 	(pt 1728 432)
-)
-(connector
-	(pt 160 -40)
-	(pt 144 -40)
-)
-(connector
-	(pt 144 -40)
-	(pt 144 96)
-)
-(connector
-	(pt 144 96)
-	(pt 344 96)
-)
-(connector
-	(pt 344 96)
-	(pt 344 184)
-)
-(connector
-	(pt 344 184)
-	(pt 344 360)
-)
-(connector
-	(pt 1152 376)
-	(pt 1128 376)
-)
-(connector
-	(pt 1128 360)
-	(pt 1128 376)
 )
 (connector
 	(pt 1608 664)
@@ -1143,14 +1116,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 344 360)
-	(pt 448 360)
-)
-(connector
-	(pt 448 360)
-	(pt 1128 360)
-)
-(connector
 	(text "pixel_row[9..0]" (rect 1938 472 2007 489)(font "Intel Clear" ))
 	(pt 1704 496)
 	(pt 2008 496)
@@ -1213,10 +1178,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 448 464)
-	(pt 776 464)
-)
-(connector
 	(text "pixel_row[9..0]" (rect 674 528 743 545)(font "Intel Clear" ))
 	(pt 664 544)
 	(pt 776 544)
@@ -1227,18 +1188,6 @@ refer to the applicable agreement for further details.
 	(pt 664 560)
 	(pt 776 560)
 	(bus)
-)
-(connector
-	(pt 448 592)
-	(pt 464 592)
-)
-(connector
-	(pt 448 360)
-	(pt 448 464)
-)
-(connector
-	(pt 448 464)
-	(pt 448 592)
 )
 (connector
 	(pt 616 592)
@@ -1254,10 +1203,6 @@ refer to the applicable agreement for further details.
 	(pt 680 528)
 	(pt 776 528)
 	(bus)
-)
-(connector
-	(pt 1128 232)
-	(pt 1200 232)
 )
 (connector
 	(pt 1520 184)
@@ -1410,34 +1355,6 @@ refer to the applicable agreement for further details.
 	(pt 1432 376)
 	(pt 1408 376)
 	(bus)
-)
-(connector
-	(pt 1408 584)
-	(pt 1400 584)
-)
-(connector
-	(pt 1400 360)
-	(pt 1432 360)
-)
-(connector
-	(pt 1128 320)
-	(pt 1400 320)
-)
-(connector
-	(pt 1128 232)
-	(pt 1128 320)
-)
-(connector
-	(pt 1128 320)
-	(pt 1128 360)
-)
-(connector
-	(pt 1400 320)
-	(pt 1400 360)
-)
-(connector
-	(pt 1400 360)
-	(pt 1400 584)
 )
 (connector
 	(pt 760 656)
@@ -1619,14 +1536,6 @@ refer to the applicable agreement for further details.
 	(pt 464 200)
 )
 (connector
-	(pt 328 184)
-	(pt 344 184)
-)
-(connector
-	(pt 344 184)
-	(pt 512 184)
-)
-(connector
 	(pt 480 296)
 	(pt 512 296)
 	(bus)
@@ -1689,15 +1598,53 @@ refer to the applicable agreement for further details.
 	(pt 1728 432)
 	(pt 1728 456)
 )
-(junction (pt 344 184))
-(junction (pt 1128 320))
-(junction (pt 1128 360))
+(connector
+	(pt 960 296)
+	(pt 952 296)
+)
+(connector
+	(text "clk" (rect 338 168 352 185)(font "Intel Clear" ))
+	(pt 328 184)
+	(pt 400 184)
+)
+(connector
+	(text "clk" (rect 114 -56 128 -39)(font "Intel Clear" ))
+	(pt 160 -40)
+	(pt 104 -40)
+)
+(connector
+	(text "clk" (rect 426 576 440 593)(font "Intel Clear" ))
+	(pt 464 592)
+	(pt 416 592)
+)
+(connector
+	(text "clk" (rect 714 448 728 465)(font "Intel Clear" ))
+	(pt 776 464)
+	(pt 704 464)
+)
+(connector
+	(text "clk" (rect 1138 216 1152 233)(font "Intel Clear" ))
+	(pt 1128 232)
+	(pt 1200 232)
+)
+(connector
+	(text "clk" (rect 1026 360 1040 377)(font "Intel Clear" ))
+	(pt 1016 376)
+	(pt 1152 376)
+)
+(connector
+	(text "clk" (rect 1410 344 1424 361)(font "Intel Clear" ))
+	(pt 1400 360)
+	(pt 1432 360)
+)
+(connector
+	(text "clk" (rect 1386 568 1400 585)(font "Intel Clear" ))
+	(pt 1408 584)
+	(pt 1376 584)
+)
 (junction (pt 768 184))
 (junction (pt 464 -8))
 (junction (pt 448 8))
-(junction (pt 448 360))
-(junction (pt 448 464))
 (junction (pt 768 440))
-(junction (pt 1400 360))
 (junction (pt 840 336))
 (junction (pt 1728 432))
