@@ -463,21 +463,21 @@ begin
 				elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 4, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 5 - 1, 10)) then
 					character_address <= vL;
 				elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 5, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 6 - 1, 10)) then
-					 if("000000110000" > timeset 							 ) then -- less than 30
+					 if("000000110000" >= timeset 							 				) then -- less than 30
 								character_address <= v1;
-					 elsif("000100000000" > timeset and timeset > "000000110000" ) then  -- more than 30 less than 1.0
+					 elsif("000100000000" > timeset and timeset >= "000000110000" ) then  -- more than 30 less than 1.0
 								character_address <= v2;
-					 elsif("000100110000" > timeset and timeset > "000100000000" ) then  -- more than 1.0 less than 1.3
+					 elsif("000100110000" > timeset and timeset >= "000100000000" ) then  -- more than 1.0 less than 1.3
 								character_address <= v3;
-					elsif("001000000000" > timeset and timeset > "000100110000" ) then -- more  than 1.3 less than 2
+					elsif("001000000000" > timeset and timeset >= "000100110000" ) then -- more  than 1.3 less than 2
 								character_address <= v4;
-					elsif("001000110000" > timeset and timeset > "001000000000" ) then -- more than 2 less than 2.3
+					elsif("001000110000" > timeset and timeset >= "001000000000" ) then -- more than 2 less than 2.3
 								character_address <= v5;
-					elsif("001100000000" > timeset and timeset > "001000110000" ) then -- more than 2.3 less than 3
+					elsif("001100000000" > timeset and timeset >= "001000110000" ) then -- more than 2.3 less than 3
 								character_address <= v6;
-					elsif("001100110000" > timeset and timeset > "001100000000" ) then -- more than 3.0 less than 3.3
+					elsif("001100110000" > timeset and timeset >= "001100000000" ) then -- more than 3.0 less than 3.3
 								character_address <= v7;
-					else -- more than 3.3
+					elsif ( timeset >= "001100110000"										) then -- more than 3.3
 								character_address <= v8;
 					end if;			
 					 
