@@ -9,8 +9,8 @@ ENTITY ball IS
 		mbL, mbR, mode				: in std_logic;
 		game_state					: in std_logic_vector(1 downto 0);
 		pixel_row, pixel_column		: in std_logic_vector(9 downto 0);
-		displayText, pipe 			: in std_logic;
-		ballHit						: in std_logic;
+		displayText, pipe, pickup	: in std_logic;
+		ballHit, pickupHit			: in std_logic;
 		ballY						: out std_logic_vector(9 downto 0);
 		lives						: out std_logic_vector(2 downto 0);
 		red, green, blue 			: out std_logic_vector(3 downto 0)
@@ -41,7 +41,7 @@ BEGin
 	
 		-- Background Rendering
 		-- Playing Screen
-		if (game_state = "01" or game_state = "10") then
+		if (game_state /= "00") then
 			-- Space
 			if ('0' & pixel_row <= SKY_BOUND) then
 				r := "0001";
@@ -67,7 +67,7 @@ BEGin
 
 		
 		-- Playing
-		if (game_state = "01" or game_state = "10") then
+		if (game_state /= "00") then
 		
 			-- Pipe Colours
 			if (pipe = '1') then
@@ -84,6 +84,13 @@ BEGin
 				r := "1111";
 				g := "1111";
 				b := "0000";
+			end if;
+			
+			-- Pickups
+			if (pickup = '1') then
+				r := "0010";
+				g := "1100";
+				b := "0010";
 			end if;
 		end if;
 		
@@ -147,6 +154,13 @@ BEGin
 					if (hitPipes = '0') then
 						hitPipes := '1';
 						vLives := vLives - 1;
+					end if;
+				elsif (pickup = '1') then
+					vLives := vLives + 1;
+					if (vLives > 5 and mode = '1') then
+						vLives := conv_std_logic_vector(5, 3);
+					elsif (vLives > 3 and mode = '0') then
+						vLives := conv_std_logic_vector(3, 3);
 					end if;
 				else
 					hitPipes := '0';

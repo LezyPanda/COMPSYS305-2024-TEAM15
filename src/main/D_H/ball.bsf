@@ -20,9 +20,9 @@ refer to the applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 232 256)
+	(rect 16 16 232 288)
 	(text "ball" (rect 5 0 16 12)(font "Arial" ))
-	(text "inst" (rect 8 224 20 236)(font "Arial" ))
+	(text "inst" (rect 8 256 20 268)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -103,9 +103,23 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 208)
 		(input)
-		(text "ballHit" (rect 0 0 22 12)(font "Arial" ))
-		(text "ballHit" (rect 21 203 43 215)(font "Arial" ))
+		(text "pickup" (rect 0 0 24 12)(font "Arial" ))
+		(text "pickup" (rect 21 203 45 215)(font "Arial" ))
 		(line (pt 0 208)(pt 16 208)(line_width 1))
+	)
+	(port
+		(pt 0 224)
+		(input)
+		(text "ballHit" (rect 0 0 22 12)(font "Arial" ))
+		(text "ballHit" (rect 21 219 43 231)(font "Arial" ))
+		(line (pt 0 224)(pt 16 224)(line_width 1))
+	)
+	(port
+		(pt 0 240)
+		(input)
+		(text "pickupHit" (rect 0 0 35 12)(font "Arial" ))
+		(text "pickupHit" (rect 21 235 56 247)(font "Arial" ))
+		(line (pt 0 240)(pt 16 240)(line_width 1))
 	)
 	(port
 		(pt 216 32)
@@ -143,6 +157,6 @@ refer to the applicable agreement for further details.
 		(line (pt 216 96)(pt 200 96)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 200 224)(line_width 1))
+		(rectangle (rect 16 16 200 256)(line_width 1))
 	)
 )

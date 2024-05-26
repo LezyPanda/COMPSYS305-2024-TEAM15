@@ -18,11 +18,10 @@ entity pipes is
 		ballY					: in std_logic_vector(9 downto 0);
 		-- vga
 		pipe_out 				: out std_logic;
+		pickup_out				: out std_logic;
 		-- Ball Collision
 		ballHit					: out std_logic;
-		-- health item 
-		healthx 				: out integer;
-		healthy 				: out integer
+		pickupHit				: out std_logic
 	);
 end pipes;
 
@@ -38,6 +37,8 @@ architecture Behavioral of pipes is
 	constant PIPE_SPACING		: integer 	:= 160;
 	constant DEFAULT_BALL_X : std_logic_vector(10 downto 0) := conv_std_logic_vector(190, 11);
 	constant DEFAULT_BALL_X2 : std_logic_vector(10 downto 0) := conv_std_logic_vector(206, 11);
+	constant DEFAULT_PICKUP_Y : std_logic_vector(10 downto 0) := conv_std_logic_vector(128, 11);
+	constant DEFAULT_PICKUP_Y2 : std_logic_vector(10 downto 0) := conv_std_logic_vector(136, 11);
 	constant BALL_SIZE		: std_logic_vector(9 downto 0)	:= conv_std_logic_vector(16, 10);
 
 	
@@ -52,29 +53,28 @@ architecture Behavioral of pipes is
 	signal pipe3X2 				: std_logic_vector(10 downto 0) 	:= conv_std_logic_vector(600 + PIPE_SPACING * 2 + PIPE_WIDTH, 11);
 	signal pipe4X2 				: std_logic_vector(10 downto 0) 	:= conv_std_logic_vector(600 + PIPE_SPACING * 3 + PIPE_WIDTH, 11);
 	signal pipe5X2 				: std_logic_vector(10 downto 0) 	:= conv_std_logic_vector(600 + PIPE_SPACING * 4 + PIPE_WIDTH, 11);
-	signal pipeY  				: std_logic_vector(9 downto 0)  := conv_std_logic_vector(240, 10);
+	signal pipeY  				: std_logic_vector(9 downto 0)  := conv_std_logic_vector(200, 10);
 	signal pipe2Y  				: std_logic_vector(9 downto 0)  := conv_std_logic_vector(240, 10);
-	signal pipe3Y  				: std_logic_vector(9 downto 0)  := conv_std_logic_vector(240, 10);
-	signal pipe4Y  				: std_logic_vector(9 downto 0)  := conv_std_logic_vector(240, 10);
-	signal pipe5Y  				: std_logic_vector(9 downto 0)  := conv_std_logic_vector(240, 10);
+	signal pipe3Y  				: std_logic_vector(9 downto 0)  := conv_std_logic_vector(220, 10);
+	signal pipe4Y  				: std_logic_vector(9 downto 0)  := conv_std_logic_vector(260, 10);
+	signal pipe5Y  				: std_logic_vector(9 downto 0)  := conv_std_logic_vector(320, 10);
 	
 	-- Game
 	signal pipeSpeed       		: std_logic_vector(10 downto 0) := conv_std_logic_vector(2, 11);
 	signal leftBound       		: std_logic_vector(10 downto 0) := conv_std_logic_vector(3, 11);
 	
 	-- health item
-	signal vhealthx 			: integer 	:= 736;
-	signal vhealthy 			: integer 	:= 128;
-	signal healthpicked 		: std_logic := '0';
+	signal pickupX 				: std_logic_vector(10 downto 0) 	:= conv_std_logic_vector(728, 11);
+	signal pickupX2 			: std_logic_vector(10 downto 0) 	:= conv_std_logic_vector(736, 11);
 begin
  
 	-- Rendering
 	process(state, pipeX, pipe2X, pipe3X, pipe4x, pipe5x, pixel_column, pixel_row)
 		variable r, g, b : std_logic_vector(3 downto 0) := "0000";
-		variable vPipeOut : std_logic := '0';
+		variable vPipeOut, vPickup : std_logic := '0';
 	begin
 		vPipeOut := '0';
-		
+		vPickup := '0';
 		if (state /= "00") then
 			-- Pipe 1
 			if (
@@ -120,9 +120,19 @@ begin
 				) then
 				vPipeOut := '1';
 			end if;
+			
+			-- Health Pickup
+			if (
+				(pickupX <= '0' & pixel_column) and ('0' & pixel_column <= pickupX2)
+				and
+				(DEFAULT_PICKUP_Y <= pixel_row) and (pixel_row <= DEFAULT_PICKUP_Y2)
+				) then
+				vPickup := '1';
+			end if;
 		end if;
 		
 		pipe_out <= vPipeOut;
+		pickup_out <= vPickup;
 
 	end process;
 	
@@ -131,6 +141,7 @@ begin
 		variable randY		: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(64, 10);
 		variable vhealth 	: std_logic_vector(5 downto 0) 	:= conv_std_logic_vector(34, 6);
 		variable vBallHit 	: std_logic						:= '0';
+		variable vPickupHit : std_logic						:= '0';
 		variable ballY2 	: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(0, 10);
 	begin 
 		
@@ -150,11 +161,13 @@ begin
 			pipe3X2 <= conv_std_logic_vector(600 + PIPE_SPACING * 2 + PIPE_WIDTH, 11);
 			pipe4X2 <= conv_std_logic_vector(600 + PIPE_SPACING * 3 + PIPE_WIDTH, 11);
 			pipe5X2 <= conv_std_logic_vector(600 + PIPE_SPACING * 4 + PIPE_WIDTH, 11);
-			pipeY  	<= conv_std_logic_vector(240, 10);
+			pipeY  	<= conv_std_logic_vector(200, 10);
 			pipe2Y  <= conv_std_logic_vector(240, 10);
-			pipe3Y  <= conv_std_logic_vector(240, 10);
-			pipe4Y  <= conv_std_logic_vector(240, 10);
-			pipe5Y  <= conv_std_logic_vector(240, 10);
+			pipe3Y  <= conv_std_logic_vector(220, 10);
+			pipe4Y  <= conv_std_logic_vector(260, 10);
+			pipe5Y  <= conv_std_logic_vector(320, 10);
+			pickupX <= conv_std_logic_vector(728, 11);
+			pickupX2<= conv_std_logic_vector(736, 11);
 		elsif (rising_edge(v_sync)) then
 			-- Random Height
 			randY := VALID_GAP_Y_BOT - (("0000" & pipe_gap) + ("0000" & pipe_gap));
@@ -205,13 +218,23 @@ begin
 					pipe5X <= pipe5X - pipeSpeed;
 					pipe5X2 <= pipe5X2 - pipeSpeed;
 				end if;
+				
+				-- Pickup Motion
+				if (pickupX2 <= leftBound) then
+					pickupX <= conv_std_logic_vector(DISP_WIDTH + PIPE_SPACING + PIPE_WIDTH * 2, 11);
+					pickupX2 <= conv_std_logic_vector(DISP_WIDTH + PIPE_SPACING + PIPE_WIDTH * 2 + 8, 11);
+				else
+					pickupX <= pickupX - pipeSpeed;
+					pickupX2 <= pickupX2 - pipeSpeed;
+				end if;
 			
 				-- Ball Collision
 				vBallHit 	:= '0';
+				vPickupHit 	:= '0';
 				ballY2		:= ballY + BALL_SIZE;
 				-- Pipe 1
 				if (
-					(('0' & pipeY <= ballY2) or (pipeY - GAP_HEIGHT >= ballY))
+					((pipeY <= ballY2) or (pipeY - GAP_HEIGHT >= ballY))
 					and
 					(DEFAULT_BALL_X2 >= pipeX and DEFAULT_BALL_X <= pipeX2)
 					) then
@@ -219,7 +242,7 @@ begin
 				end if;
 				-- Pipe 2
 				if (
-					(('0' & pipe2Y <= ballY2) or (pipe2Y - GAP_HEIGHT >= ballY))
+					((pipe2Y <= ballY2) or (pipe2Y - GAP_HEIGHT >= ballY))
 					and
 					(DEFAULT_BALL_X2 >= pipe2X and DEFAULT_BALL_X <= pipe2X2)
 					) then
@@ -227,7 +250,7 @@ begin
 				end if;
 				-- Pipe 3
 				if (
-					(('0' & pipe3Y <= ballY2) or (pipe3Y - GAP_HEIGHT >= ballY))
+					((pipe3Y <= ballY2) or (pipe3Y - GAP_HEIGHT >= ballY))
 					and
 					(DEFAULT_BALL_X2 >= pipe3X and DEFAULT_BALL_X <= pipe3X2)
 					) then
@@ -235,7 +258,7 @@ begin
 				end if;
 				-- Pipe 4
 				if (
-					(('0' & pipe4Y <= ballY2) or (pipe4Y - GAP_HEIGHT >= ballY))
+					((pipe4Y <= ballY2) or (pipe4Y - GAP_HEIGHT >= ballY))
 					and
 					(DEFAULT_BALL_X2 >= pipe4X and DEFAULT_BALL_X <= pipe4X2)
 					) then
@@ -243,25 +266,26 @@ begin
 				end if;
 				-- Pipe 5
 				if (
-					(('0' & pipe5Y <= ballY2) or (pipe5Y - GAP_HEIGHT >= ballY))
+					((pipe5Y <= ballY2) or (pipe5Y - GAP_HEIGHT >= ballY))
 					and
 					(DEFAULT_BALL_X2 >= pipe5X and DEFAULT_BALL_X <= pipe5X2)
 					) then
 					vBallHit := '1';
 				end if;
+				-- Pickup
+				if (
+					(ballY2 >= DEFAULT_PICKUP_Y and ballY <= DEFAULT_PICKUP_Y2)
+					and
+					(DEFAULT_BALL_X2 >= pickupX and DEFAULT_BALL_X <= pickupX2)
+					) then
+					vPickupHit := '1';
+					pickupX <= conv_std_logic_vector(728, 11);
+					pickupX2<= conv_std_logic_vector(736, 11);
+				end if;
 			end if;
 			
 			ballHit <= vBallHit;
-								
-								
-			if (vhealthx < 1 or healthpicked = '1') then
-				vhealthx <= 640;
-				vhealthy <= 128;
-			end if;
-			
-			healthpicked <= '0';	
-			healthx <= vhealthx;
-			healthy <= vhealthy;
+			pickupHit <= vPickupHit;
 		end if;
 	end process;
 end Behavioral;
