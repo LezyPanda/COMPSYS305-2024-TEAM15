@@ -169,8 +169,8 @@ begin
 			pipe3Y  <= conv_std_logic_vector(220, 10);
 			pipe4Y  <= conv_std_logic_vector(260, 10);
 			pipe5Y  <= conv_std_logic_vector(320, 10);
-			pickupX <= conv_std_logic_vector(600 + PIPE_SPACING * 2 + 76, 11);
-			pickupX2<= conv_std_logic_vector(600 + PIPE_SPACING * 2 + 84, 11);
+			pickupX <= pipe2X + PIPE_SPACING / 2 - 4;
+			pickupX2<= pipe2X + PIPE_SPACING / 2 + 4;
 			pickedUp <= '0';
 		elsif (rising_edge(v_sync)) then
 			-- Random Height
@@ -225,8 +225,8 @@ begin
 				
 				-- Pickup Motion
 				if (pickupX2 <= leftBound) then
-					pickupX <= conv_std_logic_vector(DISP_WIDTH + PIPE_SPACING + PIPE_WIDTH * 2, 11);
-					pickupX2 <= conv_std_logic_vector(DISP_WIDTH + PIPE_SPACING + PIPE_WIDTH * 2 + 8, 11);
+					pickupX <= pipe2X + PIPE_SPACING / 2 - 4;
+					pickupX2 <= pipe2X + PIPE_SPACING / 2 + 4;
 					pickedUp <= '0';
 				else
 					pickupX <= pickupX - pipeSpeed;
@@ -287,8 +287,6 @@ begin
 					) then
 					pickedUp <= '1';
 					vPickupHit := '1';
-					pickupX <= conv_std_logic_vector(600 + PIPE_SPACING * 2 + 76, 11);
-					pickupX2<= conv_std_logic_vector(600 + PIPE_SPACING * 2 + 84, 11);
 				end if;
 			end if;
 			

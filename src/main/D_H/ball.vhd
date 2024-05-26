@@ -165,7 +165,7 @@ BEGin
 				if (pickupHit = '1') then
 					if (hitPickups = '0') then
 						hitPickups := '1';
-						if ((vLives < 5 and mode = '1') or (vLives < 3 and mode = '0')) then
+						if ((vLives < "101" and mode = '1') or (vLives < "011" and mode = '0')) then
 							vLives := vLives + 1;
 						end if;
 					end if;
