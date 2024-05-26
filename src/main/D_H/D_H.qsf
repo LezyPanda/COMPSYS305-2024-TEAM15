@@ -299,7 +299,6 @@ set_location_assignment PIN_J8 -to VGA_G[3]
 set_location_assignment PIN_A5 -to VGA_R[3]
 set_global_assignment -name VHDL_FILE LFSR.vhd
 set_global_assignment -name VHDL_FILE game_state_FSM.vhd
-set_global_assignment -name VHDL_FILE CharRender.vhdl
 set_global_assignment -name VHDL_FILE ClockDivider.vhdl
 set_global_assignment -name VHDL_FILE BCD2SevenSeg.vhd
 set_global_assignment -name VHDL_FILE timer.vhdl
