@@ -217,15 +217,15 @@ begin
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 5, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 6 - 1, 10)) then
 						character_address <= vL;
 						
-					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 7, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 8 - 1, 10)) then
+					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 6, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 7 - 1, 10)) then
 						character_address <= vbopen;
-					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 8, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 9 - 1, 10)) then
+					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 7, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 8 - 1, 10)) then
 						character_address <= vS;
-					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 9, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 10 - 1, 10)) then
+					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 8, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 9 - 1, 10)) then
 						character_address <= vW;
-					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 10, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 11 - 1, 10)) then
+					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 9, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 10 - 1, 10)) then
 						character_address <= v0;
-					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 11, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 12 - 1, 10)) then
+					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 10, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 11 - 1, 10)) then
 						character_address <= vbclose;
 					else
 						character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
