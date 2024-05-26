@@ -89,9 +89,16 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 192 48)
 		(output)
-		(text "reset" (rect 0 0 20 12)(font "Arial" ))
-		(text "reset" (rect 151 43 171 55)(font "Arial" ))
+		(text "timer" (rect 0 0 20 12)(font "Arial" ))
+		(text "timer" (rect 151 43 171 55)(font "Arial" ))
 		(line (pt 192 48)(pt 176 48)(line_width 1))
+	)
+	(port
+		(pt 192 64)
+		(output)
+		(text "reset" (rect 0 0 20 12)(font "Arial" ))
+		(text "reset" (rect 151 59 171 71)(font "Arial" ))
+		(line (pt 192 64)(pt 176 64)(line_width 1))
 	)
 	(drawing
 		(rectangle (rect 16 16 176 160)(line_width 1))

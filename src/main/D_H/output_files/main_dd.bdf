@@ -961,7 +961,7 @@ refer to the applicable agreement for further details.
 (symbol
 	(rect 512 152 704 328)
 	(text "game_state_FSM" (rect 5 0 91 12)(font "Arial" ))
-	(text "inst2" (rect 8 160 30 177)(font "Intel Clear" ))
+	(text "inst7" (rect 8 160 30 177)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -1028,9 +1028,16 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 192 48)
 		(output)
-		(text "reset" (rect 0 0 24 12)(font "Arial" ))
-		(text "reset" (rect 151 43 175 55)(font "Arial" ))
+		(text "timer" (rect 0 0 24 12)(font "Arial" ))
+		(text "timer" (rect 151 43 175 55)(font "Arial" ))
 		(line (pt 192 48)(pt 176 48))
+	)
+	(port
+		(pt 192 64)
+		(output)
+		(text "reset" (rect 0 0 24 12)(font "Arial" ))
+		(text "reset" (rect 151 59 175 71)(font "Arial" ))
+		(line (pt 192 64)(pt 176 64))
 	)
 	(drawing
 		(rectangle (rect 16 16 176 160))
@@ -1541,11 +1548,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "reset" (rect 712 184 735 201)(font "Intel Clear" ))
-	(pt 704 200)
-	(pt 728 200)
-)
-(connector
 	(text "mode" (rect 826 64 853 81)(font "Intel Clear" ))
 	(pt 816 80)
 	(pt 848 80)
@@ -1646,6 +1648,26 @@ refer to the applicable agreement for further details.
 	(text "vSync" (rect 442 168 470 185)(font "Intel Clear" ))
 	(pt 512 184)
 	(pt 432 184)
+)
+(connector
+	(text "reset" (rect 1370 584 1393 601)(font "Intel Clear" ))
+	(pt 1408 600)
+	(pt 1360 600)
+)
+(connector
+	(text "reset" (rect 720 200 743 217)(font "Intel Clear" ))
+	(pt 704 216)
+	(pt 736 216)
+)
+(connector
+	(text "timer" (rect 714 184 738 201)(font "Intel Clear" ))
+	(pt 704 200)
+	(pt 744 200)
+)
+(connector
+	(text "timer" (rect 1370 600 1394 617)(font "Intel Clear" ))
+	(pt 1408 616)
+	(pt 1360 616)
 )
 (junction (pt 768 184))
 (junction (pt 464 -8))
