@@ -19,8 +19,12 @@ begin
 		variable state : game_state_type := intro;
 		variable bWasDown : std_logic := '0';
 		variable b2WasDown : std_logic := '0';
+		variable b3WasDown : std_logic := '0';
+		variable b4WasDown : std_logic := '0';
 		variable bPress	: std_logic := '0';
 		variable b2Press	: std_logic := '0';
+		variable b3Press	: std_logic := '0';
+		variable b4Press	: std_logic := '0';
 	begin	
 		if (rising_edge(vSync)) then
 		
@@ -47,6 +51,30 @@ begin
 				b2WasDown := '0';
 				b2Press := '0';
 			end if;
+		
+			if (button3 = '0') then
+				if (b3WasDown = '0') then
+					b3Press := '1';
+				else
+					b3Press := '0';
+				b3WasDown := '1';
+				end if;
+			else
+				b3WasDown := '0';
+				b3Press := '0';
+			end if;
+
+			if (button4 = '0') then
+				if (b4WasDown = '0') then
+					b4Press := '1';
+				else
+					b4Press := '0';
+				b4WasDown := '1';
+				end if;
+			else
+				b4WasDown := '0';
+				b4Press := '0';
+			end if;
 			
 			case state is
 				when intro => 
@@ -62,9 +90,9 @@ begin
 						state := pause;
 					end if;						
 				when pause =>
-					if (bPress = '1') then
+					if (b3Press = '1') then
 						state := play;
-					elsif (b2Press = '1') then
+					elsif (b4Press = '1') then
 						state := intro;
 					end if;
 				when dead =>
