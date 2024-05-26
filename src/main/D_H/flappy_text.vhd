@@ -6,11 +6,12 @@ USE IEEE.STD_LOGIC_UNSIGNED.all;
 ENTITY flappy_text IS
    PORT(
         game_state 					: in std_logic_vector(1 downto 0);
-		  mode							: in std_logic;
+		  mode						: in std_logic;
 		  pixel_row, pixel_column	: in std_logic_vector(9 downto 0);
-		  timeset                  : in std_logic_vector(11 downto 0);
+		  timeset					: in std_logic_vector(11 downto 0);
+		  lives						: in std_logic_vector(2 downto 0);
 		  character_address			: out std_logic_vector(5 downto 0);
-		  font_row, font_col			: out std_logic_vector(2 downto 0)
+		  font_row, font_col		: out std_logic_vector(2 downto 0)
 	  );
 end flappy_text;
 
@@ -38,7 +39,6 @@ begin
 		variable y : integer := 0;
 		variable s : integer := 0;
 		
-		variable lives: integer := 0;
 		variable max_lives: integer := 0;
 		
  
@@ -268,52 +268,51 @@ begin
 			-- check mode
 			if( mode ='1') then
 			 -- Train mode Lives
-				lives := 5;
 				max_lives := 5;
 				if (pixel_row >= CONV_STD_LOGIC_VECTOR(y, 10)) and (pixel_row <= CONV_STD_LOGIC_VECTOR(y + s - 1, 10)) then
 					if (pixel_column >= CONV_STD_LOGIC_VECTOR(		x + s * 0, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 1, 10)) then
 						case lives is
-								when 5 => character_address <= vHeart;
-								when 4 => character_address <= vHeart;
-								when 3 => character_address <= vHeart;
-								when 2 => character_address <= vHeart;
-								when 1 => character_address <= vHeart;
+								when "101" => character_address <= vHeart;
+								when "100" => character_address <= vHeart;
+								when "011" => character_address <= vHeart;
+								when "010" => character_address <= vHeart;
+								when "001" => character_address <= vHeart;
 								when others => character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
 							end case;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 1, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 2 - 1, 10)) then
 						case lives is
-								when 5 => character_address <= vHeart;
-								when 4 => character_address <= vHeart;
-								when 3 => character_address <= vHeart;
-								when 2 => character_address <= vHeart;
-								when 1 => character_address  <= CONV_STD_LOGIC_VECTOR(32, 6);
+								when "101" => character_address <= vHeart;
+								when "100" => character_address <= vHeart;
+								when "011" => character_address <= vHeart;
+								when "010" => character_address <= vHeart;
+								when "001" => character_address  <= CONV_STD_LOGIC_VECTOR(32, 6);
 								when others => character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
 							end case;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 2, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 3 - 1, 10)) then
 						case lives is
-								when 5 => character_address <= vHeart;
-								when 4 => character_address <= vHeart;
-								when 3 => character_address <= vHeart;
-								when 2 => character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
-								when 1 => character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
+								when "101" => character_address <= vHeart;
+								when "100" => character_address <= vHeart;
+								when "011" => character_address <= vHeart;
+								when "010" => character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
+								when "001" => character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
 								when others => character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
 							end case;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 3, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 4 - 1, 10)) then
 						case lives is
-								when 5 => character_address <= vHeart;
-								when 4 => character_address <= vHeart;
-								when 3 => character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
-								when 2 => character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
-								when 1 => character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
+								when "101" => character_address <= vHeart;
+								when "100" => character_address <= vHeart;
+								when "011" => character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
+								when "010" => character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
+								when "001" => character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
 								when others => character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
 							end case;
 					elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 4, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 5 - 1, 10)) then
 						case lives is
-								when 5 => character_address <= vHeart;
-								when 4 => character_address <=  CONV_STD_LOGIC_VECTOR(32, 6);
-								when 3 => character_address <=  CONV_STD_LOGIC_VECTOR(32, 6);
-								when 2 => character_address <=  CONV_STD_LOGIC_VECTOR(32, 6);
-								when 1 => character_address <=  CONV_STD_LOGIC_VECTOR(32, 6);
+								when "101" => character_address <= vHeart;
+								when "100" => character_address <=  CONV_STD_LOGIC_VECTOR(32, 6);
+								when "011" => character_address <=  CONV_STD_LOGIC_VECTOR(32, 6);
+								when "010" => character_address <=  CONV_STD_LOGIC_VECTOR(32, 6);
+								when "001" => character_address <=  CONV_STD_LOGIC_VECTOR(32, 6);
 								when others => character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
 							end case;
 					
@@ -390,28 +389,27 @@ begin
 				end if;
 			else
 			--normal mode
-				lives := 2;
 				max_lives := 3;
 				if (pixel_row >= CONV_STD_LOGIC_VECTOR(y, 10)) and (pixel_row <= CONV_STD_LOGIC_VECTOR(y + s - 1, 10)) then
 						if (pixel_column >= CONV_STD_LOGIC_VECTOR(		x + s * 0, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 1, 10)) then
 							case lives is
-								when 3 => character_address <= vHeart;
-								when 2 => character_address <= vHeart;
-								when 1 => character_address <= vHeart;
+								when "011" => character_address <= vHeart;
+								when "010" => character_address <= vHeart;
+								when "001" => character_address <= vHeart;
 								when others => character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
 							end case;
 						elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 1, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 2 - 1, 10)) then
 							case lives is
-								when 3 => character_address <= vHeart;
-								when 2 => character_address <= vHeart;
-								when 1 => character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
+								when "011" => character_address <= vHeart;
+								when "010" => character_address <= vHeart;
+								when "001" => character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
 								when others => character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
 							end case;
 						elsif (pixel_column >= CONV_STD_LOGIC_VECTOR(	x + s * 2, 10)) and (pixel_column <= CONV_STD_LOGIC_VECTOR(x + s * 3 - 1, 10)) then
 							case lives is
-								when 3 => character_address <= vHeart;
-								when 2 => character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
-								when 1 => character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
+								when "011" => character_address <= vHeart;
+								when "010" => character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
+								when "001" => character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
 								when others => character_address <= CONV_STD_LOGIC_VECTOR(32, 6);
 							end case;
 					-- pause	

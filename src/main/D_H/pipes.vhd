@@ -59,7 +59,7 @@ architecture Behavioral of pipes is
 	signal pipe5Y  				: std_logic_vector(9 downto 0)  := conv_std_logic_vector(240, 10);
 	
 	-- Game
-	signal pipeSpeed       		: std_logic_vector(10 downto 0) := conv_std_logic_vector(3, 11);
+	signal pipeSpeed       		: std_logic_vector(10 downto 0) := conv_std_logic_vector(2, 11);
 	signal leftBound       		: std_logic_vector(10 downto 0) := conv_std_logic_vector(3, 11);
 	
 	-- health item

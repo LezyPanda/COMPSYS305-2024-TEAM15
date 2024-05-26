@@ -12,12 +12,13 @@ ENTITY ball IS
 		displayText, pipe 			: in std_logic;
 		ballHit						: in std_logic;
 		ballY						: out std_logic_vector(9 downto 0);
+		lives						: out std_logic_vector(2 downto 0);
 		red, green, blue 			: out std_logic_vector(3 downto 0)
 	);		
 END ball;
 
 architecture behavior of ball is
-	constant JUMP_HEIGHT : std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(15, 10);
+	constant JUMP_HEIGHT : std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(12, 10);
 	constant MAX_SPEED : std_logic_vector(9 downto 0) 		:= conv_std_logic_vector(6, 10);
 	constant GRAVITY : std_logic_vector(9 downto 0) 		:= conv_std_logic_vector(1, 10);
 	constant DEFAULT_BALL_X : std_logic_vector(10 downto 0) := conv_std_logic_vector(190, 11);
@@ -102,7 +103,9 @@ BEGin
 	
 	-- Frame Tick
 	process (vertSync)
-		variable newBallY : std_logic_vector(9 downto 0);
+		variable newBallY 	: std_logic_vector(9 downto 0);
+		variable hitPipes	: std_logic := '0';
+		variable vLives		: std_logic_vector(2 downto 0)	:= conv_std_logic_vector(5, 3);
 	begin
 		if (rising_edge(vertSync)) then
 			-- Playing
@@ -125,17 +128,24 @@ BEGin
 				-- On Above Sky
 				if (newBallY <= SKY_BOUND) then
 					newBallY := DEFAULT_BALL_Y;
+					vLives := vLives - 1;
 				-- On Below Ground
 				elsif (newBallY + BALL_SIZE >= '0' & GROUND_BOUND) then
 					newBallY := DEFAULT_BALL_Y;
 					ballYMotion <= ZERO_MOTION;
+					vLives := vLives - 1;
 				-- On Hit-Pipe
 				elsif (ballHit = '1') then
-					newBallY := DEFAULT_BALL_Y;
-					ballYMotion <= ZERO_MOTION;
+					if (hitPipes = '0') then
+						hitPipes := '1';
+						vLives := vLives - 1;
+					end if;
+				else
+					hitPipes := '0';
 				end if;
 				
 				vBallY <= newBallY;
+				lives <= vLives;
 			end if;
 			
 			mouseClicked <= mbL or mbR;
