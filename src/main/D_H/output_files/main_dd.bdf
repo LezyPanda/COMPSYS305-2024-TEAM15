@@ -1695,6 +1695,12 @@ refer to the applicable agreement for further details.
 	(pt 752 232)
 	(pt 704 232)
 )
+(connector
+	(text "time[11..0]" (rect 674 560 724 577)(font "Intel Clear" ))
+	(pt 776 576)
+	(pt 664 576)
+	(bus)
+)
 (junction (pt 768 184))
 (junction (pt 464 -8))
 (junction (pt 448 8))
