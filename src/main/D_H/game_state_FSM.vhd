@@ -79,6 +79,7 @@ begin
 			
 			case state is
 				when intro => 
+					timer <= '0';
 					if (bPress = '1') then
 						state := play;
 						reset <= '1';

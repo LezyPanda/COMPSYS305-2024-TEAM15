@@ -21,7 +21,7 @@ refer to the applicable agreement for further details.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect -40 176 136 192)
+	(rect -144 256 32 272)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
 	(text "refclk" (rect 9 0 37 12)(font "Arial" ))
 	(pt 176 8)
@@ -1169,10 +1169,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 136 184)
-	(pt 168 184)
-)
-(connector
 	(text "pixel_row[9..0]" (rect 794 200 863 217)(font "Intel Clear" ))
 	(pt 792 216)
 	(pt 856 216)
@@ -1640,11 +1636,6 @@ refer to the applicable agreement for further details.
 	(pt 1432 360)
 )
 (connector
-	(text "clk" (rect 1386 568 1400 585)(font "Intel Clear" ))
-	(pt 1408 584)
-	(pt 1376 584)
-)
-(connector
 	(text "vSync" (rect 442 168 470 185)(font "Intel Clear" ))
 	(pt 512 184)
 	(pt 432 184)
@@ -1668,6 +1659,21 @@ refer to the applicable agreement for further details.
 	(text "timer" (rect 1370 600 1394 617)(font "Intel Clear" ))
 	(pt 1408 616)
 	(pt 1360 616)
+)
+(connector
+	(text "clock50" (rect 42 248 78 265)(font "Intel Clear" ))
+	(pt 80 264)
+	(pt 32 264)
+)
+(connector
+	(text "clock50" (rect 34 168 70 185)(font "Intel Clear" ))
+	(pt 168 184)
+	(pt 24 184)
+)
+(connector
+	(text "clock50" (rect 1370 568 1406 585)(font "Intel Clear" ))
+	(pt 1408 584)
+	(pt 1360 584)
 )
 (junction (pt 768 184))
 (junction (pt 464 -8))
