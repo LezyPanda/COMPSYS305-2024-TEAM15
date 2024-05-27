@@ -191,6 +191,8 @@ begin
 				elsif (timecheck >= "001100110000") then -- more than 3.3
 					pipeSpeed := conv_std_logic_vector(9, 11);
 				end if;
+			else
+				pipeSpeed := conv_std_logic_vector(2, 11);
 			end if;
 					
 			-- Random Height
