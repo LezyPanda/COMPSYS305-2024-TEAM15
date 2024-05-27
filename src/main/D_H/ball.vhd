@@ -173,7 +173,7 @@ BEGin
 					hitPickups := '0';
 				end if;
 				
-				vBallY := newBallY;
+				vBallY <= newBallY;
 			end if;
 			
 			mouseClicked := mbL or mbR;
