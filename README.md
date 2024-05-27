@@ -16,3 +16,8 @@
 * Normal: Every 30 seconds will increase level by 1 therefore increase pipe speed, has 3 lives max.
 * Training: Always be level 1 and have 5 lives max.
 
+**Game**
+* Health Pick-ups, restore 1 health (does not exceed)
+* Hitting ground/sky will return the bird to middle and lose 1 health
+* Hitting the pipes will lose 1 health
+
