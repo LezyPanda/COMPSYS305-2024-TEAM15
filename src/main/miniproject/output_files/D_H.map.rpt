@@ -1,5 +1,5 @@
 Analysis & Synthesis report for D_H
-Mon May 27 21:23:41 2024
+Mon May 27 21:41:06 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -57,13 +57,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon May 27 21:23:41 2024       ;
+; Analysis & Synthesis Status     ; Successful - Mon May 27 21:41:06 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; D_H                                         ;
 ; Top-level Entity Name           ; main_dd                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 423                                         ;
+; Total registers                 ; 416                                         ;
 ; Total pins                      ; 53                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 4,096                                       ;
@@ -228,7 +228,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------------------------+
 ; Resource                                    ; Usage                       ;
 +---------------------------------------------+-----------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 818                         ;
+; Estimate of Logic utilization (ALMs needed) ; 817                         ;
 ;                                             ;                             ;
 ; Combinational ALUT usage for logic          ; 1332                        ;
 ;     -- 7 input functions                    ; 11                          ;
@@ -237,7 +237,7 @@ refer to the applicable agreement for further details.
 ;     -- 4 input functions                    ; 287                         ;
 ;     -- <=3 input functions                  ; 501                         ;
 ;                                             ;                             ;
-; Dedicated logic registers                   ; 423                         ;
+; Dedicated logic registers                   ; 416                         ;
 ;                                             ;                             ;
 ; I/O pins                                    ; 53                          ;
 ; Total MLAB memory bits                      ; 0                           ;
@@ -250,8 +250,8 @@ refer to the applicable agreement for further details.
 ;                                             ;                             ;
 ; Maximum fan-out node                        ; game_state_FSM:inst10|reset ;
 ; Maximum fan-out                             ; 283                         ;
-; Total fan-out                               ; 6980                        ;
-; Average fan-out                             ; 3.73                        ;
+; Total fan-out                               ; 6966                        ;
+; Average fan-out                             ; 3.74                        ;
 +---------------------------------------------+-----------------------------+
 
 
@@ -260,11 +260,11 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                    ; Entity Name     ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------+-----------------+--------------+
-; |main_dd                                  ; 1332 (0)            ; 423 (0)                   ; 4096              ; 0          ; 53   ; 0            ; |main_dd                                                                               ; main_dd         ; work         ;
+; |main_dd                                  ; 1332 (0)            ; 416 (0)                   ; 4096              ; 0          ; 53   ; 0            ; |main_dd                                                                               ; main_dd         ; work         ;
 ;    |DP_CLK:inst|                          ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|DP_CLK:inst                                                                   ; DP_CLK          ; dp_clk       ;
 ;       |DP_CLK_0002:dp_clk_inst|           ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|DP_CLK:inst|DP_CLK_0002:dp_clk_inst                                           ; DP_CLK_0002     ; DP_CLK       ;
 ;          |altera_pll:altera_pll_i|        ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i                   ; altera_pll      ; work         ;
-;    |LFSR:inst1235|                        ; 4 (4)               ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |main_dd|LFSR:inst1235                                                                 ; LFSR            ; work         ;
+;    |LFSR:inst1235|                        ; 4 (4)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|LFSR:inst1235                                                                 ; LFSR            ; work         ;
 ;    |MOUSE:inst1|                          ; 47 (47)             ; 65 (65)                   ; 0                 ; 0          ; 0    ; 0            ; |main_dd|MOUSE:inst1                                                                   ; MOUSE           ; work         ;
 ;    |VGA_SYNC:inst33|                      ; 56 (56)             ; 57 (57)                   ; 0                 ; 0          ; 0    ; 0            ; |main_dd|VGA_SYNC:inst33                                                               ; VGA_SYNC        ; work         ;
 ;    |ball:inst8|                           ; 116 (116)           ; 34 (34)                   ; 0                 ; 0          ; 0    ; 0            ; |main_dd|ball:inst8                                                                    ; ball            ; work         ;
@@ -377,10 +377,10 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; MOUSE:inst1|CHAROUT[2]                 ; Stuck at VCC due to stuck port data_in    ;
 ; MOUSE:inst1|CHAROUT[0,1]               ; Stuck at GND due to stuck port data_in    ;
 ; MOUSE:inst1|SHIFTOUT[10]               ; Stuck at VCC due to stuck port data_in    ;
-; LFSR:inst1235|nextstate[0]             ; Merged with LFSR:inst1235|output[1]       ;
-; LFSR:inst1235|nextstate[2]             ; Merged with LFSR:inst1235|output[3]       ;
-; LFSR:inst1235|nextstate[3]             ; Merged with LFSR:inst1235|output[4]       ;
-; LFSR:inst1235|nextstate[4]             ; Merged with LFSR:inst1235|output[5]       ;
+; LFSR:inst1235|output[5]                ; Merged with LFSR:inst1235|nextstate[4]    ;
+; LFSR:inst1235|output[4]                ; Merged with LFSR:inst1235|nextstate[3]    ;
+; LFSR:inst1235|output[3]                ; Merged with LFSR:inst1235|nextstate[2]    ;
+; LFSR:inst1235|output[1]                ; Merged with LFSR:inst1235|nextstate[0]    ;
 ; VGA_SYNC:inst33|video_on_v[1..3]       ; Merged with VGA_SYNC:inst33|video_on_v[0] ;
 ; VGA_SYNC:inst33|video_on_h[1..3]       ; Merged with VGA_SYNC:inst33|video_on_h[0] ;
 ; pipes:inst9|pipeSpeed[4..9]            ; Merged with pipes:inst9|pipeSpeed[10]     ;
@@ -399,7 +399,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 423   ;
+; Total registers                              ; 416   ;
 ; Number of registers using Synchronous Clear  ; 104   ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 252   ;
@@ -490,19 +490,18 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; ball:inst8|vLives[0]                    ; 16      ;
 ; LFSR:inst1235|output[0]                 ; 12      ;
 ; pipes:inst9|pipeSpeed[1]                ; 13      ;
-; LFSR:inst1235|currstate[0]              ; 2       ;
+; LFSR:inst1235|nextstate[1]              ; 1       ;
 ; ball:inst8|newBallY[6]                  ; 1       ;
 ; ball:inst8|newBallY[5]                  ; 1       ;
 ; ball:inst8|newBallY[7]                  ; 1       ;
 ; ball:inst8|newBallY[4]                  ; 1       ;
 ; MOUSE:inst1|send_char                   ; 3       ;
-; LFSR:inst1235|nextstate[1]              ; 1       ;
 ; MOUSE:inst1|SHIFTOUT[3]                 ; 1       ;
 ; MOUSE:inst1|SHIFTOUT[5]                 ; 1       ;
 ; MOUSE:inst1|SHIFTOUT[6]                 ; 1       ;
 ; MOUSE:inst1|SHIFTOUT[7]                 ; 1       ;
 ; MOUSE:inst1|SHIFTOUT[8]                 ; 1       ;
-; Total number of inverted registers = 88 ;         ;
+; Total number of inverted registers = 87 ;         ;
 +-----------------------------------------+---------+
 
 
@@ -905,7 +904,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 423                         ;
+; arriav_ff             ; 416                         ;
 ;     CLR               ; 4                           ;
 ;     CLR SCLR          ; 32                          ;
 ;     ENA               ; 76                          ;
@@ -913,7 +912,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA CLR SCLR      ; 41                          ;
 ;     ENA SCLR          ; 21                          ;
 ;     SCLR              ; 10                          ;
-;     plain             ; 64                          ;
+;     plain             ; 57                          ;
 ; arriav_io_obuf        ; 2                           ;
 ; arriav_lcell_comb     ; 1338                        ;
 ;     arith             ; 303                         ;
@@ -936,7 +935,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; stratixv_ram_block    ; 8                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 11.00                       ;
-; Average LUT depth     ; 5.37                        ;
+; Average LUT depth     ; 5.39                        ;
 +-----------------------+-----------------------------+
 
 
@@ -955,7 +954,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon May 27 21:23:32 2024
+    Info: Processing started: Mon May 27 21:40:57 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off miniproject -c D_H
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
@@ -1289,16 +1288,16 @@ Warning: RST port on the PLL is not properly connected on instance DP_CLK:inst|D
     Info: Must be connected
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY3"
-Info (21057): Implemented 1512 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1505 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 45 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 1450 logic cells
+    Info (21061): Implemented 1443 logic cells
     Info (21064): Implemented 8 RAM segments
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 171 warnings
-    Info: Peak virtual memory: 4950 megabytes
-    Info: Processing ended: Mon May 27 21:23:41 2024
+    Info: Peak virtual memory: 4958 megabytes
+    Info: Processing ended: Mon May 27 21:41:06 2024
     Info: Elapsed time: 00:00:09
     Info: Total CPU time (on all processors): 00:00:16
 
