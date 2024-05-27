@@ -31,7 +31,7 @@ architecture Behavioral of pipes is
 	constant DISP_WIDTH 		: integer 	:= 640;
 	constant DISP_HEIGHT 		: integer 	:= 480;
 	constant MIN_PIPE_HEIGHT 	: integer 	:= 32;
-	constant VALID_GAP_Y_BOT 	: integer  	:= DISP_HEIGHT - 80;
+	constant VALID_GAP_Y_BOT 	: integer  	:= DISP_HEIGHT - 90;
 	constant GAP_HEIGHT 		: integer  	:= 150;
 	constant PIPE_WIDTH 		: integer 	:= 32;
 	constant PIPE_SPACING		: integer 	:= 160;
@@ -137,6 +137,7 @@ begin
 	
 	process(v_sync, reset, mode)
 		variable randY		: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(64, 10);
+		variable randY2		: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(64, 10);
 		variable vhealth 	: std_logic_vector(5 downto 0) 	:= conv_std_logic_vector(34, 6);
 		variable vBallHit 	: std_logic						:= '0';
 		variable vPickupHit : std_logic						:= '0';
@@ -194,6 +195,7 @@ begin
 					
 			-- Random Height
 			randY := VALID_GAP_Y_BOT - (("0000" & pipe_gap) + ("0000" & pipe_gap));
+			randY2 := VALID_GAP_Y_BOT - ("0000" & pipe_gap) - 20;
 			vBallHit 	:= '0';
 			vPickupHit 	:= '0';
 			-- Playing
@@ -248,7 +250,7 @@ begin
 				if (pickupX2 <= leftBound) then
 					pickupX <= pipe2X + PIPE_SPACING / 2 - 4;
 					pickupX2 <= pipe2X + PIPE_SPACING / 2 + 4;
-					pickupY <= randY;
+					pickupY <= randY2;
 					pickedUp <= '0';
 				else
 					pickupX <= pickupX - pipeSpeed;
