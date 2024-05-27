@@ -194,6 +194,8 @@ begin
 					
 			-- Random Height
 			randY := VALID_GAP_Y_BOT - (("0000" & pipe_gap) + ("0000" & pipe_gap));
+			vBallHit 	:= '0';
+			vPickupHit 	:= '0';
 			-- Playing
 			if (state = "01") then
 				-- If Pipe 1 Out-of-Bound, Resets, Otherwise Move
@@ -253,8 +255,6 @@ begin
 				end if;
 			
 				-- Ball Collision
-				vBallHit 	:= '0';
-				vPickupHit 	:= '0';
 				ballY2		:= ballY + BALL_SIZE;
 				-- Pipe 1
 				if (
@@ -308,10 +308,9 @@ begin
 					vPickupHit := '1';
 				end if;
 			end if;
-			
-			ballHit <= vBallHit;
-			pickupHit <= vPickupHit;
 		end if;
+		ballHit <= vBallHit;
+		pickupHit <= vPickupHit;
 	end process;
 end Behavioral;
 		
