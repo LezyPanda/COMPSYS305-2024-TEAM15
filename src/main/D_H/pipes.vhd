@@ -36,7 +36,7 @@ architecture Behavioral of pipes is
 	constant PIPE_WIDTH 		: integer 	:= 32;
 	constant PIPE_SPACING		: integer 	:= 160;
 	constant DEFAULT_BALL_X : std_logic_vector(10 downto 0) := conv_std_logic_vector(190, 11);
-	constant DEFAULT_BALL_X2 : std_logic_vector(10 downto 0) := conv_std_logic_vector(206, 11)
+	constant DEFAULT_BALL_X2 : std_logic_vector(10 downto 0) := conv_std_logic_vector(206, 11);
 	constant BALL_SIZE		: std_logic_vector(9 downto 0)	:= conv_std_logic_vector(16, 10);
 
 	
