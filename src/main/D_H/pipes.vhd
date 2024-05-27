@@ -174,23 +174,25 @@ begin
 			pickedUp <= '0';
 		elsif (rising_edge(v_sync)) then
 		
-			if ("000000110000" >= timecheck) then -- less than 30
-				pipeSpeed <= conv_std_logic_vector(2, 11);
-			elsif("000100000000" > timecheck and timecheck >= "000000110000" ) then  -- more than 30 less than 1.0
-				pipeSpeed <= conv_std_logic_vector(4, 11);
-			elsif("000100110000" > timecheck and timecheck >= "000100000000" ) then  -- more than 1.0 less than 1.3
-				pipeSpeed <= conv_std_logic_vector(6, 11);
-			elsif("001000000000" > timecheck and timecheck >= "000100110000" ) then -- more  than 1.3 less than 2
-				pipeSpeed <= conv_std_logic_vector(8, 11);
-			elsif("001000110000" > timecheck and timecheck >= "001000000000" ) then -- more than 2 less than 2.3
-				pipeSpeed <= conv_std_logic_vector(10, 11);
-			elsif("001100000000" > timecheck and timecheck >= "001000110000" ) then -- more than 2.3 less than 3
-				pipeSpeed <= conv_std_logic_vector(12, 11);
-			elsif("001100110000" > timecheck and timecheck >= "001100000000" ) then -- more than 3.0 less than 3.3
-				pipeSpeed <= conv_std_logic_vector(14, 11);
-			elsif (timecheck >= "001100110000") then -- more than 3.3
-				pipeSpeed <= conv_std_logic_vector(16, 11);
-			end if;		
+			if (mode = '0') then
+				if ("000000110000" >= timecheck) then -- less than 30
+					pipeSpeed <= conv_std_logic_vector(2, 11);
+				elsif("000100000000" > timecheck and timecheck >= "000000110000" ) then  -- more than 30 less than 1.0
+					pipeSpeed <= conv_std_logic_vector(4, 11);
+				elsif("000100110000" > timecheck and timecheck >= "000100000000" ) then  -- more than 1.0 less than 1.3
+					pipeSpeed <= conv_std_logic_vector(6, 11);
+				elsif("001000000000" > timecheck and timecheck >= "000100110000" ) then -- more  than 1.3 less than 2
+					pipeSpeed <= conv_std_logic_vector(8, 11);
+				elsif("001000110000" > timecheck and timecheck >= "001000000000" ) then -- more than 2 less than 2.3
+					pipeSpeed <= conv_std_logic_vector(10, 11);
+				elsif("001100000000" > timecheck and timecheck >= "001000110000" ) then -- more than 2.3 less than 3
+					pipeSpeed <= conv_std_logic_vector(12, 11);
+				elsif("001100110000" > timecheck and timecheck >= "001100000000" ) then -- more than 3.0 less than 3.3
+					pipeSpeed <= conv_std_logic_vector(14, 11);
+				elsif (timecheck >= "001100110000") then -- more than 3.3
+					pipeSpeed <= conv_std_logic_vector(16, 11);
+				end if;
+			end if;
 					
 			-- Random Height
 			randY := VALID_GAP_Y_BOT - (("0000" & pipe_gap) + ("0000" & pipe_gap));
