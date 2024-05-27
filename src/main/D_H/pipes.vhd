@@ -195,7 +195,7 @@ begin
 					
 			-- Random Height
 			randY := VALID_GAP_Y_BOT - (("0000" & pipe_gap) + ("0000" & pipe_gap));
-			randY2 := VALID_GAP_Y_BOT - ("0000" & pipe_gap) - 20;
+			randY2 := VALID_GAP_Y_BOT - (("0000" & pipe_gap) + ("0000" & pipe_gap) + ("0000" & pipe_gap) + ("0000" & pipe_gap)) - 30;
 			vBallHit 	:= '0';
 			vPickupHit 	:= '0';
 			-- Playing
