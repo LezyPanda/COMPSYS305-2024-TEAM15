@@ -59,10 +59,6 @@ architecture Behavioral of pipes is
 	signal pipe4Y  				: std_logic_vector(9 downto 0)  := conv_std_logic_vector(260, 10);
 	signal pipe5Y  				: std_logic_vector(9 downto 0)  := conv_std_logic_vector(320, 10);
 	
-	-- Game
-	signal pipeSpeed       		: std_logic_vector(10 downto 0) := conv_std_logic_vector(2, 11);
-	signal leftBound       		: std_logic_vector(10 downto 0) := conv_std_logic_vector(3, 11);
-	
 	-- health item
 	signal pickupX 				: std_logic_vector(10 downto 0) 	:= conv_std_logic_vector(600 + PIPE_SPACING * 2 + 76, 11);
 	signal pickupX2 			: std_logic_vector(10 downto 0) 	:= conv_std_logic_vector(600 + PIPE_SPACING * 2 + 84, 11);
@@ -146,6 +142,8 @@ begin
 		variable vBallHit 	: std_logic						:= '0';
 		variable vPickupHit : std_logic						:= '0';
 		variable ballY2 	: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(0, 10);
+		variable leftBound  : std_logic_vector(10 downto 0) := conv_std_logic_vector(3, 11);
+		variable pipeSpeed  : std_logic_vector(10 downto 0) := conv_std_logic_vector(2, 11);
 	begin 
 		
 		if (reset = '1') then
@@ -176,21 +174,21 @@ begin
 		
 			if (mode = '0') then
 				if ("000000110000" >= timecheck) then -- less than 30
-					pipeSpeed <= conv_std_logic_vector(2, 11);
+					pipeSpeed := conv_std_logic_vector(2, 11);
 				elsif("000100000000" > timecheck and timecheck >= "000000110000" ) then  -- more than 30 less than 1.0
-					pipeSpeed <= conv_std_logic_vector(3, 11);
+					pipeSpeed := conv_std_logic_vector(3, 11);
 				elsif("000100110000" > timecheck and timecheck >= "000100000000" ) then  -- more than 1.0 less than 1.3
-					pipeSpeed <= conv_std_logic_vector(4, 11);
+					pipeSpeed := conv_std_logic_vector(4, 11);
 				elsif("001000000000" > timecheck and timecheck >= "000100110000" ) then -- more  than 1.3 less than 2
-					pipeSpeed <= conv_std_logic_vector(5, 11);
+					pipeSpeed := conv_std_logic_vector(5, 11);
 				elsif("001000110000" > timecheck and timecheck >= "001000000000" ) then -- more than 2 less than 2.3
-					pipeSpeed <= conv_std_logic_vector(6, 11);
+					pipeSpeed := conv_std_logic_vector(6, 11);
 				elsif("001100000000" > timecheck and timecheck >= "001000110000" ) then -- more than 2.3 less than 3
-					pipeSpeed <= conv_std_logic_vector(7, 11);
+					pipeSpeed := conv_std_logic_vector(7, 11);
 				elsif("001100110000" > timecheck and timecheck >= "001100000000" ) then -- more than 3.0 less than 3.3
-					pipeSpeed <= conv_std_logic_vector(8, 11);
+					pipeSpeed := conv_std_logic_vector(8, 11);
 				elsif (timecheck >= "001100110000") then -- more than 3.3
-					pipeSpeed <= conv_std_logic_vector(9, 11);
+					pipeSpeed := conv_std_logic_vector(9, 11);
 				end if;
 			end if;
 					

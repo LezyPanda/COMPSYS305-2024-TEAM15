@@ -16,21 +16,6 @@ ENTITY flappy_text IS
 end flappy_text;
 
 architecture behavior of flappy_text is
-    --component CharRender is
-    --    port (
-	--		x, y, size, char: in integer;
-	--		pixel_row, pixel_column	: in std_logic_vector(9 downto 0);
-	--		character_address : out std_logic_vector(5 downto 0);
-	--		font_row, font_col : out std_logic_vector(2 downto 0)
-    --    );
-    --end component;
-	
-	--signal tpixel_row, tpixel_column	: std_logic_vector(9 downto 0);
-	--signal tcharacter_address : std_logic_vector(5 downto 0);
-	--signal tfont_row, tfont_col : std_logic_vector(2 downto 0);
-	
-		signal minute, secondten, secondone : std_logic_vector(3 downto 0);
-	
 begin
 
 	--g : CharRender port map(16, 16, 8, 7, tpixel_row, tpixel_column, tcharacter_address, tfont_row, tfont_col);
@@ -40,7 +25,7 @@ begin
 		variable s : integer := 0;
 		
 		variable max_lives: integer := 0;
-		
+		variable minute, secondten, secondone : std_logic_vector(3 downto 0);
  
 		
 		variable vA : std_logic_vector(5 downto 0) := CONV_STD_LOGIC_VECTOR(1, 6); -- A...
@@ -243,9 +228,9 @@ begin
 			x := 0;
 			y := 16;
 			s := 16;
-			minute <= timeset(11 downto 8);
-         secondten <= timeset(7 downto 4);
-         secondone <= timeset(3 downto 0);
+			minute := timeset(11 downto 8);
+			secondten := timeset(7 downto 4);
+			secondone := timeset(3 downto 0);
 			-- check mode
 			if( mode ='1') then
 			 -- Train mode Lives

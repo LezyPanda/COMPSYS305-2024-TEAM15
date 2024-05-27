@@ -29,9 +29,7 @@ architecture behavior of ball is
 	constant ZERO_MOTION 	: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(0, 10);
 	
 	
-	signal mouseClicked 	: std_logic 					:= '0';
 	signal vBallY			: std_logic_vector(9 downto 0) 	:= DEFAULT_BALL_Y;
-	signal ballYMotion		: std_logic_vector(9 downto 0)	:= ZERO_MOTION;
 BEGin
 	
 	-- Rendering
@@ -110,10 +108,13 @@ BEGin
 	
 	-- Frame Tick
 	process (vertSync, reset, mode, ballHit, pickupHit)
-		variable newBallY 	: std_logic_vector(9 downto 0);
-		variable hitPipes	: std_logic := '0';
-		variable hitPickups	: std_logic := '0';
-		variable vLives		: std_logic_vector(2 downto 0)	:= conv_std_logic_vector(5, 3);
+		variable newBallY 		: std_logic_vector(9 downto 0);
+		variable hitPipes		: std_logic := '0';
+		variable hitPickups		: std_logic := '0';
+		variable vLives			: std_logic_vector(2 downto 0)	:= conv_std_logic_vector(5, 3);
+		variable mouseClicked 	: std_logic 					:= '0';
+		variable vBallY			: std_logic_vector(9 downto 0) 	:= DEFAULT_BALL_Y;
+		variable ballYMotion	: std_logic_vector(9 downto 0)	:= ZERO_MOTION;
 	begin
 		if (reset = '1') then
 			if (mode = '1') then
@@ -130,11 +131,11 @@ BEGin
 				-- On-Click
 				if ((mbL or mbR) = '1' and (mouseClicked = '0')) then
 					-- Jump
-					ballYMotion <= -JUMP_HEIGHT;
+					ballYMotion := -JUMP_HEIGHT;
 				else
 					-- Apply gravity if not yet reached max speed
 					if (ballYMotion < MAX_SPEED) then
-						ballYMotion <= ballYMotion + GRAVITY;
+						ballYMotion := ballYMotion + GRAVITY;
 					end if;
 				end if;
 			
@@ -148,7 +149,7 @@ BEGin
 				-- On Below Ground
 				elsif (newBallY + BALL_SIZE >= '0' & GROUND_BOUND) then
 					newBallY := DEFAULT_BALL_Y;
-					ballYMotion <= ZERO_MOTION;
+					ballYMotion := ZERO_MOTION;
 					vLives := vLives - 1;
 				-- On Hit-Pipe
 				end if;
@@ -173,10 +174,10 @@ BEGin
 					hitPickups := '0';
 				end if;
 				
-				vBallY <= newBallY;
+				vBallY := newBallY;
 			end if;
 			
-			mouseClicked <= mbL or mbR;
+			mouseClicked := mbL or mbR;
 		end if;
 		lives <= vLives;
 		ballY <= vBallY;
