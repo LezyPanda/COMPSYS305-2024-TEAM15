@@ -9,16 +9,17 @@ entity LFSR is
 end LFSR;
 
 architecture aLFSR of LFSR is
-  signal currstate 	: std_logic_vector (5 downto 0) := "000001";
-  signal nextstate 	: std_logic_vector (5 downto 0) := "000010";
-  signal feedback 	: std_logic 					:= '0';
+
 begin
 	process (clk)
+		variable currstate 	: std_logic_vector (5 downto 0) := "000001";
+		variable nextstate 	: std_logic_vector (5 downto 0) := "000010";
+		variable feedback 	: std_logic 								:= '0';
 		begin
 			if (rising_edge(clk)) then
-				currstate <= nextstate;
-				feedback <= currstate(4) xor currstate(3) xor currstate(2) xor currstate(0);
-				nextstate <= feedback & currstate(5 downto 1);
+				currstate := nextstate;
+				feedback := currstate(4) xor currstate(3) xor currstate(2) xor currstate(0);
+				nextstate := feedback & currstate(5 downto 1);
 				output <= currstate;
 		end if;
 	end process;
