@@ -167,7 +167,7 @@ BEGin
 						hitPickups := '1';
 						--if ((vLives < 5 and mode = '1') or (vLives < 3 and mode = '0')) then
 							vLives := vLives + 1;
-						end if;
+						--end if;
 					end if;
 				else
 					hitPickups := '0';
