@@ -1,6 +1,6 @@
 Analysis & Synthesis report for D_H
-Mon May 27 21:41:06 2024
-Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Tue May 28 11:11:07 2024
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
 ---------------------
@@ -19,19 +19,20 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  11. State Machine - |main_dd|game_state_FSM:inst10|state
  12. User-Specified and Inferred Latches
  13. Registers Removed During Synthesis
- 14. General Register Statistics
- 15. Inverted Register Statistics
- 16. Multiplexer Restructuring Statistics (Restructuring Performed)
- 17. Source assignments for char_rom:inst4|altsyncram:altsyncram_component|altsyncram_d5g1:auto_generated
- 18. Parameter Settings for User Entity Instance: DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i
- 19. Parameter Settings for User Entity Instance: char_rom:inst4|altsyncram:altsyncram_component
- 20. altsyncram Parameter Settings by Entity Instance
- 21. Port Connectivity Checks: "timer:inst2|BCDCounter:dummy4"
- 22. Port Connectivity Checks: "timer:inst2|BCDCounter:dummy3"
- 23. Port Connectivity Checks: "timer:inst2|BCDCounter:dummy2"
- 24. Post-Synthesis Netlist Statistics for Top Partition
- 25. Elapsed Time Per Partition
- 26. Analysis & Synthesis Messages
+ 14. Removed Registers Triggering Further Register Optimizations
+ 15. General Register Statistics
+ 16. Inverted Register Statistics
+ 17. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 18. Source assignments for char_rom:inst4|altsyncram:altsyncram_component|altsyncram_d5g1:auto_generated
+ 19. Parameter Settings for User Entity Instance: DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i
+ 20. Parameter Settings for User Entity Instance: char_rom:inst4|altsyncram:altsyncram_component
+ 21. altsyncram Parameter Settings by Entity Instance
+ 22. Port Connectivity Checks: "timer:inst2|BCDCounter:dummy4"
+ 23. Port Connectivity Checks: "timer:inst2|BCDCounter:dummy3"
+ 24. Port Connectivity Checks: "timer:inst2|BCDCounter:dummy2"
+ 25. Post-Synthesis Netlist Statistics for Top Partition
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
 
 
 
@@ -54,27 +55,27 @@ refer to the applicable agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon May 27 21:41:06 2024       ;
-; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
-; Revision Name                   ; D_H                                         ;
-; Top-level Entity Name           ; main_dd                                     ;
-; Family                          ; Cyclone V                                   ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 416                                         ;
-; Total pins                      ; 53                                          ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 4,096                                       ;
-; Total DSP Blocks                ; 0                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 1                                           ;
-; Total DLLs                      ; 0                                           ;
-+---------------------------------+---------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++---------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue May 28 11:11:07 2024           ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
+; Revision Name                   ; D_H                                             ;
+; Top-level Entity Name           ; main_dd                                         ;
+; Family                          ; Cyclone V                                       ;
+; Logic utilization (in ALMs)     ; N/A                                             ;
+; Total registers                 ; 428                                             ;
+; Total pins                      ; 53                                              ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 4,096                                           ;
+; Total DSP Blocks                ; 0                                               ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 1                                               ;
+; Total DLLs                      ; 0                                               ;
++---------------------------------+-------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -169,11 +170,11 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 20          ;
-; Maximum allowed            ; 14          ;
+; Number detected on machine ; 24          ;
+; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 14          ;
+; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
@@ -183,44 +184,43 @@ refer to the applicable agreement for further details.
 ;     Processor 5            ;   0.0%      ;
 ;     Processor 6            ;   0.0%      ;
 ;     Processor 7            ;   0.0%      ;
-;     Processor 8            ;   0.0%      ;
-;     Processors 9-14        ;   0.0%      ;
+;     Processors 8-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                          ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                ; Library ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------+---------+
-; LFSR.vhd                         ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/LFSR.vhd                 ;         ;
-; game_state_FSM.vhd               ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd       ;         ;
-; ClockDivider.vhdl                ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/ClockDivider.vhdl        ;         ;
-; BCD2SevenSeg.vhd                 ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/BCD2SevenSeg.vhd         ;         ;
-; timer.vhdl                       ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/timer.vhdl               ;         ;
-; BCDCounter.vhdl                  ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/BCDCounter.vhdl          ;         ;
-; vga_sync.vhd                     ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/vga_sync.vhd             ;         ;
-; mouse.vhd                        ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/mouse.vhd                ;         ;
-; char_rom.vhd                     ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/char_rom.vhd             ;         ;
-; ball.vhd                         ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/ball.vhd                 ;         ;
-; DP_CLK.vhd                       ; yes             ; User Wizard-Generated File         ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/DP_CLK.vhd               ; DP_CLK  ;
-; DP_CLK/DP_CLK_0002.v             ; yes             ; User Verilog HDL File              ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/DP_CLK/DP_CLK_0002.v     ; DP_CLK  ;
-; output_files/main_dd.bdf         ; yes             ; User Block Diagram/Schematic File  ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/output_files/main_dd.bdf ;         ;
-; pipes.vhd                        ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd                ;         ;
-; TCGROM.MIF                       ; yes             ; User Memory Initialization File    ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/TCGROM.MIF               ;         ;
-; flappy_text.vhd                  ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd          ;         ;
-; altera_pll.v                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altera_pll.v                         ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf                       ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc                ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc                          ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc                       ;         ;
-; aglobal181.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc                       ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc                        ;         ;
-; altrom.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc                           ;         ;
-; altram.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc                           ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc                         ;         ;
-; db/altsyncram_d5g1.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/db/altsyncram_d5g1.tdf   ;         ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                    ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                                                          ; Library ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+---------+
+; LFSR.vhd                         ; yes             ; User VHDL File                     ; C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/LFSR.vhd                 ;         ;
+; game_state_FSM.vhd               ; yes             ; User VHDL File                     ; C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd       ;         ;
+; ClockDivider.vhdl                ; yes             ; User VHDL File                     ; C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/ClockDivider.vhdl        ;         ;
+; BCD2SevenSeg.vhd                 ; yes             ; User VHDL File                     ; C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/BCD2SevenSeg.vhd         ;         ;
+; timer.vhdl                       ; yes             ; User VHDL File                     ; C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/timer.vhdl               ;         ;
+; BCDCounter.vhdl                  ; yes             ; User VHDL File                     ; C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/BCDCounter.vhdl          ;         ;
+; vga_sync.vhd                     ; yes             ; User VHDL File                     ; C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/vga_sync.vhd             ;         ;
+; mouse.vhd                        ; yes             ; User VHDL File                     ; C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/mouse.vhd                ;         ;
+; char_rom.vhd                     ; yes             ; User VHDL File                     ; C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/char_rom.vhd             ;         ;
+; ball.vhd                         ; yes             ; User VHDL File                     ; C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/ball.vhd                 ;         ;
+; DP_CLK.vhd                       ; yes             ; User Wizard-Generated File         ; C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/DP_CLK.vhd               ; DP_CLK  ;
+; DP_CLK/DP_CLK_0002.v             ; yes             ; User Verilog HDL File              ; C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/DP_CLK/DP_CLK_0002.v     ; DP_CLK  ;
+; output_files/main_dd.bdf         ; yes             ; User Block Diagram/Schematic File  ; C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/output_files/main_dd.bdf ;         ;
+; pipes.vhd                        ; yes             ; User VHDL File                     ; C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd                ;         ;
+; TCGROM.MIF                       ; yes             ; User Memory Initialization File    ; C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/TCGROM.MIF               ;         ;
+; flappy_text.vhd                  ; yes             ; User VHDL File                     ; C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd          ;         ;
+; altera_pll.v                     ; yes             ; Megafunction                       ; c:/intelfpga/18.1/quartus/libraries/megafunctions/altera_pll.v                                                                        ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                       ; c:/intelfpga/18.1/quartus/libraries/megafunctions/altsyncram.tdf                                                                      ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                       ; c:/intelfpga/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                                               ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                       ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_mux.inc                                                                         ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                       ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_decode.inc                                                                      ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                       ; c:/intelfpga/18.1/quartus/libraries/megafunctions/aglobal181.inc                                                                      ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                       ; c:/intelfpga/18.1/quartus/libraries/megafunctions/a_rdenreg.inc                                                                       ;         ;
+; altrom.inc                       ; yes             ; Megafunction                       ; c:/intelfpga/18.1/quartus/libraries/megafunctions/altrom.inc                                                                          ;         ;
+; altram.inc                       ; yes             ; Megafunction                       ; c:/intelfpga/18.1/quartus/libraries/megafunctions/altram.inc                                                                          ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                       ; c:/intelfpga/18.1/quartus/libraries/megafunctions/altdpram.inc                                                                        ;         ;
+; db/altsyncram_d5g1.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/db/altsyncram_d5g1.tdf   ;         ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------------------------+
@@ -228,16 +228,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------------------------+
 ; Resource                                    ; Usage                       ;
 +---------------------------------------------+-----------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 817                         ;
+; Estimate of Logic utilization (ALMs needed) ; 883                         ;
 ;                                             ;                             ;
-; Combinational ALUT usage for logic          ; 1332                        ;
+; Combinational ALUT usage for logic          ; 1384                        ;
 ;     -- 7 input functions                    ; 11                          ;
-;     -- 6 input functions                    ; 280                         ;
-;     -- 5 input functions                    ; 253                         ;
-;     -- 4 input functions                    ; 287                         ;
-;     -- <=3 input functions                  ; 501                         ;
+;     -- 6 input functions                    ; 360                         ;
+;     -- 5 input functions                    ; 228                         ;
+;     -- 4 input functions                    ; 246                         ;
+;     -- <=3 input functions                  ; 539                         ;
 ;                                             ;                             ;
-; Dedicated logic registers                   ; 416                         ;
+; Dedicated logic registers                   ; 428                         ;
 ;                                             ;                             ;
 ; I/O pins                                    ; 53                          ;
 ; Total MLAB memory bits                      ; 0                           ;
@@ -249,9 +249,9 @@ refer to the applicable agreement for further details.
 ;     -- PLLs                                 ; 1                           ;
 ;                                             ;                             ;
 ; Maximum fan-out node                        ; game_state_FSM:inst10|reset ;
-; Maximum fan-out                             ; 283                         ;
-; Total fan-out                               ; 6966                        ;
-; Average fan-out                             ; 3.74                        ;
+; Maximum fan-out                             ; 295                         ;
+; Total fan-out                               ; 7310                        ;
+; Average fan-out                             ; 3.79                        ;
 +---------------------------------------------+-----------------------------+
 
 
@@ -260,22 +260,22 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                    ; Entity Name     ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------+-----------------+--------------+
-; |main_dd                                  ; 1332 (0)            ; 416 (0)                   ; 4096              ; 0          ; 53   ; 0            ; |main_dd                                                                               ; main_dd         ; work         ;
+; |main_dd                                  ; 1384 (0)            ; 428 (0)                   ; 4096              ; 0          ; 53   ; 0            ; |main_dd                                                                               ; main_dd         ; work         ;
 ;    |DP_CLK:inst|                          ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|DP_CLK:inst                                                                   ; DP_CLK          ; dp_clk       ;
 ;       |DP_CLK_0002:dp_clk_inst|           ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|DP_CLK:inst|DP_CLK_0002:dp_clk_inst                                           ; DP_CLK_0002     ; DP_CLK       ;
 ;          |altera_pll:altera_pll_i|        ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i                   ; altera_pll      ; work         ;
 ;    |LFSR:inst1235|                        ; 4 (4)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|LFSR:inst1235                                                                 ; LFSR            ; work         ;
 ;    |MOUSE:inst1|                          ; 47 (47)             ; 65 (65)                   ; 0                 ; 0          ; 0    ; 0            ; |main_dd|MOUSE:inst1                                                                   ; MOUSE           ; work         ;
 ;    |VGA_SYNC:inst33|                      ; 56 (56)             ; 57 (57)                   ; 0                 ; 0          ; 0    ; 0            ; |main_dd|VGA_SYNC:inst33                                                               ; VGA_SYNC        ; work         ;
-;    |ball:inst8|                           ; 116 (116)           ; 34 (34)                   ; 0                 ; 0          ; 0    ; 0            ; |main_dd|ball:inst8                                                                    ; ball            ; work         ;
+;    |ball:inst8|                           ; 117 (117)           ; 34 (34)                   ; 0                 ; 0          ; 0    ; 0            ; |main_dd|ball:inst8                                                                    ; ball            ; work         ;
 ;    |char_rom:inst4|                       ; 2 (2)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |main_dd|char_rom:inst4                                                                ; char_rom        ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |main_dd|char_rom:inst4|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
 ;          |altsyncram_d5g1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |main_dd|char_rom:inst4|altsyncram:altsyncram_component|altsyncram_d5g1:auto_generated ; altsyncram_d5g1 ; work         ;
-;    |flappy_text:inst6|                    ; 287 (287)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|flappy_text:inst6                                                             ; flappy_text     ; work         ;
+;    |flappy_text:inst6|                    ; 280 (280)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|flappy_text:inst6                                                             ; flappy_text     ; work         ;
 ;    |game_state_FSM:inst10|                ; 15 (15)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|game_state_FSM:inst10                                                         ; game_state_FSM  ; work         ;
-;    |pipes:inst9|                          ; 722 (722)           ; 184 (184)                 ; 0                 ; 0          ; 0    ; 0            ; |main_dd|pipes:inst9                                                                   ; pipes           ; work         ;
-;    |timer:inst2|                          ; 83 (6)              ; 59 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst2                                                                   ; timer           ; work         ;
-;       |BCD2SevenSeg:dummy5|               ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst2|BCD2SevenSeg:dummy5                                               ; BCD2SevenSeg    ; work         ;
+;    |pipes:inst9|                          ; 778 (778)           ; 196 (196)                 ; 0                 ; 0          ; 0    ; 0            ; |main_dd|pipes:inst9                                                                   ; pipes           ; work         ;
+;    |timer:inst2|                          ; 85 (6)              ; 59 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst2                                                                   ; timer           ; work         ;
+;       |BCD2SevenSeg:dummy5|               ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst2|BCD2SevenSeg:dummy5                                               ; BCD2SevenSeg    ; work         ;
 ;       |BCD2SevenSeg:dummy6|               ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst2|BCD2SevenSeg:dummy6                                               ; BCD2SevenSeg    ; work         ;
 ;       |BCD2SevenSeg:dummy7|               ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst2|BCD2SevenSeg:dummy7                                               ; BCD2SevenSeg    ; work         ;
 ;       |BCDCounter:dummy2|                 ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst2|BCDCounter:dummy2                                                 ; BCDCounter      ; work         ;
@@ -362,15 +362,6 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; game_state_FSM:inst10|b3WasDown        ; Stuck at GND due to stuck port data_in    ;
 ; game_state_FSM:inst10|b2WasDown        ; Stuck at GND due to stuck port data_in    ;
 ; game_state_FSM:inst10|bWasDown         ; Stuck at GND due to stuck port data_in    ;
-; pipes:inst9|pipeY[0,9]                 ; Stuck at GND due to stuck port data_in    ;
-; pipes:inst9|pipe2Y[0,9]                ; Stuck at GND due to stuck port data_in    ;
-; pipes:inst9|pipe3Y[0,9]                ; Stuck at GND due to stuck port data_in    ;
-; pipes:inst9|pipe4Y[9]                  ; Stuck at GND due to stuck port data_in    ;
-; pipes:inst9|pipe4Y[8]                  ; Stuck at VCC due to stuck port data_in    ;
-; pipes:inst9|pipe4Y[0]                  ; Stuck at GND due to stuck port data_in    ;
-; pipes:inst9|pipe5Y[9]                  ; Stuck at GND due to stuck port data_in    ;
-; pipes:inst9|pipe5Y[8]                  ; Stuck at VCC due to stuck port data_in    ;
-; pipes:inst9|pipe5Y[0]                  ; Stuck at GND due to stuck port data_in    ;
 ; pipes:inst9|pickupY[0]                 ; Stuck at GND due to stuck port data_in    ;
 ; MOUSE:inst1|CHAROUT[4..7]              ; Stuck at VCC due to stuck port data_in    ;
 ; MOUSE:inst1|CHAROUT[3]                 ; Stuck at GND due to stuck port data_in    ;
@@ -390,8 +381,18 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; pipes:inst9|pipeSpeed[10]              ; Stuck at GND due to stuck port data_in    ;
 ; VGA_SYNC:inst33|pixel_row[9]           ; Stuck at GND due to stuck port data_in    ;
 ; pipes:inst9|pickupY[9]                 ; Stuck at GND due to stuck port data_in    ;
-; Total Number of Removed Registers = 47 ;                                           ;
+; Total Number of Removed Registers = 35 ;                                           ;
 +----------------------------------------+-------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                    ;
++---------------------------+---------------------------+----------------------------------------+
+; Register name             ; Reason for Removal        ; Registers Removed due to This Register ;
++---------------------------+---------------------------+----------------------------------------+
+; pipes:inst9|pipeSpeed[10] ; Stuck at GND              ; pipes:inst9|pickupY[9]                 ;
+;                           ; due to stuck port data_in ;                                        ;
++---------------------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -399,12 +400,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 416   ;
+; Total registers                              ; 428   ;
 ; Number of registers using Synchronous Clear  ; 104   ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 252   ;
+; Number of registers using Asynchronous Clear ; 264   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 313   ;
+; Number of registers using Clock Enable       ; 329   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -415,93 +416,95 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Inverted Register                       ; Fan out ;
 +-----------------------------------------+---------+
 ; timer:inst2|init                        ; 13      ;
+; pipes:inst9|pipe2X2[4]                  ; 5       ;
+; pipes:inst9|pipe2X2[3]                  ; 6       ;
+; pipes:inst9|pipe2X2[9]                  ; 5       ;
+; pipes:inst9|pipe2X2[8]                  ; 5       ;
+; pipes:inst9|pipe2Y[5]                   ; 5       ;
+; pipes:inst9|pipe2Y[4]                   ; 3       ;
+; pipes:inst9|pipe2Y[7]                   ; 4       ;
+; pipes:inst9|pipe2Y[6]                   ; 4       ;
+; pipes:inst9|pipe2X[9]                   ; 5       ;
+; pipes:inst9|pipe2X[3]                   ; 5       ;
+; pipes:inst9|pipe2X[5]                   ; 5       ;
+; pipes:inst9|pipe2X[4]                   ; 5       ;
+; pipes:inst9|pipe2X[7]                   ; 5       ;
+; pipes:inst9|pipe2X[6]                   ; 5       ;
 ; pipes:inst9|pipe5X2[10]                 ; 3       ;
-; pipes:inst9|pipe5X2[3]                  ; 4       ;
+; pipes:inst9|pipe5X2[3]                  ; 5       ;
 ; pipes:inst9|pipe5X2[5]                  ; 5       ;
 ; pipes:inst9|pipe5X2[4]                  ; 5       ;
 ; pipes:inst9|pipe5X2[7]                  ; 5       ;
 ; pipes:inst9|pipe5X2[6]                  ; 5       ;
+; pipes:inst9|pipe5Y[8]                   ; 3       ;
 ; pipes:inst9|pipe5Y[6]                   ; 4       ;
 ; pipes:inst9|pipe5X[3]                   ; 3       ;
 ; pipes:inst9|pipe5X[4]                   ; 4       ;
 ; pipes:inst9|pipe5X[7]                   ; 6       ;
 ; pipes:inst9|pipe5X[6]                   ; 6       ;
 ; pipes:inst9|pipe5X[10]                  ; 3       ;
-; pipes:inst9|pipe3X2[3]                  ; 5       ;
-; pipes:inst9|pipe3X2[5]                  ; 6       ;
-; pipes:inst9|pipe3X2[4]                  ; 6       ;
-; pipes:inst9|pipe3X2[7]                  ; 6       ;
-; pipes:inst9|pipe3X2[9]                  ; 5       ;
-; pipes:inst9|pipe3X2[8]                  ; 5       ;
-; pipes:inst9|pipe3Y[6]                   ; 3       ;
-; pipes:inst9|pipe3Y[4]                   ; 3       ;
-; pipes:inst9|pipe3Y[3]                   ; 3       ;
-; pipes:inst9|pipe3Y[2]                   ; 3       ;
-; pipes:inst9|pipe3Y[7]                   ; 4       ;
-; pipes:inst9|pipe3X[9]                   ; 4       ;
-; pipes:inst9|pipe3X[8]                   ; 3       ;
-; pipes:inst9|pipe3X[3]                   ; 3       ;
-; pipes:inst9|pipe3X[4]                   ; 4       ;
-; pipes:inst9|pipe3X[7]                   ; 6       ;
 ; pipes:inst9|pipe4X2[10]                 ; 3       ;
-; pipes:inst9|pipe4X2[4]                  ; 5       ;
+; pipes:inst9|pipe4X2[4]                  ; 4       ;
 ; pipes:inst9|pipe4X2[3]                  ; 5       ;
-; pipes:inst9|pipe4X2[6]                  ; 6       ;
+; pipes:inst9|pipe4X2[6]                  ; 5       ;
+; pipes:inst9|pipe4Y[8]                   ; 4       ;
 ; pipes:inst9|pipe4Y[2]                   ; 3       ;
 ; pipes:inst9|pipe4X[3]                   ; 3       ;
 ; pipes:inst9|pipe4X[5]                   ; 4       ;
 ; pipes:inst9|pipe4X[4]                   ; 4       ;
 ; pipes:inst9|pipe4X[10]                  ; 3       ;
-; pipes:inst9|pipeY[7]                    ; 3       ;
-; pipes:inst9|pipeY[6]                    ; 4       ;
-; pipes:inst9|pipeY[3]                    ; 3       ;
-; pipes:inst9|pipeX2[5]                   ; 6       ;
-; pipes:inst9|pipeX2[4]                   ; 5       ;
-; pipes:inst9|pipeX2[3]                   ; 5       ;
-; pipes:inst9|pipeX2[6]                   ; 6       ;
+; pipes:inst9|pipeX2[5]                   ; 5       ;
+; pipes:inst9|pipeX2[4]                   ; 4       ;
+; pipes:inst9|pipeX2[3]                   ; 6       ;
+; pipes:inst9|pipeX2[6]                   ; 5       ;
 ; pipes:inst9|pipeX2[9]                   ; 5       ;
+; pipes:inst9|pipeY[3]                    ; 3       ;
+; pipes:inst9|pipeY[7]                    ; 4       ;
+; pipes:inst9|pipeY[6]                    ; 4       ;
 ; pipes:inst9|pipeX[9]                    ; 4       ;
 ; pipes:inst9|pipeX[3]                    ; 3       ;
 ; pipes:inst9|pipeX[4]                    ; 4       ;
 ; pipes:inst9|pipeX[6]                    ; 6       ;
-; pipes:inst9|pipe2Y[7]                   ; 3       ;
-; pipes:inst9|pipe2Y[6]                   ; 4       ;
-; pipes:inst9|pipe2Y[5]                   ; 3       ;
-; pipes:inst9|pipe2Y[4]                   ; 3       ;
-; pipes:inst9|pipe2X2[4]                  ; 4       ;
-; pipes:inst9|pipe2X2[3]                  ; 4       ;
-; pipes:inst9|pipe2X2[9]                  ; 5       ;
-; pipes:inst9|pipe2X2[8]                  ; 5       ;
-; pipes:inst9|pipe2X[9]                   ; 5       ;
-; pipes:inst9|pipe2X[3]                   ; 5       ;
-; pipes:inst9|pipe2X[5]                   ; 5       ;
-; pipes:inst9|pipe2X[4]                   ; 5       ;
-; pipes:inst9|pipe2X[7]                   ; 7       ;
-; pipes:inst9|pipe2X[6]                   ; 7       ;
-; ball:inst8|vBallY[7]                    ; 19      ;
-; ball:inst8|vBallY[6]                    ; 18      ;
-; ball:inst8|vBallY[5]                    ; 28      ;
-; ball:inst8|vBallY[4]                    ; 30      ;
+; pipes:inst9|pipe3X2[3]                  ; 6       ;
+; pipes:inst9|pipe3X2[5]                  ; 5       ;
+; pipes:inst9|pipe3X2[4]                  ; 5       ;
+; pipes:inst9|pipe3X2[7]                  ; 5       ;
+; pipes:inst9|pipe3X2[9]                  ; 5       ;
+; pipes:inst9|pipe3X2[8]                  ; 5       ;
+; pipes:inst9|pipe3Y[3]                   ; 3       ;
+; pipes:inst9|pipe3Y[2]                   ; 3       ;
+; pipes:inst9|pipe3Y[4]                   ; 4       ;
+; pipes:inst9|pipe3Y[7]                   ; 4       ;
+; pipes:inst9|pipe3Y[6]                   ; 4       ;
+; pipes:inst9|pipe3X[9]                   ; 4       ;
+; pipes:inst9|pipe3X[8]                   ; 3       ;
+; pipes:inst9|pipe3X[3]                   ; 3       ;
+; pipes:inst9|pipe3X[4]                   ; 4       ;
+; pipes:inst9|pipe3X[7]                   ; 6       ;
+; ball:inst8|vBallY[7]                    ; 16      ;
+; ball:inst8|vBallY[6]                    ; 14      ;
+; ball:inst8|vBallY[5]                    ; 29      ;
+; ball:inst8|vBallY[4]                    ; 36      ;
 ; pipes:inst9|pickupY[7]                  ; 9       ;
-; pipes:inst9|pickupY[6]                  ; 6       ;
-; pipes:inst9|pickupY[4]                  ; 7       ;
-; pipes:inst9|pickupY[3]                  ; 10      ;
+; pipes:inst9|pickupY[6]                  ; 7       ;
+; pipes:inst9|pickupY[4]                  ; 8       ;
+; pipes:inst9|pickupY[3]                  ; 11      ;
 ; pipes:inst9|pickupY[2]                  ; 4       ;
 ; ball:inst8|vLives[0]                    ; 16      ;
-; LFSR:inst1235|output[0]                 ; 12      ;
-; pipes:inst9|pipeSpeed[1]                ; 13      ;
-; LFSR:inst1235|nextstate[1]              ; 1       ;
+; LFSR:inst1235|output[0]                 ; 14      ;
+; pipes:inst9|pipeSpeed[1]                ; 1       ;
 ; ball:inst8|newBallY[6]                  ; 1       ;
 ; ball:inst8|newBallY[5]                  ; 1       ;
 ; ball:inst8|newBallY[7]                  ; 1       ;
 ; ball:inst8|newBallY[4]                  ; 1       ;
+; LFSR:inst1235|nextstate[1]              ; 1       ;
 ; MOUSE:inst1|send_char                   ; 3       ;
 ; MOUSE:inst1|SHIFTOUT[3]                 ; 1       ;
 ; MOUSE:inst1|SHIFTOUT[5]                 ; 1       ;
 ; MOUSE:inst1|SHIFTOUT[6]                 ; 1       ;
 ; MOUSE:inst1|SHIFTOUT[7]                 ; 1       ;
 ; MOUSE:inst1|SHIFTOUT[8]                 ; 1       ;
-; Total number of inverted registers = 87 ;         ;
+; Total number of inverted registers = 89 ;         ;
 +-----------------------------------------+---------+
 
 
@@ -904,38 +907,39 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 416                         ;
+; arriav_ff             ; 428                         ;
 ;     CLR               ; 4                           ;
 ;     CLR SCLR          ; 32                          ;
-;     ENA               ; 76                          ;
-;     ENA CLR           ; 175                         ;
+;     ENA               ; 80                          ;
+;     ENA CLR           ; 187                         ;
 ;     ENA CLR SCLR      ; 41                          ;
 ;     ENA SCLR          ; 21                          ;
 ;     SCLR              ; 10                          ;
-;     plain             ; 57                          ;
+;     plain             ; 53                          ;
 ; arriav_io_obuf        ; 2                           ;
-; arriav_lcell_comb     ; 1338                        ;
-;     arith             ; 303                         ;
-;         0 data inputs ; 19                          ;
-;         1 data inputs ; 225                         ;
-;         2 data inputs ; 1                           ;
+; arriav_lcell_comb     ; 1390                        ;
+;     arith             ; 321                         ;
+;         0 data inputs ; 14                          ;
+;         1 data inputs ; 242                         ;
+;         2 data inputs ; 6                           ;
+;         3 data inputs ; 1                           ;
 ;         4 data inputs ; 1                           ;
 ;         5 data inputs ; 57                          ;
 ;     extend            ; 11                          ;
 ;         7 data inputs ; 11                          ;
-;     normal            ; 1024                        ;
-;         1 data inputs ; 31                          ;
-;         2 data inputs ; 108                         ;
-;         3 data inputs ; 123                         ;
-;         4 data inputs ; 286                         ;
-;         5 data inputs ; 196                         ;
-;         6 data inputs ; 280                         ;
+;     normal            ; 1058                        ;
+;         1 data inputs ; 38                          ;
+;         2 data inputs ; 102                         ;
+;         3 data inputs ; 142                         ;
+;         4 data inputs ; 245                         ;
+;         5 data inputs ; 171                         ;
+;         6 data inputs ; 360                         ;
 ; boundary_port         ; 53                          ;
 ; generic_pll           ; 1                           ;
 ; stratixv_ram_block    ; 8                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 11.00                       ;
-; Average LUT depth     ; 5.39                        ;
+; Average LUT depth     ; 5.25                        ;
 +-----------------------+-----------------------------+
 
 
@@ -953,62 +957,62 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon May 27 21:40:57 2024
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+    Info: Processing started: Tue May 28 11:10:59 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off miniproject -c D_H
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file lfsr.vhd
-    Info (12022): Found design unit 1: LFSR-aLFSR File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/LFSR.vhd Line: 11
-    Info (12023): Found entity 1: LFSR File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/LFSR.vhd Line: 4
+    Info (12022): Found design unit 1: LFSR-aLFSR File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/LFSR.vhd Line: 11
+    Info (12023): Found entity 1: LFSR File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/LFSR.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file game_state_fsm.vhd
-    Info (12022): Found design unit 1: game_state_FSM-FSM File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd Line: 17
-    Info (12023): Found entity 1: game_state_FSM File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd Line: 4
+    Info (12022): Found design unit 1: game_state_FSM-FSM File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd Line: 17
+    Info (12023): Found entity 1: game_state_FSM File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file clockdivider.vhdl
-    Info (12022): Found design unit 1: ClockDivider-aClockDivider File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/ClockDivider.vhdl Line: 13
-    Info (12023): Found entity 1: ClockDivider File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/ClockDivider.vhdl Line: 5
+    Info (12022): Found design unit 1: ClockDivider-aClockDivider File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/ClockDivider.vhdl Line: 13
+    Info (12023): Found entity 1: ClockDivider File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/ClockDivider.vhdl Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file bcd2sevenseg.vhd
-    Info (12022): Found design unit 1: BCD2SevenSeg-aBCD2SevenSeg File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/BCD2SevenSeg.vhd Line: 14
-    Info (12023): Found entity 1: BCD2SevenSeg File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/BCD2SevenSeg.vhd Line: 7
+    Info (12022): Found design unit 1: BCD2SevenSeg-aBCD2SevenSeg File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/BCD2SevenSeg.vhd Line: 14
+    Info (12023): Found entity 1: BCD2SevenSeg File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/BCD2SevenSeg.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file timer.vhdl
-    Info (12022): Found design unit 1: timer-atimer File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/timer.vhdl Line: 18
-    Info (12023): Found entity 1: timer File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/timer.vhdl Line: 5
+    Info (12022): Found design unit 1: timer-atimer File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/timer.vhdl Line: 18
+    Info (12023): Found entity 1: timer File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/timer.vhdl Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file bcdcounter.vhdl
-    Info (12022): Found design unit 1: BCDCounter-aBCDCounter File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/BCDCounter.vhdl Line: 15
-    Info (12023): Found entity 1: BCDCounter File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/BCDCounter.vhdl Line: 6
+    Info (12022): Found design unit 1: BCDCounter-aBCDCounter File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/BCDCounter.vhdl Line: 15
+    Info (12023): Found entity 1: BCDCounter File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/BCDCounter.vhdl Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file vga_sync.vhd
-    Info (12022): Found design unit 1: VGA_SYNC-a File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/vga_sync.vhd Line: 17
-    Info (12023): Found entity 1: VGA_SYNC File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/vga_sync.vhd Line: 7
+    Info (12022): Found design unit 1: VGA_SYNC-a File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/vga_sync.vhd Line: 17
+    Info (12023): Found entity 1: VGA_SYNC File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/vga_sync.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file mouse.vhd
-    Info (12022): Found design unit 1: MOUSE-behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/mouse.vhd Line: 18
-    Info (12023): Found entity 1: MOUSE File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/mouse.vhd Line: 9
+    Info (12022): Found design unit 1: MOUSE-behavior File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/mouse.vhd Line: 18
+    Info (12023): Found entity 1: MOUSE File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/mouse.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file char_rom.vhd
-    Info (12022): Found design unit 1: char_rom-SYN File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/char_rom.vhd Line: 20
-    Info (12023): Found entity 1: char_rom File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/char_rom.vhd Line: 9
+    Info (12022): Found design unit 1: char_rom-SYN File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/char_rom.vhd Line: 20
+    Info (12023): Found entity 1: char_rom File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/char_rom.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file ball.vhd
-    Info (12022): Found design unit 1: ball-behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/ball.vhd Line: 20
-    Info (12023): Found entity 1: ball File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/ball.vhd Line: 6
+    Info (12022): Found design unit 1: ball-behavior File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/ball.vhd Line: 20
+    Info (12023): Found entity 1: ball File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/ball.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file dp_clk.vhd
-    Info (12022): Found design unit 1: DP_CLK-rtl File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/DP_CLK.vhd Line: 20
-    Info (12023): Found entity 1: DP_CLK File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/DP_CLK.vhd Line: 11
+    Info (12022): Found design unit 1: DP_CLK-rtl File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/DP_CLK.vhd Line: 20
+    Info (12023): Found entity 1: DP_CLK File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/DP_CLK.vhd Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file dp_clk/dp_clk_0002.v
-    Info (12023): Found entity 1: DP_CLK_0002 File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/DP_CLK/DP_CLK_0002.v Line: 2
+    Info (12023): Found entity 1: DP_CLK_0002 File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/DP_CLK/DP_CLK_0002.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file output_files/main_dd.bdf
     Info (12023): Found entity 1: main_dd
 Info (12021): Found 2 design units, including 1 entities, in source file pipes.vhd
-    Info (12022): Found design unit 1: pipes-Behavioral File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 28
-    Info (12023): Found entity 1: pipes File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 6
+    Info (12022): Found design unit 1: pipes-Behavioral File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 28
+    Info (12023): Found entity 1: pipes File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file flappy_text.vhd
-    Info (12022): Found design unit 1: flappy_text-behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 18
-    Info (12023): Found entity 1: flappy_text File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 6
+    Info (12022): Found design unit 1: flappy_text-behavior File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 18
+    Info (12023): Found entity 1: flappy_text File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 6
 Info (12127): Elaborating entity "main_dd" for the top level hierarchy
 Info (12128): Elaborating entity "VGA_SYNC" for hierarchy "VGA_SYNC:inst33"
 Info (12128): Elaborating entity "DP_CLK" for hierarchy "DP_CLK:inst"
-Info (12128): Elaborating entity "DP_CLK_0002" for hierarchy "DP_CLK:inst|DP_CLK_0002:dp_clk_inst" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/DP_CLK.vhd Line: 32
-Info (12128): Elaborating entity "altera_pll" for hierarchy "DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/DP_CLK/DP_CLK_0002.v Line: 85
+Info (12128): Elaborating entity "DP_CLK_0002" for hierarchy "DP_CLK:inst|DP_CLK_0002:dp_clk_inst" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/DP_CLK.vhd Line: 32
+Info (12128): Elaborating entity "altera_pll" for hierarchy "DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/DP_CLK/DP_CLK_0002.v Line: 85
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "wire_to_nowhere_64" into its bus
-Info (12130): Elaborated megafunction instantiation "DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/DP_CLK/DP_CLK_0002.v Line: 85
-Info (12133): Instantiated megafunction "DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i" with the following parameter: File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/DP_CLK/DP_CLK_0002.v Line: 85
+Info (12130): Elaborated megafunction instantiation "DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/DP_CLK/DP_CLK_0002.v Line: 85
+Info (12133): Instantiated megafunction "DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i" with the following parameter: File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/DP_CLK/DP_CLK_0002.v Line: 85
     Info (12134): Parameter "fractional_vco_multiplier" = "false"
     Info (12134): Parameter "reference_clock_frequency" = "50.0 MHz"
     Info (12134): Parameter "operation_mode" = "direct"
@@ -1070,20 +1074,20 @@ Info (12133): Instantiated megafunction "DP_CLK:inst|DP_CLK_0002:dp_clk_inst|alt
     Info (12134): Parameter "pll_type" = "General"
     Info (12134): Parameter "pll_subtype" = "General"
 Info (12128): Elaborating entity "ball" for hierarchy "ball:inst8"
-Warning (10492): VHDL Process Statement warning at ball.vhd(88): signal "pickup" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/ball.vhd Line: 88
-Warning (10492): VHDL Process Statement warning at ball.vhd(182): signal "vBallY" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/ball.vhd Line: 182
+Warning (10492): VHDL Process Statement warning at ball.vhd(88): signal "pickup" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/ball.vhd Line: 88
+Warning (10492): VHDL Process Statement warning at ball.vhd(182): signal "vBallY" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/ball.vhd Line: 182
 Info (12128): Elaborating entity "game_state_FSM" for hierarchy "game_state_FSM:inst10"
-Warning (10036): Verilog HDL or VHDL warning at game_state_FSM.vhd(29): object "b4Press" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd Line: 29
+Warning (10036): Verilog HDL or VHDL warning at game_state_FSM.vhd(29): object "b4Press" assigned a value but never read File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd Line: 29
 Info (12128): Elaborating entity "MOUSE" for hierarchy "MOUSE:inst1"
-Warning (10036): Verilog HDL or VHDL warning at mouse.vhd(25): object "CHARIN" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/mouse.vhd Line: 25
-Warning (10492): VHDL Process Statement warning at mouse.vhd(151): signal "CHAROUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/mouse.vhd Line: 151
-Warning (10492): VHDL Process Statement warning at mouse.vhd(155): signal "CHAROUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/mouse.vhd Line: 155
-Warning (10492): VHDL Process Statement warning at mouse.vhd(156): signal "CHAROUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/mouse.vhd Line: 156
-Warning (10492): VHDL Process Statement warning at mouse.vhd(157): signal "CHAROUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/mouse.vhd Line: 157
+Warning (10036): Verilog HDL or VHDL warning at mouse.vhd(25): object "CHARIN" assigned a value but never read File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/mouse.vhd Line: 25
+Warning (10492): VHDL Process Statement warning at mouse.vhd(151): signal "CHAROUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/mouse.vhd Line: 151
+Warning (10492): VHDL Process Statement warning at mouse.vhd(155): signal "CHAROUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/mouse.vhd Line: 155
+Warning (10492): VHDL Process Statement warning at mouse.vhd(156): signal "CHAROUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/mouse.vhd Line: 156
+Warning (10492): VHDL Process Statement warning at mouse.vhd(157): signal "CHAROUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/mouse.vhd Line: 157
 Info (12128): Elaborating entity "char_rom" for hierarchy "char_rom:inst4"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "char_rom:inst4|altsyncram:altsyncram_component" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/char_rom.vhd Line: 51
-Info (12130): Elaborated megafunction instantiation "char_rom:inst4|altsyncram:altsyncram_component" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/char_rom.vhd Line: 51
-Info (12133): Instantiated megafunction "char_rom:inst4|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/char_rom.vhd Line: 51
+Info (12128): Elaborating entity "altsyncram" for hierarchy "char_rom:inst4|altsyncram:altsyncram_component" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/char_rom.vhd Line: 51
+Info (12130): Elaborated megafunction instantiation "char_rom:inst4|altsyncram:altsyncram_component" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/char_rom.vhd Line: 51
+Info (12133): Instantiated megafunction "char_rom:inst4|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/char_rom.vhd Line: 51
     Info (12134): Parameter "address_aclr_a" = "NONE"
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
@@ -1099,163 +1103,162 @@ Info (12133): Instantiated megafunction "char_rom:inst4|altsyncram:altsyncram_co
     Info (12134): Parameter "width_a" = "8"
     Info (12134): Parameter "width_byteena_a" = "1"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_d5g1.tdf
-    Info (12023): Found entity 1: altsyncram_d5g1 File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/db/altsyncram_d5g1.tdf Line: 27
-Info (12128): Elaborating entity "altsyncram_d5g1" for hierarchy "char_rom:inst4|altsyncram:altsyncram_component|altsyncram_d5g1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+    Info (12023): Found entity 1: altsyncram_d5g1 File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/db/altsyncram_d5g1.tdf Line: 27
+Info (12128): Elaborating entity "altsyncram_d5g1" for hierarchy "char_rom:inst4|altsyncram:altsyncram_component|altsyncram_d5g1:auto_generated" File: c:/intelfpga/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
 Info (12128): Elaborating entity "flappy_text" for hierarchy "flappy_text:inst6"
-Warning (10036): Verilog HDL or VHDL warning at flappy_text.vhd(27): object "max_lives" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 27
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(31): used initial value expression for variable "vA" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 31
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(32): used initial value expression for variable "vB" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 32
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(33): used initial value expression for variable "vC" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 33
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(34): used initial value expression for variable "vD" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 34
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(35): used initial value expression for variable "vE" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 35
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(36): used initial value expression for variable "vF" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 36
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(38): used initial value expression for variable "vH" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 38
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(39): used initial value expression for variable "vI" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 39
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(41): used initial value expression for variable "vK" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 41
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(42): used initial value expression for variable "vL" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 42
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(43): used initial value expression for variable "vM" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 43
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(44): used initial value expression for variable "vN" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 44
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(45): used initial value expression for variable "vO" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 45
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(46): used initial value expression for variable "vP" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 46
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(48): used initial value expression for variable "vR" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 48
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(49): used initial value expression for variable "vS" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 49
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(50): used initial value expression for variable "vT" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 50
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(51): used initial value expression for variable "vU" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 51
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(52): used initial value expression for variable "vV" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 52
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(53): used initial value expression for variable "vW" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 53
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(55): used initial value expression for variable "vY" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 55
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(57): used initial value expression for variable "vHeart" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 57
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(58): used initial value expression for variable "v0" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 58
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(59): used initial value expression for variable "v1" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 59
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(60): used initial value expression for variable "v2" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 60
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(61): used initial value expression for variable "v3" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 61
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(62): used initial value expression for variable "v4" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 62
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(63): used initial value expression for variable "v5" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 63
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(64): used initial value expression for variable "v6" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 64
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(65): used initial value expression for variable "v7" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 65
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(66): used initial value expression for variable "v8" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 66
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(67): used initial value expression for variable "v9" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 67
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(68): used initial value expression for variable "vApostrphy" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 68
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(69): used initial value expression for variable "vbopen" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 69
-Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(70): used initial value expression for variable "vbclose" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 70
-Warning (10492): VHDL Process Statement warning at flappy_text.vhd(73): signal "game_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 73
-Warning (10492): VHDL Process Statement warning at flappy_text.vhd(152): signal "mode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 152
-Warning (10492): VHDL Process Statement warning at flappy_text.vhd(226): signal "game_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 226
-Warning (10492): VHDL Process Statement warning at flappy_text.vhd(231): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 231
-Warning (10492): VHDL Process Statement warning at flappy_text.vhd(232): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 232
-Warning (10492): VHDL Process Statement warning at flappy_text.vhd(233): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 233
-Warning (10492): VHDL Process Statement warning at flappy_text.vhd(235): signal "mode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 235
-Warning (10492): VHDL Process Statement warning at flappy_text.vhd(240): signal "lives" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 240
-Warning (10492): VHDL Process Statement warning at flappy_text.vhd(249): signal "lives" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 249
-Warning (10492): VHDL Process Statement warning at flappy_text.vhd(258): signal "lives" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 258
-Warning (10492): VHDL Process Statement warning at flappy_text.vhd(267): signal "lives" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 267
-Warning (10492): VHDL Process Statement warning at flappy_text.vhd(276): signal "lives" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 276
-Warning (10492): VHDL Process Statement warning at flappy_text.vhd(346): signal "lives" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 346
-Warning (10492): VHDL Process Statement warning at flappy_text.vhd(353): signal "lives" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 353
-Warning (10492): VHDL Process Statement warning at flappy_text.vhd(360): signal "lives" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 360
-Warning (10492): VHDL Process Statement warning at flappy_text.vhd(451): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 451
-Warning (10492): VHDL Process Statement warning at flappy_text.vhd(453): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 453
-Warning (10492): VHDL Process Statement warning at flappy_text.vhd(455): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 455
-Warning (10492): VHDL Process Statement warning at flappy_text.vhd(457): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 457
-Warning (10492): VHDL Process Statement warning at flappy_text.vhd(459): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 459
-Warning (10492): VHDL Process Statement warning at flappy_text.vhd(461): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 461
-Warning (10492): VHDL Process Statement warning at flappy_text.vhd(463): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 463
-Warning (10492): VHDL Process Statement warning at flappy_text.vhd(465): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 465
-Warning (10492): VHDL Process Statement warning at flappy_text.vhd(478): signal "game_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 478
-Warning (10492): VHDL Process Statement warning at flappy_text.vhd(577): signal "game_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 577
-Warning (10631): VHDL Process Statement warning at flappy_text.vhd(22): inferring latch(es) for signal or variable "character_address", which holds its previous value in one or more paths through the process File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
-Warning (10631): VHDL Process Statement warning at flappy_text.vhd(22): inferring latch(es) for signal or variable "font_row", which holds its previous value in one or more paths through the process File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
-Warning (10631): VHDL Process Statement warning at flappy_text.vhd(22): inferring latch(es) for signal or variable "font_col", which holds its previous value in one or more paths through the process File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
-Info (10041): Inferred latch for "font_col[0]" at flappy_text.vhd(22) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
-Info (10041): Inferred latch for "font_col[1]" at flappy_text.vhd(22) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
-Info (10041): Inferred latch for "font_col[2]" at flappy_text.vhd(22) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
-Info (10041): Inferred latch for "font_row[0]" at flappy_text.vhd(22) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
-Info (10041): Inferred latch for "font_row[1]" at flappy_text.vhd(22) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
-Info (10041): Inferred latch for "font_row[2]" at flappy_text.vhd(22) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
-Info (10041): Inferred latch for "character_address[0]" at flappy_text.vhd(22) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
-Info (10041): Inferred latch for "character_address[1]" at flappy_text.vhd(22) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
-Info (10041): Inferred latch for "character_address[2]" at flappy_text.vhd(22) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
-Info (10041): Inferred latch for "character_address[3]" at flappy_text.vhd(22) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
-Info (10041): Inferred latch for "character_address[4]" at flappy_text.vhd(22) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
-Info (10041): Inferred latch for "character_address[5]" at flappy_text.vhd(22) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Warning (10036): Verilog HDL or VHDL warning at flappy_text.vhd(27): object "max_lives" assigned a value but never read File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 27
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(31): used initial value expression for variable "vA" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 31
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(32): used initial value expression for variable "vB" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 32
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(33): used initial value expression for variable "vC" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 33
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(34): used initial value expression for variable "vD" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 34
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(35): used initial value expression for variable "vE" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 35
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(36): used initial value expression for variable "vF" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 36
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(38): used initial value expression for variable "vH" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 38
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(39): used initial value expression for variable "vI" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 39
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(41): used initial value expression for variable "vK" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 41
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(42): used initial value expression for variable "vL" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 42
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(43): used initial value expression for variable "vM" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 43
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(44): used initial value expression for variable "vN" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 44
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(45): used initial value expression for variable "vO" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 45
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(46): used initial value expression for variable "vP" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 46
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(48): used initial value expression for variable "vR" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 48
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(49): used initial value expression for variable "vS" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 49
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(50): used initial value expression for variable "vT" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 50
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(51): used initial value expression for variable "vU" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 51
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(52): used initial value expression for variable "vV" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 52
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(53): used initial value expression for variable "vW" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 53
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(55): used initial value expression for variable "vY" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 55
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(57): used initial value expression for variable "vHeart" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 57
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(58): used initial value expression for variable "v0" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 58
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(59): used initial value expression for variable "v1" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 59
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(60): used initial value expression for variable "v2" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 60
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(61): used initial value expression for variable "v3" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 61
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(62): used initial value expression for variable "v4" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 62
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(63): used initial value expression for variable "v5" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 63
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(64): used initial value expression for variable "v6" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 64
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(65): used initial value expression for variable "v7" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 65
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(66): used initial value expression for variable "v8" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 66
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(67): used initial value expression for variable "v9" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 67
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(68): used initial value expression for variable "vApostrphy" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 68
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(69): used initial value expression for variable "vbopen" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 69
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(70): used initial value expression for variable "vbclose" because variable was never assigned a value File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 70
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(73): signal "game_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 73
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(152): signal "mode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 152
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(226): signal "game_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 226
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(231): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 231
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(232): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 232
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(233): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 233
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(235): signal "mode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 235
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(240): signal "lives" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 240
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(249): signal "lives" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 249
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(258): signal "lives" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 258
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(267): signal "lives" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 267
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(276): signal "lives" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 276
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(346): signal "lives" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 346
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(353): signal "lives" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 353
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(360): signal "lives" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 360
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(451): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 451
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(453): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 453
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(455): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 455
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(457): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 457
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(459): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 459
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(461): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 461
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(463): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 463
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(465): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 465
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(478): signal "game_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 478
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(577): signal "game_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 577
+Warning (10631): VHDL Process Statement warning at flappy_text.vhd(22): inferring latch(es) for signal or variable "character_address", which holds its previous value in one or more paths through the process File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Warning (10631): VHDL Process Statement warning at flappy_text.vhd(22): inferring latch(es) for signal or variable "font_row", which holds its previous value in one or more paths through the process File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Warning (10631): VHDL Process Statement warning at flappy_text.vhd(22): inferring latch(es) for signal or variable "font_col", which holds its previous value in one or more paths through the process File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Info (10041): Inferred latch for "font_col[0]" at flappy_text.vhd(22) File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Info (10041): Inferred latch for "font_col[1]" at flappy_text.vhd(22) File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Info (10041): Inferred latch for "font_col[2]" at flappy_text.vhd(22) File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Info (10041): Inferred latch for "font_row[0]" at flappy_text.vhd(22) File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Info (10041): Inferred latch for "font_row[1]" at flappy_text.vhd(22) File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Info (10041): Inferred latch for "font_row[2]" at flappy_text.vhd(22) File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Info (10041): Inferred latch for "character_address[0]" at flappy_text.vhd(22) File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Info (10041): Inferred latch for "character_address[1]" at flappy_text.vhd(22) File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Info (10041): Inferred latch for "character_address[2]" at flappy_text.vhd(22) File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Info (10041): Inferred latch for "character_address[3]" at flappy_text.vhd(22) File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Info (10041): Inferred latch for "character_address[4]" at flappy_text.vhd(22) File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Info (10041): Inferred latch for "character_address[5]" at flappy_text.vhd(22) File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
 Info (12128): Elaborating entity "timer" for hierarchy "timer:inst2"
-Warning (10492): VHDL Process Statement warning at timer.vhdl(97): signal "vQ1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/timer.vhdl Line: 97
-Warning (10492): VHDL Process Statement warning at timer.vhdl(97): signal "vQ2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/timer.vhdl Line: 97
-Warning (10492): VHDL Process Statement warning at timer.vhdl(97): signal "vQ3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/timer.vhdl Line: 97
-Info (12128): Elaborating entity "ClockDivider" for hierarchy "timer:inst2|ClockDivider:dummy" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/timer.vhdl Line: 46
-Info (12128): Elaborating entity "BCDCounter" for hierarchy "timer:inst2|BCDCounter:dummy2" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/timer.vhdl Line: 47
-Warning (10492): VHDL Process Statement warning at BCDCounter.vhdl(21): signal "minNum" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/BCDCounter.vhdl Line: 21
-Info (12128): Elaborating entity "BCD2SevenSeg" for hierarchy "timer:inst2|BCD2SevenSeg:dummy5" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/timer.vhdl Line: 50
+Warning (10492): VHDL Process Statement warning at timer.vhdl(97): signal "vQ1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/timer.vhdl Line: 97
+Warning (10492): VHDL Process Statement warning at timer.vhdl(97): signal "vQ2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/timer.vhdl Line: 97
+Warning (10492): VHDL Process Statement warning at timer.vhdl(97): signal "vQ3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/timer.vhdl Line: 97
+Info (12128): Elaborating entity "ClockDivider" for hierarchy "timer:inst2|ClockDivider:dummy" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/timer.vhdl Line: 46
+Info (12128): Elaborating entity "BCDCounter" for hierarchy "timer:inst2|BCDCounter:dummy2" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/timer.vhdl Line: 47
+Warning (10492): VHDL Process Statement warning at BCDCounter.vhdl(21): signal "minNum" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/BCDCounter.vhdl Line: 21
+Info (12128): Elaborating entity "BCD2SevenSeg" for hierarchy "timer:inst2|BCD2SevenSeg:dummy5" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/timer.vhdl Line: 50
 Info (12128): Elaborating entity "pipes" for hierarchy "pipes:inst9"
-Warning (10492): VHDL Process Statement warning at pipes.vhd(77): signal "pipeX2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 77
-Warning (10492): VHDL Process Statement warning at pipes.vhd(79): signal "pipeY" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 79
-Warning (10492): VHDL Process Statement warning at pipes.vhd(86): signal "pipe2X2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 86
-Warning (10492): VHDL Process Statement warning at pipes.vhd(88): signal "pipe2Y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 88
-Warning (10492): VHDL Process Statement warning at pipes.vhd(95): signal "pipe3X2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 95
-Warning (10492): VHDL Process Statement warning at pipes.vhd(97): signal "pipe3Y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 97
-Warning (10492): VHDL Process Statement warning at pipes.vhd(104): signal "pipe4X2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 104
-Warning (10492): VHDL Process Statement warning at pipes.vhd(106): signal "pipe4Y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 106
-Warning (10492): VHDL Process Statement warning at pipes.vhd(113): signal "pipe5X2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 113
-Warning (10492): VHDL Process Statement warning at pipes.vhd(115): signal "pipe5Y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 115
-Warning (10492): VHDL Process Statement warning at pipes.vhd(122): signal "pickedUp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 122
-Warning (10492): VHDL Process Statement warning at pipes.vhd(124): signal "pickupX" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 124
-Warning (10492): VHDL Process Statement warning at pipes.vhd(124): signal "pickupX2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 124
-Warning (10492): VHDL Process Statement warning at pipes.vhd(126): signal "pickupY" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 126
-Warning (10542): VHDL Variable Declaration warning at pipes.vhd(145): used initial value expression for variable "leftBound" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 145
-Warning (10492): VHDL Process Statement warning at pipes.vhd(170): signal "pipe2X" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 170
-Warning (10492): VHDL Process Statement warning at pipes.vhd(171): signal "pipe2X" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 171
+Warning (10492): VHDL Process Statement warning at pipes.vhd(77): signal "pipeX2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 77
+Warning (10492): VHDL Process Statement warning at pipes.vhd(79): signal "pipeY" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 79
+Warning (10492): VHDL Process Statement warning at pipes.vhd(86): signal "pipe2X2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 86
+Warning (10492): VHDL Process Statement warning at pipes.vhd(88): signal "pipe2Y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 88
+Warning (10492): VHDL Process Statement warning at pipes.vhd(95): signal "pipe3X2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at pipes.vhd(97): signal "pipe3Y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 97
+Warning (10492): VHDL Process Statement warning at pipes.vhd(104): signal "pipe4X2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 104
+Warning (10492): VHDL Process Statement warning at pipes.vhd(106): signal "pipe4Y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 106
+Warning (10492): VHDL Process Statement warning at pipes.vhd(113): signal "pipe5X2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 113
+Warning (10492): VHDL Process Statement warning at pipes.vhd(115): signal "pipe5Y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 115
+Warning (10492): VHDL Process Statement warning at pipes.vhd(122): signal "pickedUp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 122
+Warning (10492): VHDL Process Statement warning at pipes.vhd(124): signal "pickupX" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 124
+Warning (10492): VHDL Process Statement warning at pipes.vhd(124): signal "pickupX2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 124
+Warning (10492): VHDL Process Statement warning at pipes.vhd(126): signal "pickupY" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 126
+Warning (10492): VHDL Process Statement warning at pipes.vhd(169): signal "pipe2X" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 169
+Warning (10492): VHDL Process Statement warning at pipes.vhd(170): signal "pipe2X" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 170
 Info (12128): Elaborating entity "LFSR" for hierarchy "LFSR:inst1235"
-Warning (13012): Latch flappy_text:inst6|font_col[2] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst33|pixel_row[6] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/vga_sync.vhd Line: 92
-Warning (13012): Latch flappy_text:inst6|font_col[1] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst33|pixel_row[6] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/vga_sync.vhd Line: 92
-Warning (13012): Latch flappy_text:inst6|font_row[0] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst33|pixel_row[6] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/vga_sync.vhd Line: 92
-Warning (13012): Latch flappy_text:inst6|font_row[1] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst33|pixel_row[4] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/vga_sync.vhd Line: 92
-Warning (13012): Latch flappy_text:inst6|font_row[2] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst33|pixel_row[5] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/vga_sync.vhd Line: 92
-Warning (13012): Latch flappy_text:inst6|character_address[0] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_state_FSM:inst10|state_out[1] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd Line: 32
-Warning (13012): Latch flappy_text:inst6|character_address[1] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_state_FSM:inst10|state_out[1] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd Line: 32
-Warning (13012): Latch flappy_text:inst6|character_address[2] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_state_FSM:inst10|state_out[1] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd Line: 32
-Warning (13012): Latch flappy_text:inst6|character_address[3] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_state_FSM:inst10|state_out[1] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd Line: 32
-Warning (13012): Latch flappy_text:inst6|character_address[4] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_state_FSM:inst10|state_out[1] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd Line: 32
-Warning (13012): Latch flappy_text:inst6|character_address[5] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_state_FSM:inst10|state_out[1] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd Line: 32
-Warning (13012): Latch flappy_text:inst6|font_col[0] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst33|pixel_row[6] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/vga_sync.vhd Line: 92
-Info (13000): Registers with preset signals will power-up high File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/mouse.vhd Line: 146
+Warning (13012): Latch flappy_text:inst6|font_col[2] has unsafe behavior File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst33|pixel_row[6] File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/vga_sync.vhd Line: 92
+Warning (13012): Latch flappy_text:inst6|font_col[1] has unsafe behavior File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst33|pixel_row[6] File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/vga_sync.vhd Line: 92
+Warning (13012): Latch flappy_text:inst6|font_row[0] has unsafe behavior File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst33|pixel_row[6] File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/vga_sync.vhd Line: 92
+Warning (13012): Latch flappy_text:inst6|font_row[1] has unsafe behavior File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst33|pixel_row[4] File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/vga_sync.vhd Line: 92
+Warning (13012): Latch flappy_text:inst6|font_row[2] has unsafe behavior File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst33|pixel_row[5] File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/vga_sync.vhd Line: 92
+Warning (13012): Latch flappy_text:inst6|character_address[0] has unsafe behavior File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_state_FSM:inst10|state_out[1] File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd Line: 32
+Warning (13012): Latch flappy_text:inst6|character_address[1] has unsafe behavior File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_state_FSM:inst10|state_out[1] File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd Line: 32
+Warning (13012): Latch flappy_text:inst6|character_address[2] has unsafe behavior File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_state_FSM:inst10|state_out[1] File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd Line: 32
+Warning (13012): Latch flappy_text:inst6|character_address[3] has unsafe behavior File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_state_FSM:inst10|state_out[1] File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd Line: 32
+Warning (13012): Latch flappy_text:inst6|character_address[4] has unsafe behavior File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_state_FSM:inst10|state_out[1] File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd Line: 32
+Warning (13012): Latch flappy_text:inst6|character_address[5] has unsafe behavior File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_state_FSM:inst10|state_out[1] File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd Line: 32
+Warning (13012): Latch flappy_text:inst6|font_col[0] has unsafe behavior File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst33|pixel_row[6] File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/vga_sync.vhd Line: 92
+Info (13000): Registers with preset signals will power-up high File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/mouse.vhd Line: 146
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
-    Warning (13310): Register "pipes:inst9|pickupX[10]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[10]~_emulated" and latch "pipes:inst9|pickupX[10]~1" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
-    Warning (13310): Register "pipes:inst9|pickupX2[10]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[10]~_emulated" and latch "pipes:inst9|pickupX2[10]~1" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
-    Warning (13310): Register "pipes:inst9|pickupX2[9]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[9]~_emulated" and latch "pipes:inst9|pickupX2[9]~5" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
-    Warning (13310): Register "pipes:inst9|pickupX2[8]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[8]~_emulated" and latch "pipes:inst9|pickupX2[8]~9" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
-    Warning (13310): Register "pipes:inst9|pickupX2[7]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[7]~_emulated" and latch "pipes:inst9|pickupX2[7]~13" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
-    Warning (13310): Register "pipes:inst9|pickupX2[6]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[6]~_emulated" and latch "pipes:inst9|pickupX2[6]~17" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
-    Warning (13310): Register "pipes:inst9|pickupX2[5]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[5]~_emulated" and latch "pipes:inst9|pickupX2[5]~21" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
-    Warning (13310): Register "pipes:inst9|pickupX2[4]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[4]~_emulated" and latch "pipes:inst9|pickupX2[4]~25" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
-    Warning (13310): Register "pipes:inst9|pickupX2[3]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[3]~_emulated" and latch "pipes:inst9|pickupX2[3]~29" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
-    Warning (13310): Register "pipes:inst9|pickupX2[2]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[2]~_emulated" and latch "pipes:inst9|pickupX2[2]~33" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
-    Warning (13310): Register "pipes:inst9|pickupX2[1]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[1]~_emulated" and latch "pipes:inst9|pickupX2[1]~37" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
-    Warning (13310): Register "pipes:inst9|pickupX2[0]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[0]~_emulated" and latch "pipes:inst9|pickupX2[0]~41" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
-    Warning (13310): Register "pipes:inst9|pickupX[9]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[9]~_emulated" and latch "pipes:inst9|pickupX[9]~5" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
-    Warning (13310): Register "pipes:inst9|pickupX[8]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[8]~_emulated" and latch "pipes:inst9|pickupX[8]~9" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
-    Warning (13310): Register "pipes:inst9|pickupX[7]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[7]~_emulated" and latch "pipes:inst9|pickupX[7]~13" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
-    Warning (13310): Register "pipes:inst9|pickupX[6]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[6]~_emulated" and latch "pipes:inst9|pickupX[6]~17" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
-    Warning (13310): Register "pipes:inst9|pickupX[5]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[5]~_emulated" and latch "pipes:inst9|pickupX[5]~21" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
-    Warning (13310): Register "pipes:inst9|pickupX[4]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[4]~_emulated" and latch "pipes:inst9|pickupX[4]~25" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
-    Warning (13310): Register "pipes:inst9|pickupX[3]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[3]~_emulated" and latch "pipes:inst9|pickupX[3]~29" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
-    Warning (13310): Register "pipes:inst9|pickupX[2]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[2]~_emulated" and latch "pipes:inst9|pickupX[2]~33" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
-    Warning (13310): Register "pipes:inst9|pickupX[1]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[1]~_emulated" and latch "pipes:inst9|pickupX2[1]~37" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
-    Warning (13310): Register "pipes:inst9|pickupX[0]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[0]~_emulated" and latch "pipes:inst9|pickupX2[0]~41" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
-    Warning (13310): Register "ball:inst8|vLives[2]" is converted into an equivalent circuit using register "ball:inst8|vLives[2]~_emulated" and latch "ball:inst8|vLives[2]~1" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/ball.vhd Line: 118
-    Warning (13310): Register "ball:inst8|vLives[1]" is converted into an equivalent circuit using register "ball:inst8|vLives[1]~_emulated" and latch "ball:inst8|vLives[1]~5" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/ball.vhd Line: 118
+    Warning (13310): Register "pipes:inst9|pickupX[10]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[10]~_emulated" and latch "pipes:inst9|pickupX[10]~1" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 148
+    Warning (13310): Register "pipes:inst9|pickupX2[10]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[10]~_emulated" and latch "pipes:inst9|pickupX2[10]~1" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 148
+    Warning (13310): Register "pipes:inst9|pickupX2[9]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[9]~_emulated" and latch "pipes:inst9|pickupX2[9]~5" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 148
+    Warning (13310): Register "pipes:inst9|pickupX2[8]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[8]~_emulated" and latch "pipes:inst9|pickupX2[8]~9" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 148
+    Warning (13310): Register "pipes:inst9|pickupX2[7]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[7]~_emulated" and latch "pipes:inst9|pickupX2[7]~13" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 148
+    Warning (13310): Register "pipes:inst9|pickupX2[6]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[6]~_emulated" and latch "pipes:inst9|pickupX2[6]~17" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 148
+    Warning (13310): Register "pipes:inst9|pickupX2[5]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[5]~_emulated" and latch "pipes:inst9|pickupX2[5]~21" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 148
+    Warning (13310): Register "pipes:inst9|pickupX2[4]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[4]~_emulated" and latch "pipes:inst9|pickupX2[4]~25" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 148
+    Warning (13310): Register "pipes:inst9|pickupX2[3]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[3]~_emulated" and latch "pipes:inst9|pickupX2[3]~29" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 148
+    Warning (13310): Register "pipes:inst9|pickupX2[2]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[2]~_emulated" and latch "pipes:inst9|pickupX2[2]~33" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 148
+    Warning (13310): Register "pipes:inst9|pickupX2[1]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[1]~_emulated" and latch "pipes:inst9|pickupX2[1]~37" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 148
+    Warning (13310): Register "pipes:inst9|pickupX2[0]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[0]~_emulated" and latch "pipes:inst9|pickupX2[0]~41" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 148
+    Warning (13310): Register "pipes:inst9|pickupX[9]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[9]~_emulated" and latch "pipes:inst9|pickupX[9]~5" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 148
+    Warning (13310): Register "pipes:inst9|pickupX[8]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[8]~_emulated" and latch "pipes:inst9|pickupX[8]~9" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 148
+    Warning (13310): Register "pipes:inst9|pickupX[7]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[7]~_emulated" and latch "pipes:inst9|pickupX[7]~13" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 148
+    Warning (13310): Register "pipes:inst9|pickupX[6]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[6]~_emulated" and latch "pipes:inst9|pickupX[6]~17" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 148
+    Warning (13310): Register "pipes:inst9|pickupX[5]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[5]~_emulated" and latch "pipes:inst9|pickupX[5]~21" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 148
+    Warning (13310): Register "pipes:inst9|pickupX[4]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[4]~_emulated" and latch "pipes:inst9|pickupX[4]~25" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 148
+    Warning (13310): Register "pipes:inst9|pickupX[3]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[3]~_emulated" and latch "pipes:inst9|pickupX[3]~29" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 148
+    Warning (13310): Register "pipes:inst9|pickupX[2]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[2]~_emulated" and latch "pipes:inst9|pickupX[2]~33" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 148
+    Warning (13310): Register "pipes:inst9|pickupX[1]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[1]~_emulated" and latch "pipes:inst9|pickupX2[1]~37" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 148
+    Warning (13310): Register "pipes:inst9|pickupX[0]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[0]~_emulated" and latch "pipes:inst9|pickupX2[0]~41" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 148
+    Warning (13310): Register "ball:inst8|vLives[2]" is converted into an equivalent circuit using register "ball:inst8|vLives[2]~_emulated" and latch "ball:inst8|vLives[2]~1" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/ball.vhd Line: 118
+    Warning (13310): Register "ball:inst8|vLives[1]" is converted into an equivalent circuit using register "ball:inst8|vLives[1]~_emulated" and latch "ball:inst8|vLives[1]~5" File: C:/Users/lrya138/OneDrive - The University of Auckland/Documents/COMPSYS305-2024-TEAM15/src/main/miniproject/ball.vhd Line: 118
 Info (286030): Timing-Driven Synthesis is running
 Warning (20013): Ignored 24 assignments for entity "DE0_CV_Default" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE0_CV_Default -section_id Top was ignored
@@ -1284,21 +1287,21 @@ Warning (20013): Ignored 24 assignments for entity "DE0_CV_Default" -- entity do
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity DE0_CV_Default -section_id Top was ignored
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 3 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning: RST port on the PLL is not properly connected on instance DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i|general[0].gpll. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altera_pll.v Line: 748
+Warning: RST port on the PLL is not properly connected on instance DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i|general[0].gpll. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: c:/intelfpga/18.1/quartus/libraries/megafunctions/altera_pll.v Line: 748
     Info: Must be connected
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY3"
-Info (21057): Implemented 1505 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1564 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 45 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 1443 logic cells
+    Info (21061): Implemented 1502 logic cells
     Info (21064): Implemented 8 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 171 warnings
-    Info: Peak virtual memory: 4958 megabytes
-    Info: Processing ended: Mon May 27 21:41:06 2024
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:16
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 170 warnings
+    Info: Peak virtual memory: 4984 megabytes
+    Info: Processing ended: Tue May 28 11:11:07 2024
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:04
 
 

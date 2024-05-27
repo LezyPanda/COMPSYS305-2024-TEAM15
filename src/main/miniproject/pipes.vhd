@@ -142,7 +142,6 @@ begin
 		variable vBallHit 	: std_logic						:= '0';
 		variable vPickupHit : std_logic						:= '0';
 		variable ballY2 	: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(0, 10);
-		variable leftBound  : std_logic_vector(10 downto 0) := conv_std_logic_vector(3, 11);
 		variable pipeSpeed  : std_logic_vector(10 downto 0) := conv_std_logic_vector(2, 11);
 	begin 
 		
@@ -196,14 +195,14 @@ begin
 			end if;
 					
 			-- Random Height
-			randY := VALID_GAP_Y_BOT - (("0000" & pipe_gap) + ("0000" & pipe_gap));
+			randY := VALID_GAP_Y_BOT - (("0000" & pipe_gap) + ("0000" & pipe_gap) + ("0000" & pipe_gap)) - 10;
 			randY2 := VALID_GAP_Y_BOT - (("0000" & pipe_gap) + ("0000" & pipe_gap) + ("0000" & pipe_gap) + ("0000" & pipe_gap)) - 30;
 			vBallHit 	:= '0';
 			vPickupHit 	:= '0';
 			-- Playing
 			if (state = "01") then
 				-- If Pipe 1 Out-of-Bound, Resets, Otherwise Move
-				if (pipeX2 <= leftBound) then
+				if (pipeX2 <= pipeSpeed) then
 					pipeX <= conv_std_logic_vector(DISP_WIDTH + PIPE_SPACING - PIPE_WIDTH, 11);
 					pipeX2 <= conv_std_logic_vector(DISP_WIDTH + PIPE_SPACING, 11);
 					pipeY <= randY;
@@ -212,7 +211,7 @@ begin
 					pipeX2 <= pipeX2 - pipeSpeed;
 				end if;
 				-- If Pipe 2 Out-of-Bound, Resets, Otherwise Move
-				if (pipe2X2 <= leftBound) then
+				if (pipe2X2 <= pipeSpeed) then
 					pipe2X <= conv_std_logic_vector(DISP_WIDTH + PIPE_SPACING - PIPE_WIDTH, 11);
 					pipe2X2 <= conv_std_logic_vector(DISP_WIDTH + PIPE_SPACING, 11);
 					pipe2Y <= randY;
@@ -221,7 +220,7 @@ begin
 					pipe2X2 <= pipe2X2 - pipeSpeed;
 				end if;
 				-- If Pipe 3 Out-of-Bound, Resets, Otherwise Move
-				if (pipe3X2 <= leftBound) then
+				if (pipe3X2 <= pipeSpeed) then
 					pipe3X <= conv_std_logic_vector(DISP_WIDTH + PIPE_SPACING - PIPE_WIDTH, 11);
 					pipe3X2 <= conv_std_logic_vector(DISP_WIDTH + PIPE_SPACING, 11);
 					pipe3Y <= randY;
@@ -230,7 +229,7 @@ begin
 					pipe3X2 <= pipe3X2 - pipeSpeed;
 				end if;
 				-- If Pipe 4 Out-of-Bound, Resets, Otherwise Move
-				if (pipe4X2 <= leftBound) then
+				if (pipe4X2 <= pipeSpeed) then
 					pipe4X <= conv_std_logic_vector(DISP_WIDTH + PIPE_SPACING - PIPE_WIDTH, 11);
 					pipe4X2 <= conv_std_logic_vector(DISP_WIDTH + PIPE_SPACING, 11);
 					pipe4Y <= randY;
@@ -239,7 +238,7 @@ begin
 					pipe4X2 <= pipe4X2 - pipeSpeed;
 				end if;
 				-- If Pipe 5 Out-of-Bound, Resets, Otherwise Move
-				if (pipe5X2 <= leftBound) then
+				if (pipe5X2 <= pipeSpeed) then
 					pipe5X <= conv_std_logic_vector(DISP_WIDTH + PIPE_SPACING - PIPE_WIDTH, 11);
 					pipe5X2 <= conv_std_logic_vector(DISP_WIDTH + PIPE_SPACING, 11);
 					pipe5Y <= randY;
@@ -249,7 +248,7 @@ begin
 				end if;
 				
 				-- Pickup Motion
-				if (pickupX2 <= leftBound) then
+				if (pickupX2 <= pipeSpeed) then
 					pickupX <= pipe2X + PIPE_SPACING / 2 - 4;
 					pickupX2 <= pipe2X + PIPE_SPACING / 2 + 4;
 					pickupY <= randY2;

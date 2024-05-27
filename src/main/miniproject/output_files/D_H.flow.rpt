@@ -1,6 +1,6 @@
 Flow report for D_H
-Mon May 27 21:42:27 2024
-Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Tue May 28 11:13:23 2024
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
 ---------------------
@@ -37,29 +37,29 @@ refer to the applicable agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------+
-; Flow Summary                                                                  ;
-+---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Mon May 27 21:42:21 2024       ;
-; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
-; Revision Name                   ; D_H                                         ;
-; Top-level Entity Name           ; main_dd                                     ;
-; Family                          ; Cyclone V                                   ;
-; Device                          ; 5CEBA4F23C7                                 ;
-; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 799 / 18,480 ( 4 % )                        ;
-; Total registers                 ; 439                                         ;
-; Total pins                      ; 53 / 224 ( 24 % )                           ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 4,096 / 3,153,920 ( < 1 % )                 ;
-; Total DSP Blocks                ; 0 / 66 ( 0 % )                              ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 1 / 4 ( 25 % )                              ;
-; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
-+---------------------------------+---------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Flow Summary                                                                      ;
++---------------------------------+-------------------------------------------------+
+; Flow Status                     ; Successful - Tue May 28 11:13:16 2024           ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
+; Revision Name                   ; D_H                                             ;
+; Top-level Entity Name           ; main_dd                                         ;
+; Family                          ; Cyclone V                                       ;
+; Device                          ; 5CEBA4F23C7                                     ;
+; Timing Models                   ; Final                                           ;
+; Logic utilization (in ALMs)     ; 843 / 18,480 ( 5 % )                            ;
+; Total registers                 ; 443                                             ;
+; Total pins                      ; 53 / 224 ( 24 % )                               ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 4,096 / 3,153,920 ( < 1 % )                     ;
+; Total DSP Blocks                ; 0 / 66 ( 0 % )                                  ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 1 / 4 ( 25 % )                                  ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                                   ;
++---------------------------------+-------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/27/2024 21:40:57 ;
+; Start date & time ; 05/28/2024 11:10:59 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; D_H                 ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+----------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name    ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+----------------+------------+
-; COMPILER_SIGNATURE_ID               ; 4931002573328.171680285710348          ; --            ; --             ; --         ;
+; COMPILER_SIGNATURE_ID               ; 224948462350537.171685145900960        ; --            ; --             ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --             ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --             ; --         ;
 ; MISC_FILE                           ; DP_CLK.cmp                             ; --            ; --             ; --         ;
@@ -103,11 +103,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4958 MB             ; 00:00:16                           ;
-; Fitter               ; 00:01:12     ; 1.1                     ; 7431 MB             ; 00:06:17                           ;
-; Assembler            ; 00:00:02     ; 1.0                     ; 4822 MB             ; 00:00:02                           ;
-; Timing Analyzer      ; 00:00:05     ; 2.3                     ; 5260 MB             ; 00:00:10                           ;
-; Total                ; 00:01:27     ; --                      ; --                  ; 00:06:45                           ;
+; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4984 MB             ; 00:00:04                           ;
+; Fitter               ; 00:02:01     ; 1.1                     ; 7754 MB             ; 00:01:18                           ;
+; Assembler            ; 00:00:04     ; 1.0                     ; 4828 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:06     ; 2.1                     ; 5290 MB             ; 00:00:04                           ;
+; Total                ; 00:02:19     ; --                      ; --                  ; 00:01:27                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -116,10 +116,10 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-K701K8L  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-K701K8L  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-K701K8L  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-K701K8L  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; EN453045         ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; EN453045         ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; EN453045         ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; EN453045         ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
