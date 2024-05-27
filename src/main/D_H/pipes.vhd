@@ -36,9 +36,7 @@ architecture Behavioral of pipes is
 	constant PIPE_WIDTH 		: integer 	:= 32;
 	constant PIPE_SPACING		: integer 	:= 160;
 	constant DEFAULT_BALL_X : std_logic_vector(10 downto 0) := conv_std_logic_vector(190, 11);
-	constant DEFAULT_BALL_X2 : std_logic_vector(10 downto 0) := conv_std_logic_vector(206, 11);
-	constant DEFAULT_PICKUP_Y : std_logic_vector(10 downto 0) := conv_std_logic_vector(128, 11);
-	constant DEFAULT_PICKUP_Y2 : std_logic_vector(10 downto 0) := conv_std_logic_vector(136, 11);
+	constant DEFAULT_BALL_X2 : std_logic_vector(10 downto 0) := conv_std_logic_vector(206, 11)
 	constant BALL_SIZE		: std_logic_vector(9 downto 0)	:= conv_std_logic_vector(16, 10);
 
 	
@@ -62,6 +60,7 @@ architecture Behavioral of pipes is
 	-- health item
 	signal pickupX 				: std_logic_vector(10 downto 0) 	:= conv_std_logic_vector(600 + PIPE_SPACING * 2 + 76, 11);
 	signal pickupX2 			: std_logic_vector(10 downto 0) 	:= conv_std_logic_vector(600 + PIPE_SPACING * 2 + 84, 11);
+	signal pickupY 				: std_logic_vector(9 downto 0) 	:= conv_std_logic_vector(220, 10);
 	signal pickedUp				: std_logic							:= '0';
 begin
  
@@ -124,7 +123,7 @@ begin
 				and
 				(pickupX <= '0' & pixel_column) and ('0' & pixel_column <= pickupX2)
 				and
-				(DEFAULT_PICKUP_Y <= pixel_row) and (pixel_row <= DEFAULT_PICKUP_Y2)
+				(pickupY <= pixel_row) and ('0' & pixel_row <= pickupY + 8)
 				) then
 				vPickup := '1';
 			end if;
@@ -169,7 +168,8 @@ begin
 			pipe5Y  <= conv_std_logic_vector(320, 10);
 			pickupX <= pipe2X + PIPE_SPACING / 2 - 4;
 			pickupX2<= pipe2X + PIPE_SPACING / 2 + 4;
-			pickedUp <= '0';
+			pickupY <= conv_std_logic_vector(220, 10);
+			pickedUp<= '0';
 		elsif (rising_edge(v_sync)) then
 		
 			if (mode = '0') then
@@ -248,6 +248,7 @@ begin
 				if (pickupX2 <= leftBound) then
 					pickupX <= pipe2X + PIPE_SPACING / 2 - 4;
 					pickupX2 <= pipe2X + PIPE_SPACING / 2 + 4;
+					pickupY <= randY;
 					pickedUp <= '0';
 				else
 					pickupX <= pickupX - pipeSpeed;
@@ -300,7 +301,7 @@ begin
 				if (
 					(pickedUp = '0')
 					and
-					(ballY2 >= DEFAULT_PICKUP_Y and ballY <= DEFAULT_PICKUP_Y2)
+					(ballY2 >= pickupY and ('0' & ballY <= pickupY + 8))
 					and
 					(DEFAULT_BALL_X2 >= pickupX and DEFAULT_BALL_X <= pickupX2)
 					) then
