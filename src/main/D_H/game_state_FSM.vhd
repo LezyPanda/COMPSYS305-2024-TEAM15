@@ -17,7 +17,7 @@ end game_state_FSM;
 architecture FSM of game_state_FSM is
 	type game_state_type is(intro, play, dead, pause);
 begin 
-	process(vSync, button1, button2, button3, button4, mbL, mbR, lives)
+	process(vSync, button1, button2, button3, button4, mbL, mbR, lives, SW0)
 		variable state : game_state_type := intro;
 		variable bWasDown : std_logic := '0';
 		variable b2WasDown : std_logic := '0';
@@ -27,6 +27,7 @@ begin
 		variable b2Press	: std_logic := '0';
 		variable b3Press	: std_logic := '0';
 		variable b4Press	: std_logic := '0';
+		variable vMode		: std_logic := '0';
 	begin	
 		if (rising_edge(vSync)) then
 		
@@ -82,7 +83,7 @@ begin
 				when intro => 
 					if (bPress = '1') then
 						reset <= '1';
-						if (mode = '0') then
+						if (vMode = '0') then
 							timer <= '1';
 						end if;
 						state := play;
@@ -98,7 +99,7 @@ begin
 					end if;						
 				when pause =>
 					if (bPress = '1') then
-						if (mode = '0') then
+						if (vMode = '0') then
 							timer <= '1';
 						end if;
 						state := play;
@@ -110,7 +111,7 @@ begin
 					if (bPress = '1') then
 						state := play;
 						reset <= '1';
-						if (mode = '0') then
+						if (vMode = '0') then
 							timer <= '1';
 						end if;
 					elsif (b2Press = '1') then
@@ -121,7 +122,7 @@ begin
 			case state is
 				when intro =>
 					state_out <= "00";
-					mode <= SW0;
+					mode <= vMode;
 				when play =>  
 					state_out <= "01";
 				when pause => 
@@ -130,6 +131,7 @@ begin
 					state_out <= "11";
 			end case;
 		end if;
+		vMode := SW0;
 	end process;
 end architecture FSM;
 					
