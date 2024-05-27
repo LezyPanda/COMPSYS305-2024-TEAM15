@@ -1,7 +1,7 @@
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.all;
 USE IEEE.STD_LOGIC_ARITH.all;
-USE IEEE.STD_LOGIC_UNSIGNED.all;
+USE IEEE.STD_LOGIC_SIGNED.all;
 
 ENTITY ball IS
 	PORT( 
@@ -130,7 +130,7 @@ BEGin
 				-- On-Click
 				if ((mbL or mbR) = '1' and (mouseClicked = '0')) then
 					-- Jump
-					ballYMotion <= 0 - JUMP_HEIGHT;
+					ballYMotion <= -JUMP_HEIGHT;
 				else
 					-- Apply gravity if not yet reached max speed
 					if (ballYMotion < MAX_SPEED) then
@@ -165,7 +165,7 @@ BEGin
 				if (pickupHit = '1') then
 					if (hitPickups = '0') then
 						hitPickups := '1';
-						if ((vLives < 5 and mode = '1') or (vLives < 3 and mode = '0')) then
+						if ((unsigned(vLives) < 5 and mode = '1') or (unsigned(vLives) < 3 and mode = '0')) then
 							vLives := vLives + 1;
 						end if;
 					end if;
