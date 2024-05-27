@@ -113,7 +113,6 @@ BEGin
 		variable hitPickups		: std_logic := '0';
 		variable vLives			: std_logic_vector(2 downto 0)	:= conv_std_logic_vector(5, 3);
 		variable mouseClicked 	: std_logic 					:= '0';
-		variable vBallY			: std_logic_vector(9 downto 0) 	:= DEFAULT_BALL_Y;
 		variable ballYMotion	: std_logic_vector(9 downto 0)	:= ZERO_MOTION;
 	begin
 		if (reset = '1') then
