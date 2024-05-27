@@ -1,10 +1,11 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
--- Converts 25MHZ to 1HZ
+
 entity ClockDivider is
     port (
         clockIn, reset : in std_logic;
+		factor : in integer; -- How many input periods to represent one output period, i.e. 4 means it will take 3 input period to have a complete output waveform
         clockOut: out std_logic
     );
 end ClockDivider;
@@ -20,7 +21,7 @@ begin
             vClockOut <= '0';
 			counter <= 0;
         elsif rising_edge(clockIn) then
-            if (counter = 12499999) then
+            if (counter = factor / 2 - 1) then
                 vClockOut <= not vClockOut;
                 counter <= 0;
             else
