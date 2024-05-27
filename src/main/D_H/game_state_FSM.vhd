@@ -83,7 +83,6 @@ begin
 					if (bPress = '1') then
 						reset <= '1';
 						timer <= '1';
-						mode <= SW0;
 						state := play;
 					end if;
 				when play =>
@@ -116,6 +115,7 @@ begin
 			case state is
 				when intro =>
 					state_out <= "00";
+					mode <= SW0;
 				when play =>  
 					state_out <= "01";
 				when pause => 
