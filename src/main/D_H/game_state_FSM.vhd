@@ -82,7 +82,9 @@ begin
 				when intro => 
 					if (bPress = '1') then
 						reset <= '1';
-						timer <= '1';
+						if (mode = '0')
+							timer <= '1';
+						end if;
 						state := play;
 					end if;
 				when play =>
@@ -96,7 +98,9 @@ begin
 					end if;						
 				when pause =>
 					if (bPress = '1') then
-						timer <= '1';
+						if (mode = '0')
+							timer <= '1';
+						end if;
 						state := play;
 					elsif (b2Press = '1') then
 						timer <= '0';
@@ -106,7 +110,9 @@ begin
 					if (bPress = '1') then
 						state := play;
 						reset <= '1';
-						timer <= '1';
+						if (mode = '0')
+							timer <= '1';
+						end if;
 					elsif (b2Press = '1') then
 						state := intro;
 					end if;
