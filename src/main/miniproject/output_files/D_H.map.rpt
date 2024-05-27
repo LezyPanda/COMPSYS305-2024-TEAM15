@@ -1,0 +1,1305 @@
+Analysis & Synthesis report for D_H
+Mon May 27 21:23:41 2024
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. State Machine - |main_dd|MOUSE:inst1|mouse_state
+ 11. State Machine - |main_dd|game_state_FSM:inst10|state
+ 12. User-Specified and Inferred Latches
+ 13. Registers Removed During Synthesis
+ 14. General Register Statistics
+ 15. Inverted Register Statistics
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Source assignments for char_rom:inst4|altsyncram:altsyncram_component|altsyncram_d5g1:auto_generated
+ 18. Parameter Settings for User Entity Instance: DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i
+ 19. Parameter Settings for User Entity Instance: char_rom:inst4|altsyncram:altsyncram_component
+ 20. altsyncram Parameter Settings by Entity Instance
+ 21. Port Connectivity Checks: "timer:inst2|BCDCounter:dummy4"
+ 22. Port Connectivity Checks: "timer:inst2|BCDCounter:dummy3"
+ 23. Port Connectivity Checks: "timer:inst2|BCDCounter:dummy2"
+ 24. Post-Synthesis Netlist Statistics for Top Partition
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon May 27 21:23:41 2024       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; D_H                                         ;
+; Top-level Entity Name           ; main_dd                                     ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 423                                         ;
+; Total pins                      ; 53                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 4,096                                       ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 1                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CEBA4F23C7        ;                    ;
+; Top-level entity name                                                           ; main_dd            ; D_H                ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 14          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 14          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
+;     Processors 9-14        ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                          ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                ; Library ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------+---------+
+; LFSR.vhd                         ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/LFSR.vhd                 ;         ;
+; game_state_FSM.vhd               ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd       ;         ;
+; ClockDivider.vhdl                ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/ClockDivider.vhdl        ;         ;
+; BCD2SevenSeg.vhd                 ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/BCD2SevenSeg.vhd         ;         ;
+; timer.vhdl                       ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/timer.vhdl               ;         ;
+; BCDCounter.vhdl                  ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/BCDCounter.vhdl          ;         ;
+; vga_sync.vhd                     ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/vga_sync.vhd             ;         ;
+; mouse.vhd                        ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/mouse.vhd                ;         ;
+; char_rom.vhd                     ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/char_rom.vhd             ;         ;
+; ball.vhd                         ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/ball.vhd                 ;         ;
+; DP_CLK.vhd                       ; yes             ; User Wizard-Generated File         ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/DP_CLK.vhd               ; DP_CLK  ;
+; DP_CLK/DP_CLK_0002.v             ; yes             ; User Verilog HDL File              ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/DP_CLK/DP_CLK_0002.v     ; DP_CLK  ;
+; output_files/main_dd.bdf         ; yes             ; User Block Diagram/Schematic File  ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/output_files/main_dd.bdf ;         ;
+; pipes.vhd                        ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd                ;         ;
+; TCGROM.MIF                       ; yes             ; User Memory Initialization File    ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/TCGROM.MIF               ;         ;
+; flappy_text.vhd                  ; yes             ; User VHDL File                     ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd          ;         ;
+; altera_pll.v                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altera_pll.v                         ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf                       ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc                ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc                          ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc                       ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc                       ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc                        ;         ;
+; altrom.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc                           ;         ;
+; altram.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc                           ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc                         ;         ;
+; db/altsyncram_d5g1.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/db/altsyncram_d5g1.tdf   ;         ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                               ;
++---------------------------------------------+-----------------------------+
+; Resource                                    ; Usage                       ;
++---------------------------------------------+-----------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 818                         ;
+;                                             ;                             ;
+; Combinational ALUT usage for logic          ; 1332                        ;
+;     -- 7 input functions                    ; 11                          ;
+;     -- 6 input functions                    ; 280                         ;
+;     -- 5 input functions                    ; 253                         ;
+;     -- 4 input functions                    ; 287                         ;
+;     -- <=3 input functions                  ; 501                         ;
+;                                             ;                             ;
+; Dedicated logic registers                   ; 423                         ;
+;                                             ;                             ;
+; I/O pins                                    ; 53                          ;
+; Total MLAB memory bits                      ; 0                           ;
+; Total block memory bits                     ; 4096                        ;
+;                                             ;                             ;
+; Total DSP Blocks                            ; 0                           ;
+;                                             ;                             ;
+; Total PLLs                                  ; 1                           ;
+;     -- PLLs                                 ; 1                           ;
+;                                             ;                             ;
+; Maximum fan-out node                        ; game_state_FSM:inst10|reset ;
+; Maximum fan-out                             ; 283                         ;
+; Total fan-out                               ; 6980                        ;
+; Average fan-out                             ; 3.73                        ;
++---------------------------------------------+-----------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                          ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                    ; Entity Name     ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------+-----------------+--------------+
+; |main_dd                                  ; 1332 (0)            ; 423 (0)                   ; 4096              ; 0          ; 53   ; 0            ; |main_dd                                                                               ; main_dd         ; work         ;
+;    |DP_CLK:inst|                          ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|DP_CLK:inst                                                                   ; DP_CLK          ; dp_clk       ;
+;       |DP_CLK_0002:dp_clk_inst|           ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|DP_CLK:inst|DP_CLK_0002:dp_clk_inst                                           ; DP_CLK_0002     ; DP_CLK       ;
+;          |altera_pll:altera_pll_i|        ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i                   ; altera_pll      ; work         ;
+;    |LFSR:inst1235|                        ; 4 (4)               ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |main_dd|LFSR:inst1235                                                                 ; LFSR            ; work         ;
+;    |MOUSE:inst1|                          ; 47 (47)             ; 65 (65)                   ; 0                 ; 0          ; 0    ; 0            ; |main_dd|MOUSE:inst1                                                                   ; MOUSE           ; work         ;
+;    |VGA_SYNC:inst33|                      ; 56 (56)             ; 57 (57)                   ; 0                 ; 0          ; 0    ; 0            ; |main_dd|VGA_SYNC:inst33                                                               ; VGA_SYNC        ; work         ;
+;    |ball:inst8|                           ; 116 (116)           ; 34 (34)                   ; 0                 ; 0          ; 0    ; 0            ; |main_dd|ball:inst8                                                                    ; ball            ; work         ;
+;    |char_rom:inst4|                       ; 2 (2)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |main_dd|char_rom:inst4                                                                ; char_rom        ; work         ;
+;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |main_dd|char_rom:inst4|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
+;          |altsyncram_d5g1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |main_dd|char_rom:inst4|altsyncram:altsyncram_component|altsyncram_d5g1:auto_generated ; altsyncram_d5g1 ; work         ;
+;    |flappy_text:inst6|                    ; 287 (287)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|flappy_text:inst6                                                             ; flappy_text     ; work         ;
+;    |game_state_FSM:inst10|                ; 15 (15)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|game_state_FSM:inst10                                                         ; game_state_FSM  ; work         ;
+;    |pipes:inst9|                          ; 722 (722)           ; 184 (184)                 ; 0                 ; 0          ; 0    ; 0            ; |main_dd|pipes:inst9                                                                   ; pipes           ; work         ;
+;    |timer:inst2|                          ; 83 (6)              ; 59 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst2                                                                   ; timer           ; work         ;
+;       |BCD2SevenSeg:dummy5|               ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst2|BCD2SevenSeg:dummy5                                               ; BCD2SevenSeg    ; work         ;
+;       |BCD2SevenSeg:dummy6|               ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst2|BCD2SevenSeg:dummy6                                               ; BCD2SevenSeg    ; work         ;
+;       |BCD2SevenSeg:dummy7|               ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst2|BCD2SevenSeg:dummy7                                               ; BCD2SevenSeg    ; work         ;
+;       |BCDCounter:dummy2|                 ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst2|BCDCounter:dummy2                                                 ; BCDCounter      ; work         ;
+;       |BCDCounter:dummy3|                 ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst2|BCDCounter:dummy3                                                 ; BCDCounter      ; work         ;
+;       |BCDCounter:dummy4|                 ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst2|BCDCounter:dummy4                                                 ; BCDCounter      ; work         ;
+;       |ClockDivider:dummy|                ; 40 (40)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |main_dd|timer:inst2|ClockDivider:dummy                                                ; ClockDivider    ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                       ;
++------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------+
+; Name                                                                                     ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF        ;
++------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------+
+; char_rom:inst4|altsyncram:altsyncram_component|altsyncram_d5g1:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 512          ; 8            ; --           ; --           ; 4096 ; tcgrom.mif ;
++------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                  ;
++--------+--------------+---------+--------------+--------------+----------------------+-----------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance      ; IP Include File ;
++--------+--------------+---------+--------------+--------------+----------------------+-----------------+
+; Altera ; altera_pll   ; 18.1    ; N/A          ; N/A          ; |main_dd|DP_CLK:inst ; DP_CLK.vhd      ;
++--------+--------------+---------+--------------+--------------+----------------------+-----------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |main_dd|MOUSE:inst1|mouse_state                                                                                                                                                        ;
++-------------------------------+---------------------------+--------------------------+-------------------------------+---------------------------+--------------------------+---------------------------+
+; Name                          ; mouse_state.INPUT_PACKETS ; mouse_state.WAIT_CMD_ACK ; mouse_state.WAIT_OUTPUT_READY ; mouse_state.LOAD_COMMAND2 ; mouse_state.LOAD_COMMAND ; mouse_state.INHIBIT_TRANS ;
++-------------------------------+---------------------------+--------------------------+-------------------------------+---------------------------+--------------------------+---------------------------+
+; mouse_state.INHIBIT_TRANS     ; 0                         ; 0                        ; 0                             ; 0                         ; 0                        ; 0                         ;
+; mouse_state.LOAD_COMMAND      ; 0                         ; 0                        ; 0                             ; 0                         ; 1                        ; 1                         ;
+; mouse_state.LOAD_COMMAND2     ; 0                         ; 0                        ; 0                             ; 1                         ; 0                        ; 1                         ;
+; mouse_state.WAIT_OUTPUT_READY ; 0                         ; 0                        ; 1                             ; 0                         ; 0                        ; 1                         ;
+; mouse_state.WAIT_CMD_ACK      ; 0                         ; 1                        ; 0                             ; 0                         ; 0                        ; 1                         ;
+; mouse_state.INPUT_PACKETS     ; 1                         ; 0                        ; 0                             ; 0                         ; 0                        ; 1                         ;
++-------------------------------+---------------------------+--------------------------+-------------------------------+---------------------------+--------------------------+---------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------+
+; State Machine - |main_dd|game_state_FSM:inst10|state              ;
++-------------+-------------+------------+------------+-------------+
+; Name        ; state.pause ; state.dead ; state.play ; state.intro ;
++-------------+-------------+------------+------------+-------------+
+; state.intro ; 0           ; 0          ; 0          ; 0           ;
+; state.play  ; 0           ; 0          ; 1          ; 1           ;
+; state.dead  ; 0           ; 1          ; 0          ; 1           ;
+; state.pause ; 1           ; 0          ; 0          ; 1           ;
++-------------+-------------+------------+------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                   ;
++-----------------------------------------------------+----------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                    ; Free of Timing Hazards ;
++-----------------------------------------------------+----------------------------------------+------------------------+
+; flappy_text:inst6|font_col[2]                       ; flappy_text:inst6|font_row[2]          ; yes                    ;
+; flappy_text:inst6|font_col[1]                       ; flappy_text:inst6|font_row[2]          ; yes                    ;
+; flappy_text:inst6|font_row[0]                       ; flappy_text:inst6|font_row[2]          ; yes                    ;
+; flappy_text:inst6|font_row[1]                       ; flappy_text:inst6|font_row[2]          ; yes                    ;
+; flappy_text:inst6|font_row[2]                       ; flappy_text:inst6|font_row[2]          ; yes                    ;
+; flappy_text:inst6|character_address[0]              ; flappy_text:inst6|character_address[3] ; yes                    ;
+; flappy_text:inst6|character_address[1]              ; flappy_text:inst6|character_address[3] ; yes                    ;
+; flappy_text:inst6|character_address[2]              ; flappy_text:inst6|character_address[3] ; yes                    ;
+; flappy_text:inst6|character_address[3]              ; flappy_text:inst6|character_address[3] ; yes                    ;
+; flappy_text:inst6|character_address[4]              ; flappy_text:inst6|character_address[3] ; yes                    ;
+; flappy_text:inst6|character_address[5]              ; flappy_text:inst6|character_address[3] ; yes                    ;
+; flappy_text:inst6|font_col[0]                       ; flappy_text:inst6|font_row[2]          ; yes                    ;
+; Number of user-specified and inferred latches = 12  ;                                        ;                        ;
++-----------------------------------------------------+----------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                 ;
++----------------------------------------+-------------------------------------------+
+; Register name                          ; Reason for Removal                        ;
++----------------------------------------+-------------------------------------------+
+; game_state_FSM:inst10|b3WasDown        ; Stuck at GND due to stuck port data_in    ;
+; game_state_FSM:inst10|b2WasDown        ; Stuck at GND due to stuck port data_in    ;
+; game_state_FSM:inst10|bWasDown         ; Stuck at GND due to stuck port data_in    ;
+; pipes:inst9|pipeY[0,9]                 ; Stuck at GND due to stuck port data_in    ;
+; pipes:inst9|pipe2Y[0,9]                ; Stuck at GND due to stuck port data_in    ;
+; pipes:inst9|pipe3Y[0,9]                ; Stuck at GND due to stuck port data_in    ;
+; pipes:inst9|pipe4Y[9]                  ; Stuck at GND due to stuck port data_in    ;
+; pipes:inst9|pipe4Y[8]                  ; Stuck at VCC due to stuck port data_in    ;
+; pipes:inst9|pipe4Y[0]                  ; Stuck at GND due to stuck port data_in    ;
+; pipes:inst9|pipe5Y[9]                  ; Stuck at GND due to stuck port data_in    ;
+; pipes:inst9|pipe5Y[8]                  ; Stuck at VCC due to stuck port data_in    ;
+; pipes:inst9|pipe5Y[0]                  ; Stuck at GND due to stuck port data_in    ;
+; pipes:inst9|pickupY[0]                 ; Stuck at GND due to stuck port data_in    ;
+; MOUSE:inst1|CHAROUT[4..7]              ; Stuck at VCC due to stuck port data_in    ;
+; MOUSE:inst1|CHAROUT[3]                 ; Stuck at GND due to stuck port data_in    ;
+; MOUSE:inst1|CHAROUT[2]                 ; Stuck at VCC due to stuck port data_in    ;
+; MOUSE:inst1|CHAROUT[0,1]               ; Stuck at GND due to stuck port data_in    ;
+; MOUSE:inst1|SHIFTOUT[10]               ; Stuck at VCC due to stuck port data_in    ;
+; LFSR:inst1235|nextstate[0]             ; Merged with LFSR:inst1235|output[1]       ;
+; LFSR:inst1235|nextstate[2]             ; Merged with LFSR:inst1235|output[3]       ;
+; LFSR:inst1235|nextstate[3]             ; Merged with LFSR:inst1235|output[4]       ;
+; LFSR:inst1235|nextstate[4]             ; Merged with LFSR:inst1235|output[5]       ;
+; VGA_SYNC:inst33|video_on_v[1..3]       ; Merged with VGA_SYNC:inst33|video_on_v[0] ;
+; VGA_SYNC:inst33|video_on_h[1..3]       ; Merged with VGA_SYNC:inst33|video_on_h[0] ;
+; pipes:inst9|pipeSpeed[4..9]            ; Merged with pipes:inst9|pipeSpeed[10]     ;
+; pipes:inst9|pickupY[1]                 ; Stuck at GND due to stuck port data_in    ;
+; ball:inst8|vBallY[9]                   ; Stuck at GND due to stuck port data_in    ;
+; ball:inst8|newBallY[9]                 ; Stuck at GND due to stuck port data_in    ;
+; pipes:inst9|pipeSpeed[10]              ; Stuck at GND due to stuck port data_in    ;
+; VGA_SYNC:inst33|pixel_row[9]           ; Stuck at GND due to stuck port data_in    ;
+; pipes:inst9|pickupY[9]                 ; Stuck at GND due to stuck port data_in    ;
+; Total Number of Removed Registers = 47 ;                                           ;
++----------------------------------------+-------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 423   ;
+; Number of registers using Synchronous Clear  ; 104   ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 252   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 313   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; timer:inst2|init                        ; 13      ;
+; pipes:inst9|pipe5X2[10]                 ; 3       ;
+; pipes:inst9|pipe5X2[3]                  ; 4       ;
+; pipes:inst9|pipe5X2[5]                  ; 5       ;
+; pipes:inst9|pipe5X2[4]                  ; 5       ;
+; pipes:inst9|pipe5X2[7]                  ; 5       ;
+; pipes:inst9|pipe5X2[6]                  ; 5       ;
+; pipes:inst9|pipe5Y[6]                   ; 4       ;
+; pipes:inst9|pipe5X[3]                   ; 3       ;
+; pipes:inst9|pipe5X[4]                   ; 4       ;
+; pipes:inst9|pipe5X[7]                   ; 6       ;
+; pipes:inst9|pipe5X[6]                   ; 6       ;
+; pipes:inst9|pipe5X[10]                  ; 3       ;
+; pipes:inst9|pipe3X2[3]                  ; 5       ;
+; pipes:inst9|pipe3X2[5]                  ; 6       ;
+; pipes:inst9|pipe3X2[4]                  ; 6       ;
+; pipes:inst9|pipe3X2[7]                  ; 6       ;
+; pipes:inst9|pipe3X2[9]                  ; 5       ;
+; pipes:inst9|pipe3X2[8]                  ; 5       ;
+; pipes:inst9|pipe3Y[6]                   ; 3       ;
+; pipes:inst9|pipe3Y[4]                   ; 3       ;
+; pipes:inst9|pipe3Y[3]                   ; 3       ;
+; pipes:inst9|pipe3Y[2]                   ; 3       ;
+; pipes:inst9|pipe3Y[7]                   ; 4       ;
+; pipes:inst9|pipe3X[9]                   ; 4       ;
+; pipes:inst9|pipe3X[8]                   ; 3       ;
+; pipes:inst9|pipe3X[3]                   ; 3       ;
+; pipes:inst9|pipe3X[4]                   ; 4       ;
+; pipes:inst9|pipe3X[7]                   ; 6       ;
+; pipes:inst9|pipe4X2[10]                 ; 3       ;
+; pipes:inst9|pipe4X2[4]                  ; 5       ;
+; pipes:inst9|pipe4X2[3]                  ; 5       ;
+; pipes:inst9|pipe4X2[6]                  ; 6       ;
+; pipes:inst9|pipe4Y[2]                   ; 3       ;
+; pipes:inst9|pipe4X[3]                   ; 3       ;
+; pipes:inst9|pipe4X[5]                   ; 4       ;
+; pipes:inst9|pipe4X[4]                   ; 4       ;
+; pipes:inst9|pipe4X[10]                  ; 3       ;
+; pipes:inst9|pipeY[7]                    ; 3       ;
+; pipes:inst9|pipeY[6]                    ; 4       ;
+; pipes:inst9|pipeY[3]                    ; 3       ;
+; pipes:inst9|pipeX2[5]                   ; 6       ;
+; pipes:inst9|pipeX2[4]                   ; 5       ;
+; pipes:inst9|pipeX2[3]                   ; 5       ;
+; pipes:inst9|pipeX2[6]                   ; 6       ;
+; pipes:inst9|pipeX2[9]                   ; 5       ;
+; pipes:inst9|pipeX[9]                    ; 4       ;
+; pipes:inst9|pipeX[3]                    ; 3       ;
+; pipes:inst9|pipeX[4]                    ; 4       ;
+; pipes:inst9|pipeX[6]                    ; 6       ;
+; pipes:inst9|pipe2Y[7]                   ; 3       ;
+; pipes:inst9|pipe2Y[6]                   ; 4       ;
+; pipes:inst9|pipe2Y[5]                   ; 3       ;
+; pipes:inst9|pipe2Y[4]                   ; 3       ;
+; pipes:inst9|pipe2X2[4]                  ; 4       ;
+; pipes:inst9|pipe2X2[3]                  ; 4       ;
+; pipes:inst9|pipe2X2[9]                  ; 5       ;
+; pipes:inst9|pipe2X2[8]                  ; 5       ;
+; pipes:inst9|pipe2X[9]                   ; 5       ;
+; pipes:inst9|pipe2X[3]                   ; 5       ;
+; pipes:inst9|pipe2X[5]                   ; 5       ;
+; pipes:inst9|pipe2X[4]                   ; 5       ;
+; pipes:inst9|pipe2X[7]                   ; 7       ;
+; pipes:inst9|pipe2X[6]                   ; 7       ;
+; ball:inst8|vBallY[7]                    ; 19      ;
+; ball:inst8|vBallY[6]                    ; 18      ;
+; ball:inst8|vBallY[5]                    ; 28      ;
+; ball:inst8|vBallY[4]                    ; 30      ;
+; pipes:inst9|pickupY[7]                  ; 9       ;
+; pipes:inst9|pickupY[6]                  ; 6       ;
+; pipes:inst9|pickupY[4]                  ; 7       ;
+; pipes:inst9|pickupY[3]                  ; 10      ;
+; pipes:inst9|pickupY[2]                  ; 4       ;
+; ball:inst8|vLives[0]                    ; 16      ;
+; LFSR:inst1235|output[0]                 ; 12      ;
+; pipes:inst9|pipeSpeed[1]                ; 13      ;
+; LFSR:inst1235|currstate[0]              ; 2       ;
+; ball:inst8|newBallY[6]                  ; 1       ;
+; ball:inst8|newBallY[5]                  ; 1       ;
+; ball:inst8|newBallY[7]                  ; 1       ;
+; ball:inst8|newBallY[4]                  ; 1       ;
+; MOUSE:inst1|send_char                   ; 3       ;
+; LFSR:inst1235|nextstate[1]              ; 1       ;
+; MOUSE:inst1|SHIFTOUT[3]                 ; 1       ;
+; MOUSE:inst1|SHIFTOUT[5]                 ; 1       ;
+; MOUSE:inst1|SHIFTOUT[6]                 ; 1       ;
+; MOUSE:inst1|SHIFTOUT[7]                 ; 1       ;
+; MOUSE:inst1|SHIFTOUT[8]                 ; 1       ;
+; Total number of inverted registers = 88 ;         ;
++-----------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |main_dd|VGA_SYNC:inst33|v_count[7]                  ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |main_dd|ball:inst8|ballYMotion                      ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |main_dd|ball:inst8|newBallY                         ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |main_dd|ball:inst8|newBallY                         ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |main_dd|ball:inst8|green[1]                         ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |main_dd|timer:inst2|BCD2SevenSeg:dummy7|SevenSeg[0] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |main_dd|timer:inst2|BCD2SevenSeg:dummy6|SevenSeg[5] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |main_dd|timer:inst2|BCD2SevenSeg:dummy5|SevenSeg[5] ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |main_dd|ball:inst8|green[2]                         ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |main_dd|ball:inst8|green[0]                         ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |main_dd|flappy_text:inst6|font_col[0]               ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |main_dd|game_state_FSM:inst10|Selector2             ;
+; 10:1               ; 5 bits    ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |main_dd|pipes:inst9|pipeSpeed                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Source assignments for char_rom:inst4|altsyncram:altsyncram_component|altsyncram_d5g1:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------+
+; Assignment                      ; Value              ; From ; To                                     ;
++---------------------------------+--------------------+------+----------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                      ;
++---------------------------------+--------------------+------+----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i ;
++--------------------------------------+------------------------+------------------------------------------+
+; Parameter Name                       ; Value                  ; Type                                     ;
++--------------------------------------+------------------------+------------------------------------------+
+; reference_clock_frequency            ; 50.0 MHz               ; String                                   ;
+; fractional_vco_multiplier            ; false                  ; String                                   ;
+; pll_type                             ; General                ; String                                   ;
+; pll_subtype                          ; General                ; String                                   ;
+; number_of_clocks                     ; 1                      ; Signed Integer                           ;
+; operation_mode                       ; direct                 ; String                                   ;
+; deserialization_factor               ; 4                      ; Signed Integer                           ;
+; data_rate                            ; 0                      ; Signed Integer                           ;
+; sim_additional_refclk_cycles_to_lock ; 0                      ; Signed Integer                           ;
+; output_clock_frequency0              ; 25.000000 MHz          ; String                                   ;
+; phase_shift0                         ; 0 ps                   ; String                                   ;
+; duty_cycle0                          ; 50                     ; Signed Integer                           ;
+; output_clock_frequency1              ; 0 MHz                  ; String                                   ;
+; phase_shift1                         ; 0 ps                   ; String                                   ;
+; duty_cycle1                          ; 50                     ; Signed Integer                           ;
+; output_clock_frequency2              ; 0 MHz                  ; String                                   ;
+; phase_shift2                         ; 0 ps                   ; String                                   ;
+; duty_cycle2                          ; 50                     ; Signed Integer                           ;
+; output_clock_frequency3              ; 0 MHz                  ; String                                   ;
+; phase_shift3                         ; 0 ps                   ; String                                   ;
+; duty_cycle3                          ; 50                     ; Signed Integer                           ;
+; output_clock_frequency4              ; 0 MHz                  ; String                                   ;
+; phase_shift4                         ; 0 ps                   ; String                                   ;
+; duty_cycle4                          ; 50                     ; Signed Integer                           ;
+; output_clock_frequency5              ; 0 MHz                  ; String                                   ;
+; phase_shift5                         ; 0 ps                   ; String                                   ;
+; duty_cycle5                          ; 50                     ; Signed Integer                           ;
+; output_clock_frequency6              ; 0 MHz                  ; String                                   ;
+; phase_shift6                         ; 0 ps                   ; String                                   ;
+; duty_cycle6                          ; 50                     ; Signed Integer                           ;
+; output_clock_frequency7              ; 0 MHz                  ; String                                   ;
+; phase_shift7                         ; 0 ps                   ; String                                   ;
+; duty_cycle7                          ; 50                     ; Signed Integer                           ;
+; output_clock_frequency8              ; 0 MHz                  ; String                                   ;
+; phase_shift8                         ; 0 ps                   ; String                                   ;
+; duty_cycle8                          ; 50                     ; Signed Integer                           ;
+; output_clock_frequency9              ; 0 MHz                  ; String                                   ;
+; phase_shift9                         ; 0 ps                   ; String                                   ;
+; duty_cycle9                          ; 50                     ; Signed Integer                           ;
+; output_clock_frequency10             ; 0 MHz                  ; String                                   ;
+; phase_shift10                        ; 0 ps                   ; String                                   ;
+; duty_cycle10                         ; 50                     ; Signed Integer                           ;
+; output_clock_frequency11             ; 0 MHz                  ; String                                   ;
+; phase_shift11                        ; 0 ps                   ; String                                   ;
+; duty_cycle11                         ; 50                     ; Signed Integer                           ;
+; output_clock_frequency12             ; 0 MHz                  ; String                                   ;
+; phase_shift12                        ; 0 ps                   ; String                                   ;
+; duty_cycle12                         ; 50                     ; Signed Integer                           ;
+; output_clock_frequency13             ; 0 MHz                  ; String                                   ;
+; phase_shift13                        ; 0 ps                   ; String                                   ;
+; duty_cycle13                         ; 50                     ; Signed Integer                           ;
+; output_clock_frequency14             ; 0 MHz                  ; String                                   ;
+; phase_shift14                        ; 0 ps                   ; String                                   ;
+; duty_cycle14                         ; 50                     ; Signed Integer                           ;
+; output_clock_frequency15             ; 0 MHz                  ; String                                   ;
+; phase_shift15                        ; 0 ps                   ; String                                   ;
+; duty_cycle15                         ; 50                     ; Signed Integer                           ;
+; output_clock_frequency16             ; 0 MHz                  ; String                                   ;
+; phase_shift16                        ; 0 ps                   ; String                                   ;
+; duty_cycle16                         ; 50                     ; Signed Integer                           ;
+; output_clock_frequency17             ; 0 MHz                  ; String                                   ;
+; phase_shift17                        ; 0 ps                   ; String                                   ;
+; duty_cycle17                         ; 50                     ; Signed Integer                           ;
+; clock_name_0                         ;                        ; String                                   ;
+; clock_name_1                         ;                        ; String                                   ;
+; clock_name_2                         ;                        ; String                                   ;
+; clock_name_3                         ;                        ; String                                   ;
+; clock_name_4                         ;                        ; String                                   ;
+; clock_name_5                         ;                        ; String                                   ;
+; clock_name_6                         ;                        ; String                                   ;
+; clock_name_7                         ;                        ; String                                   ;
+; clock_name_8                         ;                        ; String                                   ;
+; clock_name_global_0                  ; false                  ; String                                   ;
+; clock_name_global_1                  ; false                  ; String                                   ;
+; clock_name_global_2                  ; false                  ; String                                   ;
+; clock_name_global_3                  ; false                  ; String                                   ;
+; clock_name_global_4                  ; false                  ; String                                   ;
+; clock_name_global_5                  ; false                  ; String                                   ;
+; clock_name_global_6                  ; false                  ; String                                   ;
+; clock_name_global_7                  ; false                  ; String                                   ;
+; clock_name_global_8                  ; false                  ; String                                   ;
+; m_cnt_hi_div                         ; 1                      ; Signed Integer                           ;
+; m_cnt_lo_div                         ; 1                      ; Signed Integer                           ;
+; m_cnt_bypass_en                      ; false                  ; String                                   ;
+; m_cnt_odd_div_duty_en                ; false                  ; String                                   ;
+; n_cnt_hi_div                         ; 1                      ; Signed Integer                           ;
+; n_cnt_lo_div                         ; 1                      ; Signed Integer                           ;
+; n_cnt_bypass_en                      ; false                  ; String                                   ;
+; n_cnt_odd_div_duty_en                ; false                  ; String                                   ;
+; c_cnt_hi_div0                        ; 1                      ; Signed Integer                           ;
+; c_cnt_lo_div0                        ; 1                      ; Signed Integer                           ;
+; c_cnt_bypass_en0                     ; false                  ; String                                   ;
+; c_cnt_in_src0                        ; ph_mux_clk             ; String                                   ;
+; c_cnt_odd_div_duty_en0               ; false                  ; String                                   ;
+; c_cnt_prst0                          ; 1                      ; Signed Integer                           ;
+; c_cnt_ph_mux_prst0                   ; 0                      ; Signed Integer                           ;
+; c_cnt_hi_div1                        ; 1                      ; Signed Integer                           ;
+; c_cnt_lo_div1                        ; 1                      ; Signed Integer                           ;
+; c_cnt_bypass_en1                     ; false                  ; String                                   ;
+; c_cnt_in_src1                        ; ph_mux_clk             ; String                                   ;
+; c_cnt_odd_div_duty_en1               ; false                  ; String                                   ;
+; c_cnt_prst1                          ; 1                      ; Signed Integer                           ;
+; c_cnt_ph_mux_prst1                   ; 0                      ; Signed Integer                           ;
+; c_cnt_hi_div2                        ; 1                      ; Signed Integer                           ;
+; c_cnt_lo_div2                        ; 1                      ; Signed Integer                           ;
+; c_cnt_bypass_en2                     ; false                  ; String                                   ;
+; c_cnt_in_src2                        ; ph_mux_clk             ; String                                   ;
+; c_cnt_odd_div_duty_en2               ; false                  ; String                                   ;
+; c_cnt_prst2                          ; 1                      ; Signed Integer                           ;
+; c_cnt_ph_mux_prst2                   ; 0                      ; Signed Integer                           ;
+; c_cnt_hi_div3                        ; 1                      ; Signed Integer                           ;
+; c_cnt_lo_div3                        ; 1                      ; Signed Integer                           ;
+; c_cnt_bypass_en3                     ; false                  ; String                                   ;
+; c_cnt_in_src3                        ; ph_mux_clk             ; String                                   ;
+; c_cnt_odd_div_duty_en3               ; false                  ; String                                   ;
+; c_cnt_prst3                          ; 1                      ; Signed Integer                           ;
+; c_cnt_ph_mux_prst3                   ; 0                      ; Signed Integer                           ;
+; c_cnt_hi_div4                        ; 1                      ; Signed Integer                           ;
+; c_cnt_lo_div4                        ; 1                      ; Signed Integer                           ;
+; c_cnt_bypass_en4                     ; false                  ; String                                   ;
+; c_cnt_in_src4                        ; ph_mux_clk             ; String                                   ;
+; c_cnt_odd_div_duty_en4               ; false                  ; String                                   ;
+; c_cnt_prst4                          ; 1                      ; Signed Integer                           ;
+; c_cnt_ph_mux_prst4                   ; 0                      ; Signed Integer                           ;
+; c_cnt_hi_div5                        ; 1                      ; Signed Integer                           ;
+; c_cnt_lo_div5                        ; 1                      ; Signed Integer                           ;
+; c_cnt_bypass_en5                     ; false                  ; String                                   ;
+; c_cnt_in_src5                        ; ph_mux_clk             ; String                                   ;
+; c_cnt_odd_div_duty_en5               ; false                  ; String                                   ;
+; c_cnt_prst5                          ; 1                      ; Signed Integer                           ;
+; c_cnt_ph_mux_prst5                   ; 0                      ; Signed Integer                           ;
+; c_cnt_hi_div6                        ; 1                      ; Signed Integer                           ;
+; c_cnt_lo_div6                        ; 1                      ; Signed Integer                           ;
+; c_cnt_bypass_en6                     ; false                  ; String                                   ;
+; c_cnt_in_src6                        ; ph_mux_clk             ; String                                   ;
+; c_cnt_odd_div_duty_en6               ; false                  ; String                                   ;
+; c_cnt_prst6                          ; 1                      ; Signed Integer                           ;
+; c_cnt_ph_mux_prst6                   ; 0                      ; Signed Integer                           ;
+; c_cnt_hi_div7                        ; 1                      ; Signed Integer                           ;
+; c_cnt_lo_div7                        ; 1                      ; Signed Integer                           ;
+; c_cnt_bypass_en7                     ; false                  ; String                                   ;
+; c_cnt_in_src7                        ; ph_mux_clk             ; String                                   ;
+; c_cnt_odd_div_duty_en7               ; false                  ; String                                   ;
+; c_cnt_prst7                          ; 1                      ; Signed Integer                           ;
+; c_cnt_ph_mux_prst7                   ; 0                      ; Signed Integer                           ;
+; c_cnt_hi_div8                        ; 1                      ; Signed Integer                           ;
+; c_cnt_lo_div8                        ; 1                      ; Signed Integer                           ;
+; c_cnt_bypass_en8                     ; false                  ; String                                   ;
+; c_cnt_in_src8                        ; ph_mux_clk             ; String                                   ;
+; c_cnt_odd_div_duty_en8               ; false                  ; String                                   ;
+; c_cnt_prst8                          ; 1                      ; Signed Integer                           ;
+; c_cnt_ph_mux_prst8                   ; 0                      ; Signed Integer                           ;
+; c_cnt_hi_div9                        ; 1                      ; Signed Integer                           ;
+; c_cnt_lo_div9                        ; 1                      ; Signed Integer                           ;
+; c_cnt_bypass_en9                     ; false                  ; String                                   ;
+; c_cnt_in_src9                        ; ph_mux_clk             ; String                                   ;
+; c_cnt_odd_div_duty_en9               ; false                  ; String                                   ;
+; c_cnt_prst9                          ; 1                      ; Signed Integer                           ;
+; c_cnt_ph_mux_prst9                   ; 0                      ; Signed Integer                           ;
+; c_cnt_hi_div10                       ; 1                      ; Signed Integer                           ;
+; c_cnt_lo_div10                       ; 1                      ; Signed Integer                           ;
+; c_cnt_bypass_en10                    ; false                  ; String                                   ;
+; c_cnt_in_src10                       ; ph_mux_clk             ; String                                   ;
+; c_cnt_odd_div_duty_en10              ; false                  ; String                                   ;
+; c_cnt_prst10                         ; 1                      ; Signed Integer                           ;
+; c_cnt_ph_mux_prst10                  ; 0                      ; Signed Integer                           ;
+; c_cnt_hi_div11                       ; 1                      ; Signed Integer                           ;
+; c_cnt_lo_div11                       ; 1                      ; Signed Integer                           ;
+; c_cnt_bypass_en11                    ; false                  ; String                                   ;
+; c_cnt_in_src11                       ; ph_mux_clk             ; String                                   ;
+; c_cnt_odd_div_duty_en11              ; false                  ; String                                   ;
+; c_cnt_prst11                         ; 1                      ; Signed Integer                           ;
+; c_cnt_ph_mux_prst11                  ; 0                      ; Signed Integer                           ;
+; c_cnt_hi_div12                       ; 1                      ; Signed Integer                           ;
+; c_cnt_lo_div12                       ; 1                      ; Signed Integer                           ;
+; c_cnt_bypass_en12                    ; false                  ; String                                   ;
+; c_cnt_in_src12                       ; ph_mux_clk             ; String                                   ;
+; c_cnt_odd_div_duty_en12              ; false                  ; String                                   ;
+; c_cnt_prst12                         ; 1                      ; Signed Integer                           ;
+; c_cnt_ph_mux_prst12                  ; 0                      ; Signed Integer                           ;
+; c_cnt_hi_div13                       ; 1                      ; Signed Integer                           ;
+; c_cnt_lo_div13                       ; 1                      ; Signed Integer                           ;
+; c_cnt_bypass_en13                    ; false                  ; String                                   ;
+; c_cnt_in_src13                       ; ph_mux_clk             ; String                                   ;
+; c_cnt_odd_div_duty_en13              ; false                  ; String                                   ;
+; c_cnt_prst13                         ; 1                      ; Signed Integer                           ;
+; c_cnt_ph_mux_prst13                  ; 0                      ; Signed Integer                           ;
+; c_cnt_hi_div14                       ; 1                      ; Signed Integer                           ;
+; c_cnt_lo_div14                       ; 1                      ; Signed Integer                           ;
+; c_cnt_bypass_en14                    ; false                  ; String                                   ;
+; c_cnt_in_src14                       ; ph_mux_clk             ; String                                   ;
+; c_cnt_odd_div_duty_en14              ; false                  ; String                                   ;
+; c_cnt_prst14                         ; 1                      ; Signed Integer                           ;
+; c_cnt_ph_mux_prst14                  ; 0                      ; Signed Integer                           ;
+; c_cnt_hi_div15                       ; 1                      ; Signed Integer                           ;
+; c_cnt_lo_div15                       ; 1                      ; Signed Integer                           ;
+; c_cnt_bypass_en15                    ; false                  ; String                                   ;
+; c_cnt_in_src15                       ; ph_mux_clk             ; String                                   ;
+; c_cnt_odd_div_duty_en15              ; false                  ; String                                   ;
+; c_cnt_prst15                         ; 1                      ; Signed Integer                           ;
+; c_cnt_ph_mux_prst15                  ; 0                      ; Signed Integer                           ;
+; c_cnt_hi_div16                       ; 1                      ; Signed Integer                           ;
+; c_cnt_lo_div16                       ; 1                      ; Signed Integer                           ;
+; c_cnt_bypass_en16                    ; false                  ; String                                   ;
+; c_cnt_in_src16                       ; ph_mux_clk             ; String                                   ;
+; c_cnt_odd_div_duty_en16              ; false                  ; String                                   ;
+; c_cnt_prst16                         ; 1                      ; Signed Integer                           ;
+; c_cnt_ph_mux_prst16                  ; 0                      ; Signed Integer                           ;
+; c_cnt_hi_div17                       ; 1                      ; Signed Integer                           ;
+; c_cnt_lo_div17                       ; 1                      ; Signed Integer                           ;
+; c_cnt_bypass_en17                    ; false                  ; String                                   ;
+; c_cnt_in_src17                       ; ph_mux_clk             ; String                                   ;
+; c_cnt_odd_div_duty_en17              ; false                  ; String                                   ;
+; c_cnt_prst17                         ; 1                      ; Signed Integer                           ;
+; c_cnt_ph_mux_prst17                  ; 0                      ; Signed Integer                           ;
+; pll_vco_div                          ; 1                      ; Signed Integer                           ;
+; pll_slf_rst                          ; false                  ; String                                   ;
+; pll_bw_sel                           ; low                    ; String                                   ;
+; pll_output_clk_frequency             ; 0 MHz                  ; String                                   ;
+; pll_cp_current                       ; 0                      ; Signed Integer                           ;
+; pll_bwctrl                           ; 0                      ; Signed Integer                           ;
+; pll_fractional_division              ; 1                      ; Signed Integer                           ;
+; pll_fractional_cout                  ; 24                     ; Signed Integer                           ;
+; pll_dsm_out_sel                      ; 1st_order              ; String                                   ;
+; mimic_fbclk_type                     ; gclk                   ; String                                   ;
+; pll_fbclk_mux_1                      ; glb                    ; String                                   ;
+; pll_fbclk_mux_2                      ; fb_1                   ; String                                   ;
+; pll_m_cnt_in_src                     ; ph_mux_clk             ; String                                   ;
+; pll_vcoph_div                        ; 1                      ; Signed Integer                           ;
+; refclk1_frequency                    ; 0 MHz                  ; String                                   ;
+; pll_clkin_0_src                      ; clk_0                  ; String                                   ;
+; pll_clkin_1_src                      ; clk_0                  ; String                                   ;
+; pll_clk_loss_sw_en                   ; false                  ; String                                   ;
+; pll_auto_clk_sw_en                   ; false                  ; String                                   ;
+; pll_manu_clk_sw_en                   ; false                  ; String                                   ;
+; pll_clk_sw_dly                       ; 0                      ; Signed Integer                           ;
+; pll_extclk_0_cnt_src                 ; pll_extclk_cnt_src_vss ; String                                   ;
+; pll_extclk_1_cnt_src                 ; pll_extclk_cnt_src_vss ; String                                   ;
++--------------------------------------+------------------------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: char_rom:inst4|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+---------------------------------+
+; Parameter Name                     ; Value                ; Type                            ;
++------------------------------------+----------------------+---------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                         ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                      ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                    ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                    ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                  ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                         ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                         ;
+; WIDTH_A                            ; 8                    ; Signed Integer                  ;
+; WIDTHAD_A                          ; 9                    ; Signed Integer                  ;
+; NUMWORDS_A                         ; 512                  ; Signed Integer                  ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                         ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                         ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                         ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                         ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                         ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                         ;
+; WIDTH_B                            ; 1                    ; Untyped                         ;
+; WIDTHAD_B                          ; 1                    ; Untyped                         ;
+; NUMWORDS_B                         ; 1                    ; Untyped                         ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                         ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                         ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                         ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                         ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                         ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                         ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                         ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                         ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                         ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                         ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                         ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                         ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                  ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                         ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                         ;
+; BYTE_SIZE                          ; 8                    ; Untyped                         ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                         ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                         ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                         ;
+; INIT_FILE                          ; tcgrom.mif           ; Untyped                         ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                         ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                         ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                         ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                         ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                         ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                         ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                         ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                         ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                         ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                         ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                         ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                         ;
+; CBXI_PARAMETER                     ; altsyncram_d5g1      ; Untyped                         ;
++------------------------------------+----------------------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                           ;
++-------------------------------------------+------------------------------------------------+
+; Name                                      ; Value                                          ;
++-------------------------------------------+------------------------------------------------+
+; Number of entity instances                ; 1                                              ;
+; Entity Instance                           ; char_rom:inst4|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                            ;
+;     -- WIDTH_A                            ; 8                                              ;
+;     -- NUMWORDS_A                         ; 512                                            ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                   ;
+;     -- WIDTH_B                            ; 1                                              ;
+;     -- NUMWORDS_B                         ; 1                                              ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                      ;
++-------------------------------------------+------------------------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "timer:inst2|BCDCounter:dummy4" ;
++--------------+-------+----------+-------------------------+
+; Port         ; Type  ; Severity ; Details                 ;
++--------------+-------+----------+-------------------------+
+; minnum       ; Input ; Info     ; Stuck at GND            ;
+; maxnum[2..1] ; Input ; Info     ; Stuck at GND            ;
+; maxnum[3]    ; Input ; Info     ; Stuck at VCC            ;
+; maxnum[0]    ; Input ; Info     ; Stuck at VCC            ;
++--------------+-------+----------+-------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "timer:inst2|BCDCounter:dummy3" ;
++-----------+-------+----------+----------------------------+
+; Port      ; Type  ; Severity ; Details                    ;
++-----------+-------+----------+----------------------------+
+; minnum    ; Input ; Info     ; Stuck at GND               ;
+; maxnum[3] ; Input ; Info     ; Stuck at GND               ;
+; maxnum[2] ; Input ; Info     ; Stuck at VCC               ;
+; maxnum[1] ; Input ; Info     ; Stuck at GND               ;
+; maxnum[0] ; Input ; Info     ; Stuck at VCC               ;
++-----------+-------+----------+----------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "timer:inst2|BCDCounter:dummy2" ;
++--------------+-------+----------+-------------------------+
+; Port         ; Type  ; Severity ; Details                 ;
++--------------+-------+----------+-------------------------+
+; minnum       ; Input ; Info     ; Stuck at GND            ;
+; maxnum[1..0] ; Input ; Info     ; Stuck at VCC            ;
+; maxnum[3..2] ; Input ; Info     ; Stuck at GND            ;
++--------------+-------+----------+-------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 423                         ;
+;     CLR               ; 4                           ;
+;     CLR SCLR          ; 32                          ;
+;     ENA               ; 76                          ;
+;     ENA CLR           ; 175                         ;
+;     ENA CLR SCLR      ; 41                          ;
+;     ENA SCLR          ; 21                          ;
+;     SCLR              ; 10                          ;
+;     plain             ; 64                          ;
+; arriav_io_obuf        ; 2                           ;
+; arriav_lcell_comb     ; 1338                        ;
+;     arith             ; 303                         ;
+;         0 data inputs ; 19                          ;
+;         1 data inputs ; 225                         ;
+;         2 data inputs ; 1                           ;
+;         4 data inputs ; 1                           ;
+;         5 data inputs ; 57                          ;
+;     extend            ; 11                          ;
+;         7 data inputs ; 11                          ;
+;     normal            ; 1024                        ;
+;         1 data inputs ; 31                          ;
+;         2 data inputs ; 108                         ;
+;         3 data inputs ; 123                         ;
+;         4 data inputs ; 286                         ;
+;         5 data inputs ; 196                         ;
+;         6 data inputs ; 280                         ;
+; boundary_port         ; 53                          ;
+; generic_pll           ; 1                           ;
+; stratixv_ram_block    ; 8                           ;
+;                       ;                             ;
+; Max LUT depth         ; 11.00                       ;
+; Average LUT depth     ; 5.37                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Mon May 27 21:23:32 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off miniproject -c D_H
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file lfsr.vhd
+    Info (12022): Found design unit 1: LFSR-aLFSR File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/LFSR.vhd Line: 11
+    Info (12023): Found entity 1: LFSR File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/LFSR.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file game_state_fsm.vhd
+    Info (12022): Found design unit 1: game_state_FSM-FSM File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd Line: 17
+    Info (12023): Found entity 1: game_state_FSM File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file clockdivider.vhdl
+    Info (12022): Found design unit 1: ClockDivider-aClockDivider File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/ClockDivider.vhdl Line: 13
+    Info (12023): Found entity 1: ClockDivider File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/ClockDivider.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file bcd2sevenseg.vhd
+    Info (12022): Found design unit 1: BCD2SevenSeg-aBCD2SevenSeg File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/BCD2SevenSeg.vhd Line: 14
+    Info (12023): Found entity 1: BCD2SevenSeg File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/BCD2SevenSeg.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file timer.vhdl
+    Info (12022): Found design unit 1: timer-atimer File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/timer.vhdl Line: 18
+    Info (12023): Found entity 1: timer File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/timer.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file bcdcounter.vhdl
+    Info (12022): Found design unit 1: BCDCounter-aBCDCounter File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/BCDCounter.vhdl Line: 15
+    Info (12023): Found entity 1: BCDCounter File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/BCDCounter.vhdl Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file vga_sync.vhd
+    Info (12022): Found design unit 1: VGA_SYNC-a File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/vga_sync.vhd Line: 17
+    Info (12023): Found entity 1: VGA_SYNC File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/vga_sync.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file mouse.vhd
+    Info (12022): Found design unit 1: MOUSE-behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/mouse.vhd Line: 18
+    Info (12023): Found entity 1: MOUSE File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/mouse.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file char_rom.vhd
+    Info (12022): Found design unit 1: char_rom-SYN File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/char_rom.vhd Line: 20
+    Info (12023): Found entity 1: char_rom File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/char_rom.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file ball.vhd
+    Info (12022): Found design unit 1: ball-behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/ball.vhd Line: 20
+    Info (12023): Found entity 1: ball File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/ball.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file dp_clk.vhd
+    Info (12022): Found design unit 1: DP_CLK-rtl File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/DP_CLK.vhd Line: 20
+    Info (12023): Found entity 1: DP_CLK File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/DP_CLK.vhd Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file dp_clk/dp_clk_0002.v
+    Info (12023): Found entity 1: DP_CLK_0002 File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/DP_CLK/DP_CLK_0002.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file output_files/main_dd.bdf
+    Info (12023): Found entity 1: main_dd
+Info (12021): Found 2 design units, including 1 entities, in source file pipes.vhd
+    Info (12022): Found design unit 1: pipes-Behavioral File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 28
+    Info (12023): Found entity 1: pipes File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file flappy_text.vhd
+    Info (12022): Found design unit 1: flappy_text-behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 18
+    Info (12023): Found entity 1: flappy_text File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 6
+Info (12127): Elaborating entity "main_dd" for the top level hierarchy
+Info (12128): Elaborating entity "VGA_SYNC" for hierarchy "VGA_SYNC:inst33"
+Info (12128): Elaborating entity "DP_CLK" for hierarchy "DP_CLK:inst"
+Info (12128): Elaborating entity "DP_CLK_0002" for hierarchy "DP_CLK:inst|DP_CLK_0002:dp_clk_inst" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/DP_CLK.vhd Line: 32
+Info (12128): Elaborating entity "altera_pll" for hierarchy "DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/DP_CLK/DP_CLK_0002.v Line: 85
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "wire_to_nowhere_64" into its bus
+Info (12130): Elaborated megafunction instantiation "DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/DP_CLK/DP_CLK_0002.v Line: 85
+Info (12133): Instantiated megafunction "DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i" with the following parameter: File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/DP_CLK/DP_CLK_0002.v Line: 85
+    Info (12134): Parameter "fractional_vco_multiplier" = "false"
+    Info (12134): Parameter "reference_clock_frequency" = "50.0 MHz"
+    Info (12134): Parameter "operation_mode" = "direct"
+    Info (12134): Parameter "number_of_clocks" = "1"
+    Info (12134): Parameter "output_clock_frequency0" = "25.000000 MHz"
+    Info (12134): Parameter "phase_shift0" = "0 ps"
+    Info (12134): Parameter "duty_cycle0" = "50"
+    Info (12134): Parameter "output_clock_frequency1" = "0 MHz"
+    Info (12134): Parameter "phase_shift1" = "0 ps"
+    Info (12134): Parameter "duty_cycle1" = "50"
+    Info (12134): Parameter "output_clock_frequency2" = "0 MHz"
+    Info (12134): Parameter "phase_shift2" = "0 ps"
+    Info (12134): Parameter "duty_cycle2" = "50"
+    Info (12134): Parameter "output_clock_frequency3" = "0 MHz"
+    Info (12134): Parameter "phase_shift3" = "0 ps"
+    Info (12134): Parameter "duty_cycle3" = "50"
+    Info (12134): Parameter "output_clock_frequency4" = "0 MHz"
+    Info (12134): Parameter "phase_shift4" = "0 ps"
+    Info (12134): Parameter "duty_cycle4" = "50"
+    Info (12134): Parameter "output_clock_frequency5" = "0 MHz"
+    Info (12134): Parameter "phase_shift5" = "0 ps"
+    Info (12134): Parameter "duty_cycle5" = "50"
+    Info (12134): Parameter "output_clock_frequency6" = "0 MHz"
+    Info (12134): Parameter "phase_shift6" = "0 ps"
+    Info (12134): Parameter "duty_cycle6" = "50"
+    Info (12134): Parameter "output_clock_frequency7" = "0 MHz"
+    Info (12134): Parameter "phase_shift7" = "0 ps"
+    Info (12134): Parameter "duty_cycle7" = "50"
+    Info (12134): Parameter "output_clock_frequency8" = "0 MHz"
+    Info (12134): Parameter "phase_shift8" = "0 ps"
+    Info (12134): Parameter "duty_cycle8" = "50"
+    Info (12134): Parameter "output_clock_frequency9" = "0 MHz"
+    Info (12134): Parameter "phase_shift9" = "0 ps"
+    Info (12134): Parameter "duty_cycle9" = "50"
+    Info (12134): Parameter "output_clock_frequency10" = "0 MHz"
+    Info (12134): Parameter "phase_shift10" = "0 ps"
+    Info (12134): Parameter "duty_cycle10" = "50"
+    Info (12134): Parameter "output_clock_frequency11" = "0 MHz"
+    Info (12134): Parameter "phase_shift11" = "0 ps"
+    Info (12134): Parameter "duty_cycle11" = "50"
+    Info (12134): Parameter "output_clock_frequency12" = "0 MHz"
+    Info (12134): Parameter "phase_shift12" = "0 ps"
+    Info (12134): Parameter "duty_cycle12" = "50"
+    Info (12134): Parameter "output_clock_frequency13" = "0 MHz"
+    Info (12134): Parameter "phase_shift13" = "0 ps"
+    Info (12134): Parameter "duty_cycle13" = "50"
+    Info (12134): Parameter "output_clock_frequency14" = "0 MHz"
+    Info (12134): Parameter "phase_shift14" = "0 ps"
+    Info (12134): Parameter "duty_cycle14" = "50"
+    Info (12134): Parameter "output_clock_frequency15" = "0 MHz"
+    Info (12134): Parameter "phase_shift15" = "0 ps"
+    Info (12134): Parameter "duty_cycle15" = "50"
+    Info (12134): Parameter "output_clock_frequency16" = "0 MHz"
+    Info (12134): Parameter "phase_shift16" = "0 ps"
+    Info (12134): Parameter "duty_cycle16" = "50"
+    Info (12134): Parameter "output_clock_frequency17" = "0 MHz"
+    Info (12134): Parameter "phase_shift17" = "0 ps"
+    Info (12134): Parameter "duty_cycle17" = "50"
+    Info (12134): Parameter "pll_type" = "General"
+    Info (12134): Parameter "pll_subtype" = "General"
+Info (12128): Elaborating entity "ball" for hierarchy "ball:inst8"
+Warning (10492): VHDL Process Statement warning at ball.vhd(88): signal "pickup" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/ball.vhd Line: 88
+Warning (10492): VHDL Process Statement warning at ball.vhd(182): signal "vBallY" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/ball.vhd Line: 182
+Info (12128): Elaborating entity "game_state_FSM" for hierarchy "game_state_FSM:inst10"
+Warning (10036): Verilog HDL or VHDL warning at game_state_FSM.vhd(29): object "b4Press" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd Line: 29
+Info (12128): Elaborating entity "MOUSE" for hierarchy "MOUSE:inst1"
+Warning (10036): Verilog HDL or VHDL warning at mouse.vhd(25): object "CHARIN" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/mouse.vhd Line: 25
+Warning (10492): VHDL Process Statement warning at mouse.vhd(151): signal "CHAROUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/mouse.vhd Line: 151
+Warning (10492): VHDL Process Statement warning at mouse.vhd(155): signal "CHAROUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/mouse.vhd Line: 155
+Warning (10492): VHDL Process Statement warning at mouse.vhd(156): signal "CHAROUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/mouse.vhd Line: 156
+Warning (10492): VHDL Process Statement warning at mouse.vhd(157): signal "CHAROUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/mouse.vhd Line: 157
+Info (12128): Elaborating entity "char_rom" for hierarchy "char_rom:inst4"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "char_rom:inst4|altsyncram:altsyncram_component" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/char_rom.vhd Line: 51
+Info (12130): Elaborated megafunction instantiation "char_rom:inst4|altsyncram:altsyncram_component" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/char_rom.vhd Line: 51
+Info (12133): Instantiated megafunction "char_rom:inst4|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/char_rom.vhd Line: 51
+    Info (12134): Parameter "address_aclr_a" = "NONE"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "tcgrom.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "512"
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "widthad_a" = "9"
+    Info (12134): Parameter "width_a" = "8"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_d5g1.tdf
+    Info (12023): Found entity 1: altsyncram_d5g1 File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/db/altsyncram_d5g1.tdf Line: 27
+Info (12128): Elaborating entity "altsyncram_d5g1" for hierarchy "char_rom:inst4|altsyncram:altsyncram_component|altsyncram_d5g1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12128): Elaborating entity "flappy_text" for hierarchy "flappy_text:inst6"
+Warning (10036): Verilog HDL or VHDL warning at flappy_text.vhd(27): object "max_lives" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 27
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(31): used initial value expression for variable "vA" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 31
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(32): used initial value expression for variable "vB" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 32
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(33): used initial value expression for variable "vC" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 33
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(34): used initial value expression for variable "vD" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 34
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(35): used initial value expression for variable "vE" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 35
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(36): used initial value expression for variable "vF" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 36
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(38): used initial value expression for variable "vH" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 38
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(39): used initial value expression for variable "vI" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 39
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(41): used initial value expression for variable "vK" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 41
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(42): used initial value expression for variable "vL" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 42
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(43): used initial value expression for variable "vM" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 43
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(44): used initial value expression for variable "vN" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 44
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(45): used initial value expression for variable "vO" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 45
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(46): used initial value expression for variable "vP" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 46
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(48): used initial value expression for variable "vR" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 48
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(49): used initial value expression for variable "vS" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 49
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(50): used initial value expression for variable "vT" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 50
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(51): used initial value expression for variable "vU" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 51
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(52): used initial value expression for variable "vV" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 52
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(53): used initial value expression for variable "vW" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 53
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(55): used initial value expression for variable "vY" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 55
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(57): used initial value expression for variable "vHeart" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 57
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(58): used initial value expression for variable "v0" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 58
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(59): used initial value expression for variable "v1" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 59
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(60): used initial value expression for variable "v2" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 60
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(61): used initial value expression for variable "v3" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 61
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(62): used initial value expression for variable "v4" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 62
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(63): used initial value expression for variable "v5" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 63
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(64): used initial value expression for variable "v6" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 64
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(65): used initial value expression for variable "v7" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 65
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(66): used initial value expression for variable "v8" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 66
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(67): used initial value expression for variable "v9" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 67
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(68): used initial value expression for variable "vApostrphy" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 68
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(69): used initial value expression for variable "vbopen" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 69
+Warning (10542): VHDL Variable Declaration warning at flappy_text.vhd(70): used initial value expression for variable "vbclose" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 70
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(73): signal "game_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 73
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(152): signal "mode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 152
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(226): signal "game_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 226
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(231): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 231
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(232): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 232
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(233): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 233
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(235): signal "mode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 235
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(240): signal "lives" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 240
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(249): signal "lives" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 249
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(258): signal "lives" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 258
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(267): signal "lives" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 267
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(276): signal "lives" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 276
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(346): signal "lives" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 346
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(353): signal "lives" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 353
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(360): signal "lives" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 360
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(451): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 451
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(453): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 453
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(455): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 455
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(457): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 457
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(459): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 459
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(461): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 461
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(463): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 463
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(465): signal "timeset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 465
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(478): signal "game_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 478
+Warning (10492): VHDL Process Statement warning at flappy_text.vhd(577): signal "game_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 577
+Warning (10631): VHDL Process Statement warning at flappy_text.vhd(22): inferring latch(es) for signal or variable "character_address", which holds its previous value in one or more paths through the process File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Warning (10631): VHDL Process Statement warning at flappy_text.vhd(22): inferring latch(es) for signal or variable "font_row", which holds its previous value in one or more paths through the process File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Warning (10631): VHDL Process Statement warning at flappy_text.vhd(22): inferring latch(es) for signal or variable "font_col", which holds its previous value in one or more paths through the process File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Info (10041): Inferred latch for "font_col[0]" at flappy_text.vhd(22) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Info (10041): Inferred latch for "font_col[1]" at flappy_text.vhd(22) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Info (10041): Inferred latch for "font_col[2]" at flappy_text.vhd(22) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Info (10041): Inferred latch for "font_row[0]" at flappy_text.vhd(22) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Info (10041): Inferred latch for "font_row[1]" at flappy_text.vhd(22) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Info (10041): Inferred latch for "font_row[2]" at flappy_text.vhd(22) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Info (10041): Inferred latch for "character_address[0]" at flappy_text.vhd(22) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Info (10041): Inferred latch for "character_address[1]" at flappy_text.vhd(22) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Info (10041): Inferred latch for "character_address[2]" at flappy_text.vhd(22) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Info (10041): Inferred latch for "character_address[3]" at flappy_text.vhd(22) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Info (10041): Inferred latch for "character_address[4]" at flappy_text.vhd(22) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Info (10041): Inferred latch for "character_address[5]" at flappy_text.vhd(22) File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+Info (12128): Elaborating entity "timer" for hierarchy "timer:inst2"
+Warning (10492): VHDL Process Statement warning at timer.vhdl(97): signal "vQ1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/timer.vhdl Line: 97
+Warning (10492): VHDL Process Statement warning at timer.vhdl(97): signal "vQ2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/timer.vhdl Line: 97
+Warning (10492): VHDL Process Statement warning at timer.vhdl(97): signal "vQ3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/timer.vhdl Line: 97
+Info (12128): Elaborating entity "ClockDivider" for hierarchy "timer:inst2|ClockDivider:dummy" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/timer.vhdl Line: 46
+Info (12128): Elaborating entity "BCDCounter" for hierarchy "timer:inst2|BCDCounter:dummy2" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/timer.vhdl Line: 47
+Warning (10492): VHDL Process Statement warning at BCDCounter.vhdl(21): signal "minNum" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/BCDCounter.vhdl Line: 21
+Info (12128): Elaborating entity "BCD2SevenSeg" for hierarchy "timer:inst2|BCD2SevenSeg:dummy5" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/timer.vhdl Line: 50
+Info (12128): Elaborating entity "pipes" for hierarchy "pipes:inst9"
+Warning (10492): VHDL Process Statement warning at pipes.vhd(77): signal "pipeX2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 77
+Warning (10492): VHDL Process Statement warning at pipes.vhd(79): signal "pipeY" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 79
+Warning (10492): VHDL Process Statement warning at pipes.vhd(86): signal "pipe2X2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 86
+Warning (10492): VHDL Process Statement warning at pipes.vhd(88): signal "pipe2Y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 88
+Warning (10492): VHDL Process Statement warning at pipes.vhd(95): signal "pipe3X2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at pipes.vhd(97): signal "pipe3Y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 97
+Warning (10492): VHDL Process Statement warning at pipes.vhd(104): signal "pipe4X2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 104
+Warning (10492): VHDL Process Statement warning at pipes.vhd(106): signal "pipe4Y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 106
+Warning (10492): VHDL Process Statement warning at pipes.vhd(113): signal "pipe5X2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 113
+Warning (10492): VHDL Process Statement warning at pipes.vhd(115): signal "pipe5Y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 115
+Warning (10492): VHDL Process Statement warning at pipes.vhd(122): signal "pickedUp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 122
+Warning (10492): VHDL Process Statement warning at pipes.vhd(124): signal "pickupX" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 124
+Warning (10492): VHDL Process Statement warning at pipes.vhd(124): signal "pickupX2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 124
+Warning (10492): VHDL Process Statement warning at pipes.vhd(126): signal "pickupY" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 126
+Warning (10542): VHDL Variable Declaration warning at pipes.vhd(145): used initial value expression for variable "leftBound" because variable was never assigned a value File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 145
+Warning (10492): VHDL Process Statement warning at pipes.vhd(170): signal "pipe2X" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 170
+Warning (10492): VHDL Process Statement warning at pipes.vhd(171): signal "pipe2X" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 171
+Info (12128): Elaborating entity "LFSR" for hierarchy "LFSR:inst1235"
+Warning (13012): Latch flappy_text:inst6|font_col[2] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst33|pixel_row[6] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/vga_sync.vhd Line: 92
+Warning (13012): Latch flappy_text:inst6|font_col[1] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst33|pixel_row[6] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/vga_sync.vhd Line: 92
+Warning (13012): Latch flappy_text:inst6|font_row[0] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst33|pixel_row[6] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/vga_sync.vhd Line: 92
+Warning (13012): Latch flappy_text:inst6|font_row[1] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst33|pixel_row[4] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/vga_sync.vhd Line: 92
+Warning (13012): Latch flappy_text:inst6|font_row[2] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst33|pixel_row[5] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/vga_sync.vhd Line: 92
+Warning (13012): Latch flappy_text:inst6|character_address[0] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_state_FSM:inst10|state_out[1] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd Line: 32
+Warning (13012): Latch flappy_text:inst6|character_address[1] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_state_FSM:inst10|state_out[1] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd Line: 32
+Warning (13012): Latch flappy_text:inst6|character_address[2] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_state_FSM:inst10|state_out[1] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd Line: 32
+Warning (13012): Latch flappy_text:inst6|character_address[3] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_state_FSM:inst10|state_out[1] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd Line: 32
+Warning (13012): Latch flappy_text:inst6|character_address[4] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_state_FSM:inst10|state_out[1] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd Line: 32
+Warning (13012): Latch flappy_text:inst6|character_address[5] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_state_FSM:inst10|state_out[1] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/game_state_FSM.vhd Line: 32
+Warning (13012): Latch flappy_text:inst6|font_col[0] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/flappy_text.vhd Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst33|pixel_row[6] File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/vga_sync.vhd Line: 92
+Info (13000): Registers with preset signals will power-up high File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/mouse.vhd Line: 146
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "pipes:inst9|pickupX[10]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[10]~_emulated" and latch "pipes:inst9|pickupX[10]~1" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
+    Warning (13310): Register "pipes:inst9|pickupX2[10]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[10]~_emulated" and latch "pipes:inst9|pickupX2[10]~1" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
+    Warning (13310): Register "pipes:inst9|pickupX2[9]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[9]~_emulated" and latch "pipes:inst9|pickupX2[9]~5" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
+    Warning (13310): Register "pipes:inst9|pickupX2[8]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[8]~_emulated" and latch "pipes:inst9|pickupX2[8]~9" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
+    Warning (13310): Register "pipes:inst9|pickupX2[7]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[7]~_emulated" and latch "pipes:inst9|pickupX2[7]~13" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
+    Warning (13310): Register "pipes:inst9|pickupX2[6]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[6]~_emulated" and latch "pipes:inst9|pickupX2[6]~17" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
+    Warning (13310): Register "pipes:inst9|pickupX2[5]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[5]~_emulated" and latch "pipes:inst9|pickupX2[5]~21" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
+    Warning (13310): Register "pipes:inst9|pickupX2[4]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[4]~_emulated" and latch "pipes:inst9|pickupX2[4]~25" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
+    Warning (13310): Register "pipes:inst9|pickupX2[3]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[3]~_emulated" and latch "pipes:inst9|pickupX2[3]~29" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
+    Warning (13310): Register "pipes:inst9|pickupX2[2]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[2]~_emulated" and latch "pipes:inst9|pickupX2[2]~33" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
+    Warning (13310): Register "pipes:inst9|pickupX2[1]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[1]~_emulated" and latch "pipes:inst9|pickupX2[1]~37" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
+    Warning (13310): Register "pipes:inst9|pickupX2[0]" is converted into an equivalent circuit using register "pipes:inst9|pickupX2[0]~_emulated" and latch "pipes:inst9|pickupX2[0]~41" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
+    Warning (13310): Register "pipes:inst9|pickupX[9]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[9]~_emulated" and latch "pipes:inst9|pickupX[9]~5" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
+    Warning (13310): Register "pipes:inst9|pickupX[8]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[8]~_emulated" and latch "pipes:inst9|pickupX[8]~9" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
+    Warning (13310): Register "pipes:inst9|pickupX[7]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[7]~_emulated" and latch "pipes:inst9|pickupX[7]~13" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
+    Warning (13310): Register "pipes:inst9|pickupX[6]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[6]~_emulated" and latch "pipes:inst9|pickupX[6]~17" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
+    Warning (13310): Register "pipes:inst9|pickupX[5]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[5]~_emulated" and latch "pipes:inst9|pickupX[5]~21" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
+    Warning (13310): Register "pipes:inst9|pickupX[4]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[4]~_emulated" and latch "pipes:inst9|pickupX[4]~25" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
+    Warning (13310): Register "pipes:inst9|pickupX[3]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[3]~_emulated" and latch "pipes:inst9|pickupX[3]~29" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
+    Warning (13310): Register "pipes:inst9|pickupX[2]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[2]~_emulated" and latch "pipes:inst9|pickupX[2]~33" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
+    Warning (13310): Register "pipes:inst9|pickupX[1]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[1]~_emulated" and latch "pipes:inst9|pickupX2[1]~37" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
+    Warning (13310): Register "pipes:inst9|pickupX[0]" is converted into an equivalent circuit using register "pipes:inst9|pickupX[0]~_emulated" and latch "pipes:inst9|pickupX2[0]~41" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/pipes.vhd Line: 149
+    Warning (13310): Register "ball:inst8|vLives[2]" is converted into an equivalent circuit using register "ball:inst8|vLives[2]~_emulated" and latch "ball:inst8|vLives[2]~1" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/ball.vhd Line: 118
+    Warning (13310): Register "ball:inst8|vLives[1]" is converted into an equivalent circuit using register "ball:inst8|vLives[1]~_emulated" and latch "ball:inst8|vLives[1]~5" File: C:/Users/thoye/Desktop/COMPSYS305-2024-TEAM15/src/main/miniproject/ball.vhd Line: 118
+Info (286030): Timing-Driven Synthesis is running
+Warning (20013): Ignored 24 assignments for entity "DE0_CV_Default" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE0_CV_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity DE0_CV_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity DE0_CV_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_PRESERVE_HIGH_SPEED_TILES ON -entity DE0_CV_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IGNORE_SOURCE_FILE_CHANGES OFF -entity DE0_CV_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ALWAYS_USE_QXP_NETLIST OFF -entity DE0_CV_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_COLOR 16764057 -entity DE0_CV_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_ASSIGNMENTS ON -entity DE0_CV_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_ASSIGNMENTS REPLACE_CONFLICTING -entity DE0_CV_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS UPDATE_CONFLICTING -entity DE0_CV_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PIN_ASSIGNMENTS ON -entity DE0_CV_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PROMOTE_ASSIGNMENTS ON -entity DE0_CV_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_TYPE STANDARD_PARTITION -entity DE0_CV_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ALLOW_MULTIPLE_PERSONAS OFF -entity DE0_CV_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ASD_REGION_ID 1 -entity DE0_CV_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name CROSS_BOUNDARY_OPTIMIZATIONS OFF -entity DE0_CV_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_CONSTANTS_ON_INPUTS ON -entity DE0_CV_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_INVERSIONS_ON_INPUTS ON -entity DE0_CV_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS ON -entity DE0_CV_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_INPUTS ON -entity DE0_CV_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_BIDIRS ON -entity DE0_CV_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS ON -entity DE0_CV_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity DE0_CV_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity DE0_CV_Default -section_id Top was ignored
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 3 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
+Warning: RST port on the PLL is not properly connected on instance DP_CLK:inst|DP_CLK_0002:dp_clk_inst|altera_pll:altera_pll_i|general[0].gpll. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altera_pll.v Line: 748
+    Info: Must be connected
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY3"
+Info (21057): Implemented 1512 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 45 output pins
+    Info (21060): Implemented 2 bidirectional pins
+    Info (21061): Implemented 1450 logic cells
+    Info (21064): Implemented 8 RAM segments
+    Info (21065): Implemented 1 PLLs
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 171 warnings
+    Info: Peak virtual memory: 4950 megabytes
+    Info: Processing ended: Mon May 27 21:23:41 2024
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:16
+
+
