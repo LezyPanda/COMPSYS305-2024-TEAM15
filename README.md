@@ -3,7 +3,7 @@
   > Implementation of Flappy Bird Game inside of the Cyclone V DEO-CV fpga, using DIP switch, push button and PS/2 mouse.
 
   **Developed by [Darren Ho](https://github.com/LezyPanda), [Luke Ryan](https://github.com/lryan123) and [Thomas Yeh](https://github.com/ThomasYeh7414)**
-  * **[report link here](https://uoa-my.sharepoint.com/:w:/g/personal/lrya138_uoa_auckland_ac_nz/EdKUL6Pb7shEvACy6bubvrkBI2V3lJeAHeqMRaUnivwL6w?e=yR8Znf)**
+  * **[report link here](https://github.com/LezyPanda/COMPSYS305-2024-TEAM15/blob/main/Breif%20Design%20Report%20(interm%20report).pdf)**
   ---
 **Keys to use**
 * [SW0] Switch Mode (only on Home/Start)
@@ -20,4 +20,5 @@
 * Health Pick-ups, restore 1 health (does not exceed)
 * Hitting ground/sky will return the bird to middle and lose 1 health
 * Hitting the pipes will lose 1 health
-
+---
+**Grade Recieved: A+**
